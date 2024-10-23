@@ -3,6 +3,7 @@ using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
 using KAF.UI.Module.ViewModels;
 using Prism.Ioc;
+using Prism.Navigation.Regions;
 
 namespace KAF.UI.Module
 {
@@ -20,21 +21,16 @@ namespace KAF.UI.Module
             // Register the view in a specific region (e.g., MenuRegion)
             _regionManager.RegisterViewWithRegion("MenuRegion", typeof(MenuView));
             _regionManager.RegisterViewWithRegion("formContentRegion", typeof(HomeView));
-            
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register the UserControl and its ViewModel as a dialog
             containerRegistry.RegisterDialog<DialogView, DialogViewModel>();
-
             // Register any services or view models related to the Menu module
             containerRegistry.RegisterForNavigation<DepartmentView, DepartmentViewModel>();
             containerRegistry.RegisterForNavigation<HomeView, HomeViewModel>();
             containerRegistry.RegisterForNavigation<MenuView, MenuViewModel>();
-
-
-
 
         }
     }
