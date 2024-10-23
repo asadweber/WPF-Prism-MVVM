@@ -27,6 +27,8 @@ namespace KAF.UI.Module
             // Register any services or view models related to the Menu module
             containerRegistry.RegisterForNavigation<HomeView,HomeViewModel>();
             containerRegistry.RegisterForNavigation<MenuView,MenuViewModel>();
+            containerRegistry.RegisterForNavigation<DepartmentView,DepartmentViewModel>();
+
 
            // Register the UserControl and its ViewModel as a dialog
             containerRegistry.RegisterDialog<DialogView,DialogViewModel>();

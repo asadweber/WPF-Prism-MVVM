@@ -1,4 +1,5 @@
 ﻿using KAF.UI.Common.Model;
+using KAF.UI.Module.View;
 using KAF.UI.Service;
 using KAF.UI.ViewModels;
 using System.Collections.ObjectModel;
@@ -10,12 +11,15 @@ namespace KAF.UI.Module.ViewModels
     {
         private readonly IUserService _userService;
 
+        private readonly IRegionManager _regionManager;
+
         public ObservableCollection<MenuItemModel> MenuItems { get; private set; }
-        public MenuViewModel(IUserService userService)
+        public MenuViewModel(IUserService userService, IRegionManager regionManager)
         {
             _userService = userService;
             MenuItems = new ObservableCollection<MenuItemModel>();
             GenerateMockMenu();
+            _regionManager = regionManager;
         }
 
         private void GenerateMockMenu()
@@ -25,36 +29,19 @@ namespace KAF.UI.Module.ViewModels
             new MenuItemModel
             {
                 Header = "General",
-                Command = new DelegateCommand(() => ExecuteFileCommand()),
+                Command = new DelegateCommand(()=>ExecuteEmptyCommand(string.Empty)),
                 SubItems = new List<MenuItemModel>
                 {
-                    new MenuItemModel { Header = "New", Command = new DelegateCommand(ExecuteNew) },
+                    new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew("DepartmentView")) },
                 }
             },
-            //new MenuItemModel
-            //{
-            //    Header = "Edit",
-            //    Command = new DelegateCommand(() => ExecuteEditCommand()),
-            //    SubItems = new List<MenuItemModel>
-            //    {
-            //        new MenuItemModel { Header = "Cut", Command = new DelegateCommand(ExecuteCut) },
-            //        new MenuItemModel { Header = "Copy", Command = new DelegateCommand(ExecuteCopy) },
-            //        new MenuItemModel { Header = "Paste", Command = new DelegateCommand(ExecutePaste) }
-            //    }
-            //}
         };
         }
 
-        private void ExecuteFileCommand() { /* Logic for File */ }
-        private void ExecuteNew() { 
-            System.Windows.MessageBox.Show("New clicked");             
+        private void ExecuteEmptyCommand(string ViewName) { /* Logic for File */ }
+        private void ExecuteNew(string ViewName) { 
+                 _regionManager.RequestNavigate("formContentRegion",ViewName);
          }
-        private void ExecuteOpen() { System.Windows.MessageBox.Show("Open clicked"); }
-        private void ExecuteSave() { System.Windows.MessageBox.Show("Save clicked"); }
-
-        private void ExecuteEditCommand() { /* Logic for Edit */ }
-        private void ExecuteCut() { System.Windows.MessageBox.Show("Cut clicked"); }
-        private void ExecuteCopy() { System.Windows.MessageBox.Show("Copy clicked"); }
-        private void ExecutePaste() { System.Windows.MessageBox.Show("Paste clicked"); }
+        
     }
 }
