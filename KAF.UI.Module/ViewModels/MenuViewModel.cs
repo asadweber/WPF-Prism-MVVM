@@ -29,8 +29,6 @@ namespace KAF.UI.Module.ViewModels
                 SubItems = new List<MenuItemModel>
                 {
                     new MenuItemModel { Header = "New", Command = new DelegateCommand(ExecuteNew) },
-                    new MenuItemModel { Header = "Open", Command = new DelegateCommand(ExecuteOpen) },
-                    new MenuItemModel { Header = "Save", Command = new DelegateCommand(ExecuteSave) }
                 }
             },
             //new MenuItemModel
