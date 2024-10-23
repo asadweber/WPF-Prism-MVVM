@@ -9,8 +9,11 @@ namespace KAF.UI.Module.ViewModels
 {
     public class DepartmentViewModel : BaseViewModel
     {
-        public DepartmentViewModel()
+        private readonly IRegionManager _regionManager;
+
+        public DepartmentViewModel(IRegionManager regionManager)
         {
+            _regionManager = regionManager;
         }
     }
 }

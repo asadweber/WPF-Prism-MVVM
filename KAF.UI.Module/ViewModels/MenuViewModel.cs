@@ -32,7 +32,7 @@ namespace KAF.UI.Module.ViewModels
                 Command = new DelegateCommand(()=>ExecuteEmptyCommand(string.Empty)),
                 SubItems = new List<MenuItemModel>
                 {
-                    new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew("Department")) },
+                    new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew("DepartmentView")) },
                 }
             },
         };
