@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace KAF.UI.Module.ViewModels
 {
-    public class DepartmentViewModel:BaseViewModel
+    public class DepartmentViewModel : BaseViewModel
     {
+        public DepartmentViewModel()
+        {
+        }
     }
 }
