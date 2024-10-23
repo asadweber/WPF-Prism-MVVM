@@ -62,18 +62,19 @@ namespace KAF.UI.ViewModels
             {
                 //Add other Data
                 _userService.CurrentUser = login;
-                Application.Current.Dispatcher.Invoke(() =>
-       {
-           // Close the login window
-           var loginWindow = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
-           loginWindow?.Hide();
 
-           // Create and show the master window
-           var masterWindow = _containerProvider.Resolve<MasterWindow>();
-           // Optionally, you can set the master window as the application main window
-           Application.Current.MainWindow = masterWindow;
-           Application.Current.MainWindow.Show();
-       });
+                Application.Current.Dispatcher.Invoke(() =>
+                   {
+                       // Close the login window
+                       var loginWindow = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
+                       loginWindow?.Hide();
+
+                       // Create and show the master window
+                       var masterWindow = _containerProvider.Resolve<MasterWindow>();
+                       // Optionally, you can set the master window as the application main window
+                       Application.Current.MainWindow = masterWindow;
+                       Application.Current.MainWindow.Show();
+                   });
             }
 
 
