@@ -6,11 +6,11 @@ using Prism.Ioc;
 
 namespace KAF.UI.Module
 {
-    public class MenuModule : IModule
+    public class UIModule : IModule
     {
         private readonly IRegionManager _regionManager;
 
-        public MenuModule(IRegionManager regionManager)
+        public UIModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
         }
