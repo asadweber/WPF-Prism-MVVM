@@ -46,7 +46,9 @@ namespace KAF.UI.Module.ViewModels
         }
 
         private void ExecuteFileCommand() { /* Logic for File */ }
-        private void ExecuteNew() { System.Windows.MessageBox.Show("New clicked"); }
+        private void ExecuteNew() { 
+            System.Windows.MessageBox.Show("New clicked");             
+         }
         private void ExecuteOpen() { System.Windows.MessageBox.Show("Open clicked"); }
         private void ExecuteSave() { System.Windows.MessageBox.Show("Save clicked"); }
 
