@@ -28,7 +28,10 @@ namespace KAF.UI.ViewModels
         public User CurrentUser { get => _currentUser; set => SetProperty(ref _currentUser, value); }
 
 
-        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService)
+        private readonly IDialogService _dialogService;
+
+
+        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService)
         {
             Title = "User Login";
             _containerProvider = containerProvider;
@@ -44,6 +47,8 @@ namespace KAF.UI.ViewModels
 
             LoginCommand = new DelegateCommand<User>(ExecuteLoginCommand, CanExecuteLogin);
             _userService = userService;
+
+            _dialogService = dialogService;
         }
 
         // Logic to determine whether the command can be executed (can enable/disable button)
@@ -75,6 +80,25 @@ namespace KAF.UI.ViewModels
                        Application.Current.MainWindow = masterWindow;
                        Application.Current.MainWindow.Show();
                    });
+            }
+            else
+            {
+                var parameters = new DialogParameters
+            {
+                { "message", "This is a dialog message." }
+            };
+
+                _dialogService.ShowDialog("DialogView", parameters, r =>
+                {
+                    if (r.Result == ButtonResult.OK)
+                    {
+                        // Handle OK result
+                    }
+                    else if (r.Result == ButtonResult.Cancel)
+                    {
+                        // Handle Cancel result
+                    }
+                });
             }
 
 

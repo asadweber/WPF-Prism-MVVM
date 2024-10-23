@@ -1,3 +1,5 @@
+using KAF.UI.Common.View;
+using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
 using KAF.UI.Module.ViewModels;
 using Prism.Ioc;
@@ -25,6 +27,9 @@ namespace KAF.UI.Module
             // Register any services or view models related to the Menu module
             containerRegistry.RegisterForNavigation<HomeView,HomeViewModel>();
             containerRegistry.RegisterForNavigation<MenuView,MenuViewModel>();
+
+           // Register the UserControl and its ViewModel as a dialog
+            containerRegistry.RegisterDialog<DialogView,DialogViewModel>();
 
         }
     }
