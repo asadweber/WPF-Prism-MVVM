@@ -7,11 +7,11 @@
          xmlns:prism="http://prismlibrary.com/"
  prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
-        Title="Alert" Height="143" Width="430"
+        Title="Alert" Height="150" Width="250"
         WindowStyle="SingleBorderWindow"   
         ResizeMode="NoResize"              
         ShowInTaskbar="False"
         WindowStartupLocation="CenterScreen"
         >
-     <ContentPresenter />
+    <ContentPresenter />
 </Window>

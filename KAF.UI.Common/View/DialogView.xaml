@@ -7,12 +7,12 @@
              mc:Ignorable="d"
              xmlns:prism="http://prismlibrary.com/"             
             prism:ViewModelLocator.AutoWireViewModel="True" 
-              Width="100"
+            Width="100"
     >
     <DockPanel>
         <TextBlock Text="{Binding Message}" DockPanel.Dock="Top" Margin="10" />
-        <StackPanel DockPanel.Dock="Bottom">
-            <Button Content="OK" Command="{Binding CloseCommand}" HorizontalAlignment="Right" Margin="10" />
+        <StackPanel DockPanel.Dock="Bottom" Height="20" Margin="10">
+            <Button Content="OK" Command="{Binding CloseCommand}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30"/>
         </StackPanel>
     </DockPanel>
 </UserControl>
