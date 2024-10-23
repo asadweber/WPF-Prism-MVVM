@@ -22,6 +22,7 @@ namespace KAF.UI.ViewModels
         private readonly IContainerProvider _containerProvider;
         private readonly Window _currentWindow;
         private readonly IUserService _userService;
+        private readonly IRegionManager _regionManager;
 
 
         private User _currentUser;
@@ -31,7 +32,7 @@ namespace KAF.UI.ViewModels
         private readonly IDialogService _dialogService;
 
 
-        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService)
+        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager)
         {
             Title = "User Login";
             _containerProvider = containerProvider;
@@ -49,6 +50,7 @@ namespace KAF.UI.ViewModels
             _userService = userService;
 
             _dialogService = dialogService;
+            _regionManager = regionManager;
         }
 
         // Logic to determine whether the command can be executed (can enable/disable button)
@@ -75,7 +77,7 @@ namespace KAF.UI.ViewModels
                        loginWindow?.Hide();
 
                        // Create and show the master window
-                       var masterWindow = _containerProvider.Resolve<MasterWindow>();
+                       var masterWindow = _containerProvider.Resolve<MasterWindow>();                        
                        // Optionally, you can set the master window as the application main window
                        Application.Current.MainWindow = masterWindow;
                        Application.Current.MainWindow.Show();

@@ -26,8 +26,8 @@ public class Bootstrapper : PrismBootstrapper
         // Resolve the IRegionManager
         var regionManager = Container.Resolve<IRegionManager>();
         // Register views with the region
-        regionManager.RegisterViewWithRegion("MenuRegion", typeof(MenuView));
-        regionManager.RegisterViewWithRegion("formContentRegion", typeof(HomeView));
+        //regionManager.RegisterViewWithRegion("MenuRegion", typeof(MenuView));
+        //regionManager.RegisterViewWithRegion("formContentRegion", typeof(HomeView));
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
