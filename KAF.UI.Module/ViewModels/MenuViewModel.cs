@@ -39,7 +39,7 @@ namespace KAF.UI.Module.ViewModels
         }
 
         private void ExecuteEmptyCommand(string ViewName) { /* Logic for File */ }
-        private void ExecuteNew(string ViewName) { 
+        public void ExecuteNew(string ViewName) { 
                  _regionManager.RequestNavigate("formContentRegion",ViewName);
          }
         
