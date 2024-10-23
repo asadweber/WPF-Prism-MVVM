@@ -13,23 +13,6 @@ public class Bootstrapper : PrismBootstrapper
         // Resolve the main window (shell)
         return Container.Resolve<LoginWindow>();
     }
-
-    //protected override void OnInitialized()
-    //{
-    //    base.OnInitialized();
-    //    // Configure regions after showing the main window
-    //    ConfigureRegions();
-    //}
-
-    //private void ConfigureRegions()
-    //{
-    //    // Resolve the IRegionManager
-    //    var regionManager = Container.Resolve<IRegionManager>();
-    //    // Register views with the region
-    //    //regionManager.RegisterViewWithRegion("MenuRegion", typeof(MenuView));
-    //    //regionManager.RegisterViewWithRegion("formContentRegion", typeof(HomeView));
-    //}
-
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
         //Register All Service
