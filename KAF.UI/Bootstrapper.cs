@@ -30,6 +30,6 @@ public class Bootstrapper : PrismBootstrapper
     }
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {
-        moduleCatalog.AddModule<UIModule>();
+        moduleCatalog.AddModule<AppModule>();
     }
 }

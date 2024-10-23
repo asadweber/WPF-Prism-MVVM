@@ -6,11 +6,11 @@ using Prism.Ioc;
 
 namespace KAF.UI.Module
 {
-    public class UIModule : IModule
+    public class AppModule : IModule
     {
         private readonly IRegionManager _regionManager;
 
-        public UIModule(IRegionManager regionManager)
+        public AppModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
         }
@@ -20,6 +20,7 @@ namespace KAF.UI.Module
             // Register the view in a specific region (e.g., MenuRegion)
             _regionManager.RegisterViewWithRegion("MenuRegion", typeof(MenuView));
             _regionManager.RegisterViewWithRegion("formContentRegion", typeof(HomeView));
+            
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
