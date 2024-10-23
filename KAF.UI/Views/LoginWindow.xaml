@@ -1,0 +1,43 @@
+﻿<Window x:Class="KAF.UI.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KAF.UI.Views"
+        mc:Ignorable="d"
+        Width="500" Height="250"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}"
+        WindowStyle="SingleBorderWindow"  
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"  
+        >
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" >
+        <DockPanel LastChildFill="True">
+            <Grid DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10">
+                    <TextBlock Text="User Name" />
+                    <TextBox x:Name="txtUserName" TextAlignment="Center" Height="25" Text="{Binding CurrentUser.UserName}" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
+                    <TextBlock Text="Password" />
+                    <TextBox    Height="25"   TextAlignment="Center"
+               PreviewTextInput="PasswordTextBox_PreviewTextInput" 
+               TextChanged="PasswordTextBox_TextChanged"
+               Tag="{Binding CurrentUser.Password}" 
+               />
+                </StackPanel>
+                <Button Grid.Row="2" Content="Login" Command="{Binding LoginCommand}" CommandParameter="{Binding CurrentUser}"  Width="100" Height="30" HorizontalAlignment="Right" Margin="10">
+                </Button>
+            </Grid>           
+        </DockPanel>
+    </StackPanel>
+
+
+</Window>
