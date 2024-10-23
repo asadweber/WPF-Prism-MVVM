@@ -10,8 +10,6 @@ namespace KAF.UI.Common.ViewModels
     {
         public string Title => "My Dialog";
 
-        public event Action<IDialogResult> RequestClose;
-
         private string _message;
         public string Message
         {
@@ -21,7 +19,9 @@ namespace KAF.UI.Common.ViewModels
 
         public DelegateCommand CloseCommand { get; private set; }
 
-        DialogCloseListener IDialogAware.RequestClose => throw new NotImplementedException();
+        DialogCloseListener IDialogAware.RequestClose => new DialogCloseListener();
+
+        DialogCloseListener RequestClose;
 
         public DialogViewModel()
         {
@@ -30,7 +30,7 @@ namespace KAF.UI.Common.ViewModels
 
         private void OnClose()
         {
-            RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
+            RequestClose.Invoke(new DialogResult(ButtonResult.OK));
         }
 
         public bool CanCloseDialog() => true;

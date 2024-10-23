@@ -19,6 +19,8 @@ public class Bootstrapper : PrismBootstrapper
         //Register All Service
         containerRegistry.RegisterSingleton<IUserService, UserService>();
 
+        // Register the custom window that will host the UserControl dialog
+        containerRegistry.RegisterDialogWindow<AppDialogWindow>();
 
         // Register All shells Window
         containerRegistry.RegisterForNavigation<LoginWindow, LoginViewModel>();

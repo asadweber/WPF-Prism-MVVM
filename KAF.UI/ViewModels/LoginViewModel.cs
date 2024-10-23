@@ -84,9 +84,9 @@ namespace KAF.UI.ViewModels
             else
             {
                 var parameters = new DialogParameters
-            {
-                { "message", "This is a dialog message." }
-            };
+                    {
+                        { "message", "This is a dialog message." }
+                    };
 
                 _dialogService.ShowDialog("DialogView", parameters, r =>
                 {
