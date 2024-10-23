@@ -24,7 +24,7 @@ namespace KAF.UI.Module.ViewModels
         {
             new MenuItemModel
             {
-                Header = "File",
+                Header = "General",
                 Command = new DelegateCommand(() => ExecuteFileCommand()),
                 SubItems = new List<MenuItemModel>
                 {
@@ -33,17 +33,17 @@ namespace KAF.UI.Module.ViewModels
                     new MenuItemModel { Header = "Save", Command = new DelegateCommand(ExecuteSave) }
                 }
             },
-            new MenuItemModel
-            {
-                Header = "Edit",
-                Command = new DelegateCommand(() => ExecuteEditCommand()),
-                SubItems = new List<MenuItemModel>
-                {
-                    new MenuItemModel { Header = "Cut", Command = new DelegateCommand(ExecuteCut) },
-                    new MenuItemModel { Header = "Copy", Command = new DelegateCommand(ExecuteCopy) },
-                    new MenuItemModel { Header = "Paste", Command = new DelegateCommand(ExecutePaste) }
-                }
-            }
+            //new MenuItemModel
+            //{
+            //    Header = "Edit",
+            //    Command = new DelegateCommand(() => ExecuteEditCommand()),
+            //    SubItems = new List<MenuItemModel>
+            //    {
+            //        new MenuItemModel { Header = "Cut", Command = new DelegateCommand(ExecuteCut) },
+            //        new MenuItemModel { Header = "Copy", Command = new DelegateCommand(ExecuteCopy) },
+            //        new MenuItemModel { Header = "Paste", Command = new DelegateCommand(ExecutePaste) }
+            //    }
+            //}
         };
         }
 
