@@ -5,9 +5,11 @@ namespace KAF.UI.Module.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
-        public HomeViewModel()
-        {
+        private readonly IRegionManager _regionManager;
 
+        public HomeViewModel(IRegionManager regionManager)
+        {
+            _regionManager = regionManager;
         }
 
 
