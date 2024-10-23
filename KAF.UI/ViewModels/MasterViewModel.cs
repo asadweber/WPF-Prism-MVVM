@@ -16,8 +16,8 @@ namespace KAF.UI.ViewModels
             _regionManager = regionManager;
 
               // Navigate to MenuView in MenuRegion and HomeView in formContentRegion at startup
-            _regionManager.RequestNavigate("MenuRegion", "MenuView");
-            _regionManager.RequestNavigate("formContentRegion", "HomeView");
+            //_regionManager.RequestNavigate("MenuRegion", "MenuView");
+            //_regionManager.RequestNavigate("formContentRegion", "HomeView");
         }
     }
 }
