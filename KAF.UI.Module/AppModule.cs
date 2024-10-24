@@ -2,6 +2,7 @@ using KAF.UI.Common.View;
 using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
 using KAF.UI.Module.ViewModels;
+using KAF.UI.Service;
 using Prism.Ioc;
 using Prism.Navigation.Regions;
 
@@ -25,6 +26,9 @@ namespace KAF.UI.Module
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+             //Register All Service
+             containerRegistry.RegisterSingleton<IUserService, UserService>();
+
             // Register the UserControl and its ViewModel as a dialog
             containerRegistry.RegisterDialog<DialogView, DialogViewModel>();
             // Register any services or view models related to the Menu module
