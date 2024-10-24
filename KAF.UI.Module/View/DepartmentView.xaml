@@ -10,6 +10,12 @@
 prism:ViewModelLocator.AutoWireViewModel="True" 
              >
     <Grid>
-          <Label Content="Department"/>  
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+          <Label Content="Department" Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource FormHeaderLabelStyle}"/> 
+        
     </Grid>
 </UserControl>
