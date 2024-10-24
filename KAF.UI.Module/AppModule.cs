@@ -20,8 +20,8 @@ namespace KAF.UI.Module
         public void OnInitialized(IContainerProvider containerProvider)
         {
             // Register the view in a specific region (e.g., MenuRegion)
-            _regionManager.RegisterViewWithRegion("MenuRegion", typeof(MenuView));
-            _regionManager.RegisterViewWithRegion("formContentRegion", typeof(HomeView));
+            _regionManager.RegisterViewWithRegion(RegionNameConfig.MenueRegionName, typeof(MenuView));
+            _regionManager.RegisterViewWithRegion(RegionNameConfig.ContentRegionName, typeof(HomeView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

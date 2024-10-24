@@ -32,7 +32,8 @@ namespace KAF.UI.Module.ViewModels
                 Command = new DelegateCommand(()=>ExecuteEmptyCommand(string.Empty)),
                 SubItems = new List<MenuItemModel>
                 {
-                    new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew("DepartmentView")) },
+                    
+                    new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew(typeof(DepartmentView).Name)) },
                 }
             },
         };
@@ -40,7 +41,7 @@ namespace KAF.UI.Module.ViewModels
 
         private void ExecuteEmptyCommand(string ViewName) { /* Logic for File */ }
         public void ExecuteNew(string ViewName) { 
-                 _regionManager.RequestNavigate("formContentRegion",ViewName);
+                 _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, ViewName);
          }
         
     }
