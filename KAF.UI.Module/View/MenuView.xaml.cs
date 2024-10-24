@@ -24,5 +24,7 @@ namespace KAF.UI.Module.View
         {
             InitializeComponent();
         }
+
+
     }
 }

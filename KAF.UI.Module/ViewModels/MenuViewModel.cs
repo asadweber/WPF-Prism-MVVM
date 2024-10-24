@@ -14,6 +14,14 @@ namespace KAF.UI.Module.ViewModels
         private readonly IRegionManager _regionManager;
 
         public ObservableCollection<MenuItemModel> MenuItems { get; private set; }
+       
+        private MenuItemModel _selectedItem;
+        public MenuItemModel SelectedItem
+        {
+            get => _selectedItem;
+            set => SetProperty(ref _selectedItem, value);
+        }
+
         public MenuViewModel(IUserService userService, IRegionManager regionManager)
         {
             _userService = userService;
@@ -31,7 +39,7 @@ namespace KAF.UI.Module.ViewModels
                 Header = "Home",
                 Command = new DelegateCommand(()=>ExecuteNew(typeof(HomeView).Name)),
                 SubItems = new List<MenuItemModel> ()
-                
+
             },
             new MenuItemModel
             {
@@ -39,7 +47,7 @@ namespace KAF.UI.Module.ViewModels
                 Command = new DelegateCommand(()=>ExecuteEmptyCommand(string.Empty)),
                 SubItems = new List<MenuItemModel>
                 {
-                    
+
                     new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew(typeof(DepartmentView).Name)) },
                 }
             },
@@ -47,9 +55,10 @@ namespace KAF.UI.Module.ViewModels
         }
 
         private void ExecuteEmptyCommand(string ViewName) { /* Logic for File */ }
-        public void ExecuteNew(string ViewName) { 
-                 _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, ViewName);
-         }
-        
+        public void ExecuteNew(string ViewName)
+        {
+            _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, ViewName);
+        }
+
     }
 }
