@@ -1,4 +1,5 @@
-﻿using KAF.UI.ViewModels;
+﻿using KAF.UI.Common.Model;
+using KAF.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,36 @@ namespace KAF.UI.Module.ViewModels
     public class DepartmentViewModel : BaseViewModel
     {
         private readonly IRegionManager _regionManager;
+        private readonly IDialogService _dialogService;
 
-        public DepartmentViewModel(IRegionManager regionManager)
+
+        public DelegateCommand SaveCommand { get; private set; }
+
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService)
         {
             _regionManager = regionManager;
+            SaveCommand = new DelegateCommand(ExecuteSaveCommand);
+            _dialogService = dialogService;
+        }
+
+        private void ExecuteSaveCommand()
+        {
+            var parameters = new DialogParameters
+                    {
+                        { "message", "Are you sure want to save?" }
+                    };
+
+            _dialogService.ShowDialog("DialogView", parameters, r =>
+            {
+                if (r.Result == ButtonResult.OK)
+                {
+                    // Handle OK result
+                }
+                else if (r.Result == ButtonResult.Cancel)
+                {
+                    // Handle Cancel result
+                }
+            });
         }
     }
 }
