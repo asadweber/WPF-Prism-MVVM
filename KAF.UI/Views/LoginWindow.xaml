@@ -11,7 +11,8 @@
         Title="{Binding Title}"
         WindowStyle="SingleBorderWindow"  
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"  
+        ResizeMode="NoResize" 
+ 
         >
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" >
         <DockPanel LastChildFill="True">

@@ -80,7 +80,7 @@ namespace KAF.UI.ViewModels
                        var masterWindow = _containerProvider.Resolve<MasterWindow>();       
                         
                        // Ensure the RegionManager is associated with MainShell
-                        RegionManager.SetRegionManager(masterWindow, _containerProvider.Resolve<IRegionManager>());
+                        RegionManager.SetRegionManager(masterWindow, _regionManager);
 
                        // Optionally, you can set the master window as the application main window
                        Application.Current.MainWindow = masterWindow;
