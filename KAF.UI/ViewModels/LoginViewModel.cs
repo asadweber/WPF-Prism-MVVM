@@ -91,7 +91,7 @@ namespace KAF.UI.ViewModels
             {
                 var parameters = new DialogParameters
                     {
-                        { "message", "This is a dialog message." }
+                        { "message", "Invalid Login." }
                     };
 
                 _dialogService.ShowDialog("DialogView", parameters, r =>

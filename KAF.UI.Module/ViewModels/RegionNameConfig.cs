@@ -4,6 +4,6 @@
     {
         public const string ContentRegionName = "formContentRegion";
 
-        public static string MenueRegionName = "MenuRegion";
+        public static string MenuRegionName = "MenuRegion";
     }
 }
