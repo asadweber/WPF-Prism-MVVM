@@ -26,6 +26,13 @@ namespace KAF.UI.Module.ViewModels
         {
             MenuItems = new ObservableCollection<MenuItemModel>
         {
+                new MenuItemModel
+            {
+                Header = "Home",
+                Command = new DelegateCommand(()=>ExecuteNew(typeof(HomeView).Name)),
+                SubItems = new List<MenuItemModel> ()
+                
+            },
             new MenuItemModel
             {
                 Header = "General",

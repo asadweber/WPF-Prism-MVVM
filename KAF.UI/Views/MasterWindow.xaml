@@ -10,6 +10,9 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         WindowState="Maximized"
         >
+    <Window.Resources>
+      
+    </Window.Resources>
      <DockPanel LastChildFill="True">
         <!-- Menu Region -->
         <ContentControl prism:RegionManager.RegionName="MenuRegion" DockPanel.Dock="Left" />
