@@ -27,16 +27,12 @@ namespace KAF.UI.Common.Helper
             {
                 passwordBox.PasswordChanged -= PasswordBox_PasswordChanged;
 
-                if (!string.IsNullOrEmpty(passwordBox.Password))
+                if (e.NewValue is string newPassword)
                 {
-                    // Prevents password change event from firing
-                    passwordBox.Password = string.Empty;
+                    passwordBox.Password = newPassword;
                 }
 
                 passwordBox.PasswordChanged += PasswordBox_PasswordChanged;
-
-                // Set the password from the binding when it changes
-                passwordBox.Password = e.NewValue as string;
             }
         }
 
@@ -44,7 +40,6 @@ namespace KAF.UI.Common.Helper
         {
             if (sender is PasswordBox passwordBox)
             {
-                // Update the attached property when the password changes
                 SetPassword(passwordBox, passwordBox.Password);
             }
         }

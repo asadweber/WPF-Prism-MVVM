@@ -29,12 +29,18 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
                     <TextBlock Text="Password" />
-                    <PasswordBox  kaf:PasswordBoxBehavior.Password="{Binding CurrentUser.Password, Mode=TwoWay}" />
+                    <!--<TextBox    Height="25"   TextAlignment="Center"
+                            PreviewTextInput="PasswordTextBox_PreviewTextInput" 
+                            TextChanged="PasswordTextBox_TextChanged"
+                            Tag="{Binding CurrentUser.Password}" 
+                            />-->
+                    <TextBox x:Name="txtPassword" Height="25" TextAlignment="Center" Text="{Binding CurrentUser.Password , Mode=TwoWay}"  />
+
 
                 </StackPanel>
                 <Button Grid.Row="2" Content="Login" Command="{Binding LoginCommand}" CommandParameter="{Binding CurrentUser}"  Width="100" Height="30" HorizontalAlignment="Right" Margin="10">
                 </Button>
-            </Grid>           
+            </Grid>
         </DockPanel>
     </StackPanel>
 
