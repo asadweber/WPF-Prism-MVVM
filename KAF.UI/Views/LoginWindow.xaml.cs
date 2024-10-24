@@ -27,10 +27,10 @@ namespace KAF.UI.Views
             InitializeComponent();
         }
 
-        
 
 
-         private void PasswordTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+
+        private void PasswordTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             // Get the TextBox reference
             var textBox = sender as TextBox;
@@ -60,7 +60,7 @@ namespace KAF.UI.Views
 
         protected override void OnClosed(EventArgs e)
         {
-            base.OnClosed(e);   
+            base.OnClosed(e);
             Application.Current.Shutdown();
         }
     }
