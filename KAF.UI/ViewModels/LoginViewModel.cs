@@ -77,10 +77,10 @@ namespace KAF.UI.ViewModels
                        loginWindow?.Hide();
 
                        // Create and show the master window
-                       var masterWindow = _containerProvider.Resolve<MasterWindow>();       
-                        
+                       var masterWindow = _containerProvider.Resolve<MasterWindow>();
+
                        // Ensure the RegionManager is associated with MainShell
-                        RegionManager.SetRegionManager(masterWindow, _regionManager);
+                       RegionManager.SetRegionManager(masterWindow, _regionManager);
 
                        // Optionally, you can set the master window as the application main window
                        Application.Current.MainWindow = masterWindow;
