@@ -1,4 +1,4 @@
-﻿namespace KAF.UI.Module.ViewModels
+﻿namespace KAF.UI.Module
 {
     public static class RegionNameConfig
     {

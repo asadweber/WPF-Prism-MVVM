@@ -1,4 +1,6 @@
 ﻿using KAF.UI.Common.Model;
+using KAF.UI.Common.View;
+using KAF.UI.Module.View;
 using KAF.UI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,7 +32,7 @@ namespace KAF.UI.Module.ViewModels
                         { "message", "Are you sure want to save?" }
                     };
 
-            _dialogService.ShowDialog("DialogView", parameters, r =>
+            _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
             {
                 if (r.Result == ButtonResult.OK)
                 {

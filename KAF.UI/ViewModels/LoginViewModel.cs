@@ -1,4 +1,5 @@
 ﻿using KAF.UI.Common.Model;
+using KAF.UI.Common.View;
 using KAF.UI.Service;
 using KAF.UI.Views;
 using Prism.Ioc;
@@ -94,7 +95,7 @@ namespace KAF.UI.ViewModels
                         { "message", "Invalid Login." }
                     };
 
-                _dialogService.ShowDialog("DialogView", parameters, r =>
+                _dialogService.ShowDialog(typeof(DialogView).Name, parameters, r =>
                 {
                     if (r.Result == ButtonResult.OK)
                     {
