@@ -17,7 +17,7 @@ namespace KAF.UI.Common.ViewModels
             set => SetProperty(ref _message, value);
         }
 
-        public DelegateCommand CloseCommand { get; private set; }
+        public DelegateCommand ConfirmCommand { get; private set; }
         public DelegateCommand CancelCommand { get; private set; }
 
                                         
@@ -27,7 +27,7 @@ namespace KAF.UI.Common.ViewModels
 
         public ConfirmDialogViewModel()
         {
-            CloseCommand = new DelegateCommand(OnClose);
+            ConfirmCommand = new DelegateCommand(OnConfirm);
             CancelCommand = new DelegateCommand(OnCancel);
 
         }
@@ -37,7 +37,7 @@ namespace KAF.UI.Common.ViewModels
            RequestClose.Invoke(new DialogResult(ButtonResult.Cancel));
         }
 
-        private void OnClose()
+        private void OnConfirm()
         {
             RequestClose.Invoke(new DialogResult(ButtonResult.OK));
         }

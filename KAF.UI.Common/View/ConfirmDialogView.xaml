@@ -7,14 +7,16 @@
              mc:Ignorable="d"
              xmlns:prism="http://prismlibrary.com/"             
             prism:ViewModelLocator.AutoWireViewModel="True" 
-            Width="100"
     >
+    <UserControl.InputBindings>
+         <KeyBinding Key="S" Modifiers="Control" Command="{Binding ConfirmCommand}"/>
+         <KeyBinding Key="C" Modifiers="Control" Command="{Binding CancelCommand}"/>
+    </UserControl.InputBindings>
     <DockPanel>
         <TextBlock Text="{Binding Message}" DockPanel.Dock="Top" Margin="10" />
-        <StackPanel DockPanel.Dock="Bottom" Height="20" Margin="10">
-            <Button Content="OK" Command="{Binding CloseCommand}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30"/>
-            <Button Content="OK" Command="{Binding CancelCommand}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30"/>
-            
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="OK" Command="{Binding ConfirmCommand}" Margin="5" Width="50"/>
+            <Button Content="Cancel" Command="{Binding CancelCommand}" Margin="5"  Width="50"/>
         </StackPanel>
     </DockPanel>
 </UserControl>
