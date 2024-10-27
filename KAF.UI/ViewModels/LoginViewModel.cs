@@ -1,16 +1,8 @@
 ﻿using KAF.UI.Common.Model;
 using KAF.UI.Common.View;
-using KAF.UI.Service;
+using KAF.UI.Service.Interface;
 using KAF.UI.Views;
-using Prism.Ioc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace KAF.UI.ViewModels
 {

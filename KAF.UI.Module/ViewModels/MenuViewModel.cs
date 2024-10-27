@@ -1,6 +1,7 @@
 ﻿using KAF.UI.Common.Model;
 using KAF.UI.Module.View;
 using KAF.UI.Service;
+using KAF.UI.Service.Interface;
 using KAF.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

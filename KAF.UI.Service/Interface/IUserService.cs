@@ -1,7 +1,6 @@
-
 using KAF.UI.Common.Model;
 
-namespace KAF.UI.Service
+namespace KAF.UI.Service.Interface
 {
     public interface IUserService
     {

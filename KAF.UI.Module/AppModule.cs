@@ -3,8 +3,8 @@ using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
 using KAF.UI.Module.ViewModels;
 using KAF.UI.Service;
-using Prism.Ioc;
-using Prism.Navigation.Regions;
+using KAF.UI.Service.Interface;
+using KAF.UI.Service.Services;
 
 namespace KAF.UI.Module
 {
@@ -31,6 +31,9 @@ namespace KAF.UI.Module
 
             //Register All Service
             containerRegistry.RegisterSingleton<IUserService, UserService>();
+
+            containerRegistry.RegisterScoped<IDepartmentService, DepartmentService>();
+
 
             // Register the UserControl and its ViewModel as a dialog
             containerRegistry.RegisterDialog<DialogView, DialogViewModel>();

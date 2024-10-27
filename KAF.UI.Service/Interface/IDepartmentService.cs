@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KAF.UI.Service
+namespace KAF.UI.Service.Interface
 {
-    public class UserService : IUserService
+    public interface IDepartmentService
     {
-        public User CurrentUser { get; set; }
+        List<Department> GetDepartments();
+
+        Department GetDepartment(int id);
     }
 }

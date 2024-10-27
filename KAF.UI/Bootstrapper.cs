@@ -1,7 +1,7 @@
 ﻿using KAF.UI;
 using KAF.UI.Module;
-using KAF.UI.Module.View;
-using KAF.UI.Service;
+using KAF.UI.Service.Interface;
+using KAF.UI.Service.Services;
 using KAF.UI.ViewModels;
 using KAF.UI.Views;
 using System.Windows;
