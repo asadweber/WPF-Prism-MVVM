@@ -18,21 +18,57 @@ namespace KAF.UI.Module.ViewModels
 
 
         public DelegateCommand SaveCommand { get; private set; }
+        public DelegateCommand CloseCommand { get; private set; }
+        public DelegateCommand LoadDataCommand { get; private set; }
+
+
+        private Department _currentDepartment;
+
+        public Department CurrentDepartment
+        {
+            get { return _currentDepartment; }
+            set { SetProperty(ref _currentDepartment, value); }
+        }
+
+
+
 
         public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
             _eventAggregator = eventAggregator;
-            SaveCommand = new DelegateCommand(ExecuteSaveCommand);
-
+            SaveCommand = new DelegateCommand(async () => await ExecuteSaveCommand());
+            CloseCommand = new DelegateCommand(async () => await ExecuteCloseCommand());
+            this.IsBusy = false;
+            LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync()).ObservesCanExecute(()=>!IsBusy);
+            LoadDataCommand.Execute();
         }
 
-        private void ExecuteSaveCommand()
+        private async Task LoadDataAsync()
+        {
+            IsBusy = true;
+            try
+            {
+                // Simulate a long-running task
+                await Task.Delay(3000);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task ExecuteCloseCommand()
+        {
+            _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
+        }
+
+        private async Task ExecuteSaveCommand()
         {
             var parameters = new DialogParameters
             {
-                { 
+                {
                     "message", "Are you sure want to save?"
                 }
             };

@@ -16,6 +16,7 @@
      <DockPanel LastChildFill="True">
         <!-- Menu Region -->
         <ContentControl prism:RegionManager.RegionName="MenuRegion" DockPanel.Dock="Left" />
+         
         <ContentControl prism:RegionManager.RegionName="formContentRegion" />
          
     </DockPanel>

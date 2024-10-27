@@ -7,43 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:prism="http://prismlibrary.com/"             
-prism:ViewModelLocator.AutoWireViewModel="True" 
+            prism:ViewModelLocator.AutoWireViewModel="True" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              >
     <UserControl.InputBindings>
         <KeyBinding Key="S" Modifiers="Control" Command="{Binding SaveCommand}"/>
     </UserControl.InputBindings>
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Label Content="Department" Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource FormHeaderLabelStyle}"/>
-
-        <Grid Grid.Row="1" Margin="20">
+    
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy, Mode=TwoWay}" >
+        <Grid >
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"  />
-                <RowDefinition  Height="50"/>
-                <RowDefinition  Height="50"/>
-                <RowDefinition  Height="50"/>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0" >
-                <TextBlock Text="Department Code" />
-                <TextBox Height="25"/>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0">
-                <TextBlock Text="Department Name" />
-                <TextBox Height="25"/>
-            </StackPanel>
-            <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
-                <DockPanel>
-                    <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"></Button>
-                    <Button Content="Close" Height="30" Width="60"  Margin="5"></Button>
-                    <Label Margin="5"></Label>
-                </DockPanel>
-            </StackPanel>
+
+
+            <Label Content="Department" Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource FormHeaderLabelStyle}"/>
+
+            <Grid Grid.Row="1" Margin="20" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"  />
+                    <RowDefinition  Height="50"/>
+                    <RowDefinition  Height="50"/>
+                    <RowDefinition  Height="50"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0" >
+                    <TextBlock Text="Department Code" />
+                    <TextBox Height="25"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0">
+                    <TextBlock Text="Department Name" />
+                    <TextBox Height="25"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
+                    <DockPanel>
+                        <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"></Button>
+                        <Button Content="Close" Height="30" Width="60"  Margin="5" Command="{Binding CloseCommand}"></Button>
+                        <Label Margin="5"></Label>
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+
+
+
         </Grid>
 
-
-
-    </Grid>
+    </xctk:BusyIndicator>
 </UserControl>
