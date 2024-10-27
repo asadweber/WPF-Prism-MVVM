@@ -5,11 +5,16 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KAF.UI", "KAF.UI\KAF.UI.csproj", "{E4212017-167E-412D-BF58-E2D015537A7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KAF.UI.Module", "KAF.UI.Module\KAF.UI.Module.csproj", "{9906DACB-9BD6-47D6-8091-ED866F068A8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KAF.UI.Module", "KAF.UI.Module\KAF.UI.Module.csproj", "{9906DACB-9BD6-47D6-8091-ED866F068A8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KAF.UI.Common", "KAF.UI.Common\KAF.UI.Common.csproj", "{6269B816-62B5-4909-A50A-5A287A9A2B9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KAF.UI.Common", "KAF.UI.Common\KAF.UI.Common.csproj", "{6269B816-62B5-4909-A50A-5A287A9A2B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KAF.UI.Service", "KAF.UI.Service\KAF.UI.Service.csproj", "{904B8C42-17CF-4EFD-8A5A-4FD505807AC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KAF.UI.Service", "KAF.UI.Service\KAF.UI.Service.csproj", "{904B8C42-17CF-4EFD-8A5A-4FD505807AC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B2083DD-BE54-4ABB-AA7B-B01BE7126B21}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

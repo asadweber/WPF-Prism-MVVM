@@ -29,12 +29,21 @@ namespace KAF.UI.Module.ViewModels
             get { return _currentDepartment; }
             set { SetProperty(ref _currentDepartment, value); }
         }
-
-        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator)
+        
+        
+        /// <summary>
+        ///   Initialize
+        /// </summary>
+        /// <param name="regionManager"></param>
+        /// <param name="dialogService"></param>
+        /// <param name="eventAggregation"></param>
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregation)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
-            _eventAggregator = eventAggregator;
+            _eventAggregator = eventAggregation;
+
+            CurrentDepartment=new Department();
             SaveCommand = new DelegateCommand(async () => await ExecuteSaveCommand());
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
