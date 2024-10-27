@@ -54,7 +54,7 @@ namespace KAF.UI.Module.ViewModels
 
             CurrentDepartment=new Department();
 
-            SaveCommand = new DelegateCommand(async () => await ExecuteSaveCommand());
+            SaveCommand = new DelegateCommand(() => ExecuteSaveCommand());
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
@@ -82,7 +82,7 @@ namespace KAF.UI.Module.ViewModels
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
 
-        private async Task ExecuteSaveCommand()
+        private void ExecuteSaveCommand()
         {
             var parameters = new DialogParameters
             {
