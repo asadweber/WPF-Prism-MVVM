@@ -9,7 +9,7 @@ namespace KAF.UI.Service.Interface
 {
     public interface IDepartmentService
     {
-        List<Department> GetDepartments();
+        Task<List<Department>> GetDepartments();
 
         Department GetDepartment(int id);
     }

@@ -16,9 +16,16 @@ namespace KAF.UI.Service.Services
             return department;
         }
 
-        public List<Department> GetDepartments()
+        public async Task<List<Department>> GetDepartments()
         {
-            List<Department> list = new List<Department>();
+            // Create a list of departments with sample data
+            List<Department> list = new List<Department>
+                    {
+                        new Department { DepartmentId = 1, DepartmentName = "HR" },
+                        new Department { DepartmentId = 2, DepartmentName = "IT" },
+                        new Department { DepartmentId = 3, DepartmentName = "Finance" }
+                    };
+
             return list;
         }
     }

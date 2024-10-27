@@ -1,6 +1,7 @@
 ﻿using KAF.UI.Common.Model;
 using KAF.UI.Common.View;
 using KAF.UI.Module.View;
+using KAF.UI.Service.Interface;
 using KAF.UI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace KAF.UI.Module.ViewModels
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
         private readonly IEventAggregator _eventAggregator;
+
+        private readonly IDepartmentService _departmentService;
 
 
         public DelegateCommand SaveCommand { get; private set; }
@@ -46,13 +49,14 @@ namespace KAF.UI.Module.ViewModels
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
         /// <param name="eventAggregation"></param>
-        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator)
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator, IDepartmentService departmentService)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
             _eventAggregator = eventAggregator;
+            _departmentService = departmentService;
 
-            CurrentDepartment=new Department();
+            CurrentDepartment = new Department();
 
             SaveCommand = new DelegateCommand(() => ExecuteSaveCommand());
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
@@ -65,11 +69,7 @@ namespace KAF.UI.Module.ViewModels
             IsBusy = true;
             try
             {
-                // Simulate a long-running task
-                await Task.Delay(3000);
-                //TO-Do
-
-
+                DepartmentList = new ObservableCollection<Department>(await _departmentService.GetDepartments());
             }
             finally
             {
