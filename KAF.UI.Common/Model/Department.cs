@@ -13,12 +13,12 @@ namespace KAF.UI.Common.Model
 {
     public class Department : BaseModel, INotifyDataErrorInfo
     {
-        private long _departmentCode;
+        private long? _departmentCode;
         private string _departmentName;
 
 
         [Required(ErrorMessage = "Department Code is required.")]
-        public long DepartmentCode
+        public long? DepartmentCode
         {
             get => _departmentCode; set
             {
