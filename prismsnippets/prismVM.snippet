@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+	    <Title>prismVM</Title>
+	    <Shortcut>prismVM</Shortcut>
+	    <Description>Snippet to add a VM derived from the BindableBase prism class.</Description>
+	    <Author>Michael Taulbee</Author>
+	    <SnippetTypes>
+		    <SnippetType>Expansion</SnippetType>
+	    </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>VmType</ID>
+          <ToolTip>ViewModel type</ToolTip>
+          <Default>MainViewModel</Default>
+          <Function>
+          </Function>
+        </Literal>
+		<Literal Editable="true">
+          <ID>baseClass</ID>
+          <ToolTip>Derived BaseClass Type</ToolTip>
+          <Default>BindableBase</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[/// <summary>/// Prism ViewModel/// </summary>
+        public class $VmType$ViewModel : $baseClass$
+        {
+			public $VmType$ViewModel()
+			{
+			
+			}
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

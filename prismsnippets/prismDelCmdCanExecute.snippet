@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>prismDelCmdCanExecute</Title>
+      <Shortcut>prismDelCmdCanExecute</Shortcut>
+      <Description>Snippet to add a Prism DelegateCommand with a Can Execute.</Description>
+      <Author>Michael Taulbee</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>varDelCommand</ID>
+          <ToolTip>Variable to hold the Prism DelegateCommand.</ToolTip>
+          <Default>prismCommand</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>delCommand</ID>
+          <ToolTip>Name of the Prism DelegateCommand.</ToolTip>
+          <Default>PrismCommand</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>canExecute</ID>
+          <ToolTip>Can Execute delegate</ToolTip>
+          <Default>true</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+                      <![CDATA[private DelegateCommand $varDelCommand$;
+
+        /// <summary>
+        /// Gets the $delCommand$ DelegateCommand.
+        /// </summary>
+        public DelegateCommand $delCommand$
+        {
+            get
+            {
+                return $varDelCommand$ 
+                    ?? ($varDelCommand$ = new DelegateCommand(
+                    () =>
+                    {
+                        $end$
+                    },
+                    () => $canExecute$));
+            }
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
