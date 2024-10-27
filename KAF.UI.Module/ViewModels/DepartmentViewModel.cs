@@ -31,9 +31,11 @@ namespace KAF.UI.Module.ViewModels
         private void ExecuteSaveCommand()
         {
             var parameters = new DialogParameters
-                    {
-                        { "message", "Are you sure want to save?" }
-                    };
+            {
+                { 
+                    "message", "Are you sure want to save?"
+                }
+            };
 
             _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
             {
