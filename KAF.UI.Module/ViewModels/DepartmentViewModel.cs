@@ -4,6 +4,7 @@ using KAF.UI.Module.View;
 using KAF.UI.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,16 @@ namespace KAF.UI.Module.ViewModels
             get { return _currentDepartment; }
             set { SetProperty(ref _currentDepartment, value); }
         }
-        
-        
+
+        private ObservableCollection<Department> _departmentList;
+
+        public ObservableCollection<Department> DepartmentList
+        {
+            get { return _departmentList; }
+            set { SetProperty(ref _departmentList, value); }
+        }
+
+
         /// <summary>
         ///   Initialize
         /// </summary>
@@ -44,6 +53,7 @@ namespace KAF.UI.Module.ViewModels
             _eventAggregator = eventAggregation;
 
             CurrentDepartment=new Department();
+
             SaveCommand = new DelegateCommand(async () => await ExecuteSaveCommand());
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
@@ -58,6 +68,8 @@ namespace KAF.UI.Module.ViewModels
                 // Simulate a long-running task
                 await Task.Delay(3000);
                 //TO-Do
+
+
             }
             finally
             {
