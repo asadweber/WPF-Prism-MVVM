@@ -20,7 +20,9 @@ namespace KAF.UI.Common.Model
         [Required(ErrorMessage = "Department Code is required.")]
         public long? DepartmentCode
         {
-            get => _departmentCode; set
+            get => _departmentCode; 
+            
+            set
             {
                 if (_departmentCode != value)
                 {
