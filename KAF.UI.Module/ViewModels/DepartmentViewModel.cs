@@ -36,7 +36,7 @@ namespace KAF.UI.Module.ViewModels
             _dialogService = dialogService;
             _eventAggregator = eventAggregator;
             SaveCommand = new DelegateCommand(async () => await ExecuteSaveCommand());
-            CloseCommand = new DelegateCommand(async () => await ExecuteCloseCommand());
+            CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
         }
@@ -56,7 +56,7 @@ namespace KAF.UI.Module.ViewModels
             }
         }
 
-        private async Task ExecuteCloseCommand()
+        private void ExecuteCloseCommand()
         {
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
