@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KAF.UI.Module.ViewModels;
+using KAF.UI.Service.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,12 @@ namespace KAF.UI.Module.View
     /// </summary>
     public partial class DepartmentView : UserControl
     {
+
+
         public DepartmentView()
         {
             InitializeComponent();
+
         }
     }
 }

@@ -17,7 +17,6 @@ namespace KAF.UI.Module.ViewModels
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
         private readonly IEventAggregator _eventAggregator;
-
         private readonly IDepartmentService _departmentService;
 
 
@@ -63,6 +62,8 @@ namespace KAF.UI.Module.ViewModels
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
         }
+
+        
 
         private async Task LoadDataAsync()
         {

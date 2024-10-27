@@ -11,12 +11,25 @@ using System.Xml.Linq;
 
 namespace KAF.UI.Common.Model
 {
-    public class Department : BaseModel ,INotifyDataErrorInfo
+    public class Department : BaseModel, INotifyDataErrorInfo
     {
-        private long? _departmentCode;
+        private long _departmentCode;
         private string _departmentName;
 
-        public long? DepartmentCode { get => _departmentCode; set => SetProperty(ref _departmentCode, value); }
+
+        [Required(ErrorMessage = "Department Code is required.")]
+        public long DepartmentCode
+        {
+            get => _departmentCode; set
+            {
+                if (_departmentCode != value)
+                {
+                    _departmentCode = value;
+                    SetProperty(ref _departmentCode, value); ;
+                    ValidateProperty(nameof(DepartmentCode));
+                }
+            }
+        }
 
 
         [Required(ErrorMessage = "Department name is required.")]
@@ -30,7 +43,7 @@ namespace KAF.UI.Common.Model
                     _departmentName = value;
                     SetProperty(ref _departmentName, value); ;
                     ValidateProperty(nameof(DepartmentName));
-                }                                
+                }
             }
 
         }
