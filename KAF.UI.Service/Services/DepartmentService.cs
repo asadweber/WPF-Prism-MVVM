@@ -19,6 +19,7 @@ namespace KAF.UI.Service.Services
         public async Task<List<Department>> GetDepartments()
         {
             // Create a list of departments with sample data
+            await Task.Delay(3000);
             List<Department> list = new List<Department>
                     {
                         new Department { DepartmentId = 1, DepartmentName = "HR" },
