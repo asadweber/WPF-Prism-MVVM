@@ -15,6 +15,10 @@ public class Bootstrapper : PrismBootstrapper
     }
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
+
+        containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
+
+
         //Register All Service
         containerRegistry.RegisterSingleton<IUserService, UserService>();
 

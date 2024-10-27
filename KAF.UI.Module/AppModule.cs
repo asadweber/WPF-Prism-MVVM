@@ -25,9 +25,12 @@ namespace KAF.UI.Module
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-             //Register All Service
-             containerRegistry.RegisterSingleton<IUserService, UserService>();
+        {       
+            // Register the Event Aggregator
+            containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
+
+            //Register All Service
+            containerRegistry.RegisterSingleton<IUserService, UserService>();
 
             // Register the UserControl and its ViewModel as a dialog
             containerRegistry.RegisterDialog<DialogView, DialogViewModel>();
