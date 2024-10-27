@@ -12,6 +12,7 @@
              >
     <UserControl.InputBindings>
         <KeyBinding Key="S" Modifiers="Control" Command="{Binding SaveCommand}"/>
+        <KeyBinding Key="C" Modifiers="Control" Command="{Binding CloseCommand}"/>
     </UserControl.InputBindings>
     
     <xctk:BusyIndicator IsBusy="{Binding IsBusy, Mode=TwoWay}" >
