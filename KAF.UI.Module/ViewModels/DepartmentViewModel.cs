@@ -46,11 +46,11 @@ namespace KAF.UI.Module.ViewModels
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
         /// <param name="eventAggregation"></param>
-        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregation)
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
-            _eventAggregator = eventAggregation;
+            _eventAggregator = eventAggregator;
 
             CurrentDepartment=new Department();
 
