@@ -22,9 +22,9 @@ namespace KAF.UI.Service.Services
             await Task.Delay(3000);
             List<Department> list = new List<Department>
                     {
-                        new Department { DepartmentId = 1, DepartmentName = "HR" },
-                        new Department { DepartmentId = 2, DepartmentName = "IT" },
-                        new Department { DepartmentId = 3, DepartmentName = "Finance" }
+                        new Department { DepartmentCode = 1, DepartmentName = "HR" },
+                        new Department { DepartmentCode = 2, DepartmentName = "IT" },
+                        new Department { DepartmentCode = 3, DepartmentName = "Finance" }
                     };
 
             return list;

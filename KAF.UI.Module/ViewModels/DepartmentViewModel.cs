@@ -21,7 +21,7 @@ namespace KAF.UI.Module.ViewModels
         private readonly IDepartmentService _departmentService;
 
 
-        public DelegateCommand SaveCommand { get; private set; }
+        public DelegateCommand<Department> SaveCommand { get; private set; }
         public DelegateCommand CloseCommand { get; private set; }
         public DelegateCommand LoadDataCommand { get; private set; }
 
@@ -58,7 +58,7 @@ namespace KAF.UI.Module.ViewModels
 
             CurrentDepartment = new Department();
 
-            SaveCommand = new DelegateCommand(() => ExecuteSaveCommand());
+            SaveCommand = new DelegateCommand<Department>(ExecuteSaveCommand, CanSaveDepartment);
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
@@ -82,28 +82,36 @@ namespace KAF.UI.Module.ViewModels
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
 
-        private void ExecuteSaveCommand()
+        private bool CanSaveDepartment(Department department)
         {
-            var parameters = new DialogParameters
+            var status = CurrentDepartment != null && !CurrentDepartment.HasErrors;
+            return status;
+        }
+        private void ExecuteSaveCommand(Department department)
+        {
+            if (department != null)
             {
-                {
-                    "message", "Are you sure want to save?"
-                }
-            };
+                var parameters = new DialogParameters
+                        {
+                            {
+                                "message", "Are you sure want to save?"
+                            }
+                        };
 
-            _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
-            {
-                if (r.Result == ButtonResult.OK)
+                _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
                 {
-                    // Handle OK result
+                    if (r.Result == ButtonResult.OK)
+                    {
+                        // Handle OK result
 
-                    LoadDataCommand.Execute();
-                }
-                else if (r.Result == ButtonResult.Cancel)
-                {
-                    // Handle Cancel result
-                }
-            });
+                        LoadDataCommand.Execute();
+                    }
+                    else if (r.Result == ButtonResult.Cancel)
+                    {
+                        // Handle Cancel result
+                    }
+                });
+            }
         }
     }
 }
