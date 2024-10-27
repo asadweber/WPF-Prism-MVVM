@@ -30,9 +30,6 @@ namespace KAF.UI.Module.ViewModels
             set { SetProperty(ref _currentDepartment, value); }
         }
 
-
-
-
         public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator)
         {
             _regionManager = regionManager;
@@ -40,8 +37,7 @@ namespace KAF.UI.Module.ViewModels
             _eventAggregator = eventAggregator;
             SaveCommand = new DelegateCommand(async () => await ExecuteSaveCommand());
             CloseCommand = new DelegateCommand(async () => await ExecuteCloseCommand());
-            this.IsBusy = false;
-            LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync()).ObservesCanExecute(()=>!IsBusy);
+            LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
         }
 

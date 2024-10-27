@@ -9,7 +9,7 @@
             set => SetProperty(ref title, value);
         }
 
-        private bool isBusy=false;
+        private bool isBusy;
         public bool IsBusy
         {
             get => isBusy;
