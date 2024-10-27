@@ -38,11 +38,11 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0" >
                     <TextBlock Text="Department Code" />
-                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentCode,ValidatesOnDataErrors=True,Mode=TwoWay}"  Background="{Binding SelectedDepartment.HasErrors, Converter={StaticResource BoolToBrushConverter}}" />
+                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentCode}"  ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0">
                     <TextBlock Text="Department Name" />
-                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentName,ValidatesOnDataErrors=True,Mode=TwoWay}" Background="{Binding SelectedDepartment.HasErrors, Converter={StaticResource BoolToBrushConverter}}" />
+                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentName}" ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
                 </StackPanel>
                 <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
                     <DockPanel>

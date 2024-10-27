@@ -24,9 +24,9 @@ namespace KAF.UI.Module.ViewModels
         private readonly IDepartmentService _departmentService;
 
 
-        public DelegateCommand SaveCommand { get; private set; }
-        public DelegateCommand CloseCommand { get; private set; }
-        public DelegateCommand LoadDataCommand { get; private set; }
+        public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand CloseCommand { get; set; }
+        public DelegateCommand LoadDataCommand { get; set; }
 
 
         private Department _currentDepartment;
@@ -37,9 +37,7 @@ namespace KAF.UI.Module.ViewModels
             set
             {
                 SetProperty(ref _currentDepartment, value);
-
-                ValidateProperty(value?.DepartmentName, nameof(Department.DepartmentName));  // Validate on set
-
+                ValidateProperty(typeof(Department));  // Validate on set
                 SaveCommand.RaiseCanExecuteChanged();
             }
         }
@@ -66,12 +64,13 @@ namespace KAF.UI.Module.ViewModels
             _eventAggregator = eventAggregator;
             _departmentService = departmentService;
 
-            CurrentDepartment = new Department();
-
             SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveDepartment);
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
+
+            CurrentDepartment = new Department();
+
         }
 
 

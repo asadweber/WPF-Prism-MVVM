@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using KAF.UI.Common.Model;
+using System.Collections;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -47,6 +48,7 @@ namespace KAF.UI.ViewModels
 
         // INotifyDataErrorInfo implementation
         public bool HasErrors => _errors.Any();
+
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         public IEnumerable GetErrors(string propertyName)
@@ -54,21 +56,36 @@ namespace KAF.UI.ViewModels
             return propertyName != null && _errors.ContainsKey(propertyName) ? _errors[propertyName] : null;
         }
 
+
         // Method to validate a property using DataAnnotations
-        public void ValidateProperty(object value, string propertyName)
+        public void ValidateProperty(object type)
         {
-            // Clear previous errors
-            _errors.Remove(propertyName);
+            _errors.Clear();  // Clear existing errors
 
-            var validationContext = new ValidationContext(this) { MemberName = propertyName };
+            // Create ValidationContext for the entire Department object
+            var validationContext = new ValidationContext(type);
             var validationResults = new List<ValidationResult>();
-            Validator.TryValidateProperty(value, validationContext, validationResults);
 
-            if (validationResults.Any())
+            // Validate the entire object based on DataAnnotations
+            Validator.TryValidateObject(type, validationContext, validationResults, validateAllProperties: true);
+
+            // Populate _errors dictionary with validation results
+            foreach (var validationResult in validationResults)
             {
-                // Store errors for the property
-                _errors[propertyName] = validationResults.Select(r => r.ErrorMessage).ToList();
-                ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+                foreach (var memberName in validationResult.MemberNames)
+                {
+                    if (!_errors.ContainsKey(memberName))
+                    {
+                        _errors[memberName] = new List<string>();
+                    }
+                    _errors[memberName].Add(validationResult.ErrorMessage);
+                }
+            }
+
+            // Notify the UI that errors have changed
+            foreach (var memberName in _errors.Keys)
+            {
+                ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(memberName));
             }
         }
     }
