@@ -4,11 +4,15 @@ using KAF.UI.Module.View;
 using KAF.UI.Service.Interface;
 using KAF.UI.ViewModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace KAF.UI.Module.ViewModels
 {
@@ -20,7 +24,7 @@ namespace KAF.UI.Module.ViewModels
         private readonly IDepartmentService _departmentService;
 
 
-        public DelegateCommand<Department> SaveCommand { get; private set; }
+        public DelegateCommand SaveCommand { get; private set; }
         public DelegateCommand CloseCommand { get; private set; }
         public DelegateCommand LoadDataCommand { get; private set; }
 
@@ -30,7 +34,14 @@ namespace KAF.UI.Module.ViewModels
         public Department CurrentDepartment
         {
             get { return _currentDepartment; }
-            set { SetProperty(ref _currentDepartment, value); }
+            set
+            {
+                SetProperty(ref _currentDepartment, value);
+
+                ValidateProperty(value?.DepartmentName, nameof(Department.DepartmentName));  // Validate on set
+
+                SaveCommand.RaiseCanExecuteChanged();
+            }
         }
 
         private ObservableCollection<Department> _departmentList;
@@ -57,13 +68,13 @@ namespace KAF.UI.Module.ViewModels
 
             CurrentDepartment = new Department();
 
-            SaveCommand = new DelegateCommand<Department>(ExecuteSaveCommand, CanSaveDepartment);
+            SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveDepartment);
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
         }
 
-        
+
 
         private async Task LoadDataAsync()
         {
@@ -83,36 +94,36 @@ namespace KAF.UI.Module.ViewModels
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
 
-        private bool CanSaveDepartment(Department department)
+        private bool CanSaveDepartment()
         {
-            var status = CurrentDepartment != null && !CurrentDepartment.HasErrors;
-            return status;
+            return !HasErrors; // Command is enabled if there are no errors
         }
-        private void ExecuteSaveCommand(Department department)
+
+
+        private void ExecuteSaveCommand()
         {
-            if (department != null)
-            {
-                var parameters = new DialogParameters
+
+            var parameters = new DialogParameters
                         {
                             {
                                 "message", "Are you sure want to save?"
                             }
                         };
 
-                _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
+            _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
+            {
+                if (r.Result == ButtonResult.OK)
                 {
-                    if (r.Result == ButtonResult.OK)
-                    {
-                        // Handle OK result
+                    // Handle OK result
 
-                        LoadDataCommand.Execute();
-                    }
-                    else if (r.Result == ButtonResult.Cancel)
-                    {
-                        // Handle Cancel result
-                    }
-                });
-            }
+                    LoadDataCommand.Execute();
+                }
+                else if (r.Result == ButtonResult.Cancel)
+                {
+                    // Handle Cancel result
+                }
+            });
+
         }
     }
 }

@@ -46,7 +46,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
                     <DockPanel>
-                        <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"  CommandParameter="{Binding CurrentDepartment}" ></Button>
+                        <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"></Button>
                         <Button Content="Close" Height="30" Width="60"  Margin="5" Command="{Binding CloseCommand}"></Button>
                         <Label Margin="5"></Label>
                     </DockPanel>
