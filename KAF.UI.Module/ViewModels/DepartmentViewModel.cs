@@ -14,15 +14,18 @@ namespace KAF.UI.Module.ViewModels
     {
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
+        private readonly IEventAggregator _eventAggregator;
 
 
         public DelegateCommand SaveCommand { get; private set; }
 
-        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService)
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator)
         {
             _regionManager = regionManager;
-            SaveCommand = new DelegateCommand(ExecuteSaveCommand);
             _dialogService = dialogService;
+            _eventAggregator = eventAggregator;
+            SaveCommand = new DelegateCommand(ExecuteSaveCommand);
+
         }
 
         private void ExecuteSaveCommand()
