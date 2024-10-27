@@ -29,12 +29,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10">
                     <TextBlock Text="Password" />
-                    <!--<TextBox    Height="25"   TextAlignment="Center"
-                            PreviewTextInput="PasswordTextBox_PreviewTextInput" 
-                            TextChanged="PasswordTextBox_TextChanged"
-                            Tag="{Binding CurrentUser.Password}" 
-                            />-->
-                    <TextBox x:Name="txtPassword" Height="25" TextAlignment="Center" Text="{Binding CurrentUser.Password , Mode=TwoWay}"  />
+                    <PasswordBox x:Name="txtPassword" Height="25"  PasswordChanged="txtPassword_PasswordChanged" VerticalAlignment="Center"  />
 
 
                 </StackPanel>

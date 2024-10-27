@@ -1,4 +1,5 @@
-﻿using KAF.UI.ViewModels;
+﻿using KAF.UI.Service;
+using KAF.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,28 @@ namespace KAF.UI.Views
     public partial class LoginWindow : Window
     {
         private StringBuilder _passwordBuilder = new StringBuilder();
+        public LoginViewModel loginViewModel { get; set; }
 
-        public LoginWindow()
+        private readonly IContainerProvider _containerProvider;
+        private readonly Window _currentWindow;
+        private readonly IUserService _userService;
+        private readonly IRegionManager _regionManager;
+        private readonly IDialogService _dialogService;
+
+        public LoginWindow(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IRegionManager regionManager, IDialogService dialogService)
         {
             InitializeComponent();
+
+            _containerProvider = containerProvider;
+            _currentWindow = currentWindow;
+            _userService = userService;
+            _regionManager = regionManager;
+            _dialogService = dialogService;
+
+            loginViewModel = new LoginViewModel(containerProvider, currentWindow, userService, dialogService, regionManager);
+            DataContext = loginViewModel;
+
+
         }
 
 
@@ -32,6 +51,12 @@ namespace KAF.UI.Views
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
+        }
+
+        private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            var passwordBox = sender as PasswordBox;
+            loginViewModel.CurrentUser.Password = passwordBox.Password; // Update the ViewModel property
         }
     }
 }

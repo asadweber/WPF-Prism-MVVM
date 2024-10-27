@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -13,6 +14,9 @@ namespace KAF.UI.Common.Model
         private string _password;
 
         public string UserName { get => _userName;   set => SetProperty(ref _userName, value); }
+         
+        
+        [DataType(DataType.Password)]
         public string Password { get => _password;  set => SetProperty(ref _password, value);}
     }
 }
