@@ -119,7 +119,6 @@ namespace KAF.UI.Module.ViewModels
                 if (r.Result == ButtonResult.OK)
                 {
                     // Handle OK result
-
                     LoadDataCommand.Execute();
                 }
                 else if (r.Result == ButtonResult.Cancel)
