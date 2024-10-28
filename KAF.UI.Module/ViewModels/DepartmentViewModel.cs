@@ -42,7 +42,6 @@ namespace KAF.UI.Module.ViewModels
             set
             {
                 SetProperty(ref _currentDepartment, value);
-                CurrentDepartment.ValidateAllProperties();
             }
         }
 
@@ -111,25 +110,32 @@ namespace KAF.UI.Module.ViewModels
         private void ExecuteSaveCommand()
         {
 
-            var parameters = new DialogParameters
+            CurrentDepartment.ValidateAllProperties();
+
+            if (!HasErrors)
+            {
+
+                var parameters = new DialogParameters
                         {
                             {
                                 "message", "Are you sure want to save?"
                             }
                         };
 
-            _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
-            {
-                if (r.Result == ButtonResult.OK)
+                _dialogService.ShowDialog(typeof(ConfirmDialogView).Name, parameters, r =>
                 {
-                    // Handle OK result
-                    LoadDataCommand.Execute();
-                }
-                else if (r.Result == ButtonResult.Cancel)
-                {
-                    // Handle Cancel result
-                }
-            });
+                    if (r.Result == ButtonResult.OK)
+                    {
+                        // Handle OK result
+                        LoadDataCommand.Execute();
+                    }
+                    else if (r.Result == ButtonResult.Cancel)
+                    {
+                        // Handle Cancel result
+                    }
+                });
+
+            }
 
         }
 
