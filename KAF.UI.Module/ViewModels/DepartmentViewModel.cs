@@ -20,17 +20,20 @@ namespace KAF.UI.Module.ViewModels
 {
     public class DepartmentViewModel : BaseViewModel
     {
+        #region DI
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
         private readonly IEventAggregator _eventAggregator;
         private readonly IDepartmentService _departmentService;
+        #endregion
 
-
-        public DelegateCommand SaveCommand { get;}
+        #region Command
+        public DelegateCommand SaveCommand { get; }
         public DelegateCommand CloseCommand { get; }
         public DelegateCommand LoadDataCommand { get; }
+        #endregion
 
-
+        #region Field & Property
         private Department _currentDepartment;
 
         public Department CurrentDepartment
@@ -39,7 +42,7 @@ namespace KAF.UI.Module.ViewModels
             set
             {
                 SetProperty(ref _currentDepartment, value);
-                CurrentDepartment.ValidateAllProperties();               
+                CurrentDepartment.ValidateAllProperties();
             }
         }
 
@@ -50,7 +53,7 @@ namespace KAF.UI.Module.ViewModels
             get { return _departmentList; }
             set { SetProperty(ref _departmentList, value); }
         }
-
+        #endregion
 
         /// <summary>
         ///   Initialize
@@ -78,6 +81,21 @@ namespace KAF.UI.Module.ViewModels
         }
 
 
+        #region Validation Handler
+
+        public bool HasErrors => CurrentDepartment.HasErrors;
+        private void OnDepartmentErrorsChanged(object? sender, DataErrorsChangedEventArgs e)
+        {
+            // Reevaluate CanExecute for SaveCommand whenever there's a validation error
+            SaveCommand.RaiseCanExecuteChanged();
+        }
+        private bool CanSaveDepartment()
+        {
+            return !HasErrors; // Command is enabled if there are no errors
+        }
+        #endregion
+
+        #region Command Implementation
         private async Task LoadDataAsync()
         {
             IsBusy = true;
@@ -90,20 +108,6 @@ namespace KAF.UI.Module.ViewModels
                 IsBusy = false;
             }
         }
-
-
-
-        public bool HasErrors => CurrentDepartment.HasErrors;
-        private void OnDepartmentErrorsChanged(object? sender, DataErrorsChangedEventArgs e)
-        {
-            // Reevaluate CanExecute for SaveCommand whenever there's a validation error
-            SaveCommand.RaiseCanExecuteChanged();
-        }
-        private bool CanSaveDepartment()
-        {
-            return !HasErrors; // Command is enabled if there are no errors
-        }
-
         private void ExecuteSaveCommand()
         {
 
@@ -133,5 +137,6 @@ namespace KAF.UI.Module.ViewModels
         {
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
+        #endregion
     }
 }
