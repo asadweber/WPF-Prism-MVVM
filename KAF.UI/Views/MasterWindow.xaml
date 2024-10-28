@@ -19,12 +19,12 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" >
-             <ToggleButton x:Name="LanguageToggleButton" Width="200" Height="30" 
+             <ToggleButton x:Name="LanguageToggleButton" Width="100" Height="30" HorizontalAlignment="Right"
                       Content="{x:Static lan:_Common.LanguageToggle}" 
                       Checked="LanguageToggleButton_Checked" 
                       Unchecked="LanguageToggleButton_Unchecked"/>
         </StackPanel>
-        <DockPanel LastChildFill="True" Grid.Row="1">
+        <DockPanel x:Name="frm" LastChildFill="True" Grid.Row="1">
             <!-- Menu Region -->
             <ContentControl prism:RegionManager.RegionName="MenuRegion" DockPanel.Dock="Left" />
 
