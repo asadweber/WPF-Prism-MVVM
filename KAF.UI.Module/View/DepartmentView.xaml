@@ -38,15 +38,17 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0" >
                     <TextBlock Text="Department Code" />
-                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentCode}"  ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
+                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentCode,UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"  ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0">
                     <TextBlock Text="Department Name" />
-                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentName}" ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
+                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentName,UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" 
+                             ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
                 </StackPanel>
                 <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
                     <DockPanel>
-                        <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"></Button>
+                        <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"  
+                                IsEnabled="{Binding SaveCommand.CanExecute,UpdateSourceTrigger=PropertyChanged}"></Button>
                         <Button Content="Close" Height="30" Width="60"  Margin="5" Command="{Binding CloseCommand}"></Button>
                         <Label Margin="5"></Label>
                     </DockPanel>

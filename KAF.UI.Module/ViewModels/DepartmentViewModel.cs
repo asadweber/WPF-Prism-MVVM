@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
+using System.Windows.Controls;
 
 namespace KAF.UI.Module.ViewModels
 {
@@ -24,9 +26,9 @@ namespace KAF.UI.Module.ViewModels
         private readonly IDepartmentService _departmentService;
 
 
-        public DelegateCommand SaveCommand { get; set; }
-        public DelegateCommand CloseCommand { get; set; }
-        public DelegateCommand LoadDataCommand { get; set; }
+        public DelegateCommand SaveCommand { get;}
+        public DelegateCommand CloseCommand { get; }
+        public DelegateCommand LoadDataCommand { get; }
 
 
         private Department _currentDepartment;
@@ -37,8 +39,7 @@ namespace KAF.UI.Module.ViewModels
             set
             {
                 SetProperty(ref _currentDepartment, value);
-                ValidateProperty(typeof(Department));  // Validate on set
-                SaveCommand.RaiseCanExecuteChanged();
+                CurrentDepartment.ValidateAllProperties();
             }
         }
 
@@ -64,15 +65,17 @@ namespace KAF.UI.Module.ViewModels
             _eventAggregator = eventAggregator;
             _departmentService = departmentService;
 
-            SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveDepartment);
+            CurrentDepartment = new Department();
+            CurrentDepartment.ErrorsChanged += OnDepartmentErrorsChanged;
+
+            SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveDepartment)
+                .ObservesProperty(() => CurrentDepartment);
+
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
 
-            CurrentDepartment = new Department();
-
         }
-
 
 
         private async Task LoadDataAsync()
@@ -88,16 +91,18 @@ namespace KAF.UI.Module.ViewModels
             }
         }
 
-        private void ExecuteCloseCommand()
-        {
-            _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
-        }
 
+
+        public bool HasErrors => CurrentDepartment.HasErrors;
+        private void OnDepartmentErrorsChanged(object? sender, DataErrorsChangedEventArgs e)
+        {
+            // Reevaluate CanExecute for SaveCommand whenever there's a validation error
+            SaveCommand.RaiseCanExecuteChanged();
+        }
         private bool CanSaveDepartment()
         {
             return !HasErrors; // Command is enabled if there are no errors
         }
-
 
         private void ExecuteSaveCommand()
         {
@@ -123,6 +128,11 @@ namespace KAF.UI.Module.ViewModels
                 }
             });
 
+        }
+
+        private void ExecuteCloseCommand()
+        {
+            _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
     }
 }
