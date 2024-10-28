@@ -39,7 +39,7 @@ namespace KAF.UI.Module.ViewModels
             set
             {
                 SetProperty(ref _currentDepartment, value);
-                CurrentDepartment.ValidateAllProperties();
+                CurrentDepartment.ValidateAllProperties();               
             }
         }
 
