@@ -29,6 +29,9 @@ namespace KAF.UI.Module.ViewModels
 
         #region Command
         public DelegateCommand SaveCommand { get; }
+        public DelegateCommand UpdateCommand { get; private set; }
+        public DelegateCommand DeleteCommand { get; private set; }
+
         public DelegateCommand CloseCommand { get; }
         public DelegateCommand LoadDataCommand { get; }
         #endregion
@@ -70,8 +73,12 @@ namespace KAF.UI.Module.ViewModels
             CurrentDepartment = new Department();
             CurrentDepartment.ErrorsChanged += OnDepartmentErrorsChanged;
 
-            SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveDepartment)
+            SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveExecute)
                 .ObservesProperty(() => CurrentDepartment);
+
+            UpdateCommand = new DelegateCommand(ExecuteUpdateCommand, CanUpdateOrDeleteExecute).ObservesProperty(() => CurrentDepartment);
+            DeleteCommand = new DelegateCommand(ExecuteDeleteCommand, CanUpdateOrDeleteExecute).ObservesProperty(() => CurrentDepartment);
+
 
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
@@ -88,10 +95,15 @@ namespace KAF.UI.Module.ViewModels
             // Reevaluate CanExecute for SaveCommand whenever there's a validation error
             SaveCommand.RaiseCanExecuteChanged();
         }
-        private bool CanSaveDepartment()
+        private bool CanSaveExecute()
         {
             return !HasErrors; // Command is enabled if there are no errors
         }
+        private bool CanUpdateOrDeleteExecute()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region Command Implementation
@@ -139,6 +151,19 @@ namespace KAF.UI.Module.ViewModels
 
         }
 
+      
+        
+
+        private void ExecuteUpdateCommand()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ExecuteDeleteCommand()
+        {
+            throw new NotImplementedException();
+        }
+
         private void ExecuteCloseCommand()
         {
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
@@ -146,7 +171,7 @@ namespace KAF.UI.Module.ViewModels
 
         private void OnRowSelected(Department department)
         {
-            
+
         }
         #endregion
     }
