@@ -8,17 +8,18 @@
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:prism="http://prismlibrary.com/"             
             prism:ViewModelLocator.AutoWireViewModel="True" 
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:helper="clr-namespace:KAF.UI.Common.Helper;assembly=KAF.UI.Common"
+            xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+            xmlns:helper="clr-namespace:KAF.UI.Common.Helper;assembly=KAF.UI.Common"
+            xmlns:lan="clr-namespace:KAF.Model.Lang.LLClasses;assembly=KAF.Model.Lang"
              >
     <UserControl.Resources>
-       <helper:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
+        <helper:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
     </UserControl.Resources>
     <UserControl.InputBindings>
         <KeyBinding Key="S" Modifiers="Control" Command="{Binding SaveCommand}"/>
         <KeyBinding Key="C" Modifiers="Control" Command="{Binding CloseCommand}"/>
     </UserControl.InputBindings>
-    
+
     <xctk:BusyIndicator IsBusy="{Binding IsBusy, Mode=TwoWay}" >
         <Grid >
             <Grid.RowDefinitions>
@@ -49,7 +50,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
                     <DockPanel>
-                        <Button Content="Save" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"  
+                        <Button Content="{x:Static lan:_Common._btnSave}" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"  
                                 IsEnabled="{Binding SaveCommand.CanExecute}"></Button>
                         <Button Content="Close" Height="30" Width="60"  Margin="5" Command="{Binding CloseCommand}"></Button>
                         <Label Margin="5"></Label>

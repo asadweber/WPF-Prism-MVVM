@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<resource culture="ar-kw" name="_btnSave" value=" حفظ" ></resource>
+	<resource culture="en-us" name="_btnSave" value="Save"></resource>
+</resources>

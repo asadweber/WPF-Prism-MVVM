@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KAF.Model.Lang", "KAF.Model.Lang\KAF.Model.Lang.csproj", "{B77CA01D-D8F9-4514-AACD-FB5E4FB5916A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{904B8C42-17CF-4EFD-8A5A-4FD505807AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{904B8C42-17CF-4EFD-8A5A-4FD505807AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{904B8C42-17CF-4EFD-8A5A-4FD505807AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B77CA01D-D8F9-4514-AACD-FB5E4FB5916A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B77CA01D-D8F9-4514-AACD-FB5E4FB5916A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B77CA01D-D8F9-4514-AACD-FB5E4FB5916A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B77CA01D-D8F9-4514-AACD-FB5E4FB5916A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
