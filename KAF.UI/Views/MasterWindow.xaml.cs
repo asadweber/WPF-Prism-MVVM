@@ -52,6 +52,8 @@ namespace KAF.UI
             Thread.CurrentThread.CurrentCulture = newCulture;
             Thread.CurrentThread.CurrentUICulture = newCulture;
 
+            // Update flow direction based on the new culture
+            SetFlowDirectionBasedOnCulture();
             // Get the region by name
             var contentRegion = _regionManager.Regions[RegionNameConfig.ContentRegionName];
             // Check if the region exists
@@ -65,6 +67,25 @@ namespace KAF.UI
                     // Re-add the views (you can also navigate or register again)
                     _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, activeView.GetType().Name);
                 }
+            }
+        }
+
+
+        private void SetFlowDirectionBasedOnCulture()
+        {
+            // Get the current culture
+            var currentCulture = Thread.CurrentThread.CurrentCulture;
+
+            // Check if the culture is RTL
+            if (currentCulture.TextInfo.IsRightToLeft)
+            {
+                // Set FlowDirection to RightToLeft
+                this.FlowDirection = FlowDirection.RightToLeft;
+            }
+            else
+            {
+                // Set FlowDirection to LeftToRight
+                this.FlowDirection = FlowDirection.LeftToRight;
             }
         }
     }
