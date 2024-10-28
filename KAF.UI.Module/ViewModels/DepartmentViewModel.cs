@@ -143,6 +143,11 @@ namespace KAF.UI.Module.ViewModels
         {
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
+
+        private void OnRowSelected(Department department)
+        {
+            
+        }
         #endregion
     }
 }

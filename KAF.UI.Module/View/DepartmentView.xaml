@@ -36,6 +36,8 @@
                     <RowDefinition  Height="50"/>
                     <RowDefinition  Height="50"/>
                     <RowDefinition  Height="50"/>
+                    <RowDefinition  Height="10"/>
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0" >
                     <TextBlock Text="Department Code" />
@@ -56,6 +58,18 @@
                         <Label Margin="5"></Label>
                     </DockPanel>
                 </StackPanel>
+                <DataGrid ItemsSource="{Binding DepartmentList}" 
+                          SelectedItem="{Binding CurrentDepartment, Mode=TwoWay}"                             
+                          AutoGenerateColumns="False" Grid.Row="5"
+                          SelectionMode="Single"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False" 
+                          >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding DepartmentCode}" Width="Auto" />
+                        <DataGridTextColumn Header="Name" Binding="{Binding DepartmentName}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
 
 
