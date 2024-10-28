@@ -17,4 +17,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="9.0.537" />
+  </ItemGroup>
+
 </Project>

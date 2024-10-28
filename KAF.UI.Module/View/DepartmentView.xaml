@@ -45,7 +45,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical"  VerticalAlignment="Top"  Margin="0">
                     <TextBlock Text="Department Name" />
-                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentName,ValidatesOnNotifyDataErrors=True}" 
+                    <TextBox Height="25" Text="{Binding CurrentDepartment.DepartmentName, ValidatesOnNotifyDataErrors=True}" 
                              ToolTip="{Binding (Validation.Errors).CurrentItem.ErrorContent, RelativeSource={RelativeSource Self}}" />
                 </StackPanel>
                 <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >

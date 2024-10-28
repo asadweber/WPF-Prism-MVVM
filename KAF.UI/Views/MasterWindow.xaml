@@ -9,16 +9,30 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         WindowState="Maximized"
+            xmlns:lan="clr-namespace:KAF.Model.Lang.LLClasses;assembly=KAF.Model.Lang"
+        
         >
-    <Window.Resources>
-      
-    </Window.Resources>
-     <DockPanel LastChildFill="True">
-        <!-- Menu Region -->
-        <ContentControl prism:RegionManager.RegionName="MenuRegion" DockPanel.Dock="Left" />
-         
-        <ContentControl prism:RegionManager.RegionName="formContentRegion" />
-         
-    </DockPanel>
-    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" >
+             <ToggleButton x:Name="LanguageToggleButton" Width="200" Height="30" 
+                      Content="{x:Static lan:_Common.LanguageToggle}" 
+                      Checked="LanguageToggleButton_Checked" 
+                      Unchecked="LanguageToggleButton_Unchecked"/>
+        </StackPanel>
+        <DockPanel LastChildFill="True" Grid.Row="1">
+            <!-- Menu Region -->
+            <ContentControl prism:RegionManager.RegionName="MenuRegion" DockPanel.Dock="Left" />
+
+            <ContentControl prism:RegionManager.RegionName="formContentRegion" />
+
+        </DockPanel>
+    </Grid>
+
+
+
 </Window>
