@@ -20,7 +20,7 @@ namespace KAF.UI.Service.Services
         {
             // Create a list of departments with sample data
             //Let assume data load take some time
-            await Task.Delay(3000);
+            await Task.Delay(300);
             List<Department> list = new List<Department>
                     {
                         new Department { DepartmentCode = 1, DepartmentName = "HR" },

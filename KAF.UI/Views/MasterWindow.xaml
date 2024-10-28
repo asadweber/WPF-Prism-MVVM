@@ -19,7 +19,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" >
-             <ToggleButton x:Name="LanguageToggleButton" Width="100" Height="30" HorizontalAlignment="Right"
+             <ToggleButton x:Name="LanguageToggleButton" Width="100" Height="30"
                       Content="{x:Static lan:_Common.LanguageToggle}" 
                       Checked="LanguageToggleButton_Checked" 
                       Unchecked="LanguageToggleButton_Unchecked"/>

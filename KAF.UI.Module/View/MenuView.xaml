@@ -15,7 +15,7 @@
     <StackPanel Width="150" HorizontalAlignment="Left">
         <DockPanel LastChildFill="True">
             <TextBox x:Name="txtSearchMenu" DockPanel.Dock="Top"/>
-            <TreeView ItemsSource="{Binding MenuItems}">
+            <TreeView ItemsSource="{Binding MenuItems}" >
                 <TreeView.ItemTemplate>
                     <HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
                         <TextBlock Text="{Binding Header}"  >
