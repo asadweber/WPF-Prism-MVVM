@@ -3,11 +3,12 @@
         <!-- Centralized NuGet package versions -->
         <PrismCoreVersion>9.0.537</PrismCoreVersion>
         <PrismUnityVersion>9.0.537</PrismUnityVersion>
+        <ExtendedWpfToolkitVersion>4.6.1</ExtendedWpfToolkitVersion>
 		
 		
         <!-- Common properties for all projects -->
         <OutputPath>$(SolutionDir)\bin\</OutputPath>
         <TargetFramework>net8.0</TargetFramework>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>		
     </PropertyGroup>
 </Project>
