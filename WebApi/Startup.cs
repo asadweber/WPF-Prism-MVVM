@@ -45,7 +45,7 @@ namespace WebApi
         {
             services.InstallServicesInAssembly(_configuration);
 
-            services.AddAutoMapper(typeof(Startup));
+           // services.AddAutoMapper(typeof(Startup));
 
             // Now register our services with Autofac container.
             var builder = new ContainerBuilder();

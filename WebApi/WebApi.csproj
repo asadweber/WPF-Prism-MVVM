@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<UserSecretsId>ecde624a-0163-4b8d-988c-a55ea0993a3c</UserSecretsId>
 		<ApplicationIcon />
 		<OutputType>Exe</OutputType>
@@ -15,9 +15,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Controllers\Extended\**" />
 	  <Compile Remove="LanguagesFiles\**" />
+	  <Content Remove="Controllers\Extended\**" />
 	  <Content Remove="LanguagesFiles\**" />
+	  <EmbeddedResource Remove="Controllers\Extended\**" />
 	  <EmbeddedResource Remove="LanguagesFiles\**" />
+	  <None Remove="Controllers\Extended\**" />
 	  <None Remove="LanguagesFiles\**" />
 	</ItemGroup>
 
@@ -52,40 +56,37 @@
 		<PackageReference Include="AspNetCore.CacheOutput.Redis" Version="2.1.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-		<PackageReference Include="ClosedXML" Version="0.100.3" />
+		<PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
 		<PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.4" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.0" />
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="ReportViewerCore.NETCore" Version="15.1.19" />
-		<PackageReference Include="Serilog" Version="2.11.0-dev-01380" />
-		<PackageReference Include="Serilog.AspNetCore" Version="6.0.0-dev-00265" />
-		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.1-dev-00787" />
+		<PackageReference Include="Serilog" Version="4.1.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
 		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
-		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.2.0-dev-00752" />
-		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.1-dev-00296" />
-		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
-		<PackageReference Include="Serilog.Sinks.MongoDB" Version="5.1.2" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="8.0.4" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="2.1.0" />
+		<PackageReference Include="Serilog.Sinks.MongoDB" Version="6.0.0" />
 		<PackageReference Include="StackExchange.Redis" Version="2.5.61" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
-		<PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\AppConfig\AppConfig.csproj" />
 		<ProjectReference Include="..\BDO\BDO.csproj" />
 		<ProjectReference Include="..\CLL\CLL.csproj" />
-		<ProjectReference Include="..\QRCoder\QRCoder.NETCore20.csproj" />
 		<ProjectReference Include="..\Web.Api.Infrastructure\Web.Api.Infrastructure.csproj" />
 		<ProjectReference Include="..\Web.Core.Frame\Web.Core.Frame.csproj" />
-		<ProjectReference Include="..\WebShared\WebShared.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controllers\Extended\" />
 		<Folder Include="Models\Request\" />
 		<Folder Include="Services\" />
 	</ItemGroup>

@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Auth\JwtIssuerOptions.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="automapper" Version="13.0.1" />
     <PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
@@ -59,6 +55,10 @@
   <ItemGroup>
     <ProjectReference Include="..\BDO\BDO.csproj" />
     <ProjectReference Include="..\Web.Core.Frame\Web.Core.Frame.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Extended\" />
   </ItemGroup>
  
 

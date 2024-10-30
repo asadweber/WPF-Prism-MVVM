@@ -34,11 +34,7 @@ namespace WebApi
            WebHost.CreateDefaultBuilder(args)
             //.UseKestrel()
            // .UseIISIntegration()
-            .UseStartup<Startup>()
-            .UseSerilog((context, config) =>
-            {
-                config.ReadFrom.Configuration(context.Configuration);
-            });
+            .UseStartup<Startup>();
 
         
     }

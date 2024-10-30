@@ -19,8 +19,6 @@ namespace Web.Api.Infrastructure
             builder.RegisterType<JwtFactory>().As<IJwtFactory>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
             builder.RegisterType<JwtTokenHandler>().As<IJwtTokenHandler>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
             builder.RegisterType<JwtTokenValidator>().As<IJwtTokenValidator>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-            builder.RegisterType<SecCapFillerFromJWTClaim>().As<ISecCapFillerFromJWTClaim>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-            builder.RegisterType<HttpClientHR>().As<IHttpClientHR>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
             builder.RegisterType<dataHashingHandler>().As<IdataHashing>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
 
             builder.RegisterType<Logger>().As<ILogger>().SingleInstance();
@@ -30,12 +28,6 @@ namespace Web.Api.Infrastructure
 
 
             builder.RegisterType<StringCompression>().As<IStringCompression>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-
-            builder.RegisterType<HttpClientPACIAuth>().As<IHttpClientPACIAuth>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-
-
-            builder.RegisterType<NotificationService>().As<INotificationService>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-
 
 			builder.RegisterType<FileUploadClient>().As<IFileUploadClient>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
 
