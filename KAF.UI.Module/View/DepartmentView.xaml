@@ -52,7 +52,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="3" Style="{StaticResource CommandButtonPanel}" HorizontalAlignment="Center" >
                     <DockPanel>
-                        <Button Content="{x:Static lan:_Common._btnSave}" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"  
+                        <Button Content="{x:Static lan:_Common.btnSave}" Height="30" Width="60"  Margin="5" Command="{Binding SaveCommand}"  
                                 IsEnabled="{Binding SaveCommand.CanExecute}"></Button>
                         <Button Content="Close" Height="30" Width="60"  Margin="5" Command="{Binding CloseCommand}"></Button>
                         <Label Margin="5"></Label>

@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <!-- Centralized NuGet package versions -->
+        <PrismCoreVersion>9.0.537</PrismCoreVersion>
+        <!-- Common properties for all projects -->
+        <OutputPath>$(SolutionDir)\bin\</OutputPath>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    </PropertyGroup>
+</Project>

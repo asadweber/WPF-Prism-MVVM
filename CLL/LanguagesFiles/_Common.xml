@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-	<resource culture="ar-kw" name="_btnSave" value=" حفظ" ></resource>
-	<resource culture="en-us" name="_btnSave" value="Save"></resource>
+	<resource culture="ar-kw" name="btnSave" value=" حفظ" ></resource>
+	<resource culture="en-us" name="btnSave" value="Save"></resource>
 	
 	<resource culture="ar-kw" name="_languageToggle" value="التبديل إلى الإنجليزية" ></resource>
 	<resource culture="en-us" name="_languageToggle" value="Switch to Arabic"></resource>
