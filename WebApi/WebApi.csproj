@@ -92,15 +92,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Reference Include="MIDAuthServiceClient">
-	    <HintPath>..\..\PACIRefDLL\MIDAuthServiceClient.dll</HintPath>
-	  </Reference>
-	  <Reference Include="MIDAuthServiceClientContract">
-	    <HintPath>..\..\PACIRefDLL\MIDAuthServiceClientContract.dll</HintPath>
-	  </Reference>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Content Update="wwwroot\swagger-ui\kaf_logo.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
