@@ -1,4 +1,5 @@
-﻿using KAF.UI.Common.Model;
+﻿using BDO.Model;
+using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Service.Interface;
 using KAF.UI.Views;

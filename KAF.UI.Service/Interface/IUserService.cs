@@ -1,4 +1,5 @@
-using KAF.UI.Common.Model;
+
+using BDO.Model;
 
 namespace KAF.UI.Service.Interface
 {

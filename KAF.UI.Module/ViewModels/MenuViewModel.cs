@@ -1,10 +1,8 @@
-﻿using KAF.UI.Common.Model;
+﻿using BDO.Model;
+using KAF.UI.Common;
 using KAF.UI.Module.View;
-using KAF.UI.Service;
 using KAF.UI.Service.Interface;
-using KAF.UI.ViewModels;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace KAF.UI.Module.ViewModels
 {

@@ -9,7 +9,7 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         WindowState="Maximized"
-            xmlns:lan="clr-namespace:KAF.Model.Lang.LLClasses;assembly=KAF.Model.Lang"
+            xmlns:lan="clr-namespace:CLL.LLClasses;assembly=CLL"
         
         >
 

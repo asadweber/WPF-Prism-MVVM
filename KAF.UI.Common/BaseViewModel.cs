@@ -1,9 +1,4 @@
-﻿using KAF.UI.Common.Model;
-using System.Collections;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace KAF.UI.ViewModels
+﻿namespace KAF.UI.Common
 {
     public class BaseViewModel : BindableBase, INavigationAware
     {
@@ -43,7 +38,7 @@ namespace KAF.UI.ViewModels
 
         }
 
-       
+
 
     }
 }

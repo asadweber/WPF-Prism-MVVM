@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KAF.Model.Lang.Abstract
+namespace CLL.Abstract
 {
     public interface IResourceProvider
     {

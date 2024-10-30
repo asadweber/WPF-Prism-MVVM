@@ -10,7 +10,7 @@
             prism:ViewModelLocator.AutoWireViewModel="True" 
             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
             xmlns:helper="clr-namespace:KAF.UI.Common.Helper;assembly=KAF.UI.Common"
-            xmlns:lan="clr-namespace:KAF.Model.Lang.LLClasses;assembly=KAF.Model.Lang"
+            xmlns:lan="clr-namespace:CLL.LLClasses;assembly=CLL"
              >
     <UserControl.Resources>
         <helper:BoolToBrushConverter x:Key="BoolToBrushConverter"/>

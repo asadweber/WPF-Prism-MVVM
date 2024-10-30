@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KAF.Model.Lang.Entities
+namespace CLL.Entities
 {
     public class ResourceEntry
     {

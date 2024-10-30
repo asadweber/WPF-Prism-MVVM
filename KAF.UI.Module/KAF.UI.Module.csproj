@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BDO\BDO.csproj" />
+    <ProjectReference Include="..\CLL\CLL.csproj" />
     <ProjectReference Include="..\KAF.Model.Lang\KAF.Model.Lang.csproj" />
     <ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
     <ProjectReference Include="..\KAF.UI.Service\KAF.UI.Service.csproj" />

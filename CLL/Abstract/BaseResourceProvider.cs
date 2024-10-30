@@ -1,11 +1,11 @@
-﻿using KAF.Model.Lang.Entities;
+﻿using CLL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KAF.Model.Lang.Abstract
+namespace CLL.Abstract
 {
     public abstract class BaseResourceProvider : IResourceProvider
     {

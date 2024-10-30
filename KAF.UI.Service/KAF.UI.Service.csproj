@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BDO\BDO.csproj" />
     <ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
   </ItemGroup>
 

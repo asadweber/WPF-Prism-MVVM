@@ -4,9 +4,9 @@ using System.IO;
 using System.Text;
 using System.Xml.Linq;
 using System.Linq;
-using KAF.Model.Lang.Entities;
+using CLL.Entities;
 
-namespace KAF.Model.Lang.Abstract
+namespace CLL.Abstract
 {
     public class XmlResourceProvider : BaseResourceProvider
     {

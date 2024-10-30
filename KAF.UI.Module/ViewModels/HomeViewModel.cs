@@ -1,5 +1,4 @@
-﻿using KAF.UI.ViewModels;
-using System.Windows.Input;
+﻿using KAF.UI.Common;
 
 namespace KAF.UI.Module.ViewModels
 {

@@ -1,9 +1,9 @@
-﻿using KAF.Model.Lang.Abstract;
+﻿using CLL.Abstract;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 
-namespace KAF.Model.Lang.LLClasses
+namespace CLL.LLClasses
 {
     public class _Common
     {
@@ -22,6 +22,6 @@ namespace KAF.Model.Lang.LLClasses
                 return resourceProvidercommon.GetResource("_languageToggle", CultureInfo.CurrentUICulture.Name) as string;
             }
         }
-       
+
     }
 }

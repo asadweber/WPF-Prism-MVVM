@@ -1,10 +1,5 @@
-﻿using KAF.UI.Common.Model;
+﻿using BDO.Model;
 using KAF.UI.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KAF.UI.Service.Services
 {
@@ -29,6 +24,16 @@ namespace KAF.UI.Service.Services
                     };
 
             return list;
+        }
+
+        Department IDepartmentService.GetDepartment(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<Department>> IDepartmentService.GetDepartments()
+        {
+            throw new NotImplementedException();
         }
     }
 }
