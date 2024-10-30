@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using Prism.Mvvm;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace BDO.Model
 {
     public class BaseModel : BindableBase, INotifyDataErrorInfo
     {
-
 
         private readonly Dictionary<string, List<string>> _errors = new();
         public bool HasErrors => _errors.Any();

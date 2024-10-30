@@ -1,20 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="LanguagesFiles\_Common.xml" />
+    <PackageReference Include="ClosedXML" Version="0.100.3" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="5.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="LanguagesFiles\_Common.xml">
+    <EmbeddedResource Update="Localization\SharedResource.ar-KW.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\SharedResource.en-US.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator></Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

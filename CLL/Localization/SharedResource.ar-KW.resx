@@ -1,0 +1,1997 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="REGISTER" xml:space="preserve">
+    <value>تسجيل</value>
+  </data>
+  <data name="CONFIRM_PASSWORD" xml:space="preserve">
+    <value>Conferma Password</value>
+  </data>
+  <data name="CONFIRM_PASSWORD_NOT_MATCHING" xml:space="preserve">
+    <value>Le password inserite non corrispondono.</value>
+  </data>
+  <data name="CREATE_A_NEW_ACCOUNT" xml:space="preserve">
+    <value>Crea un nuovo account.</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>Email non valida</value>
+  </data>
+  <data name="EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email obbligatoria</value>
+  </data>
+  <data name="PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Password obbligatoria</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>Reimposta</value>
+  </data>
+  <data name="RESET_PASSWORD" xml:space="preserve">
+    <value>تغيير كلمة السر</value>
+  </data>
+  <data name="RESET_YOUR_PASSWORD" xml:space="preserve">
+    <value>Reimposta la password</value>
+  </data>
+  <data name="LOGOUT" xml:space="preserve">
+    <value>تسجيل خروج</value>
+  </data>
+  <data name="REMEMBER_ME" xml:space="preserve">
+    <value>تذكرني</value>
+  </data>
+  <data name="FORGOT_YOUR_PASSWORD" xml:space="preserve">
+    <value>هل نسيت الرقم السري ؟</value>
+  </data>
+  <data name="ACCOUNT_LOGIN" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="REGISTER_AS_NEW_USER" xml:space="preserve">
+    <value>Registrati come nuovo utente</value>
+  </data>
+  <data name="ACCESS_DENIED" xml:space="preserve">
+    <value>الدخول ممنوع</value>
+  </data>
+  <data name="ACCESS_DENIED_TEXT" xml:space="preserve">
+    <value>Non hai i permessi per accedere a questa risorsa.</value>
+  </data>
+  <data name="ACCOUNT_NO_EXTERNAL_LOGINS" xml:space="preserve">
+    <value>Non ci sono servizi di autenticazione esterni configurati. Guarda questo articolo https://go.microsoft.com/fwlink/?LinkID=532715 per impostare questa applicazione ASP.NET in modo da supportare login esterni.</value>
+  </data>
+  <data name="ACCOUNT_USE_ANOTHER_SERVICE_LOG_IN" xml:space="preserve">
+    <value>Usa un altro servizio per effettuare il login.</value>
+  </data>
+  <data name="ACCOUNT_USE_LOCAL_ACCOUNT_TO_LOG_IN" xml:space="preserve">
+    <value>Usa un account locale per eseguire il login.</value>
+  </data>
+  <data name="CONFIRM_EMAIL" xml:space="preserve">
+    <value>Conferma email</value>
+  </data>
+  <data name="CONFIRM_EMAIL_TEXT" xml:space="preserve">
+    <value>Grazie per aver confermato la tua email email.</value>
+  </data>
+  <data name="CONFIRM_YOUR_EMAIL" xml:space="preserve">
+    <value>Conferma la tua email</value>
+  </data>
+  <data name="CONFIRM_YOUR_EMAIL_TEXT" xml:space="preserve">
+    <value>Perfavore conferma il tuo account &lt;a href='{0}'&gt;cliccando qui&lt;/a&gt;.</value>
+  </data>
+  <data name="FORGOT_PASSWORD_CONFIRMATION" xml:space="preserve">
+    <value>Conferma password dimenticata</value>
+  </data>
+  <data name="FORGOT_PASSWORD_CONFIRMATION_TEXT" xml:space="preserve">
+    <value>Perfavore controlla la tua email per confermare il reset della password.</value>
+  </data>
+  <data name="FORGOT_YOUR_PASSWORD_ENTER_EMAIL" xml:space="preserve">
+    <value>Inserisci la tua email.</value>
+  </data>
+  <data name="INVALID_LOGIN_ATTEMPT" xml:space="preserve">
+    <value>خطأ في اسم المستخدم او كلمة المرور</value>
+  </data>
+  <data name="LOCKED_OUT" xml:space="preserve">
+    <value>Bloccato</value>
+  </data>
+  <data name="LOCKED_OUT_TEXT" xml:space="preserve">
+    <value>Questo account risulta bloccato, riprova più tardi.</value>
+  </data>
+  <data name="RESET_PASSWORD_EMAIL_TEXT" xml:space="preserve">
+    <value>Perfavore, resetta la tua password &lt;a href='{0}'&gt;cliccando qui&lt;/a&gt;.</value>
+  </data>
+  <data name="SUBMIT" xml:space="preserve">
+    <value>تقديم</value>
+  </data>
+  <data name="EXTERNAL_LOGIN_ASSOCIATE_ACCOUNT" xml:space="preserve">
+    <value>Associa il tuo {0} account</value>
+  </data>
+  <data name="EXTERNAL_LOGIN_TEXT" xml:space="preserve">
+    <value>Ti sei loggato con {0}. Perfavore, inseriri una email e clicca su Registrati per finire la procedura di login.</value>
+  </data>
+  <data name="EXTERNAL_PROVIDER_ERROR" xml:space="preserve">
+    <value>Errore del provider esterno: {0}</value>
+  </data>
+  <data name="EXTERNAL_PROVIDER_ERROR_CONFIRMATION" xml:space="preserve">
+    <value>Errore di caricamento durante il caricamento dei dati di login esterno.</value>
+  </data>
+  <data name="EXTERNAL_PROVIDER_ERROR_INFO" xml:space="preserve">
+    <value>Errore di caricamento durante il caricamento dei dati di login esterno.</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA" xml:space="preserve">
+    <value>Autenticazione a due fattori</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_NO_AUTHENTICATOR_DEVICE" xml:space="preserve">
+    <value>Non hai un device di autenticazione? Puoi</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_RECOVERY_CODE_TEXT" xml:space="preserve">
+    <value>login con un codice di recupero</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_REMEMBER_MC" xml:space="preserve">
+    <value>Ricorda questo pc</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_2FA_TEXT" xml:space="preserve">
+    <value>Il tuo login è protetto con un'app di autenticazione. Inserisci il codice di autenticazione qua sotto.</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_AUTHENTICATOR_CODE" xml:space="preserve">
+    <value>Codice di autenticazione</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE" xml:space="preserve">
+    <value>Codice di recupero</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE_REQUIRED" xml:space="preserve">
+    <value>Codice di recupero obbligatorio</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE_VERIFICATION" xml:space="preserve">
+    <value>Verifica del codice di recupero</value>
+  </data>
+  <data name="ACCOUNT_RECOVERY_CODE_VERIFICATION_TEXT" xml:space="preserve">
+    <value>Hai richiesto il login con un codice di recupero. Questo login non sarà ricordato fino a che non inserirerai un codice di autenticazione oppure disabiliti l'autenticazione a due fattori.</value>
+  </data>
+  <data name="INVALID_AUTHENTICATOR_CODE" xml:space="preserve">
+    <value>Codice di autenticazione non valido.</value>
+  </data>
+  <data name="INVALID_RECOVERY_CODE" xml:space="preserve">
+    <value>Codice di recupero non valido.</value>
+  </data>
+  <data name="LOGOUT_TEXT" xml:space="preserve">
+    <value>Logout eseguito con successo.</value>
+  </data>
+  <data name="RESET_PASSWORD_CONFIRMATION" xml:space="preserve">
+    <value>Conferma reset della password</value>
+  </data>
+  <data name="RESET_PASSWORD_CONFIRMATION_CLICK_HERE" xml:space="preserve">
+    <value>clicca per effettuare il login</value>
+  </data>
+  <data name="RESET_PASSWORD_CONFIRMATION_TEXT1" xml:space="preserve">
+    <value>La tua password è stata resettata. Perfavore</value>
+  </data>
+  <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
+    <value>Il valore inserito {0} deve essere almeno {2} and lungo al massimo {1} caratteri.</value>
+  </data>
+  <data name="2FA" xml:space="preserve">
+    <value>التحقق بخطوتين</value>
+  </data>
+  <data name="CHANGE_PASSWORD" xml:space="preserve">
+    <value>تغيير كلمة السر</value>
+  </data>
+  <data name="CHANGE_PASSWORD_STATUS" xml:space="preserve">
+    <value>La tua password è stata cambiata.</value>
+  </data>
+  <data name="CURRENT_PASSWORD" xml:space="preserve">
+    <value>Password corrente</value>
+  </data>
+  <data name="CURRENT_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Password corrente obbligatoria</value>
+  </data>
+  <data name="EXTERNAL_LOGINS" xml:space="preserve">
+    <value>Login esterni</value>
+  </data>
+  <data name="MANAGE_CHANGE_ACCOUNT_SETTINGS" xml:space="preserve">
+    <value>Cambia le impostazione del tuo account</value>
+  </data>
+  <data name="MANAGE_YOUR_ACCOUNT" xml:space="preserve">
+    <value>Gestisci account</value>
+  </data>
+  <data name="NEW_PASSWORD" xml:space="preserve">
+    <value>Nuova password</value>
+  </data>
+  <data name="NEW_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Nuova password obbligatoria</value>
+  </data>
+  <data name="PERSONAL_DATA" xml:space="preserve">
+    <value>Dati personali</value>
+  </data>
+  <data name="PROFILE" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
+  <data name="TWOFACTORCODE_REQUIRED" xml:space="preserve">
+    <value>Il codice autenticazione a due fattori è obbligatorio</value>
+  </data>
+  <data name="UPDATE_PASSWORD" xml:space="preserve">
+    <value>تحديث كلمة السر</value>
+  </data>
+  <data name="VERIFICATION_CODE_REQUIRED" xml:space="preserve">
+    <value>Il codice di verifica è obbligatorio</value>
+  </data>
+  <data name="AND" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP" xml:space="preserve">
+    <value>Configura l'app di autenticazione</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_DOWNLOAD_TEXT" xml:space="preserve">
+    <value>Scarica un'app di autenticazione a due fattori come ad esempio Microsoft Authenticator per</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_GOOGLE_TEXT" xml:space="preserve">
+    <value>Google Authenticator per</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN1" xml:space="preserve">
+    <value>Scansiona il QR Code o inserisci questa chiave</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN2" xml:space="preserve">
+    <value>nella tua app di autenticazione. Spazi e maiuscole non hanno importanza.</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT" xml:space="preserve">
+    <value>Per abilitare la generazione del QR Code, perfavore leggi la nostra</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_DETAILS" xml:space="preserve">
+    <value>Una volta scansionato il QR Code o aver inserito la chiave sotto, l'app di autenticazione a due fattori ti fornirà un codice. Inseriscilo nel box di conferma qua sotto.</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_SCAN_ALERT_LINK" xml:space="preserve">
+    <value>documentazione</value>
+  </data>
+  <data name="CONFIGURE_AUTHENTICATOR_APP_STEPS" xml:space="preserve">
+    <value>Per utilizzare l'app di autenticazione, segui i seguenti step:</value>
+  </data>
+  <data name="DELETE_PERSONAL_DATA" xml:space="preserve">
+    <value>Elimina dati personali</value>
+  </data>
+  <data name="DELETE_PERSONAL_DATA_AND_CLOSE" xml:space="preserve">
+    <value>Cancella i dati ed elimina l'account</value>
+  </data>
+  <data name="DELETE_PERSONAL_DATA_TEXT" xml:space="preserve">
+    <value>Eliminando questi dati, cancellari il tuo account e non potrà essere recuperato.</value>
+  </data>
+  <data name="DISABLE_2FA" xml:space="preserve">
+    <value>Disabilita autenticazione a due fattori (2FA)</value>
+  </data>
+  <data name="DISABLE_2FA_BUTTON" xml:space="preserve">
+    <value>Disabilita 2FA</value>
+  </data>
+  <data name="DISABLE_2FA_STATUS" xml:space="preserve">
+    <value>2fa è stata disabilitata. Puoi riabilitarla configurando un'app di autenticazione</value>
+  </data>
+  <data name="DISABLE_2FA_TEXT_DETAILS" xml:space="preserve">
+    <value>Disabilitando la 2FA non cambierai le chiavi nell'app di autenticazione. Se vuoi cambiare le chiavi di autenticazione, fallo dall'app</value>
+  </data>
+  <data name="DISABLE_2FA_TEXT_DETAILS_LINK" xml:space="preserve">
+    <value>reimposta le tue chiavi di autenticazione.</value>
+  </data>
+  <data name="DISABLE_2FA_TEXT_HEADER" xml:space="preserve">
+    <value>Questa operazione disabiliterà solo la 2FA.</value>
+  </data>
+  <data name="DOWNLOAD_YOUR_DATA" xml:space="preserve">
+    <value>Scarica i tuoi dati</value>
+  </data>
+  <data name="INCORRECT_PASSWORD" xml:space="preserve">
+    <value>La password non è corretta</value>
+  </data>
+  <data name="INVALID_VERFICATION_CODE" xml:space="preserve">
+    <value>Il codice di verifica non è valido.</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="USER_NOTFOUND" xml:space="preserve">
+    <value>Impossibile caricare lo user con ID '{0}'.</value>
+  </data>
+  <data name="VERIFICATION_CODE" xml:space="preserve">
+    <value>Codice di verifica</value>
+  </data>
+  <data name="VERIFY" xml:space="preserve">
+    <value>Verifica</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_ADD_AUTHENTICATOR_APP" xml:space="preserve">
+    <value>Aggiungi app di autenticazione</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_ADD_RESET_APP" xml:space="preserve">
+    <value>Reimposta app di autenticazione</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_ADD_SETUP_APP" xml:space="preserve">
+    <value>Imposta app di autenticazione</value>
+  </data>
+  <data name="2FA_AUTHENTICATION_TITLE" xml:space="preserve">
+    <value>Autenticazione a due fattori (2FA)</value>
+  </data>
+  <data name="2FA_NO_CODES_LEFT" xml:space="preserve">
+    <value>Non hai codice di verifica.</value>
+  </data>
+  <data name="2FA_NO_CODES_LEFT_TEXT" xml:space="preserve">
+    <value>Devi generare nuovi codice di verifica prima di accedere in modalità di recupero.</value>
+  </data>
+  <data name="2FA_N_CODES_LEFT" xml:space="preserve">
+    <value>Hai ancora {0} codici di recupero.</value>
+  </data>
+  <data name="2FA_N_CODES_LEFT_TEXT" xml:space="preserve">
+    <value>Dovresti generare nuovi codici di recupero. </value>
+  </data>
+  <data name="2FA_ONE_CODES_LEFT" xml:space="preserve">
+    <value>Hai ancora 1 codice di verifica.</value>
+  </data>
+  <data name="2FA_ONE_CODES_LEFT_TEXT" xml:space="preserve">
+    <value>Puoi generare un nuovo set  di codici di verifica.</value>
+  </data>
+  <data name="2FA_STATUS_BROWSER_FORGET" xml:space="preserve">
+    <value>Il browser corrente sarà eliminato. Quando eseguirai di nuovo il login da questo browser, ti verrà chiesto di eseguire di nuovo l'autenticazione a due fattori.</value>
+  </data>
+  <data name="AUTHENTICATOR_APP" xml:space="preserve">
+    <value>App di autenticazione</value>
+  </data>
+  <data name="DOWNLOAD" xml:space="preserve">
+    <value>Scarica</value>
+  </data>
+  <data name="EXTERNAL_LOGINS_REGISTERED_LOGIN" xml:space="preserve">
+    <value>Login registrati</value>
+  </data>
+  <data name="EXTERNAL_LOGINS_TITLE" xml:space="preserve">
+    <value>Gestisci i tuoi login esterni</value>
+  </data>
+  <data name="FORGET_THIS_BROWSER" xml:space="preserve">
+    <value>Elimina questo browser</value>
+  </data>
+  <data name="GENERATE" xml:space="preserve">
+    <value>Genera</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES" xml:space="preserve">
+    <value>Genera codiie di autenticazione a due fattori (2FA)</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_INFO_LOSE" xml:space="preserve">
+    <value>Se perdi il tuo device e non hai impostato i codici di recupero, perderai l'accesso al tuo account.</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_SAFE_PLACE" xml:space="preserve">
+    <value>Metti questi codici in un posto sicuro.</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_TEXT" xml:space="preserve">
+    <value>Generando nuovi codici di recupero non cambierai le chiavi utilizzate nell'app di autenticazione. Se vuoi cambiare le chiavi di autenticazione, fallo dall'app</value>
+  </data>
+  <data name="GENERATE_2FA_RECOVERY_CODES_TEXT_LINK" xml:space="preserve">
+    <value>reimposta le tue chiavi di autenticazione.</value>
+  </data>
+  <data name="GENERATE_RECOVERY_CODES" xml:space="preserve">
+    <value>Generate Recovery Codes</value>
+  </data>
+  <data name="PERSONAL_DATA_DELETEINFO" xml:space="preserve">
+    <value>Eliminando questi dati, rimuoverai il tuo account in modo permanente e non sarà possibile recuperarlo.</value>
+  </data>
+  <data name="PERSONAL_DATA_INFO" xml:space="preserve">
+    <value>Il tuo account contiene dati personali che ci hai fornito. Questa pagina ti permette di scaricare questi dati o di eliminarli.</value>
+  </data>
+  <data name="PHONE_NUMBER" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="REMOVE" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_INFO" xml:space="preserve">
+    <value>Se resetti le tue chiavi di autenticazione, la tua app di autenticazione non funzionerà fino a che non la reimposterai.</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_KEY" xml:space="preserve">
+    <value>Reimposta chiavi autenticatore</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_STATUS" xml:space="preserve">
+    <value>La tua chiave di autenticazione è stata resettata. Devi configurare l'app di autenticazione con delle nuove chiavi.</value>
+  </data>
+  <data name="RESET_AUTHENTICATOR_TEXT" xml:space="preserve">
+    <value>Questo processo disabilita l'autenticazione 2FA fino a che non userai l'app di autenticazione. Se non completi la configurazione dell'app di autenticazione, il tuo account non sarà utilizzabile.</value>
+  </data>
+  <data name="RESET_RECOVERY_CODES" xml:space="preserve">
+    <value>Reimposta chiavi di recupero</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="SEND_VERIFICATION_EMAIL" xml:space="preserve">
+    <value>Invia email di verifica</value>
+  </data>
+  <data name="SET_PASSWORD" xml:space="preserve">
+    <value>Imposta password</value>
+  </data>
+  <data name="SET_PASSWORD_STATUS" xml:space="preserve">
+    <value>Password impostata.</value>
+  </data>
+  <data name="SET_PASSWORD_TEXT" xml:space="preserve">
+    <value>Non hai nessuno account per questo sito. Aggiungi un account per eseguire il login senza login esterni.</value>
+  </data>
+  <data name="SET_YOUR_PASSWORD" xml:space="preserve">
+    <value>Imposta la password</value>
+  </data>
+  <data name="STATUS_EXTERNAL_LOGIN_ADDED" xml:space="preserve">
+    <value>Il login esterno è stato aggiunto.</value>
+  </data>
+  <data name="STATUS_EXTERNAL_LOGIN_REMOVED" xml:space="preserve">
+    <value>Il login esterno è stato rimosso.</value>
+  </data>
+  <data name="STATUS_GENERATE_CODES" xml:space="preserve">
+    <value>Hai generato i nuovi codici di recupero.</value>
+  </data>
+  <data name="STATUS_PROFILE_UPDATED" xml:space="preserve">
+    <value>تم تحديث البيانات</value>
+  </data>
+  <data name="STATUS_UPDATE_PROFILE_EMAIL_SEND" xml:space="preserve">
+    <value>Email di verifica inviata. Controlla la tua posta.</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="ACCOUNT_CLICK_LOGIN_LINK" xml:space="preserve">
+    <value>Clicca sul pulsante di login</value>
+  </data>
+  <data name="ACCOUNT_LOGIN_WITH_AZURE_AD" xml:space="preserve">
+    <value>Login con Azure AD</value>
+  </data>
+  <data name="REMEMBER_BROWSER" xml:space="preserve">
+    <value>Ricorda Browser</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="CONSENT_APPLICATION_ACCESS" xml:space="preserve">
+    <value>Accesso applicazione</value>
+  </data>
+  <data name="CONSENT_IS_CHECK_UNREQUIRED" xml:space="preserve">
+    <value>Deseleziona il consenso che non vuoi permettere.</value>
+  </data>
+  <data name="CONSENT_IS_REQUESTING_YOUR_PERMISSION" xml:space="preserve">
+    <value>sta richiedendo il tuoi permesso</value>
+  </data>
+  <data name="CONSENT_NO_NOT_ALLOWED" xml:space="preserve">
+    <value>No, non permettere</value>
+  </data>
+  <data name="CONSENT_PERSONAL_INFORMATION" xml:space="preserve">
+    <value>Informazioni personali</value>
+  </data>
+  <data name="CONSENT_REMEMBER_MY_DECISION" xml:space="preserve">
+    <value>Ricorda la mia scelta</value>
+  </data>
+  <data name="CONSENT_REQUIRED" xml:space="preserve">
+    <value>(richiesto)</value>
+  </data>
+  <data name="CONSENT_YES_ALLOWED" xml:space="preserve">
+    <value>Sì, Consenti</value>
+  </data>
+  <data name="LOGOUT_RETURN_TO" xml:space="preserve">
+    <value>Ritorna a</value>
+  </data>
+  <data name="WOULD_YOU_LIKE_TO_LOGOUT" xml:space="preserve">
+    <value>Vuoi eseguire il logout da IdentityServer?</value>
+  </data>
+  <data name="EXTERNAL_LOGINS_ADD_ANOTHER_SERVICE_TO_LOGIN" xml:space="preserve">
+    <value>Aggiungi un nuovo servizio di login.</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="RESET_PASSWORD_CLICK_HERE_TO_LOGIN" xml:space="preserve">
+    <value>Clicca per eseguire il login</value>
+  </data>
+  <data name="RESET_PASSWORD_YOUR_PASSWORD_HAS_BEEN_RESET" xml:space="preserve">
+    <value>La tua password è stata reimpostata.</value>
+  </data>
+  <data name="SEND_VERIFICATION_CODE" xml:space="preserve">
+    <value>Invia codice di verifica</value>
+  </data>
+  <data name="SEND_VERIFICATION_CODE_SELECT" xml:space="preserve">
+    <value>Seleziona il provider di autenticazione a due fattori:</value>
+  </data>
+  <data name="UNSUCCESSFUL_LOGIN_WITH_SERVICE" xml:space="preserve">
+    <value>Login non riuscito con questo servizio.</value>
+  </data>
+  <data name="CODE_REQUIRED" xml:space="preserve">
+    <value>Codice obbligatorio</value>
+  </data>
+  <data name="INVALID_CODE" xml:space="preserve">
+    <value>Codice non valido.</value>
+  </data>
+  <data name="INVALID_CONSENT_PERMISSION" xml:space="preserve">
+    <value>Devi selezionare almeno una permission.</value>
+  </data>
+  <data name="INVALID_CONSENT_SELECTION" xml:space="preserve">
+    <value>Selezione non valida</value>
+  </data>
+  <data name="STATUS_MESSAGE_PROFILE_HAS_BEEN_RESET" xml:space="preserve">
+    <value>تم تحديث البيانات</value>
+  </data>
+  <data name="ConcurrencyFailure" xml:space="preserve">
+    <value>La concorrenza ottimistica è fallita, l'oggetto è stato modificato.</value>
+    <comment>Errore quando la concorrenza ottimistica fallisce</comment>
+  </data>
+  <data name="DefaultError" xml:space="preserve">
+    <value>Si è verificato un errore imprevisto.</value>
+    <comment>Errore di default</comment>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>La mail '{0}' è giù stata usata.</value>
+    <comment>Errore di duplicazione email</comment>
+  </data>
+  <data name="DuplicateRoleName" xml:space="preserve">
+    <value>Il ruolo '{0}' è già stato usato.</value>
+    <comment>Errore di duplicazione ruolo</comment>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>Lo user name '{0}' è già stato usato.</value>
+    <comment>Errore di duplicazione user name</comment>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Email '{0}' non valida.</value>
+    <comment>Email non valida</comment>
+  </data>
+  <data name="InvalidManagerType" xml:space="preserve">
+    <value>Il tipo {0} deve derivare da {1}&lt;{2}&gt;.</value>
+    <comment>Errore di tipo manager non corretto</comment>
+  </data>
+  <data name="InvalidPasswordHasherCompatibilityMode" xml:space="preserve">
+    <value>Il PasswordHasherCompatibilityMode non è valido.</value>
+    <comment>Errore avvenuto quando il password hasher non è riuscito a recuperare il formato.</comment>
+  </data>
+  <data name="InvalidPasswordHasherIterationCount" xml:space="preserve">
+    <value>L'iterazione deve contenere un valore positivo.</value>
+    <comment>Errore quando l'iterazione è &lt; di 1.</comment>
+  </data>
+  <data name="InvalidRoleName" xml:space="preserve">
+    <value>Il nome del ruolo '{0}' non è alido.</value>
+    <comment>Errore sulla validazione dei ruoli</comment>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>Token non valido.</value>
+    <comment>Token non riconosciuto</comment>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>User name '{0}' non valido, può contenere solo lettere o numeri.</value>
+    <comment>User names può contenere solo lettere o numeri</comment>
+  </data>
+  <data name="LoginAlreadyAssociated" xml:space="preserve">
+    <value>Utente con lo stesso login già esistente.</value>
+    <comment>Login già esistente</comment>
+  </data>
+  <data name="MustCallAddIdentity" xml:space="preserve">
+    <value>AddIdentity deve essere chiamato durante l'inizializzazione dei servizi.</value>
+    <comment>AddIdentity non inizializzato</comment>
+  </data>
+  <data name="NoPersonalDataProtector" xml:space="preserve">
+    <value>Nessun servizio IPersonalDataProtector è stato registrato, è richiesto quando ProtectPersonalData = true.</value>
+    <comment>Non è presente nessun IPersonalDataProtector</comment>
+  </data>
+  <data name="NoRoleType" xml:space="preserve">
+    <value>Nessun RoleType specificato, provare AddRoles&lt;TRole&gt;().</value>
+    <comment>IdentityBuilder.RoleType non specificato</comment>
+  </data>
+  <data name="NoTokenProvider" xml:space="preserve">
+    <value>Nessun IUserTwoFactorTokenProvider&lt;{0}&gt; denominato '{1}' è registrato.</value>
+    <comment>Nessun IUserTwoFactorTokenProvider specificato</comment>
+  </data>
+  <data name="NullSecurityStamp" xml:space="preserve">
+    <value>User security stamp non può essere nullo.</value>
+    <comment>Errore quando lo user security stamp è nullo.</comment>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Password non corretta.</value>
+    <comment>Errore quando le password non corrispondono</comment>
+  </data>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value>Le password devono contenere almeno un numero ('0'-'9').</value>
+    <comment>Password senza numeri</comment>
+  </data>
+  <data name="PasswordRequiresLower" xml:space="preserve">
+    <value>Le password devono contenere almeno una lettera minuscola ('a'-'z').</value>
+    <comment>Password senza lettera minuscola</comment>
+  </data>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>Le password devono contenere almeno un carattere non alfanumerico.</value>
+    <comment>Password senza carattere alfanumerico</comment>
+  </data>
+  <data name="PasswordRequiresUniqueChars" xml:space="preserve">
+    <value>Le passoword devono contenere almeno {0} caratteri differenti.</value>
+    <comment>Password non troppi caratteri simili</comment>
+  </data>
+  <data name="PasswordRequiresUpper" xml:space="preserve">
+    <value>Le password devono contenere almeno una lettera maiuscola ('A'-'Z').</value>
+    <comment>Password senza lettera maiuscola</comment>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>Le password devono essere almeno di {0} caratteri.</value>
+    <comment>Password troppo corta</comment>
+  </data>
+  <data name="RecoveryCodeRedemptionFailed" xml:space="preserve">
+    <value>Creazione Codice di Recupero non riuscito.</value>
+    <comment>Errore su creazione codice di recupero.</comment>
+  </data>
+  <data name="RoleNotFound" xml:space="preserve">
+    <value>Il ruolo {0} non esiste.</value>
+    <comment>Ruolo non esistente</comment>
+  </data>
+  <data name="StoreNotIProtectedUserStore" xml:space="preserve">
+    <value>Lo Store non implementa IProtectedUserStore&lt;TUser&gt; che è richiesta quando ProtectPersonalData = true.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIQueryableRoleStore" xml:space="preserve">
+    <value>Lo Store non implementa IQueryableRoleStore&lt;TRole&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIQueryableUserStore" xml:space="preserve">
+    <value>Lo Store non implementa IQueryableUserStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIRoleClaimStore" xml:space="preserve">
+    <value>Lo Store non implementa IRoleClaimStore&lt;TRole&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserAuthenticationTokenStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserAuthenticationTokenStore&lt;User&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserAuthenticatorKeyStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserAuthenticatorKeyStore&lt;User&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserClaimStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserClaimStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserConfirmationStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserConfirmationStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserEmailStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserEmailStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserLockoutStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserLockoutStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserLoginStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserLoginStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserPasswordStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserPasswordStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserPhoneNumberStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserPhoneNumberStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserRoleStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserRoleStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserSecurityStampStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserSecurityStampStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserTwoFactorRecoveryCodeStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserTwoFactorRecoveryCodeStore&lt;User&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="StoreNotIUserTwoFactorStore" xml:space="preserve">
+    <value>Lo Store non implementa IUserTwoFactorStore&lt;TUser&gt;.</value>
+    <comment>Interfaccia non implementata</comment>
+  </data>
+  <data name="UserAlreadyHasPassword" xml:space="preserve">
+    <value>L'utente ha già una password assegnata.</value>
+    <comment>AddPasswordAsync chiamata quando l'utente ha già la password</comment>
+  </data>
+  <data name="UserAlreadyInRole" xml:space="preserve">
+    <value>L'utente ha già il ruolo '{0}'.</value>
+    <comment>Ruolo già assegnato all'utente</comment>
+  </data>
+  <data name="UserLockedOut" xml:space="preserve">
+    <value>L'utente è bloccato.</value>
+    <comment>Utente bloccato</comment>
+  </data>
+  <data name="UserLockoutNotEnabled" xml:space="preserve">
+    <value>Lockout non abilitato per questo utente.</value>
+    <comment>Lockout non abilitato</comment>
+  </data>
+  <data name="UserNameNotFound" xml:space="preserve">
+    <value>User {0} non esistente.</value>
+    <comment>Utente non esistente</comment>
+  </data>
+  <data name="UserNotInRole" xml:space="preserve">
+    <value>L'utente non ha il ruolo '{0}'.</value>
+    <comment>Utente senza ruolo corretto</comment>
+  </data>
+  <data name="If you lose your device and don't have the recovery codes you will lose access to your account." xml:space="preserve">
+    <value>If you lose your device and don't have the recovery codes you will lose access to your account.</value>
+  </data>
+  <data name="Put these codes in a safe place." xml:space="preserve">
+    <value>Put these codes in a safe place.</value>
+  </data>
+  <data name="Recovery codes" xml:space="preserve">
+    <value>Recovery codes</value>
+  </data>
+  <data name="modalTitleConfirmation" xml:space="preserve">
+    <value>AR Confirmation</value>
+  </data>
+  <data name="modalTitleError" xml:space="preserve">
+    <value>AR Error</value>
+  </data>
+  <data name="modalTitleInformation" xml:space="preserve">
+    <value>AR Information</value>
+  </data>
+  <data name="You must pick at least one permission" xml:space="preserve">
+    <value>AR You must pick at least one permission</value>
+  </data>
+  <data name="Your email address" xml:space="preserve">
+    <value>AR Your email address</value>
+  </data>
+  <data name="Your user identifier" xml:space="preserve">
+    <value>AR Your user identifier</value>
+  </data>
+  <data name="Your user profile information (first name, last name, etc.)" xml:space="preserve">
+    <value>AR Your user profile information (first name, last name, etc.)</value>
+  </data>
+  <data name="jsonStatusError" xml:space="preserve">
+    <value>error</value>
+  </data>
+  <data name="jsonStatusFailed" xml:space="preserve">
+    <value>failed</value>
+  </data>
+  <data name="jsonStatusSuccess" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="UPDATE_EMAIL_ADDRESS" xml:space="preserve">
+    <value>تحديث البريد الإلكتروني</value>
+  </data>
+  <data name="UPDATE_PHONE_NUMBER" xml:space="preserve">
+    <value>تحديث الهاتف</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="RECOVERY_EMAIL_ADDRESS" xml:space="preserve">
+    <value>إدخل بريد إلكتروني إحتياطي</value>
+  </data>
+  <data name="SUBMIT_REQUEST" xml:space="preserve">
+    <value>تقديم الطلب</value>
+  </data>
+  <data name="SUBMIT_APPROVE" xml:space="preserve">
+    <value>مقبول</value>
+  </data>
+  <data name="SUBMIT_REJECT" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="FORGETPASSWORDEMAIL" xml:space="preserve">
+    <value>الرجاء مراجعة البريد الإلكتروني  لتهيئة كلمة السر</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>الصفحة الرئيسية   </value>
+  </data>
+  <data name="E-Office" xml:space="preserve">
+    <value>المكتب الإلكتروني</value>
+  </data>
+  <data name="MilitaryNationalServiceLaw" xml:space="preserve">
+    <value>قانون الخدمة الوطنية العسكرية </value>
+  </data>
+  <data name="AboutThelaw" xml:space="preserve">
+    <value>نبذة من القانون</value>
+  </data>
+  <data name="RequiredDocuments" xml:space="preserve">
+    <value>المستندات المطلوبة </value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>التسجيل  </value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>تسجيل الدخول </value>
+  </data>
+  <data name="DirectorateOfReinforcementAndGeneralMobilization" xml:space="preserve">
+    <value>مديرية التعزيز والتعبئة العامة  </value>
+  </data>
+  <data name="DocumentsRequiredForPostponementAndExemption" xml:space="preserve">
+    <value>المستندات المطلوبة للتأجيل والإعفاء </value>
+  </data>
+  <data name="ExemptionAndPostponementRequests" xml:space="preserve">
+    <value>طلبات الإعفاء والتأجيل</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>الأخبار </value>
+  </data>
+  <data name="FrequentlyAskedQuestions" xml:space="preserve">
+    <value>الأسئلة المتكررة</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>هاتف</value>
+  </data>
+  <data name="INVALID_REQUEST" xml:space="preserve">
+    <value>طلب غير صحيح</value>
+  </data>
+  <data name="DATA_PERSISTANCE_ERROR" xml:space="preserve">
+    <value>خطأ في إستمرار البيانات</value>
+  </data>
+  <data name="USER_MANAGEMENT" xml:space="preserve">
+    <value>إدارة المستخدمين</value>
+  </data>
+  <data name="VIEW_USER_LIST" xml:space="preserve">
+    <value>عرض قائمة المستخدمين</value>
+  </data>
+  <data name="ADD_FAQ_CATEGORY" xml:space="preserve">
+    <value>إضافة فئة التعليمات</value>
+  </data>
+  <data name="DETAILS" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="FAQ_CATEGORY_LIST" xml:space="preserve">
+    <value>قائمة فئات الأسئلة الشائعة</value>
+  </data>
+  <data name="ACTIONS_BUTTONS" xml:space="preserve">
+    <value>أزرار تفاعلية</value>
+  </data>
+  <data name="ADD_FAQ" xml:space="preserve">
+    <value>أضف التعليمات</value>
+  </data>
+  <data name="FAQ_LIST" xml:space="preserve">
+    <value>قائمة التعليمات</value>
+  </data>
+  <data name="PROCESS" xml:space="preserve">
+    <value>معالجة</value>
+  </data>
+  <data name="SEARCH" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Delete_GET" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Delete_POST" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Edit_GET" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Edit_POST" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="GetSingle_GET" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="GetSingle_POST" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="New_GET" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="New_POST" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Process_GET" xml:space="preserve">
+    <value>معالجة</value>
+  </data>
+  <data name="Process_POST" xml:space="preserve">
+    <value>معالجة</value>
+  </data>
+  <data name="Search_GET" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Search_POST" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Submit_POST" xml:space="preserve">
+    <value>تقديم</value>
+  </data>
+  <data name="REMOVE_IMAGE" xml:space="preserve">
+    <value>إزالة الصورة</value>
+  </data>
+  <data name="ADD_IMAGE_GALLERY_CATEGORY" xml:space="preserve">
+    <value>إضافة فئة معرض الصور</value>
+  </data>
+  <data name="ADD_IMAGE_GALLERY" xml:space="preserve">
+    <value>أضف معرض الصور</value>
+  </data>
+  <data name="IMAGE_GALLERY_LIST" xml:space="preserve">
+    <value>قائمة معرض الصور</value>
+  </data>
+  <data name="IMAGE_GALLERY_CATEGORY_LIST" xml:space="preserve">
+    <value>قائمة فئات معرض الصور</value>
+  </data>
+  <data name="EDIT_FAQ_CATEGORY" xml:space="preserve">
+    <value>تعديل فئة التعليمات</value>
+  </data>
+  <data name="EDIT_FAQ" xml:space="preserve">
+    <value>تعديل التعليمات</value>
+  </data>
+  <data name="EDIT_IMAGE_GALLERY" xml:space="preserve">
+    <value>تعديل معرض الصور</value>
+  </data>
+  <data name="EDIT_IMAGE_GALLERY_CATEGORY" xml:space="preserve">
+    <value>تعديل فئة معرض الصور</value>
+  </data>
+  <data name="SHOWUSERLIST" xml:space="preserve">
+    <value>Online User List View</value>
+  </data>
+  <data name="SELECTITEMFROMDROPDOWN" xml:space="preserve">
+    <value>يرجى إختيار قيمة</value>
+  </data>
+  <data name="Mudakkara" xml:space="preserve">
+    <value>البريد الوارد للمذكرة</value>
+  </data>
+  <data name="Kitab" xml:space="preserve">
+    <value>البريد الوارد للكتاب</value>
+  </data>
+  <data name="Circular" xml:space="preserve">
+    <value>البريد الوارد القوائم/التعاميم</value>
+  </data>
+  <data name="btnConvert" xml:space="preserve">
+    <value>معاينة الإجراءات</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="btnReply" xml:space="preserve">
+    <value>الرد</value>
+  </data>
+  <data name="btnRollback" xml:space="preserve">
+    <value>الرجوع</value>
+  </data>
+  <data name="btnTransaction" xml:space="preserve">
+    <value>تحويل المذكرة الى كتاب</value>
+  </data>
+  <data name="btnView" xml:space="preserve">
+    <value>معاينة</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="PINREST" xml:space="preserve">
+    <value>إعادة الرمز</value>
+  </data>
+  <data name="btnAdd" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>منتهي</value>
+  </data>
+  <data name="Corr_Share_Delegate_Add" xml:space="preserve">
+    <value>Correspondence Share Delegate Settings Add</value>
+  </data>
+  <data name="Corr_Share_Delegate_Edit" xml:space="preserve">
+    <value>Correspondence Share Delegate Settings Edit</value>
+  </data>
+  <data name="Corr_Share_Delegate_View" xml:space="preserve">
+    <value>Correspondence Share Delegate Settings View</value>
+  </data>
+  <data name="PIN_NOT_MATCH" xml:space="preserve">
+    <value>الرمز القديم و كلمة السر لمرة واحد لا يتطابقان</value>
+  </data>
+  <data name="CREATE_PIN" xml:space="preserve">
+    <value>إنشاء رمز</value>
+  </data>
+  <data name="PIN_CHANGE" xml:space="preserve">
+    <value>تغيير الرمز</value>
+  </data>
+  <data name="PIN_RESET" xml:space="preserve">
+    <value>إعادة تهيئة الرمز</value>
+  </data>
+  <data name="Corr_Org_Chart_Title" xml:space="preserve">
+    <value>الهيكل التنظيمي</value>
+  </data>
+  <data name="My_Org_Chart" xml:space="preserve">
+    <value>الهيكل التنظيمي</value>
+  </data>
+  <data name="Memo_Chart" xml:space="preserve">
+    <value>قائمة التراسل بواسطة المذكرة</value>
+  </data>
+  <data name="Kitab_Chart" xml:space="preserve">
+    <value>قائمة التراسل بواسطة الكتاب</value>
+  </data>
+  <data name="SelectedUnit" xml:space="preserve">
+    <value>Selected Unit</value>
+  </data>
+  <data name="CorrespondenceMessagesLoadDelegate" xml:space="preserve">
+    <value>التخويل من قبل</value>
+  </data>
+  <data name="CorrespondenceMessagesLoadManager" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="CorrespondenceMessagesLoadSelf" xml:space="preserve">
+    <value>بواسطتي</value>
+  </data>
+  <data name="CorrespondenceMessagesLoadShared" xml:space="preserve">
+    <value>المشاركة من قبل</value>
+  </data>
+  <data name="CIVIL_ID_SEARCH" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="HOME_PAGE" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="Law" xml:space="preserve">
+    <value>القانون</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="CONTACT" xml:space="preserve">
+    <value>تواصل</value>
+  </data>
+  <data name="SERVICES" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="CLICK_CURRENT_DOCUMENT" xml:space="preserve">
+    <value>اضغط هنا للمستندات الحالية</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>مشاهدة المزيد</value>
+  </data>
+  <data name="EmailUs" xml:space="preserve">
+    <value>راسلنا عبر البريد الإلكتروني</value>
+  </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>للاتصل بنا</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>الاصدار</value>
+  </data>
+  <data name="COPYRIGHT" xml:space="preserve">
+    <value>حقوق النشر</value>
+  </data>
+  <data name="KNS" xml:space="preserve">
+    <value>الخدمة العسكرية الوطنية</value>
+  </data>
+  <data name="RightsReserved" xml:space="preserve">
+    <value>جميع الحقوق محفوظة</value>
+  </data>
+  <data name="DIRECT_EXT" xml:space="preserve">
+    <value>مباشر 1844411  داخلي 60026</value>
+  </data>
+  <data name="home_faq_subhead" xml:space="preserve">
+    <value>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</value>
+  </data>
+  <data name="home_services_subhead" xml:space="preserve">
+    <value>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</value>
+  </data>
+  <data name="home_contact_subhead" xml:space="preserve">
+    <value>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</value>
+  </data>
+  <data name="Register_Save" xml:space="preserve">
+    <value>المتابعة</value>
+  </data>
+  <data name="GO_BACK" xml:space="preserve">
+    <value>العودة</value>
+  </data>
+  <data name="REQUEST_INFO" xml:space="preserve">
+    <value>اطلب معلومات</value>
+  </data>
+  <data name="STUDENT_INFO" xml:space="preserve">
+    <value>معلومات المتدرب</value>
+  </data>
+  <data name="PRE_REQUEST_INFO" xml:space="preserve">
+    <value>الطلب السابق</value>
+  </data>
+  <data name="CUR_REQUEST_INFO" xml:space="preserve">
+    <value>الطلب الحالي</value>
+  </data>
+  <data name="DECESION" xml:space="preserve">
+    <value>قرار</value>
+  </data>
+  <data name="ADD_KNS_STATUSCHANGEREQUEST" xml:space="preserve">
+    <value>إضافة طلب تغيير الحالة</value>
+  </data>
+  <data name="DELETE_KNS_STATUSCHANGEREQUEST" xml:space="preserve">
+    <value>حذف طلب تغيير الحالة</value>
+  </data>
+  <data name="EDIT_KNS_STATUSCHANGEREQUEST" xml:space="preserve">
+    <value>تعديل طلب تغيير الحالة</value>
+  </data>
+  <data name="KNS_STATUSCHANGEREQUEST" xml:space="preserve">
+    <value>طلب تغيير الحالة</value>
+  </data>
+  <data name="KNS_STATUSCHANGEREQUESTY_LIST" xml:space="preserve">
+    <value>قائمة طلبات تغيير الحالة</value>
+  </data>
+  <data name="EDIT_KNS_TRAN_REGISTRATIONPROFILE" xml:space="preserve">
+    <value>تعديل ملف تعريف التسجيل</value>
+  </data>
+  <data name="Exempted" xml:space="preserve">
+    <value>معفى</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>منتظر</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>استثناء</value>
+  </data>
+  <data name="Join_Current_Batch_Requst" xml:space="preserve">
+    <value>تاريخ طلب الدفعة الحالية</value>
+  </data>
+  <data name="LOGIN_WITH_PACI" xml:space="preserve">
+    <value>تسجيل الدخول مع هويتي</value>
+  </data>
+  <data name="LOGIN_WITH_PASSWORD" xml:space="preserve">
+    <value>تسجيل الدخول باستخدام كلمة المرور</value>
+  </data>
+  <data name="Join Current Batch Requst" xml:space="preserve">
+    <value>تاريخ طلب الدفعة الحالية</value>
+  </data>
+  <data name="Delay" xml:space="preserve">
+    <value>تأجيل</value>
+  </data>
+  <data name="MYPROFILE" xml:space="preserve">
+    <value>ملفي</value>
+  </data>
+  <data name="BasicInfo" xml:space="preserve">
+    <value>معلومات أساسية</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="ADD_NEW_RECORD" xml:space="preserve">
+    <value>اضف جديد</value>
+  </data>
+  <data name="COPY_LIST" xml:space="preserve">
+    <value>قائمة النسخ</value>
+  </data>
+  <data name="EXCEL_EXPORT" xml:space="preserve">
+    <value>تصدير إلى Excel</value>
+  </data>
+  <data name="CSV_EXPORT" xml:space="preserve">
+    <value>تصدير إلى CSV</value>
+  </data>
+  <data name="PRINT" xml:space="preserve">
+    <value>مطبعة</value>
+  </data>
+  <data name="User_Profile" xml:space="preserve">
+    <value>ملف المستخدم</value>
+  </data>
+  <data name="User profile" xml:space="preserve">
+    <value>ملف تعريفي للمستخدم</value>
+  </data>
+  <data name="KNS_Trainee" xml:space="preserve">
+    <value>مكلف</value>
+  </data>
+  <data name="Recruit_Summary" xml:space="preserve">
+    <value>ملخص المكلف</value>
+  </data>
+  <data name="Batch_Summary" xml:space="preserve">
+    <value>ملخص الدعوة الحالية</value>
+  </data>
+  <data name="Account_Status" xml:space="preserve">
+    <value>حالة المكلف</value>
+  </data>
+  <data name="Your_Batch_Number" xml:space="preserve">
+    <value>رقم الدفعة الخاصة بك</value>
+  </data>
+  <data name="Current_Batch_Number" xml:space="preserve">
+    <value>رقم الدعوة الحالية</value>
+  </data>
+  <data name="Batch_Status" xml:space="preserve">
+    <value>تاريخ بداية الدعوة الحالية</value>
+  </data>
+  <data name="User_Details" xml:space="preserve">
+    <value>بيانات المستخدم</value>
+  </data>
+  <data name="Full_Name" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Pending_Request_info" xml:space="preserve">
+    <value>معلومات طلبات المكلف</value>
+  </data>
+  <data name="Instruction" xml:space="preserve">
+    <value>تعليمات</value>
+  </data>
+  <data name="Punishment" xml:space="preserve">
+    <value>عقوبة</value>
+  </data>
+  <data name="RegistrationStatus" xml:space="preserve">
+    <value>حالة التسجيل</value>
+  </data>
+  <data name="Requested_Date" xml:space="preserve">
+    <value>تاريخ الطلب</value>
+  </data>
+  <data name="Batch_NO" xml:space="preserve">
+    <value>Batch No</value>
+  </data>
+  <data name="Requested_Reason" xml:space="preserve">
+    <value>سبب الطلب</value>
+  </data>
+  <data name="Request_Status" xml:space="preserve">
+    <value>حالة الطلب</value>
+  </data>
+  <data name="TrainingStatus" xml:space="preserve">
+    <value>حالة التدريب</value>
+  </data>
+  <data name="BatchStatus" xml:space="preserve">
+    <value>حالة الدفعة</value>
+  </data>
+  <data name="Education" xml:space="preserve">
+    <value>معلومات التعليم</value>
+  </data>
+  <data name="Family" xml:space="preserve">
+    <value>معلومات الأسرة</value>
+  </data>
+  <data name="FAMILY_INFO_REQUIRED" xml:space="preserve">
+    <value>مطلوب بيانات العائلة</value>
+  </data>
+  <data name="FAMILY_INFO" xml:space="preserve">
+    <value>بيانات العائلة</value>
+  </data>
+  <data name="NO_FAMILY_INFO" xml:space="preserve">
+    <value>لا يوجد بيانات للعائلة</value>
+  </data>
+  <data name="Requested_Decision" xml:space="preserve">
+    <value>القرار</value>
+  </data>
+  <data name="LatestNews" xml:space="preserve">
+    <value>أحدث الأخبار</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>رقم</value>
+  </data>
+  <data name="PLEASE_SELECT_DROPDOWN" xml:space="preserve">
+    <value>يرجى إختيار قيمة</value>
+  </data>
+  <data name="Search_Trainee" xml:space="preserve">
+    <value>بحث عن مكلف</value>
+  </data>
+  <data name="SEND_NOTIFICATION" xml:space="preserve">
+    <value>إرسال إشعار</value>
+  </data>
+  <data name="SELECT_MESSAGE_AND_DATE" xml:space="preserve">
+    <value>إختار الرسالة و التاريخ</value>
+  </data>
+  <data name="GO_BACK_PROFILE_SEARCH" xml:space="preserve">
+    <value>الرجوع للبحث عن مكلفين</value>
+  </data>
+  <data name="Emergency_Contact_Info" xml:space="preserve">
+    <value>بيانات أقرب شخص</value>
+  </data>
+  <data name="NO_ACTIVE_BATCH" xml:space="preserve">
+    <value>لا يوجد دعوة فعالة</value>
+  </data>
+  <data name="Training_Status" xml:space="preserve">
+    <value>أخر تحديث للمتدرب</value>
+  </data>
+  <data name="Select_Message" xml:space="preserve">
+    <value>إختيار الرسالة</value>
+  </data>
+  <data name="REPORT_NEED_TO_SERVE" xml:space="preserve">
+    <value>كشف بالمكلفين المدعوين بالدعوة</value>
+  </data>
+  <data name="REPORT_NEED_TO_SERVE_REGESTER" xml:space="preserve">
+    <value>كشف بالمكلفين المطلوبين و المسجلين بالدعوة</value>
+  </data>
+  <data name="REPORT_NEED_TO_SERVE_UNREGESTER" xml:space="preserve">
+    <value>كشف بالمكلفين المطلوبين و الغير مسجلين بالدعوة</value>
+  </data>
+  <data name="REPORT_MEDICAL_RESULT" xml:space="preserve">
+    <value>كشف بنتائج الفحص الطبي للمكلفين بالدعوة</value>
+  </data>
+  <data name="DEFAULTER_PROFILES" xml:space="preserve">
+    <value>كشف بالمكلفين المتخلفين عن الإلتحاق بالدعوة</value>
+  </data>
+  <data name="Recruit_Punishment" xml:space="preserve">
+    <value> كشف بعقوبات المكلفين </value>
+  </data>
+  <data name="Delay_Profiles" xml:space="preserve">
+    <value>كشف بدعاءات المكلفين بالدعوة </value>
+  </data>
+  <data name="Medical_Finished" xml:space="preserve">
+    <value>كشف بحالة الفحص الطبي للمكلفين بالدعوة </value>
+  </data>
+  <data name="Medical_Results" xml:space="preserve">
+    <value>كشف بنتائج الفحص الطبي للمكلفين بالدعوة </value>
+  </data>
+  <data name="RecruitSummaryBatchReport" xml:space="preserve">
+    <value>إحصائية بالمكلفين المدعوين بالدعوة </value>
+  </data>
+  <data name="Report_Ready_For_Medical" xml:space="preserve">
+    <value>كشف بالمكلفين الجاهزين للفحص الطبي </value>
+  </data>
+  <data name="Summary_Report_Ready_For_Medical" xml:space="preserve">
+    <value>إحصائية بالمكلفين الجاهزين للفحص لطبي </value>
+  </data>
+  <data name="Profile_Certificate" xml:space="preserve">
+    <value>شهادة لمن يهمه الأمر</value>
+  </data>
+  <data name="Professional_Certificate" xml:space="preserve">
+    <value>شهادة مزاولة مهنة حرة</value>
+  </data>
+  <data name="Employement_Certificate" xml:space="preserve">
+    <value>شهادة تعيين</value>
+  </data>
+  <data name="General_Certificate" xml:space="preserve">
+    <value>شهادة البيانات الأساسية</value>
+  </data>
+  <data name="NOTIFICATION_SENT" xml:space="preserve">
+    <value>تم إرسال الإخطار بنجاح</value>
+  </data>
+  <data name="NEEDTOSERVE" xml:space="preserve">
+    <value>مطلوب للخدمة</value>
+  </data>
+  <data name="NEEDTOSERVEREGISTER" xml:space="preserve">
+    <value> المسجلين مطلوبين للخدمة </value>
+  </data>
+  <data name="NEEDTOSERVENOTREGISTER" xml:space="preserve">
+    <value>الغير مسجلين ومطلوبين للخدمة</value>
+  </data>
+  <data name="KNS_SEARCH_PROFILE" xml:space="preserve">
+    <value>بحث عن ملف مجند بالخدمة الوطنية</value>
+  </data>
+  <data name="KNS_STATUSCHANGEREQUESTRESOLUTION_LIST" xml:space="preserve">
+    <value>قائمة طلبات تغيير حالة الخدمة الوطنية</value>
+  </data>
+  <data name="ADD_KNS_TRAN_PHASEINFO" xml:space="preserve">
+    <value>إضافة بيانات مرحلة</value>
+  </data>
+  <data name="KNS_MEDICALY_LIST" xml:space="preserve">
+    <value>قائمة الفحص الطبي</value>
+  </data>
+  <data name="KNS_BATCHY_LIST" xml:space="preserve">
+    <value>قائمة الدعوة</value>
+  </data>
+  <data name="EDIT_KNS_BATCH" xml:space="preserve">
+    <value>تعديل الدعوة</value>
+  </data>
+  <data name="DELETE_KNS_BATCH" xml:space="preserve">
+    <value>مسح الدعوة</value>
+  </data>
+  <data name="KNS_BATCH" xml:space="preserve">
+    <value>عرض الدعوة</value>
+  </data>
+  <data name="Relation" xml:space="preserve">
+    <value>العلاقة</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="Civil_ID" xml:space="preserve">
+    <value>الرقم المدني</value>
+  </data>
+  <data name="remarks" xml:space="preserve">
+    <value>ملاحظة</value>
+  </data>
+  <data name="Request_for_Join_Current_Batch" xml:space="preserve">
+    <value>طلب إنضمام للدعوة الحالية</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>مقبول</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>مرفوض</value>
+  </data>
+  <data name="Cancled" xml:space="preserve">
+    <value>ملغى</value>
+  </data>
+  <data name="Exampted" xml:space="preserve">
+    <value>إعفاء</value>
+  </data>
+  <data name="RecruitDetailsBatchReport" xml:space="preserve">
+    <value>كشف بالكلفين المدعوين بالدعوة</value>
+  </data>
+  <data name="Fit" xml:space="preserve">
+    <value>جاهز للخدمة الميدانية</value>
+  </data>
+  <data name="Fit_for_Admin" xml:space="preserve">
+    <value>جاهز للخدمة الإدارية</value>
+  </data>
+  <data name="Unfit" xml:space="preserve">
+    <value>غير لائق</value>
+  </data>
+  <data name="ProfileList" xml:space="preserve">
+    <value>قائمة المكلفين</value>
+  </data>
+  <data name="SELECTPROFILE" xml:space="preserve">
+    <value>إختيار المكلف</value>
+  </data>
+  <data name="REMOVESERVCEDATA" xml:space="preserve">
+    <value>AR: Remove old data of</value>
+  </data>
+  <data name="SearchByDate" xml:space="preserve">
+    <value>AR: Search By Date</value>
+  </data>
+  <data name="SearchByCivilId" xml:space="preserve">
+    <value>AR: Search By Civil Id</value>
+  </data>
+  <data name="Attachment" xml:space="preserve">
+    <value>الرجاء إدخال مرفقات</value>
+  </data>
+  <data name="KNS_PendingChangeRequestTask" xml:space="preserve">
+    <value>الطلبات قيد الانتظار</value>
+  </data>
+  <data name="KNS_Registration_Notification" xml:space="preserve">
+    <value>Registration Notification</value>
+  </data>
+  <data name="KNS_Registration_Warning" xml:space="preserve">
+    <value>Registration_Warning</value>
+  </data>
+  <data name="KNS_PendingChangeRequestTaskDetail" xml:space="preserve">
+    <value>Pending Change Request Task Detail</value>
+  </data>
+  <data name="MOHE_Service_Data" xml:space="preserve">
+    <value>التعليم العالي</value>
+  </data>
+  <data name="Kuwait_University_Service_data" xml:space="preserve">
+    <value>جامعة الكويت</value>
+  </data>
+  <data name="PAAET_Service_data" xml:space="preserve">
+    <value>الهيئة العامة للتعليم التطبيقي والتدريب</value>
+  </data>
+  <data name="PUC_Service_data" xml:space="preserve">
+    <value>الجامعات الخاصة</value>
+  </data>
+  <data name="Disabled_Service_data" xml:space="preserve">
+    <value>المعاقين البيانات</value>
+  </data>
+  <data name="Departed_Service_data" xml:space="preserve">
+    <value>الوفيات</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاريخ</value>
+  </data>
+  <data name="CONFIRM_REQUEST" xml:space="preserve">
+    <value>هل أنت متأكد؟</value>
+  </data>
+  <data name="CONFIRM_REQUEST_MESSAGE" xml:space="preserve">
+    <value>سيقوم النظام بتشغيل مهمة من تلقي البيانات من الخدمات المحددة.</value>
+  </data>
+  <data name="KNSTRANSPUNISHMENTY_LIST" xml:space="preserve">
+    <value>قائمة العقوبات</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>سجلات المكلف</value>
+  </data>
+  <data name="Add_GET" xml:space="preserve">
+    <value>أضف</value>
+  </data>
+  <data name="ADD_KNSTRANSPUNISHMENT" xml:space="preserve">
+    <value>Recruite Punishment</value>
+  </data>
+  <data name="CivilId" xml:space="preserve">
+    <value>Civill ID</value>
+  </data>
+  <data name="DownloadServiceData" xml:space="preserve">
+    <value>تحميل بيانات الربط مع الوزارات للدعوة:</value>
+  </data>
+  <data name="ViewServiceDataByCivilId" xml:space="preserve">
+    <value>Ministry Services By Civil ID</value>
+  </data>
+  <data name="ViewServiceDataByDateRange" xml:space="preserve">
+    <value>تحميل بيانات خدمات الوزارة حسب النطاق الزمني</value>
+  </data>
+  <data name="EDIT_KNSTRANSPUNISHMENT" xml:space="preserve">
+    <value>Recruit Punishment</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>من تاريخ</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>إلى تاريخ</value>
+  </data>
+  <data name="Request_for_MedicalReExam" xml:space="preserve">
+    <value>طلب إعادة الفحص الطبي</value>
+  </data>
+  <data name="Admin_Delay" xml:space="preserve">
+    <value>تأجيل إداري</value>
+  </data>
+  <data name="Admin_Exemption" xml:space="preserve">
+    <value>إعفاء إداري</value>
+  </data>
+  <data name="Joined" xml:space="preserve">
+    <value>ملتحق</value>
+  </data>
+  <data name="Medical_Delay" xml:space="preserve">
+    <value>تأجيل طبي</value>
+  </data>
+  <data name="Medical_Exemption" xml:space="preserve">
+    <value>إعفاء طبي</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>إشعار</value>
+  </data>
+  <data name="Not_Joined" xml:space="preserve">
+    <value>غير ملتحق</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>إحصائيات</value>
+  </data>
+  <data name="Total_Applicant" xml:space="preserve">
+    <value>المجموع</value>
+  </data>
+  <data name="Total_Register" xml:space="preserve">
+    <value>المسجلين</value>
+  </data>
+  <data name="Total_Un_Register" xml:space="preserve">
+    <value>الغير مسجلين</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>تنبيه</value>
+  </data>
+  <data name="ADD_KNS_BATCH" xml:space="preserve">
+    <value>إنشاء دعوة</value>
+  </data>
+  <data name="ADD_KNS_NOTIFICATION" xml:space="preserve">
+    <value>إرسال الإشعارات</value>
+  </data>
+  <data name="INVALID_CIVILID" xml:space="preserve">
+    <value>Civil ID Invalid</value>
+  </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>Incorrect Password</value>
+  </data>
+  <data name="ADD_KNS_MEDICAL" xml:space="preserve">
+    <value>الفحص الطبي</value>
+  </data>
+  <data name="EDIT_KNS_MEDICAL" xml:space="preserve">
+    <value>الفحص الطبي</value>
+  </data>
+  <data name="KNS_MEDICAL" xml:space="preserve">
+    <value>الفحص الطبي</value>
+  </data>
+  <data name="Re_Exam" xml:space="preserve">
+    <value>إعادة فحص</value>
+  </data>
+  <data name="Clear_Data" xml:space="preserve">
+    <value>إلغاء التحديد</value>
+  </data>
+  <data name="Get_Data" xml:space="preserve">
+    <value>تحميل البيانات</value>
+  </data>
+  <data name="SAVE_REQUEST" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Services_Data_Process" xml:space="preserve">
+    <value>معالجة بيانات الربط مع الوزارات</value>
+  </data>
+  <data name="Service_Data" xml:space="preserve">
+    <value>جميع بيانات الجهات</value>
+  </data>
+  <data name="TotalNotProcessData" xml:space="preserve">
+    <value>مجموع البيانات التي لم يتم معالجتها</value>
+  </data>
+  <data name="TotalProcessData" xml:space="preserve">
+    <value>مجموع البيانات المعالجة</value>
+  </data>
+  <data name="TotalServiceData" xml:space="preserve">
+    <value>مجموع البيانات التي تم تحميلها</value>
+  </data>
+  <data name="REGISTER_NEW" xml:space="preserve">
+    <value>تسجيل عن طريق مسؤول النظام</value>
+  </data>
+  <data name="Medical_Result_Summary" xml:space="preserve">
+    <value>إحصائية بنتائج الفحص الطبي للمكلفين</value>
+  </data>
+  <data name="Ready_For_Medical_Summary" xml:space="preserve">
+    <value>كشف بالمكلفين الجاهزين للفحص الطبي</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="DATA_UPDATE_CONFIRMATION" xml:space="preserve">
+    <value>تم تحديث البيانات</value>
+  </data>
+  <data name="DATA_UPDATE_ERROR" xml:space="preserve">
+    <value>خطأ في التحديث</value>
+  </data>
+  <data name="DATA_SAVE_CONFIRMATION" xml:space="preserve">
+    <value>تم تحديث البيانات</value>
+  </data>
+  <data name="DATA_DELETE_CONFIRMATION" xml:space="preserve">
+    <value>تم حذف البيانات بنجاح</value>
+  </data>
+  <data name="Action_Taken" xml:space="preserve">
+    <value>تم اتخاذ فعل</value>
+  </data>
+  <data name="Cenceled" xml:space="preserve">
+    <value>Cenceled</value>
+  </data>
+  <data name="Civil_ID_Already_Exists" xml:space="preserve">
+    <value>الرقم المدني مسجل</value>
+  </data>
+  <data name="NO_DATA_FOUND" xml:space="preserve">
+    <value>لا توجد بيانات</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>وصف العقوبة</value>
+  </data>
+  <data name="Certificate" xml:space="preserve">
+    <value>النماذج</value>
+  </data>
+  <data name="DelayRequest" xml:space="preserve">
+    <value>طلب تأجيل</value>
+  </data>
+  <data name="ExemptedRequest" xml:space="preserve">
+    <value>طلب إعفاء</value>
+  </data>
+  <data name="RequiredDocumentsForJoining" xml:space="preserve">
+    <value>المستندات المطلوبة لالتحاق</value>
+  </data>
+  <data name="EmergencyContact" xml:space="preserve">
+    <value>بيانات أقرب شخص</value>
+  </data>
+  <data name="MANPOWER_Service_data" xml:space="preserve">
+    <value>القوى العاملة</value>
+  </data>
+  <data name="CivilServiceCom_Service_data" xml:space="preserve">
+    <value>ديوان الخدمة المدنية</value>
+  </data>
+  <data name="KFSD_Service_data" xml:space="preserve">
+    <value>الأطفاء العام</value>
+  </data>
+  <data name="KPC_Service_data" xml:space="preserve">
+    <value>مؤسسة البترول الكويتية</value>
+  </data>
+  <data name="MOE_Service_data" xml:space="preserve">
+    <value>وزارة التربية</value>
+  </data>
+  <data name="MOI_Service_data" xml:space="preserve">
+    <value>وزارة الداخلية</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>تقرير</value>
+  </data>
+  <data name="Generate_DelayApplication" xml:space="preserve">
+    <value>طلب تأجيل</value>
+  </data>
+  <data name="Generate_ExceptionApplication" xml:space="preserve">
+    <value>طلب إستثناء</value>
+  </data>
+  <data name="Generate_ExemptionApplication" xml:space="preserve">
+    <value>طلب إعفاء</value>
+  </data>
+  <data name="RecruitSituation_Report" xml:space="preserve">
+    <value>بيان وضع مكلف</value>
+  </data>
+  <data name="REPORT_UnRegisterandLetRegPunishment" xml:space="preserve">
+    <value>كشف بالمكلفين المتخلفين عن التسجيل في الخدمة الوطنية</value>
+  </data>
+  <data name="Generate_MedicalRequest" xml:space="preserve">
+    <value>توصية اللجنة الطبية</value>
+  </data>
+  <data name="Stop_Service" xml:space="preserve">
+    <value>وقف الخدمة</value>
+  </data>
+  <data name="FilterType" xml:space="preserve">
+    <value>نوع المتخلفين</value>
+  </data>
+  <data name="FilterType_All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="FilterType_NotJoinBatch" xml:space="preserve">
+    <value>غير ملتحق</value>
+  </data>
+  <data name="FilterType_JoinBatch" xml:space="preserve">
+    <value>ملتحق</value>
+  </data>
+  <data name="FilterType_NotHaveMedicalAppionment" xml:space="preserve">
+    <value>ليس لديهم موعد طبي</value>
+  </data>
+  <data name="FilterType_HaveMedicalAppionmentButNoResult" xml:space="preserve">
+    <value>لديهم موعد طبي و ليس لديهم نتيجة</value>
+  </data>
+  <data name="FilterType_HaveMedicalAppionment_FitForAdmin" xml:space="preserve">
+    <value>جاهز إداري</value>
+  </data>
+  <data name="FilterType_HaveMedicalAppionment_FitForField" xml:space="preserve">
+    <value>جاهز ميداني</value>
+  </data>
+  <data name="FilterType_HaveMedicalAppionment_Fit" xml:space="preserve">
+    <value>لائق</value>
+  </data>
+  <data name="FilterType_HaveMedicalAppionment_UnFit" xml:space="preserve">
+    <value>غير لائق</value>
+  </data>
+  <data name="Generate_DisabledCertificate" xml:space="preserve">
+    <value>شهادة ذوي الإعاقة</value>
+  </data>
+  <data name="FilterType_Fit_NotJoinBatch" xml:space="preserve">
+    <value>لائق طبي و لم يلتحق</value>
+  </data>
+  <data name="Paci_Data_Sync" xml:space="preserve">
+    <value>طلب مصادقة لتحديث البيانات</value>
+  </data>
+  <data name="FilterType_DosenotHaveAnyExcuise" xml:space="preserve">
+    <value>متخلف ليس لديه ( اعفاء - تأجيل - استثناء )</value>
+  </data>
+  <data name="FilterType_NoExcuseNotJoinNoMedicalResult" xml:space="preserve">
+    <value>متخلف لديه ( موعد طبي)</value>
+  </data>
+  <data name="FilterType_NoExcuseNotJoinHaveMedicalResult" xml:space="preserve">
+    <value>متخلف لديه ( نتيجه طبيه)</value>
+  </data>
+  <data name="MOINewService_Service_data" xml:space="preserve">
+    <value> وزارة الداخلية</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>المجموع</value>
+  </data>
+  <data name="FilterType_NoExcuseNotJoinNoAppoinment" xml:space="preserve">
+    <value>متخلف ليس لديه ( اعفاء - تأجيل - استثناء - نتيجه طبيه - موعد طبي)</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>AR:Document</value>
+  </data>
+  <data name="Civil_Id_DV" xml:space="preserve">
+    <value>صورة البطاقة المدنية</value>
+  </data>
+  <data name="Document_Not_Clear_DV" xml:space="preserve">
+    <value>الصوره غير واضحة</value>
+  </data>
+  <data name="Duplicate_File_DV" xml:space="preserve">
+    <value>تم ارفاق المستند مسبقا</value>
+  </data>
+  <data name="Education_Certificate_DV" xml:space="preserve">
+    <value>أخر شهادة دراسية</value>
+  </data>
+  <data name="Iban_DV" xml:space="preserve">
+    <value>أيبان البنك</value>
+  </data>
+  <data name="Personal_Photo_DV" xml:space="preserve">
+    <value>صورة شخصية 4*6 خلفية زرقاء مكشوف الرأس</value>
+  </data>
+  <data name="PFISS_Certificate_DV" xml:space="preserve">
+    <value>شهادة التأمينات الاجتماعية</value>
+  </data>
+  <data name="Salary_Certificate_DV" xml:space="preserve">
+    <value>تقرير راتب مفصل حديث للموظفين</value>
+  </data>
+  <data name="Wrong_Document_DV" xml:space="preserve">
+    <value>خطأ في الملف</value>
+  </data>
+  <data name="DenyReasonDetails_DV" xml:space="preserve">
+    <value>رفض تفاصيل السبب</value>
+  </data>
+  <data name="DenyReason_DV" xml:space="preserve">
+    <value>رفض السبب</value>
+  </data>
+  <data name="Status_DV" xml:space="preserve">
+    <value>حالة</value>
+  </data>
+  <data name="Documents_Upload" xml:space="preserve">
+    <value>إرفاق المستندات</value>
+  </data>
+  <data name="KnsNo" xml:space="preserve">
+    <value>رقم المجند</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>تعليقات</value>
+  </data>
+  <data name="Please_select_reason" xml:space="preserve">
+    <value>الرجاء تحديد السبب قبل الإرسال</value>
+  </data>
+  <data name="Please_select_status" xml:space="preserve">
+    <value>الرجاء تحديد الحالة</value>
+  </data>
+  <data name="Accepted_File_Type" xml:space="preserve">
+    <value>نوع الملف المقبول:</value>
+  </data>
+  <data name="btn_add_deny_reason" xml:space="preserve">
+    <value>إضافة سبب الرفض</value>
+  </data>
+  <data name="btn_clear_comments" xml:space="preserve">
+    <value>مسح التعليقات</value>
+  </data>
+  <data name="Select_Single_File" xml:space="preserve">
+    <value>الرجاء تحديد ملف واحد ل</value>
+  </data>
+  <data name="Medical_Board_Form" xml:space="preserve">
+    <value>تقرير الفحص الطبي العام</value>
+  </data>
+  <data name="Medical_Form" xml:space="preserve">
+    <value>تقرير الفحص الطبي للمكلف</value>
+  </data>
+  <data name="NO_KNSNO" xml:space="preserve">
+    <value>لا يمكنك تغيير حالة المجند هنا. الرجاء تغييرها في النظام الالي.</value>
+  </data>
+  <data name="KnsEmploymentLtr" xml:space="preserve">
+    <value>شهــــــــــــــــادة تعييـــــــــــن ( للمجند )</value>
+  </data>
+  <data name="KnsToWhom" xml:space="preserve">
+    <value>شهادة لمن يهمه الأمر ( للمجند )</value>
+  </data>
+  <data name="KNSEndServiceInfo" xml:space="preserve">
+    <value>انتهاء الخدمة العاملة للخدمة الوطنية العسكرية</value>
+  </data>
+  <data name="Medical_Attend" xml:space="preserve">
+    <value>حضور طبي</value>
+  </data>
+  <data name="Appt_Status" xml:space="preserve">
+    <value>حالة التعيين</value>
+  </data>
+  <data name="Appointment_Date" xml:space="preserve">
+    <value>تاريخ الموعد</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>عدد المواعيد</value>
+  </data>
+  <data name="Attended" xml:space="preserve">
+    <value>حضر</value>
+  </data>
+  <data name="Not_Attended" xml:space="preserve">
+    <value>لم يحضر</value>
+  </data>
+  <data name="Medical_Appt_List" xml:space="preserve">
+    <value>قائمة المواعيد الطبية</value>
+  </data>
+  <data name="No_of_Medical_Appt" xml:space="preserve">
+    <value>عدد المواعيد الطبية</value>
+  </data>
+  <data name="EmployementCertificate_Reserve" xml:space="preserve">
+    <value>شهادة تعين (احتياط)</value>
+  </data>
+  <data name="ProfileCertificate_Reserve" xml:space="preserve">
+    <value>شهادة لمن يهمه الأمر (احتياط)</value>
+  </data>
+  <data name="Document_Verification_List" xml:space="preserve">
+    <value>عرض قائمة التحقق من الوثائق</value>
+  </data>
+  <data name="MedicalData" xml:space="preserve">
+    <value>نتيجة طبية</value>
+  </data>
+  <data name="FilterType_DocumentVerified" xml:space="preserve">
+    <value>تم التحقق من الوثيقة</value>
+  </data>
+  <data name="Include_All" xml:space="preserve">
+    <value>تضمين الإخطارات التي تم إرسالها بالفعل</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>لطلب</value>
+  </data>
+  <data name="Service_Start_Date" xml:space="preserve">
+    <value>تاريخ الالتحاق بالخدمة</value>
+  </data>
+  <data name="Service_End_Date" xml:space="preserve">
+    <value>تاريخ انهاء الخدمة</value>
+  </data>
+  <data name="Expected_End_Service" xml:space="preserve">
+    <value>تاريخ انهاء الخدمة المقررة</value>
+  </data>
+  <data name="Extra_Service_Days" xml:space="preserve">
+    <value>عدد ايام الخدمة الإضافيّة</value>
+  </data>
+  <data name="Service_Information" xml:space="preserve">
+    <value>الخدمة</value>
+  </data>
+  <data name="Process_Information" xml:space="preserve">
+    <value>تاريخ المرحلة</value>
+  </data>
+  <data name="Download_Excel" xml:space="preserve">
+    <value>تحميل إكسل</value>
+  </data>
+  <data name="KNSVacationInfo" xml:space="preserve">
+    <value>نموذج إجازة</value>
+  </data>
+  <data name="KnsToWhomDetail" xml:space="preserve">
+    <value>شهادة لمن يهمه الأمر (تفصيلية)</value>
+  </data>
+</root>

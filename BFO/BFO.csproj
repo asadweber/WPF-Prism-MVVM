@@ -1,9 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+ <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.100.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BDO\BDO.csproj" />
+    <ProjectReference Include="..\DAC\DAC.csproj" />
+    <ProjectReference Include="..\IBFO\IBFO.csproj" />
+    <ProjectReference Include="..\IDAC\IDAC.csproj" />
+  </ItemGroup>
 
 </Project>

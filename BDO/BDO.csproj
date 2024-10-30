@@ -7,7 +7,38 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Core" Version="9.0.537" />
+    <Compile Remove="DataAccessObjects\NewFolder\**" />
+    <Compile Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
+    <EmbeddedResource Remove="DataAccessObjects\NewFolder\**" />
+    <EmbeddedResource Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
+    <None Remove="DataAccessObjects\NewFolder\**" />
+    <None Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataAccessObjects\ExtendedEntities\KNSDomainUrlSetting.cs" />
+    <Compile Remove="DataAccessObjects\ExtendedEntities\PaciFileUploadingModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="ClosedXML" Version="0.100.3" />
+	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.10" />
+	  <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.7" />
+	  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.14.1" />
+	  <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="Prism.Core" Version="9.0.537" />
+	  <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CLL\CLL.csproj" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <Compile Update="DataAccessObjects\KNS\gen_phasesEntity.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>-->
 
 </Project>
