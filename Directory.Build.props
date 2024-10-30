@@ -4,8 +4,8 @@
 		<PrismCoreVersion>9.0.537</PrismCoreVersion>
 		<PrismUnityVersion>9.0.537</PrismUnityVersion>
 		<ExtendedWpfToolkitVersion>4.6.1</ExtendedWpfToolkitVersion>
-
-
+		<ClosedXMLVersion>0.104.1</ClosedXMLVersion>
+		
 		<!-- Common properties for all projects -->
 		<OutputPath>$(SolutionDir)\bin\</OutputPath>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>

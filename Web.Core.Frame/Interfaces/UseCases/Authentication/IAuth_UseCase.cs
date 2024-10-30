@@ -16,19 +16,7 @@ namespace Web.Core.Frame.Interfaces.UseCases
         Task<bool> ChangePassword(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
 
 
-        //
-        Task<bool> GetFrontUserCivilIDValidated(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-        Task<bool> WebFrontCivilIdValidateUsingPaciAPI(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-        Task<bool> GetQRCodeFromPACIToAuthenticate(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-        Task<bool> LoginWebFrontPACIRequest(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-		Task<bool> CivilIdValidateFromCDUsingPaciAPI(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-
-        Task<bool> LoginWebFrontWithPassword(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-
-
-		Task<bool> SyncProfileAuthRequestByCivilId(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-
-
+   
 
 
 	}

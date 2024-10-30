@@ -48,8 +48,6 @@ namespace Web.Core.Frame.CustomIdentityManagers
         }
 
         private readonly IConfiguration _config;
-        private readonly hrwebapiconnectionsettings _objhrwebapiSettigns;
-        private readonly IHttpClientHR _ihttpclienthr;
 
 
         public ApplicationSignInManager(
@@ -61,8 +59,7 @@ namespace Web.Core.Frame.CustomIdentityManagers
             ILogger<SignInManager<owin_userEntity>> logger,
             IAuthenticationSchemeProvider schemes,
             IUserConfirmation<owin_userEntity> confirmation,
-            IConfiguration config, 
-            IHttpClientHR ihttpclienthr
+            IConfiguration config 
         )
         : base(userManager, contextAccessor, claimsFactory, optionsAccessor, logger, schemes, confirmation)
         {
@@ -86,8 +83,6 @@ namespace Web.Core.Frame.CustomIdentityManagers
             Logger = logger;
             _schemes = schemes;
             _config = config;
-            _objhrwebapiSettigns = _config.GetSection(nameof(hrwebapiconnectionsettings)).Get<hrwebapiconnectionsettings>();
-            _ihttpclienthr = ihttpclienthr;
         }
 
         public override async Task<ClaimsPrincipal> CreateUserPrincipalAsync(owin_userEntity user) => await ClaimsFactory.CreateAsync(user);

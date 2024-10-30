@@ -1,7 +1,6 @@
 ﻿using AppConfig.EncryptionHandler;
 using BDO.Core.Base;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
-using BDO.Core.DataAccessObjects.HRDomainModel;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -124,20 +123,8 @@ namespace Web.Core.Frame.CustomIdentityManagers
             }
 
             var user = await Store.FindByNameAsync(userName, CancellationToken);
-            if (user != null)
                 return user;
-            else
-            {
-                var cast = Store as CustomUserStore;
-                hrprofileJsonString = _stringCompression.UnZip(hrprofileJsonString);
-                GetMilShortInfoByBasicMilEntity objUserHRProfile = JsonConvert.DeserializeObject<GetMilShortInfoByBasicMilEntity>(hrprofileJsonString);
-                objUserHRProfile.jobresponsibility = string.Empty;
-                objUserHRProfile.unitrole = string.Empty;
-                objUserHRProfile.jobresponsibility = password;
-
-                user = await cast.createUserProfileAsync(objUserHRProfile, CancellationToken);
-                return user;
-            }    
+            
         }
 
 

@@ -10,7 +10,6 @@ using CLL.Localization;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using Web.Core.Frame.Interfaces;
 using Web.Core.Frame.Interfaces.Services;
-using BDO.Core.DataAccessObjects.HRDomainModel;
 
 namespace Web.Core.Frame.CustomStores
 {
@@ -611,63 +610,6 @@ namespace Web.Core.Frame.CustomStores
         {
             throw new NotImplementedException();
         }
-
-
-
-        public async Task<owin_userEntity> createUserProfileAsync(GetMilShortInfoByBasicMilEntity objUserHRProfile, CancellationToken cancellationToken)
-        {
-            owin_userEntity user = new owin_userEntity();
-
-            DateTime dt = DateTime.Now;
-
-            BDO.Core.Base.SecurityCapsule sec = _seccapfillerfromjwtclaim.SetCap(objUserHRProfile);
-            user.username = objUserHRProfile.ademail;
-            user.emailaddress = objUserHRProfile.ademail;
-            user.loweredusername = objUserHRProfile.ademail.ToLower();
-            user.mobilenumber = objUserHRProfile.mobileno;
-            user.userprofilephoto = objUserHRProfile.photo;
-            user.isanonymous = false;
-
-            user.userid = new Guid();
-            user.applicationid = new Guid("c4077e81-cd92-42e9-8811-b93a6578a4c1");
-            user.ischildenable = false;
-            user.masprivatekey = "REF";
-            user.maspublickey = "REF";
-            user.password = objUserHRProfile.jobresponsibility;
-            user.mobilepin = "121212";
-            user.passwordquestion = "what is my name?";
-            user.passwordanswer = "my name";
-            user.approved = true;
-            user.locked = false;
-            user.lastlogindate = null;
-            user.lastpasschangeddate = null;
-            user.lastlockoutdate = null;
-            user.failedpasswordattemptcount = null;
-            user.comment = "created at signin " + dt.ToString();
-            user.lastactivitydate = null;
-            user.isreviewed = true;
-            user.reviewedby = 123;
-            user.reviewedbyusername = objUserHRProfile.fullname;
-            user.revieweddate = dt;
-            user.isapproved = true;
-            user.approvedby = 123;
-            user.approvedbyusername = objUserHRProfile.fullname;
-            user.approveddate = dt;
-            user.isemailconfirmed = true;
-            user.emailconfirmationbyuserdate = dt;
-            user.twofactorenable = null;
-            user.ismobilenumberconfirmed = true;
-            user.mobilenumberconfirmedbyuserdate = dt;
-            user.mobilenumberconfirmedbyuserdate = dt;
-            user.BaseSecurityParam = new BDO.Core.Base.SecurityCapsule();
-            user.BaseSecurityParam = sec;
-            user.roleid = 12;
-
-            long? i = await BFC.Core.FacadeCreatorObjects.Security.ExtendedPartial.FCCKAFUserSecurity.GetFacadeCreate(_contextAccessor).createuser(user, cancellationToken);
-
-            return user;
-        }
-
 
 
 

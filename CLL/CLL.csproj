@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ClosedXML" Version="0.100.3" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="5.0.3" />
+    <PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="8.0.10" />
   </ItemGroup>
 
   <ItemGroup>

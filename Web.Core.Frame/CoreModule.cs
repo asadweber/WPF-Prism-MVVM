@@ -10,8 +10,6 @@ namespace Web.Core.Frame
         {
             builder.RegisterType<LoginUseCase>().As<ILoginUseCase>().InstancePerLifetimeScope();
 
-            builder.RegisterType<RegisterUserUseCase>().As<IRegisterUserUseCase>().InstancePerLifetimeScope();
-            
             builder.RegisterType<ExchangeRefreshTokenUseCase>().As<IExchangeRefreshTokenUseCase>().InstancePerLifetimeScope();
 
 

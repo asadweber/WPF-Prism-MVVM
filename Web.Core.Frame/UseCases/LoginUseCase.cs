@@ -27,9 +27,6 @@ namespace Web.Core.Frame.UseCases
         private readonly IStringLocalizer _sharedLocalizer;
         private readonly ILogger<LoginUseCase> _logger;
         private readonly IConfiguration _config;
-        private readonly hrwebapiconnectionsettings _objhrwebapiSettigns;
-
-        private readonly IHttpClientHR _ihttpclienthr;
 
         public LoginUseCase(
             IHttpContextAccessor contextAccessor,
@@ -38,7 +35,6 @@ namespace Web.Core.Frame.UseCases
             ITokenFactory tokenFactory,
             IStringLocalizerFactory factory,
             ILoggerFactory loggerFactory
-            , IHttpClientHR ihttpclienthr
             , IConfiguration config)
         {
             _contextAccessor = contextAccessor;
@@ -48,13 +44,11 @@ namespace Web.Core.Frame.UseCases
             _logger = loggerFactory.CreateLogger<LoginUseCase>();
             _config = config;
 
-            _objhrwebapiSettigns = _config.GetSection(nameof(hrwebapiconnectionsettings)).Get<hrwebapiconnectionsettings>();
 
             var type = typeof(SharedResource);
             var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
             _sharedLocalizer = factory.Create("SharedResource", assemblyName.Name);
 
-            _ihttpclienthr = ihttpclienthr;
         }
 
         public async Task<bool> Handle(LoginRequest message, IOutputPort<LoginResponse> outputPort)
@@ -64,44 +58,7 @@ namespace Web.Core.Frame.UseCases
                 string hrTokenJsonString = string.Empty;
                 string hrprofileJsonString = string.Empty;
                 bool ADLogin = false;
-
-                if (_objhrwebapiSettigns.isRequired)
-                {
-                    hrTokenJsonString = await _ihttpclienthr.LoginToHRAPIService();
-                    hrprofileJsonString = await _ihttpclienthr.CheckUserExists(message.UserName);
-                    if (string.IsNullOrEmpty(hrprofileJsonString))
-                    {
-                        outputPort.Handle(new LoginResponse(new[] { new Error("login_failure", "Invalid username or HR user profile does not exists .") }));
-                        return false;
-                    }
-                }
-
-                //AD AUTH CHECK HERE
-                if (_objhrwebapiSettigns.isAdCheckRequired)
-                {
-                    if (!string.IsNullOrEmpty(_objhrwebapiSettigns.LDAPURL)) ADLogin = await _ihttpclienthr.LDAPAuthentication(message.UserName, message.Password);
-                    if (!ADLogin)
-                    {
-                        outputPort.Handle(new LoginResponse(new[] { new Error("login_failure", "Invalid username or HR user profile does not exists .") }));
-                        return false;
-                    }
-                    else
-                    {
-                        // GET HR Token FROM API
-                        if (_objhrwebapiSettigns.isRequired)
-                        {
-
-                            hrprofileJsonString = await _ihttpclienthr.GetMilitaryShortProfileFromHR(message.UserName, hrTokenJsonString);
-                            if (string.IsNullOrEmpty(hrprofileJsonString))
-                            {
-                                outputPort.Handle(new LoginResponse(new[] { new Error("login_failure", "Invalid username or HR user profile does not exists .") }));
-                                return false;
-                            }
-                        }
-                    }
-                }
-
-                var ss = _sharedLocalizer["INVALID_VERFICATION_CODE"].Value;
+                
                 // ensure we have a user with the given user name
                 var user = await _userManager.FindByNameAsync(message.UserName);
                 if (user != null)

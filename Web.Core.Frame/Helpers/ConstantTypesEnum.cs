@@ -142,28 +142,6 @@ namespace Web.Core.Frame.Helpers
 			return displayValue;
 		}
 
-		internal static List<KAFParamsListGeneric> ToSelectList<T>(Type type)
-		{
-			List<KAFParamsListGeneric> obj = new List<KAFParamsListGeneric>();
-			foreach (var enumName in Enum.GetNames(type))
-			{
-				var idValue = ((int)Enum.Parse(type, enumName, true)).ToString();
-				var displayValue = enumName;
-
-				// get the corresponding enum field using reflection
-				var field = type.GetField(enumName);
-				var display = ((System.ComponentModel.DataAnnotations.DisplayAttribute[])field.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.DisplayAttribute), false)).FirstOrDefault();
-				if (display != null)
-				{
-					displayValue = display.Name;
-				}
-				obj.Add(new KAFParamsListGeneric()
-				{
-					paramname = displayValue,
-					paramvalue = idValue
-				});
-			}
-			return obj;
-		}
+		
 	}
 }

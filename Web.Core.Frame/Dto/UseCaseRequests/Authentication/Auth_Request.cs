@@ -7,7 +7,6 @@ namespace Web.Core.Frame.RequestResponse.UseCaseRequests
 {
     public class Auth_Request : IUseCaseRequest<Auth_Response>
     {
-        public PACIAuthRequestEntity Obj_PACIAuthRequest { get; }
         public owin_userEntity Obj_owin_user { get; }
         public string RemoteIpAddress { get; }
 
@@ -16,9 +15,5 @@ namespace Web.Core.Frame.RequestResponse.UseCaseRequests
             Obj_owin_user = obj_owin_user;
         }
 
-        public Auth_Request(PACIAuthRequestEntity obj_PACIAuthRequest)
-        {
-            Obj_PACIAuthRequest = obj_PACIAuthRequest;
-        }
     }
 }
