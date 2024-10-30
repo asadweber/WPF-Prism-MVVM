@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Compile Remove="Data\**" />
+		<Compile Remove="Identity\**" />
+		<Compile Remove="InAppResources\**" />
+		<Compile Remove="Migrations\**" />
+		<EmbeddedResource Remove="Data\**" />
+		<EmbeddedResource Remove="Identity\**" />
+		<EmbeddedResource Remove="InAppResources\**" />
+		<EmbeddedResource Remove="Migrations\**" />
+		<None Remove="Data\**" />
+		<None Remove="Identity\**" />
+		<None Remove="InAppResources\**" />
+		<None Remove="Migrations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="6.2.0" />
+		<PackageReference Include="ClosedXML" Version="0.100.3" />
+		<PackageReference Include="EPPlus" Version="7.0.10" />
+		<PackageReference Include="Hangfire.AspNetCore" Version="1.8.5" />
+		<PackageReference Include="Hangfire.Core" Version="1.8.5" />
+		<PackageReference Include="Hangfire.SqlServer" Version="1.8.5" />
+		<PackageReference Include="Microsoft.AspNet.Providers.Core" Version="2.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+		<PackageReference Include="NLog" Version="4.7.7" />
+		<PackageReference Include="RestSharp" Version="108.0.1" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
+		<PackageReference Include="Serilog.Sinks.MongoDB" Version="4.0.0" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+		<PackageReference Include="System.ServiceModel.Duplex" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.Federation" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.Security" Version="4.8.*" />
+		<!-- Keep this -->
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AppConfig\AppConfig.csproj" />
+		<ProjectReference Include="..\BDO\BDO.csproj" />
+		<ProjectReference Include="..\BFC\BFC.csproj" />
+		<ProjectReference Include="..\BFO\BFO.csproj" />
+		<ProjectReference Include="..\IBFO\IBFO.csproj" />
+		<ProjectReference Include="..\IDAC\IDAC.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Dto\UseCaseRequests\Extended\" />
+	  <Folder Include="Interfaces\IProcessHelper\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="MIDAuthServiceClient">
+	    <HintPath>..\..\PACIRefDLL\MIDAuthServiceClient.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MIDAuthServiceClientContract">
+	    <HintPath>..\..\PACIRefDLL\MIDAuthServiceClientContract.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Dto\UseCaseResponses\Extended\Kns_Tran_PhaseInfo_NotificationCountResponse.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
+
+
+</Project>

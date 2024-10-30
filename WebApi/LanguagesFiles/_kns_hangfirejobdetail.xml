@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <!--  ar-kwabic (ar-kw) -->
+
+  <resource culture="ar-kw" name="JobStatus" value="حالة"></resource>
+
+
+  <resource culture="ar-kw" name="jobdetailid" value="التسلسل"></resource>
+  <resource culture="ar-kw" name="jobdetailidRequired" value="AR: Please provide  Job Detail Id"></resource>
+  <resource culture="ar-kw" name="jobagrument" value="AR:  Job Agrument"></resource>
+  <resource culture="ar-kw" name="jobagrumentRequired" value="AR: Please provide  Job Agrument"></resource>
+  <resource culture="ar-kw" name="jobcreatetime" value="وقت الإنشاء"></resource>
+  <resource culture="ar-kw" name="jobcreatetimeRequired" value="AR: Please provide  Job Create Time"></resource>
+  <resource culture="ar-kw" name="internaltaskid" value="AR:  Internal Task Id"></resource>
+  <resource culture="ar-kw" name="internaltaskidRequired" value="AR: Please provide  Internal Task Id"></resource>
+  <resource culture="ar-kw" name="hangfirejobdetailList" value="AR: View All"></resource>
+  <resource culture="ar-kw" name="hangfirejobdetailCreate" value="AR: Create"></resource>
+  <resource culture="ar-kw" name="hangfirejobdetailUpdate" value="AR: Update"></resource>
+  <resource culture="ar-kw" name="hangfirejobdetailDetails" value="AR: Detail"></resource>
+
+  <resource culture="ar-kw" name="jobname" value="العملية"></resource>
+
+  <!--  ar-kwabic (ar-kw) -->
+
+  <!--  English (en-US) -->
+
+  <resource culture="en-us" name="JobStatus" value="Status"></resource>
+
+  <resource culture="en-us" name="jobdetailid" value=" Job Detail Id"></resource>
+  <resource culture="en-us" name="jobdetailidRequired" value="Please provide  Job Detail Id"></resource>
+  <resource culture="en-us" name="jobagrument" value=" Job Agrument"></resource>
+  <resource culture="en-us" name="jobagrumentRequired" value="Please provide  Job Agrument"></resource>
+  <resource culture="en-us" name="jobcreatetime" value=" Job Create Time"></resource>
+  <resource culture="en-us" name="jobcreatetimeRequired" value="Please provide  Job Create Time"></resource>
+  <resource culture="en-us" name="internaltaskid" value=" Internal Task Id"></resource>
+  <resource culture="en-us" name="internaltaskidRequired" value="Please provide  Internal Task Id"></resource>
+  <resource culture="en-us" name="jobname" value="Job Name"></resource>
+  <resource culture="en-us" name="hangfirejobdetailList" value="View All"></resource>
+  <resource culture="en-us" name="hangfirejobdetailCreate" value="Create"></resource>
+  <resource culture="en-us" name="hangfirejobdetailUpdate" value="Update"></resource>
+  <resource culture="en-us" name="hangfirejobdetailDetails" value="Detail"></resource>
+  <!--  English (en-US) -->
+
+
+
+</resources>

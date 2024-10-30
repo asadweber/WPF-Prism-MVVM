@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="smsgatewayconfigid" value="AR:  S M S Gateway Config I D"></resource>
+       <resource culture="ar-kw" name="smsgatewayconfigidRequired" value="AR: Please provide  S M S Gateway Config I D"></resource>
+       <resource culture="ar-kw" name="parametername" value="AR:  Parameter Name"></resource>
+       <resource culture="ar-kw" name="parametervalue" value="AR:  Parameter Value"></resource>
+       <resource culture="ar-kw" name="parametertype" value="AR:  Parameter Type"></resource>
+       <resource culture="ar-kw" name="islenvalidaterequired" value="AR:  Is Len Validate Required"></resource>
+       <resource culture="ar-kw" name="minlen" value="AR:  Min Len"></resource>
+       <resource culture="ar-kw" name="maxlen" value="AR:  Max Len"></resource>
+       <resource culture="ar-kw" name="isrequried" value="AR:  Is Requried"></resource>
+       <resource culture="ar-kw" name="isrequiredvalidated" value="AR:  Is Required Validated"></resource>
+		<resource culture="ar-kw" name="configsmsgatewaydetailList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="configsmsgatewaydetailCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="configsmsgatewaydetailUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="configsmsgatewaydetailDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="smsgatewayconfigid" value=" S M S Gateway Config I D"></resource>
+       <resource culture="en-us" name="smsgatewayconfigidRequired" value="Please provide  S M S Gateway Config I D"></resource>
+       <resource culture="en-us" name="parametername" value=" Parameter Name"></resource>
+       <resource culture="en-us" name="parametervalue" value=" Parameter Value"></resource>
+       <resource culture="en-us" name="parametertype" value=" Parameter Type"></resource>
+       <resource culture="en-us" name="islenvalidaterequired" value=" Is Len Validate Required"></resource>
+       <resource culture="en-us" name="minlen" value=" Min Len"></resource>
+       <resource culture="en-us" name="maxlen" value=" Max Len"></resource>
+       <resource culture="en-us" name="isrequried" value=" Is Requried"></resource>
+       <resource culture="en-us" name="isrequiredvalidated" value=" Is Required Validated"></resource>
+        <resource culture="en-us" name="configsmsgatewaydetailList" value="View All"></resource>
+		<resource culture="en-us" name="configsmsgatewaydetailCreate" value="Create"></resource>
+		<resource culture="en-us" name="configsmsgatewaydetailUpdate" value="Update"></resource>
+		<resource culture="en-us" name="configsmsgatewaydetailDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

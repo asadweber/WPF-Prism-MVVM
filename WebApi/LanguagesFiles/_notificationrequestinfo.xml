@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="filerequestid" value="AR:  File Request I D"></resource>
+       <resource culture="ar-kw" name="applicationid" value="AR:  Application I D"></resource>
+       <resource culture="ar-kw" name="applicationidRequired" value="AR: Please provide  Application I D"></resource>
+       <resource culture="ar-kw" name="notificationrequestdate" value="AR:  Notification Request Date"></resource>
+       <resource culture="ar-kw" name="notificationrequestdateRequired" value="AR: Please provide  Notification Request Date"></resource>
+       <resource culture="ar-kw" name="notificationrequestcode" value="AR:  Notification Request Code"></resource>
+       <resource culture="ar-kw" name="notificationrequestcodeRequired" value="AR: Please provide  Notification Request Code"></resource>
+       <resource culture="ar-kw" name="totalrecipient" value="AR:  Total Recipient"></resource>
+       <resource culture="ar-kw" name="totalrecipientRequired" value="AR: Please provide  Total Recipient"></resource>
+       <resource culture="ar-kw" name="datareadytoprocess" value="AR:  Data Ready To Process"></resource>
+       <resource culture="ar-kw" name="isprocessed" value="AR:  Is Processed"></resource>
+       <resource culture="ar-kw" name="processstartdate" value="AR:  Process Start Date"></resource>
+       <resource culture="ar-kw" name="processendstartdate" value="AR:  Process End Start Date"></resource>
+		<resource culture="ar-kw" name="notificationrequestinfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="notificationrequestinfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="notificationrequestinfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="notificationrequestinfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="filerequestid" value=" File Request I D"></resource>
+       <resource culture="en-us" name="applicationid" value=" Application I D"></resource>
+       <resource culture="en-us" name="applicationidRequired" value="Please provide  Application I D"></resource>
+       <resource culture="en-us" name="notificationrequestdate" value=" Notification Request Date"></resource>
+       <resource culture="en-us" name="notificationrequestdateRequired" value="Please provide  Notification Request Date"></resource>
+       <resource culture="en-us" name="notificationrequestcode" value=" Notification Request Code"></resource>
+       <resource culture="en-us" name="notificationrequestcodeRequired" value="Please provide  Notification Request Code"></resource>
+       <resource culture="en-us" name="totalrecipient" value=" Total Recipient"></resource>
+       <resource culture="en-us" name="totalrecipientRequired" value="Please provide  Total Recipient"></resource>
+       <resource culture="en-us" name="datareadytoprocess" value=" Data Ready To Process"></resource>
+       <resource culture="en-us" name="isprocessed" value=" Is Processed"></resource>
+       <resource culture="en-us" name="processstartdate" value=" Process Start Date"></resource>
+       <resource culture="en-us" name="processendstartdate" value=" Process End Start Date"></resource>
+        <resource culture="en-us" name="notificationrequestinfoList" value="View All"></resource>
+		<resource culture="en-us" name="notificationrequestinfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="notificationrequestinfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="notificationrequestinfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

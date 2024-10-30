@@ -8,7 +8,6 @@
 
 		<!-- Common properties for all projects -->
 		<OutputPath>$(SolutionDir)\bin\</OutputPath>
-		<TargetFramework>net8.0</TargetFramework>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>

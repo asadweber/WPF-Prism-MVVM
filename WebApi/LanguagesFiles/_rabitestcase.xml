@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="testname" value="AR: testname"></resource>
+       <resource culture="ar-kw" name="testnameRequired" value="AR: Please provide testname"></resource>
+       <resource culture="ar-kw" name="remarks" value="AR:  Remarks"></resource>
+		<resource culture="ar-kw" name="rabitestcaseList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="rabitestcaseCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="rabitestcaseUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="rabitestcaseDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="testname" value="testname"></resource>
+       <resource culture="en-us" name="testnameRequired" value="Please provide testname"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+        <resource culture="en-us" name="rabitestcaseList" value="View All"></resource>
+		<resource culture="en-us" name="rabitestcaseCreate" value="Create"></resource>
+		<resource culture="en-us" name="rabitestcaseUpdate" value="Update"></resource>
+		<resource culture="en-us" name="rabitestcaseDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

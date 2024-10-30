@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="requestfromcivilid" value="AR:  Request From Civil I D"></resource>
+       <resource culture="ar-kw" name="requestfromcivilidRequired" value="AR: Please provide  Request From Civil I D"></resource>
+       <resource culture="ar-kw" name="servicename" value="AR:  Service Name"></resource>
+       <resource culture="ar-kw" name="servicenameRequired" value="AR: Please provide  Service Name"></resource>
+       <resource culture="ar-kw" name="requestdate" value="AR:  Request Date"></resource>
+       <resource culture="ar-kw" name="requestdateRequired" value="AR: Please provide  Request Date"></resource>
+       <resource culture="ar-kw" name="isrequestprocessed" value="AR:  Is Request Processed"></resource>
+       <resource culture="ar-kw" name="isrequestprocessedRequired" value="AR: Please provide  Is Request Processed"></resource>
+       <resource culture="ar-kw" name="requestprocesseddate" value="AR:  Request Processed Date"></resource>
+       <resource culture="ar-kw" name="requestresponse" value="AR:  Request Response"></resource>
+       <resource culture="ar-kw" name="repliedfrompaci" value="AR:  Replied From P A C I"></resource>
+       <resource culture="ar-kw" name="replieddate" value="AR:  Replied Date"></resource>
+       <resource culture="ar-kw" name="responsefrompaci" value="AR:  Response From P A C I"></resource>
+       <resource culture="ar-kw" name="isauthenticated" value="AR:  Is Authenticated"></resource>
+       <resource culture="ar-kw" name="callingurl" value="AR:  Calling Url"></resource>
+       <resource culture="ar-kw" name="keyparam" value="AR:  Key Param"></resource>
+       <resource culture="ar-kw" name="signalrcontextname" value="AR:  Signal R Context Name"></resource>
+       <resource culture="ar-kw" name="signalrmethodname" value="AR:  Signal R Method Name"></resource>
+       <resource culture="ar-kw" name="paciauthresponse" value="AR:  P A C I Auth Response"></resource>
+       <resource culture="ar-kw" name="pacigetuserdetailresponse" value="AR:  P A C I Get User Detail Response"></resource>
+		<resource culture="ar-kw" name="pacisigninrequestinfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="pacisigninrequestinfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="pacisigninrequestinfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="pacisigninrequestinfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="requestfromcivilid" value=" Request From Civil I D"></resource>
+       <resource culture="en-us" name="requestfromcivilidRequired" value="Please provide  Request From Civil I D"></resource>
+       <resource culture="en-us" name="servicename" value=" Service Name"></resource>
+       <resource culture="en-us" name="servicenameRequired" value="Please provide  Service Name"></resource>
+       <resource culture="en-us" name="requestdate" value=" Request Date"></resource>
+       <resource culture="en-us" name="requestdateRequired" value="Please provide  Request Date"></resource>
+       <resource culture="en-us" name="isrequestprocessed" value=" Is Request Processed"></resource>
+       <resource culture="en-us" name="isrequestprocessedRequired" value="Please provide  Is Request Processed"></resource>
+       <resource culture="en-us" name="requestprocesseddate" value=" Request Processed Date"></resource>
+       <resource culture="en-us" name="requestresponse" value=" Request Response"></resource>
+       <resource culture="en-us" name="repliedfrompaci" value=" Replied From P A C I"></resource>
+       <resource culture="en-us" name="replieddate" value=" Replied Date"></resource>
+       <resource culture="en-us" name="responsefrompaci" value=" Response From P A C I"></resource>
+       <resource culture="en-us" name="isauthenticated" value=" Is Authenticated"></resource>
+       <resource culture="en-us" name="callingurl" value=" Calling Url"></resource>
+       <resource culture="en-us" name="keyparam" value=" Key Param"></resource>
+       <resource culture="en-us" name="signalrcontextname" value=" Signal R Context Name"></resource>
+       <resource culture="en-us" name="signalrmethodname" value=" Signal R Method Name"></resource>
+       <resource culture="en-us" name="paciauthresponse" value=" P A C I Auth Response"></resource>
+       <resource culture="en-us" name="pacigetuserdetailresponse" value=" P A C I Get User Detail Response"></resource>
+        <resource culture="en-us" name="pacisigninrequestinfoList" value="View All"></resource>
+		<resource culture="en-us" name="pacisigninrequestinfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="pacisigninrequestinfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="pacisigninrequestinfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

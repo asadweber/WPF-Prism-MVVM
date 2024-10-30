@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="formname" value="AR:  Form Name"></resource>
+       <resource culture="ar-kw" name="formnameRequired" value="AR: Please provide  Form Name"></resource>
+       <resource culture="ar-kw" name="formnamear" value="AR:  Form Name Ar"></resource>
+       <resource culture="ar-kw" name="parentid" value="AR:  Parent I D"></resource>
+       <resource culture="ar-kw" name="levelid" value="AR:  Level I D"></resource>
+       <resource culture="ar-kw" name="menulevel" value="AR:  Menu Level"></resource>
+       <resource culture="ar-kw" name="hasdirectchild" value="AR:  Has Direct Child"></resource>
+       <resource culture="ar-kw" name="icon" value="AR:  Icon"></resource>
+       <resource culture="ar-kw" name="classicon" value="AR:  Class Icon"></resource>
+       <resource culture="ar-kw" name="sequence" value="AR:  Sequence"></resource>
+       <resource culture="ar-kw" name="url" value="AR:  U R L"></resource>
+       <resource culture="ar-kw" name="isview" value="AR:  Is View"></resource>
+       <resource culture="ar-kw" name="isdynamic" value="AR:  Is Dynamic"></resource>
+       <resource culture="ar-kw" name="issuperadmin" value="AR:  Is Super Admin"></resource>
+       <resource culture="ar-kw" name="isvisibleinmenu" value="AR:  Is Visible In Menu"></resource>
+		<resource culture="ar-kw" name="forminfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="forminfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="forminfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="forminfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="formname" value=" Form Name"></resource>
+       <resource culture="en-us" name="formnameRequired" value="Please provide  Form Name"></resource>
+       <resource culture="en-us" name="formnamear" value=" Form Name Ar"></resource>
+       <resource culture="en-us" name="parentid" value=" Parent I D"></resource>
+       <resource culture="en-us" name="levelid" value=" Level I D"></resource>
+       <resource culture="en-us" name="menulevel" value=" Menu Level"></resource>
+       <resource culture="en-us" name="hasdirectchild" value=" Has Direct Child"></resource>
+       <resource culture="en-us" name="icon" value=" Icon"></resource>
+       <resource culture="en-us" name="classicon" value=" Class Icon"></resource>
+       <resource culture="en-us" name="sequence" value=" Sequence"></resource>
+       <resource culture="en-us" name="url" value=" U R L"></resource>
+       <resource culture="en-us" name="isview" value=" Is View"></resource>
+       <resource culture="en-us" name="isdynamic" value=" Is Dynamic"></resource>
+       <resource culture="en-us" name="issuperadmin" value=" Is Super Admin"></resource>
+       <resource culture="en-us" name="isvisibleinmenu" value=" Is Visible In Menu"></resource>
+        <resource culture="en-us" name="forminfoList" value="View All"></resource>
+		<resource culture="en-us" name="forminfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="forminfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="forminfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

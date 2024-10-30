@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="servicetypear" value="فئة الخدمة"></resource>
+       <resource culture="ar-kw" name="servicetypearRequired" value="الرجاء إدخال فئة الخدمة"></resource>
+       <resource culture="ar-kw" name="descriptionar" value="الوصف"></resource>
+       <resource culture="ar-kw" name="servicetype" value="فئة الخدمة"></resource>
+       <resource culture="ar-kw" name="description" value="الوصف"></resource>
+		<resource culture="ar-kw" name="servicestypeList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="servicestypeCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="servicestypeUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="servicestypeDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="servicetypear" value=" Service Type A R"></resource>
+       <resource culture="en-us" name="servicetypearRequired" value="Please provide  Service Type A R"></resource>
+       <resource culture="en-us" name="descriptionar" value=" Description A R"></resource>
+       <resource culture="en-us" name="servicetype" value=" Service Type"></resource>
+       <resource culture="en-us" name="description" value=" Description"></resource>
+        <resource culture="en-us" name="servicestypeList" value="View All"></resource>
+		<resource culture="en-us" name="servicestypeCreate" value="Create"></resource>
+		<resource culture="en-us" name="servicestypeUpdate" value="Update"></resource>
+		<resource culture="en-us" name="servicestypeDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+	<!--  ar-kwabic (ar-kw) -->
+
+	<resource culture="ar-kw" name="parentid" value="AR:  Parent I D"></resource>
+	<resource culture="ar-kw" name="actionname" value="AR:  Action Name"></resource>
+	<resource culture="ar-kw" name="actionnameRequired" value="AR: Please provide  Action Name"></resource>
+	<resource culture="ar-kw" name="displaynamear" value="AR:  Display Name Ar"></resource>
+	<resource culture="ar-kw" name="displayname" value="AR:  Display Name"></resource>
+	<resource culture="ar-kw" name="actiontype" value="AR:  Action Type"></resource>
+	<resource culture="ar-kw" name="isview" value="AR:  Is View"></resource>
+	<resource culture="ar-kw" name="isapi" value="AR:  Is A P I"></resource>
+	<resource culture="ar-kw" name="isshowonmenu" value="AR:  Is Show On Menu"></resource>
+	<resource culture="ar-kw" name="classicon" value="AR:  Class Icon"></resource>
+	<resource culture="ar-kw" name="isitem" value="AR:  Is Item"></resource>
+	<resource culture="ar-kw" name="eventname" value="AR:  Event Name"></resource>
+	<resource culture="ar-kw" name="sequence" value="AR:  Sequence"></resource>
+	<resource culture="ar-kw" name="formactionList" value="AR: View All"></resource>
+	<resource culture="ar-kw" name="formactionCreate" value="AR: Create"></resource>
+	<resource culture="ar-kw" name="formactionUpdate" value="AR: Update"></resource>
+	<resource culture="ar-kw" name="formactionDetails" value="AR: Detail"></resource>
+
+	<!--  ar-kwabic (ar-kw) -->
+
+	<!--  English (en-US) -->
+	<resource culture="en-us" name="parentid" value=" Parent I D"></resource>
+	<resource culture="en-us" name="actionname" value=" Action Name"></resource>
+	<resource culture="en-us" name="actionnameRequired" value="Please provide  Action Name"></resource>
+	<resource culture="en-us" name="displaynamear" value=" Display Name Ar"></resource>
+	<resource culture="en-us" name="displayname" value=" Display Name"></resource>
+	<resource culture="en-us" name="actiontype" value=" Action Type"></resource>
+	<resource culture="en-us" name="isview" value=" Is View"></resource>
+	<resource culture="en-us" name="isapi" value=" Is A P I"></resource>
+	<resource culture="en-us" name="isshowonmenu" value=" Is Show On Menu"></resource>
+	<resource culture="en-us" name="classicon" value=" Class Icon"></resource>
+	<resource culture="en-us" name="isitem" value=" Is Item"></resource>
+	<resource culture="en-us" name="eventname" value=" Event Name"></resource>
+	<resource culture="en-us" name="sequence" value=" Sequence"></resource>
+	<resource culture="en-us" name="formactionList" value="View All"></resource>
+	<resource culture="en-us" name="formactionCreate" value="Create"></resource>
+	<resource culture="en-us" name="formactionUpdate" value="Update"></resource>
+	<resource culture="en-us" name="formactionDetails" value="Detail"></resource>
+	<!--  English (en-US) -->
+
+
+
+</resources>

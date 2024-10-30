@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="batchid" value="رقم الدعوة"></resource>
+       <resource culture="ar-kw" name="batchidRequired" value="الرجاء إدخال رقم الدعوة"></resource>
+       <resource culture="ar-kw" name="basicinfoid" value="الرقم المدني"></resource>
+       <resource culture="ar-kw" name="basicinfoidRequired" value="الرجاء إدخال الرقم المدني"></resource>
+       <resource culture="ar-kw" name="batchorderid" value="رقم الأمر للدعوة"></resource>
+       <resource culture="ar-kw" name="invitationdate" value="تاريخ الإستدعاء"></resource>
+       <resource culture="ar-kw" name="invitationdateRequired" value="الرجاء إدخال تاريخ الإستدعاء"></resource>
+       <resource culture="ar-kw" name="previouslyinvited" value="مستدعى سابقا"></resource>
+       <resource culture="ar-kw" name="previouslyinvitedRequired" value="الرجاء إدخال مستدعى سابقا"></resource>
+       <resource culture="ar-kw" name="status" value="الحالة"></resource>
+       <resource culture="ar-kw" name="statusRequired" value="الرجاء إدخال الحالة"></resource>
+       <resource culture="ar-kw" name="reasontypeid" value="رقم نوع الادعاء"></resource>
+       <resource culture="ar-kw" name="remarks" value="ملاحظة"></resource>
+       <resource culture="ar-kw" name="isactive" value="فعال"></resource>
+		<resource culture="ar-kw" name="batchdetailList" value="View All"></resource>
+		<resource culture="ar-kw" name="batchdetailCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="batchdetailUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="batchdetailDetails" value="AR: Detail"></resource>
+		<resource culture="ar-kw" name="phasesid" value="رقم المراحل"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="batchid" value=" Batch Id"></resource>
+       <resource culture="en-us" name="batchidRequired" value="Please provide  Batch Id"></resource>
+       <resource culture="en-us" name="basicinfoid" value=" Basic Info I D"></resource>
+       <resource culture="en-us" name="basicinfoidRequired" value="Please provide  Basic Info I D"></resource>
+       <resource culture="en-us" name="batchorderid" value=" Batch Order Id"></resource>
+       <resource culture="en-us" name="invitationdate" value=" Invitation Date"></resource>
+       <resource culture="en-us" name="invitationdateRequired" value="Please provide  Invitation Date"></resource>
+       <resource culture="en-us" name="previouslyinvited" value=" Previouslyinvited"></resource>
+       <resource culture="en-us" name="previouslyinvitedRequired" value="Please provide  Previouslyinvited"></resource>
+       <resource culture="en-us" name="status" value=" Status"></resource>
+       <resource culture="en-us" name="statusRequired" value="Please provide  Status"></resource>
+       <resource culture="en-us" name="reasontypeid" value=" Reason Type Id"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+        <resource culture="en-us" name="batchdetailList" value="View All"></resource>
+		<resource culture="en-us" name="batchdetailCreate" value="Create"></resource>
+		<resource culture="en-us" name="batchdetailUpdate" value="Update"></resource>
+		<resource culture="en-us" name="batchdetailDetails" value="Detail"></resource>
+		<resource culture="en-us" name="phasesid" value=" Phases "></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

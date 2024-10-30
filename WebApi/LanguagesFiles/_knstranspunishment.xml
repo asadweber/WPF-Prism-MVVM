@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="batchid" value="رقم الدعوة"></resource>
+       <resource culture="ar-kw" name="basicinfoid" value="رقم البيانات الاساسية"></resource>
+       <resource culture="ar-kw" name="issueid" value="رقم الكتاب"></resource>
+       <resource culture="ar-kw" name="punishmentdate" value="تاريخ العقوبة"></resource>
+       <resource culture="ar-kw" name="punishment" value="العقوبة"></resource>
+       <resource culture="ar-kw" name="actiontaken" value="العقوبة"></resource>
+       <resource culture="ar-kw" name="remarks" value="ملاحظة"></resource>
+       <resource culture="ar-kw" name="isactive" value="فعالة"></resource>
+		<resource culture="ar-kw" name="knstranspunishmentList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="knstranspunishmentCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="knstranspunishmentUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="knstranspunishmentDetails" value="AR: Detail"></resource>
+		<resource culture="ar-kw" name="enddate" value="تاريخ الإنتهاء"></resource>
+		<resource culture="ar-kw" name="RegistrationDate" value="تاريخ التسجيل"></resource>
+		<resource culture="ar-kw" name="DOB" value="تاريخ الميلاد"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="batchid" value=" Batch Id"></resource>
+       <resource culture="en-us" name="basicinfoid" value=" Basic Info I D"></resource>
+       <resource culture="en-us" name="issueid" value=" Issue Id"></resource>
+       <resource culture="en-us" name="punishmentdate" value=" Punishment Date"></resource>
+       <resource culture="en-us" name="punishment" value=" Punishment"></resource>
+       <resource culture="en-us" name="actiontaken" value=" Action Taken"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+        <resource culture="en-us" name="knstranspunishmentList" value="View All"></resource>
+		<resource culture="en-us" name="knstranspunishmentCreate" value="Create"></resource>
+		<resource culture="en-us" name="knstranspunishmentUpdate" value="Update"></resource>
+		<resource culture="en-us" name="knstranspunishmentDetails" value="Detail"></resource>
+		<resource culture="en-us" name="enddate" value="End Date"></resource>
+		<resource culture="en-us" name="RegistrationDate" value=" Registration Date"></resource>
+		<resource culture="en-us" name="DOB" value="Date of Birth"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

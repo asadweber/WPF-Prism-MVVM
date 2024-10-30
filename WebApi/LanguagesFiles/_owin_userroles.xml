@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+		<resource culture="ar-kw" name="userrolesList" value="مشاهدة الكل"></resource>
+		<resource culture="ar-kw" name="userrolesCreate" value="خلق"></resource>
+		<resource culture="ar-kw" name="userrolesUpdate" value="تحديث"></resource>
+		<resource culture="ar-kw" name="userrolesDetails" value="التفاصيل"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+        <resource culture="en-us" name="userrolesList" value="View All"></resource>
+		<resource culture="en-us" name="userrolesCreate" value="Create"></resource>
+		<resource culture="en-us" name="userrolesUpdate" value="Update"></resource>
+		<resource culture="en-us" name="userrolesDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="knsexserviceid" value="AR:  K N S Ex Service I D"></resource>
+       <resource culture="ar-kw" name="knsexserviceidRequired" value="AR: Please provide  K N S Ex Service I D"></resource>
+       <resource culture="ar-kw" name="basicinfoid" value="AR:  Basic Info I D"></resource>
+       <resource culture="ar-kw" name="basicinfoidRequired" value="AR: Please provide  Basic Info I D"></resource>
+       <resource culture="ar-kw" name="planorderdetailid" value="AR:  Plan Order Detail Id"></resource>
+       <resource culture="ar-kw" name="planorderdetailidRequired" value="AR: Please provide  Plan Order Detail Id"></resource>
+       <resource culture="ar-kw" name="jsonresultstring" value="AR:  Json Result String"></resource>
+       <resource culture="ar-kw" name="resultdate" value="AR:  Result Date"></resource>
+       <resource culture="ar-kw" name="comment" value="AR:  Comment"></resource>
+       <resource culture="ar-kw" name="actionbit" value="AR:  Action Bit"></resource>
+		<resource culture="ar-kw" name="tranList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="tranCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="tranUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="tranDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="knsexserviceid" value=" K N S Ex Service I D"></resource>
+       <resource culture="en-us" name="knsexserviceidRequired" value="Please provide  K N S Ex Service I D"></resource>
+       <resource culture="en-us" name="basicinfoid" value=" Basic Info I D"></resource>
+       <resource culture="en-us" name="basicinfoidRequired" value="Please provide  Basic Info I D"></resource>
+       <resource culture="en-us" name="planorderdetailid" value=" Plan Order Detail Id"></resource>
+       <resource culture="en-us" name="planorderdetailidRequired" value="Please provide  Plan Order Detail Id"></resource>
+       <resource culture="en-us" name="jsonresultstring" value=" Json Result String"></resource>
+       <resource culture="en-us" name="resultdate" value=" Result Date"></resource>
+       <resource culture="en-us" name="comment" value=" Comment"></resource>
+       <resource culture="en-us" name="actionbit" value=" Action Bit"></resource>
+        <resource culture="en-us" name="tranList" value="View All"></resource>
+		<resource culture="en-us" name="tranCreate" value="Create"></resource>
+		<resource culture="en-us" name="tranUpdate" value="Update"></resource>
+		<resource culture="en-us" name="tranDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

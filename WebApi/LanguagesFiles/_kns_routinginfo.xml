@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="basicinfoid" value="AR:  Basic Info I D"></resource>
+       <resource culture="ar-kw" name="basicinfoidRequired" value="AR: Please provide  Basic Info I D"></resource>
+       <resource culture="ar-kw" name="batchid" value="AR:  Batch Id"></resource>
+       <resource culture="ar-kw" name="batchidRequired" value="AR: Please provide  Batch Id"></resource>
+       <resource culture="ar-kw" name="joindate" value="AR:  Join Date"></resource>
+       <resource culture="ar-kw" name="joindateRequired" value="AR: Please provide  Join Date"></resource>
+       <resource culture="ar-kw" name="planorderdetailid" value="AR:  Plan Order Detail Id"></resource>
+       <resource culture="ar-kw" name="militryno" value="AR:  Militry No"></resource>
+       <resource culture="ar-kw" name="militrynoRequired" value="AR: Please provide  Militry No"></resource>
+       <resource culture="ar-kw" name="routinggroupno" value="AR:  Routing Group No"></resource>
+       <resource culture="ar-kw" name="traningcenterid" value="AR:  Traning Center Id"></resource>
+       <resource culture="ar-kw" name="traningcenteridRequired" value="AR: Please provide  Traning Center Id"></resource>
+       <resource culture="ar-kw" name="currentstatus" value="AR:  Current Status"></resource>
+       <resource culture="ar-kw" name="isactive" value="AR:  Is Active"></resource>
+       <resource culture="ar-kw" name="routingtype" value="AR:  Routing Type"></resource>
+       <resource culture="ar-kw" name="oldtraningcenterid" value="AR:  Old Traning Center Id"></resource>
+       <resource culture="ar-kw" name="migrationinfo" value="AR:  Migration Info"></resource>
+       <resource culture="ar-kw" name="migrationtable" value="AR:  Migration Table"></resource>
+       <resource culture="ar-kw" name="migrationtext" value="AR:  Migration Text"></resource>
+		<resource culture="ar-kw" name="routinginfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="routinginfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="routinginfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="routinginfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="basicinfoid" value=" Basic Info I D"></resource>
+       <resource culture="en-us" name="basicinfoidRequired" value="Please provide  Basic Info I D"></resource>
+       <resource culture="en-us" name="batchid" value=" Batch Id"></resource>
+       <resource culture="en-us" name="batchidRequired" value="Please provide  Batch Id"></resource>
+       <resource culture="en-us" name="joindate" value=" Join Date"></resource>
+       <resource culture="en-us" name="joindateRequired" value="Please provide  Join Date"></resource>
+       <resource culture="en-us" name="planorderdetailid" value=" Plan Order Detail Id"></resource>
+       <resource culture="en-us" name="militryno" value=" Militry No"></resource>
+       <resource culture="en-us" name="militrynoRequired" value="Please provide  Militry No"></resource>
+       <resource culture="en-us" name="routinggroupno" value=" Routing Group No"></resource>
+       <resource culture="en-us" name="traningcenterid" value=" Traning Center Id"></resource>
+       <resource culture="en-us" name="traningcenteridRequired" value="Please provide  Traning Center Id"></resource>
+       <resource culture="en-us" name="currentstatus" value=" Current Status"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+       <resource culture="en-us" name="routingtype" value=" Routing Type"></resource>
+       <resource culture="en-us" name="oldtraningcenterid" value=" Old Traning Center Id"></resource>
+       <resource culture="en-us" name="migrationinfo" value=" Migration Info"></resource>
+       <resource culture="en-us" name="migrationtable" value=" Migration Table"></resource>
+       <resource culture="en-us" name="migrationtext" value=" Migration Text"></resource>
+        <resource culture="en-us" name="routinginfoList" value="View All"></resource>
+		<resource culture="en-us" name="routinginfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="routinginfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="routinginfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

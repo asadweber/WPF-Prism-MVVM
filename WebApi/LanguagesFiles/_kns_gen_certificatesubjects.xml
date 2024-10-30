@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="certificateid" value="مستوى الشهادة"></resource>
+       <resource culture="ar-kw" name="certificateidRequired" value="الرجاء إدخال مستوى الشهادة"></resource>
+       <resource culture="ar-kw" name="certificatesubjectname" value="أسم التخصص"></resource>
+       <resource culture="ar-kw" name="certificatesubjectnameRequired" value="الرجاء إدخال أسم التخصص"></resource>
+       <resource culture="ar-kw" name="years" value="السنة"></resource>
+       <resource culture="ar-kw" name="comment" value="تعليق"></resource>
+		<resource culture="ar-kw" name="genList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="genCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="genUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="genDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="certificateid" value=" Certificate I D"></resource>
+       <resource culture="en-us" name="certificateidRequired" value="Please provide  Certificate I D"></resource>
+       <resource culture="en-us" name="certificatesubjectname" value=" Certificate Subject Name"></resource>
+       <resource culture="en-us" name="certificatesubjectnameRequired" value="Please provide  Certificate Subject Name"></resource>
+       <resource culture="en-us" name="years" value=" Years"></resource>
+       <resource culture="en-us" name="comment" value=" Comment"></resource>
+        <resource culture="en-us" name="genList" value="View All"></resource>
+		<resource culture="en-us" name="genCreate" value="Create"></resource>
+		<resource culture="en-us" name="genUpdate" value="Update"></resource>
+		<resource culture="en-us" name="genDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

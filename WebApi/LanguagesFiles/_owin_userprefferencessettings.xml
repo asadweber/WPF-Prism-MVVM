@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="userid" value="معرف المستخدم"></resource>
+       <resource culture="ar-kw" name="useridRequired" value="يرجى تقديم المستخدم الأول د"></resource>
+       <resource culture="ar-kw" name="masteruserid" value="المستخدم الرئيسي د"></resource>
+       <resource culture="ar-kw" name="masteruseridRequired" value="يرجى تقديم المستخدم الرئيسي د"></resource>
+       <resource culture="ar-kw" name="appformid" value="AR:  App Form I D"></resource>
+       <resource culture="ar-kw" name="appformidRequired" value="AR: Please provide  App Form I D"></resource>
+       <resource culture="ar-kw" name="prepagesize" value="حجم ما قبل الصفحة"></resource>
+		<resource culture="ar-kw" name="userprefferencessettingsList" value="مشاهدة الكل"></resource>
+		<resource culture="ar-kw" name="userprefferencessettingsCreate" value="خلق"></resource>
+		<resource culture="ar-kw" name="userprefferencessettingsUpdate" value="تحديث"></resource>
+		<resource culture="ar-kw" name="userprefferencessettingsDetails" value="التفاصيل"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="userid" value=" User I D"></resource>
+       <resource culture="en-us" name="useridRequired" value="Please provide  User I D"></resource>
+       <resource culture="en-us" name="masteruserid" value=" Master User I D"></resource>
+       <resource culture="en-us" name="masteruseridRequired" value="Please provide  Master User I D"></resource>
+       <resource culture="en-us" name="appformid" value=" App Form I D"></resource>
+       <resource culture="en-us" name="appformidRequired" value="Please provide  App Form I D"></resource>
+       <resource culture="en-us" name="prepagesize" value=" Pre Page Size"></resource>
+        <resource culture="en-us" name="userprefferencessettingsList" value="View All"></resource>
+		<resource culture="en-us" name="userprefferencessettingsCreate" value="Create"></resource>
+		<resource culture="en-us" name="userprefferencessettingsUpdate" value="Update"></resource>
+		<resource culture="en-us" name="userprefferencessettingsDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="imagegallarycategory" value="AR:  Image Gallary Category"></resource>
+       <resource culture="ar-kw" name="imagegallarycategoryRequired" value="AR: Please provide  Image Gallary Category"></resource>
+       <resource culture="ar-kw" name="descriptions" value="AR:  Descriptions"></resource>
+		<resource culture="ar-kw" name="imagegallarycategoryList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="imagegallarycategoryCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="imagegallarycategoryUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="imagegallarycategoryDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="imagegallarycategory" value=" Image Gallary Category"></resource>
+       <resource culture="en-us" name="imagegallarycategoryRequired" value="Please provide  Image Gallary Category"></resource>
+       <resource culture="en-us" name="descriptions" value=" Descriptions"></resource>
+        <resource culture="en-us" name="imagegallarycategoryList" value="View All"></resource>
+		<resource culture="en-us" name="imagegallarycategoryCreate" value="Create"></resource>
+		<resource culture="en-us" name="imagegallarycategoryUpdate" value="Update"></resource>
+		<resource culture="en-us" name="imagegallarycategoryDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        
