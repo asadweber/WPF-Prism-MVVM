@@ -50,6 +50,8 @@ namespace WebApi
             // Now register our services with Autofac container.
             var builder = new ContainerBuilder();
 
+
+            
             builder.RegisterModule(new CoreModule());
             builder.RegisterModule(new CoreModuleExtended());
             builder.RegisterModule(new InfrastructureModule());
@@ -104,6 +106,7 @@ namespace WebApi
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseStaticFiles();
             app.UseSwagger();
+            
             app.UseSwaggerUI(c =>
             {
                 //c.RoutePrefix = "swagger/ui";
