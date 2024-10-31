@@ -32,10 +32,7 @@ namespace IDAC.Core.IDataAccessObjects.General
 		#endregion GetAll
 		
 		#region SaveMasterDetails
-        Task<long> SaveMasterDetcnf_studentmenuskip(owin_forminfoEntity masterEntity, IList<cnf_studentmenuskipEntity> listAdded, IList<cnf_studentmenuskipEntity> listUpdated, IList<cnf_studentmenuskipEntity> listDeleted, CancellationToken cancellationToken);
-
-        Task<long> SaveMasterDetcnf_studentmenuskipdetail(owin_forminfoEntity masterEntity, IList<cnf_studentmenuskipdetailEntity> listAdded, IList<cnf_studentmenuskipdetailEntity> listUpdated, IList<cnf_studentmenuskipdetailEntity> listDeleted, CancellationToken cancellationToken);
-
+       
         Task<long> SaveMasterDetowin_formaction(owin_forminfoEntity masterEntity, IList<owin_formactionEntity> listAdded, IList<owin_formactionEntity> listUpdated, IList<owin_formactionEntity> listDeleted, CancellationToken cancellationToken);
 
         Task<long> SaveMasterDetowin_rolepermission(owin_forminfoEntity masterEntity, IList<owin_rolepermissionEntity> listAdded, IList<owin_rolepermissionEntity> listUpdated, IList<owin_rolepermissionEntity> listDeleted, CancellationToken cancellationToken);

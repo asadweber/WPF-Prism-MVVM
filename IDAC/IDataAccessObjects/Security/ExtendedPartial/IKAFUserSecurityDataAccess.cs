@@ -46,7 +46,6 @@ namespace IDAC.Core.IDataAccessObjects.Security.ExtendedPartial
 
         Task<long?> createuser(owin_userEntity user, CancellationToken cancellationToken);
 
-        Task<long?> createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken);
 
         Task<IList<Owin_ProcessGetFormActionistEntity_Ext>> GetMenuWiseFormActionList(owin_userEntity objEntity, CancellationToken cancellationToken);
 
