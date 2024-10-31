@@ -16,30 +16,8 @@ namespace WebApi.Services
         /// <param name="configuration"></param>
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            //var redisConnectionStrings = configuration.GetSection(nameof(RedisConnectionStrings)).Get<RedisConnectionStrings>();
-
-
-            //var redisConfigurationOptions = ConfigurationOptions.Parse("localhost:6379");
-
-            //services.AddStackExchangeRedisCache(redisCacheConfig =>
-            //{
-            //    redisCacheConfig.ConfigurationOptions = redisConfigurationOptions;
-            //});
-
-            //services.AddStackExchangeRedisCache(redisCacheConfig =>
-            //{
-            //    redisCacheConfig.ConfigurationOptions = redisConnectionStrings.RedisCache;
-            //});
-
-
-            //services.AddStackExchangeRedisCache(options =>
-            //{
-            //    options.Configuration = _config["MyRedisConStr"];
-            //    options.InstanceName = "SampleInstance";
-            //});
-
-            //var conStr = configuration["RedisConnectionStrings:RedisCache"];
-            //services.AddRedisCacheOutput(conStr);
+            var conStr = configuration["RedisConnectionStrings:RedisCache"];
+            services.AddRedisCacheOutput(conStr);
         }
     }
 }

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+
+	<resource culture="ar-kw" name="universityname" value="اسم الجامعة"></resource>
+	<resource culture="en-us" name="universityname" value="University Name"></resource>
+
+	<resource culture="ar-kw" name="speciality" value="تخصص"></resource>
+	<resource culture="en-us" name="speciality" value="Speciality"></resource>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="civilid" value="الرقم المدني"></resource>
+       <resource culture="ar-kw" name="civilidRequired" value="AR: Please provide  Civil Id"></resource>
+       <resource culture="ar-kw" name="birthdate" value="تاريخ الميلاد"></resource>
+       <resource culture="ar-kw" name="serviceinfoid" value="معلومات الخدمة"></resource>
+       <resource culture="ar-kw" name="serviceinfoidRequired" value="AR: Please provide  Service Info Id"></resource>
+       <resource culture="ar-kw" name="servicestatusid" value="حالة الخدمة"></resource>
+       <resource culture="ar-kw" name="servicestatusidRequired" value="AR: Please provide  Service Status Id"></resource>
+       <resource culture="ar-kw" name="iscurrent" value="AR:  Is Current"></resource>
+       <resource culture="ar-kw" name="migratedate" value="AR:  Migrate Date"></resource>
+       <resource culture="ar-kw" name="migratedateRequired" value="AR: Please provide  Migrate Date"></resource>
+       <resource culture="ar-kw" name="remarks" value="AR:  Remarks"></resource>
+       <resource culture="ar-kw" name="internaltaskid" value="AR:  Internal Task Id"></resource>
+       <resource culture="ar-kw" name="internaltaskidRequired" value="AR: Please provide  Internal Task Id"></resource>
+       <resource culture="ar-kw" name="batchid" value="AR:  Batch Id"></resource>
+       <resource culture="ar-kw" name="batchidRequired" value="AR: Please provide  Batch Id"></resource>
+	
+	
+       <resource culture="ar-kw" name="disabilitytype" value="نوع الإعاقة"></resource>
+       <resource culture="ar-kw" name="disabilityseverity" value="شدة الإعاقة"></resource>
+       <resource culture="ar-kw" name="disabilitydate" value="تاريخ الإعاقة"></resource>
+       <resource culture="ar-kw" name="disabilityvalidity" value="صلاحية الإعاقة"></resource>
+       <resource culture="ar-kw" name="studentid" value="هوية الطالب"></resource>
+       <resource culture="ar-kw" name="graduationdate" value="تاريخ التخرج"></resource>
+       <resource culture="ar-kw" name="collegename" value="اسم الكلية"></resource>
+       <resource culture="ar-kw" name="departeddata" value="البيانات الراحلة"></resource>
+       <resource culture="ar-kw" name="deathreferenceno" value="الرقم المرجعي للوفاة"></resource>
+       <resource culture="ar-kw" name="isprocess" value="AR:  Is Process"></resource>
+       <resource culture="ar-kw" name="isprocessRequired" value="AR: Please provide  Is Process"></resource>
+		<resource culture="ar-kw" name="apimigratedatainfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="apimigratedatainfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="apimigratedatainfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="apimigratedatainfoDetails" value="AR: Detail"></resource>
+
+
+
+
+	<!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="civilid" value=" Civil Id"></resource>
+       <resource culture="en-us" name="civilidRequired" value="Please provide  Civil Id"></resource>
+       <resource culture="en-us" name="birthdate" value=" Birth Date"></resource>
+       <resource culture="en-us" name="serviceinfoid" value=" Service Info Id"></resource>
+       <resource culture="en-us" name="serviceinfoidRequired" value="Please provide  Service Info Id"></resource>
+       <resource culture="en-us" name="servicestatusid" value=" Service Status Id"></resource>
+       <resource culture="en-us" name="servicestatusidRequired" value="Please provide  Service Status Id"></resource>
+       <resource culture="en-us" name="iscurrent" value=" Is Current"></resource>
+       <resource culture="en-us" name="migratedate" value=" Migrate Date"></resource>
+       <resource culture="en-us" name="migratedateRequired" value="Please provide  Migrate Date"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+       <resource culture="en-us" name="internaltaskid" value=" Internal Task Id"></resource>
+       <resource culture="en-us" name="internaltaskidRequired" value="Please provide  Internal Task Id"></resource>
+       <resource culture="en-us" name="batchid" value=" Batch Id"></resource>
+       <resource culture="en-us" name="batchidRequired" value="Please provide  Batch Id"></resource>
+       <resource culture="en-us" name="disabilitytype" value=" Disability Type"></resource>
+       <resource culture="en-us" name="disabilityseverity" value=" Disability Severity"></resource>
+       <resource culture="en-us" name="disabilitydate" value=" Disability Date"></resource>
+       <resource culture="en-us" name="disabilityvalidity" value=" Disability Validity"></resource>
+       <resource culture="en-us" name="studentid" value=" Student Id"></resource>
+       <resource culture="en-us" name="graduationdate" value=" Graduation Date"></resource>
+       <resource culture="en-us" name="collegename" value=" College Name"></resource>
+       <resource culture="en-us" name="departeddata" value=" Departed Data"></resource>
+       <resource culture="en-us" name="deathreferenceno" value=" Death Reference No"></resource>
+       <resource culture="en-us" name="isprocess" value=" Is Process"></resource>
+       <resource culture="en-us" name="isprocessRequired" value="Please provide  Is Process"></resource>
+        <resource culture="en-us" name="apimigratedatainfoList" value="View All"></resource>
+		<resource culture="en-us" name="apimigratedatainfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="apimigratedatainfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="apimigratedatainfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

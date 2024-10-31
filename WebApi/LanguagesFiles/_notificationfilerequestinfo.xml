@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="fileguid" value="AR:  File G U I D"></resource>
+       <resource culture="ar-kw" name="fileguidRequired" value="AR: Please provide  File G U I D"></resource>
+       <resource culture="ar-kw" name="applicationid" value="AR:  Application I D"></resource>
+       <resource culture="ar-kw" name="applicationidRequired" value="AR: Please provide  Application I D"></resource>
+       <resource culture="ar-kw" name="physicalfilename" value="AR:  Physical File Name"></resource>
+       <resource culture="ar-kw" name="userfilename" value="AR:  User File Name"></resource>
+       <resource culture="ar-kw" name="filetype" value="AR:  File Type"></resource>
+       <resource culture="ar-kw" name="fileextension" value="AR:  File Extension"></resource>
+       <resource culture="ar-kw" name="filesize" value="AR:  File Size"></resource>
+       <resource culture="ar-kw" name="datareadytoprocess" value="AR:  Data Ready To Process"></resource>
+       <resource culture="ar-kw" name="isprocessed" value="AR:  Is Processed"></resource>
+       <resource culture="ar-kw" name="processstartdate" value="AR:  Process Start Date"></resource>
+       <resource culture="ar-kw" name="processendstartdate" value="AR:  Process End Start Date"></resource>
+       <resource culture="ar-kw" name="messagesubject" value="AR:  Message Subject"></resource>
+       <resource culture="ar-kw" name="messagebody" value="AR:  Message Body"></resource>
+       <resource culture="ar-kw" name="messagesubjectar" value="AR:  Message Subject A R"></resource>
+       <resource culture="ar-kw" name="messagebodyar" value="AR:  Message Body A R"></resource>
+		<resource culture="ar-kw" name="notificationfilerequestinfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="notificationfilerequestinfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="notificationfilerequestinfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="notificationfilerequestinfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="fileguid" value=" File G U I D"></resource>
+       <resource culture="en-us" name="fileguidRequired" value="Please provide  File G U I D"></resource>
+       <resource culture="en-us" name="applicationid" value=" Application I D"></resource>
+       <resource culture="en-us" name="applicationidRequired" value="Please provide  Application I D"></resource>
+       <resource culture="en-us" name="physicalfilename" value=" Physical File Name"></resource>
+       <resource culture="en-us" name="userfilename" value=" User File Name"></resource>
+       <resource culture="en-us" name="filetype" value=" File Type"></resource>
+       <resource culture="en-us" name="fileextension" value=" File Extension"></resource>
+       <resource culture="en-us" name="filesize" value=" File Size"></resource>
+       <resource culture="en-us" name="datareadytoprocess" value=" Data Ready To Process"></resource>
+       <resource culture="en-us" name="isprocessed" value=" Is Processed"></resource>
+       <resource culture="en-us" name="processstartdate" value=" Process Start Date"></resource>
+       <resource culture="en-us" name="processendstartdate" value=" Process End Start Date"></resource>
+       <resource culture="en-us" name="messagesubject" value=" Message Subject"></resource>
+       <resource culture="en-us" name="messagebody" value=" Message Body"></resource>
+       <resource culture="en-us" name="messagesubjectar" value=" Message Subject A R"></resource>
+       <resource culture="en-us" name="messagebodyar" value=" Message Body A R"></resource>
+        <resource culture="en-us" name="notificationfilerequestinfoList" value="View All"></resource>
+		<resource culture="en-us" name="notificationfilerequestinfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="notificationfilerequestinfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="notificationfilerequestinfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

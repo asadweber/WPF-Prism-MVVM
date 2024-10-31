@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="phasestatus" value="حالة المرحلة"></resource>
+       <resource culture="ar-kw" name="phasestatusRequired" value="الرجاء إدخال حالة المرحلة"></resource>
+       <resource culture="ar-kw" name="phasestatuseng" value="حالة المرحلة"></resource>
+       <resource culture="ar-kw" name="phasestatusengRequired" value="الرجاء إدخال حالة المرحلة"></resource>
+       <resource culture="ar-kw" name="isactive" value="فعال"></resource>
+       <resource culture="ar-kw" name="isactiveRequired" value="الرجاء إدخال إذا كان فعال"></resource>
+       <resource culture="ar-kw" name="islast" value="الأخير"></resource>
+       <resource culture="ar-kw" name="remarks" value="ملاحظة"></resource>
+       <resource culture="ar-kw" name="migrationinfo" value="AR:  Migration Info"></resource>
+       <resource culture="ar-kw" name="migrationtable" value="AR:  Migration Table"></resource>
+       <resource culture="ar-kw" name="migrationtext" value="AR:  Migration Text"></resource>
+		<resource culture="ar-kw" name="phasestatusList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="phasestatusCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="phasestatusUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="phasestatusDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="phasestatus" value=" Phase Status"></resource>
+       <resource culture="en-us" name="phasestatusRequired" value="Please provide  Phase Status"></resource>
+       <resource culture="en-us" name="phasestatuseng" value=" Phase Status Eng"></resource>
+       <resource culture="en-us" name="phasestatusengRequired" value="Please provide  Phase Status Eng"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+       <resource culture="en-us" name="isactiveRequired" value="Please provide  Is Active"></resource>
+       <resource culture="en-us" name="islast" value=" Is Last"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+       <resource culture="en-us" name="migrationinfo" value=" Migration Info"></resource>
+       <resource culture="en-us" name="migrationtable" value=" Migration Table"></resource>
+       <resource culture="en-us" name="migrationtext" value=" Migration Text"></resource>
+        <resource culture="en-us" name="phasestatusList" value="View All"></resource>
+		<resource culture="en-us" name="phasestatusCreate" value="Create"></resource>
+		<resource culture="en-us" name="phasestatusUpdate" value="Update"></resource>
+		<resource culture="en-us" name="phasestatusDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -32,10 +32,10 @@ namespace Web.Api.Controllers
         public IConfiguration _configuration { get; }
 
         /// <summary>
-        /// GenFAQCagetogyController
+        /// GenFAQCategoryController
         /// </summary>
-        /// <param name="gen_FAQCagetogyUseCase"></param>
-        /// <param name="gen_FAQCagetogyPresenter"></param>
+        /// <param name="gen_FAQCategoryUseCase"></param>
+        /// <param name="gen_FAQCategoryPresenter"></param>
         /// <param name="authSettings"></param>
         public Owin_UserRolesController(
             IOwin_UserRolesUseCase owin_UserRolesUseCase,
@@ -46,6 +46,7 @@ namespace Web.Api.Controllers
             _owin_UserRolesUseCase = owin_UserRolesUseCase;
             _owin_UserRolesPresenter = owin_UserRolesPresenter;
         }
+
         /// <summary>
         /// GetAllOwin_UserRoles
         /// </summary>

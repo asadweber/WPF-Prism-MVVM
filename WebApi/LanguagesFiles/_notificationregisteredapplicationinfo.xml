@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="applicationcodename" value="AR:  Application Code Name"></resource>
+       <resource culture="ar-kw" name="applicationcodenameRequired" value="AR: Please provide  Application Code Name"></resource>
+       <resource culture="ar-kw" name="applicationfreindlyname" value="AR:  Application Freindly Name"></resource>
+       <resource culture="ar-kw" name="applicationfreindlynameRequired" value="AR: Please provide  Application Freindly Name"></resource>
+       <resource culture="ar-kw" name="serviceproviderid" value="AR:  Service Provider I D"></resource>
+       <resource culture="ar-kw" name="certthumbprint" value="AR:  Cert Thumb Print"></resource>
+       <resource culture="ar-kw" name="certfreindlyname" value="AR:  Cert Freindly Name"></resource>
+       <resource culture="ar-kw" name="paciserviceurl" value="AR:  P A C I Service U R L"></resource>
+       <resource culture="ar-kw" name="paciserviceport" value="AR:  P A C I Service Port"></resource>
+       <resource culture="ar-kw" name="kafwebapicallbackurl" value="AR:  K A F Web A P I Call Back U R L"></resource>
+		<resource culture="ar-kw" name="notificationregisteredapplicationinfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="notificationregisteredapplicationinfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="notificationregisteredapplicationinfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="notificationregisteredapplicationinfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="applicationcodename" value=" Application Code Name"></resource>
+       <resource culture="en-us" name="applicationcodenameRequired" value="Please provide  Application Code Name"></resource>
+       <resource culture="en-us" name="applicationfreindlyname" value=" Application Freindly Name"></resource>
+       <resource culture="en-us" name="applicationfreindlynameRequired" value="Please provide  Application Freindly Name"></resource>
+       <resource culture="en-us" name="serviceproviderid" value=" Service Provider I D"></resource>
+       <resource culture="en-us" name="certthumbprint" value=" Cert Thumb Print"></resource>
+       <resource culture="en-us" name="certfreindlyname" value=" Cert Freindly Name"></resource>
+       <resource culture="en-us" name="paciserviceurl" value=" P A C I Service U R L"></resource>
+       <resource culture="en-us" name="paciserviceport" value=" P A C I Service Port"></resource>
+       <resource culture="en-us" name="kafwebapicallbackurl" value=" K A F Web A P I Call Back U R L"></resource>
+        <resource culture="en-us" name="notificationregisteredapplicationinfoList" value="View All"></resource>
+		<resource culture="en-us" name="notificationregisteredapplicationinfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="notificationregisteredapplicationinfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="notificationregisteredapplicationinfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

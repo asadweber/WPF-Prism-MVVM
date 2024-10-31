@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="issuetype" value="نوع العقوبة"></resource>
+		<resource culture="ar-kw" name="issuetypeRequired" value="الرجاء إدخال نوع العقوبة"></resource>
+       <resource culture="ar-kw" name="remarks" value="ملاحظة"></resource>
+       <resource culture="ar-kw" name="isactive" value="فعالة"></resource>
+		<resource culture="ar-kw" name="issuetypeList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="issuetypeCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="issuetypeUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="issuetypeDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="issuetype" value=" Issue Type"></resource>
+       <resource culture="en-us" name="issuetypeRequired" value=" Please provide Issue Type"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+        <resource culture="en-us" name="issuetypeList" value="View All"></resource>
+		<resource culture="en-us" name="issuetypeCreate" value="Create"></resource>
+		<resource culture="en-us" name="issuetypeUpdate" value="Update"></resource>
+		<resource culture="en-us" name="issuetypeDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

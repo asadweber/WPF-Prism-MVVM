@@ -1,55 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 		<UserSecretsId>ecde624a-0163-4b8d-988c-a55ea0993a3c</UserSecretsId>
 		<ApplicationIcon />
 		<OutputType>Exe</OutputType>
 		<StartupObject />
+		<UseGlobalApplicationHostFile>false</UseGlobalApplicationHostFile>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
-		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
-		<EnableNETAnalyzers>False</EnableNETAnalyzers>
-		<AnalysisLevel>none</AnalysisLevel>
-		<NoWarn>NU1701</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DocumentationFile></DocumentationFile>
-		<WarningLevel>0</WarningLevel>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <WarningLevel>0</WarningLevel>
+		<DocumentationFile>C:\Projects\KNS-Core\WebSolutionTemplate\WebApi\WebApi.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="InternalServices\**" />
-	  <Content Remove="InternalServices\**" />
-	  <EmbeddedResource Remove="InternalServices\**" />
-	  <None Remove="InternalServices\**" />
+	  <Compile Remove="LanguagesFiles\**" />
+	  <Content Remove="LanguagesFiles\**" />
+	  <EmbeddedResource Remove="LanguagesFiles\**" />
+	  <None Remove="LanguagesFiles\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Remove="Controllers\General\CorrespondenceOperationController.cs" />
 		<Compile Remove="Controllers\General\MilitaryPersonnelController.cs" />
-		<Compile Remove="Controllers\General\TranLoginController.cs" />
+		<Compile Remove="Controllers\PACINotificationAPIController.cs" />
 		<Compile Remove="Models\Request\ExchangeRefreshTokenRequest.cs" />
 		<Compile Remove="Models\Request\LoginRequest.cs" />
 		<Compile Remove="Models\Request\RegisterUserRequest.cs" />
-		<Compile Remove="Models\Validation\NotificationRegisteredApplicationInfoRequestValidator.cs" />
-		<Compile Remove="Models\Validation\RegisterUserRequestValidator.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Remove="wwwroot\swagger-ui\custom.Prod.css" />
 	  <Content Remove="wwwroot\swagger-ui\custom.Uat.css" />
 	  <Content Remove="wwwroot\swagger-ui\customJs.js" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="wwwroot\msgTemplates\kuwaitarmycontactform.html" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -65,67 +49,57 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AspNetCore.CacheOutput.Redis" Version="3.2.0" />
-		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
-		<!--<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />-->
-		<PackageReference Include="ClosedXML" Version="0.104.1" />
-		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-		<PackageReference Include="HtmlAgilityPack" Version="1.11.70" />
-		<PackageReference Include="jQuery" Version="3.7.1" />
-		<PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.3" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
-		<PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.10" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.10" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
-		<PackageReference Include="Microsoft.Owin" Version="4.2.2" />
-		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+		<PackageReference Include="AspNetCore.CacheOutput.Redis" Version="2.1.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="ClosedXML" Version="0.100.3" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.4" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.0" />
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
-		<PackageReference Include="Serilog" Version="4.1.0" />
-		<PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
-		<PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
-		<PackageReference Include="Serilog.Enrichers.Process" Version="3.0.0" />
-		<PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
-		<PackageReference Include="Serilog.Settings.Configuration" Version="8.0.4" />
-		<PackageReference Include="Serilog.Sinks.Async" Version="2.1.0" />
-		<PackageReference Include="Serilog.Sinks.MongoDB" Version="6.0.0" />
-		<PackageReference Include="StackExchange.Redis" Version="2.8.16" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.9.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.9.0" />
-		<PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
-		<PackageReference Include="System.IO.Packaging" Version="8.0.1" />
-		<PackageReference Include="System.Net.Http" Version="4.3.4" />
-		<PackageReference Include="System.ServiceModel.Duplex" Version="6.0.0" />
-		<PackageReference Include="System.ServiceModel.Federation" Version="8.0.0" />
-		<PackageReference Include="System.ServiceModel.Http" Version="8.0.0" />
-		<PackageReference Include="System.ServiceModel.NetTcp" Version="8.0.0" />
-		<PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
+		<PackageReference Include="ReportViewerCore.NETCore" Version="15.1.19" />
+		<PackageReference Include="Serilog" Version="2.11.0-dev-01380" />
+		<PackageReference Include="Serilog.AspNetCore" Version="6.0.0-dev-00265" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.1-dev-00787" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.2.0-dev-00752" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.1-dev-00296" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Serilog.Sinks.MongoDB" Version="5.1.2" />
+		<PackageReference Include="StackExchange.Redis" Version="2.5.61" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\AppConfig\AppConfig.csproj" />
 		<ProjectReference Include="..\BDO\BDO.csproj" />
 		<ProjectReference Include="..\CLL\CLL.csproj" />
+		<ProjectReference Include="..\QRCoder\QRCoder.NETCore20.csproj" />
 		<ProjectReference Include="..\Web.Api.Infrastructure\Web.Api.Infrastructure.csproj" />
 		<ProjectReference Include="..\Web.Core.Frame\Web.Core.Frame.csproj" />
+		<ProjectReference Include="..\WebShared\WebShared.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Connected Services\" />
-		<Folder Include="Controllers\General\" />
+		<Folder Include="Controllers\Extended\" />
 		<Folder Include="Models\Request\" />
-		<Folder Include="Properties\PublishProfiles\" />
 		<Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="wwwroot\msgTemplates\kuwaitarmyreserviceform.html">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
-	  <Content Update="wwwroot\msgTemplates\kuwaitarmycontactform.html">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
+	  <Reference Include="MIDAuthServiceClient">
+	    <HintPath>..\..\PACIRefDLL\MIDAuthServiceClient.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MIDAuthServiceClientContract">
+	    <HintPath>..\..\PACIRefDLL\MIDAuthServiceClientContract.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Content Update="wwwroot\swagger-ui\kaf_logo.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>

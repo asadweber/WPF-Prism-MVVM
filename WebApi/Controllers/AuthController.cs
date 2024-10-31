@@ -8,8 +8,7 @@ using Web.Core.Frame.Presenters;
 using Web.Core.Frame.Dto.UseCaseRequests;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
-using Microsoft.AspNetCore.Http;
-using Web.Core.Frame.Dto.UseCaseResponses;
+
 namespace WebApi.Controllers
 {
     /// <summary>
@@ -25,6 +24,7 @@ namespace WebApi.Controllers
         private readonly IExchangeRefreshTokenUseCase _exchangeRefreshTokenUseCase;
         private readonly ExchangeRefreshTokenPresenter _exchangeRefreshTokenPresenter;
         private readonly AuthSettings _authSettings;
+
 
 
 
@@ -53,17 +53,17 @@ namespace WebApi.Controllers
             _userSignManager = userSignManager;
         }
 
-        [ApiExplorerSettings(IgnoreApi = true)]
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [HttpPost("loginTest")]
-        public async Task<ActionResult> loginTest([FromBody] LoginRequest request)
-        {
-            return _loginPresenter.ContentResult;
-        }
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <returns></returns>
+        //[HttpPost("loginTest")]
+        //public async Task<ActionResult> loginTest([FromBody] LoginRequest request)
+        //{
+        //    return _loginPresenter.ContentResult;
+        //}
 
 
         // POST api/auth/login
@@ -73,14 +73,30 @@ namespace WebApi.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("login")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LoginResponse))]
+
         public async Task<ActionResult> Login([FromBody] LoginRequest request)
         {
             var ipaddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
             var result = await _userSignManager.CanSignInAsync(new owin_userEntity());
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
-            //await _loginUseCase.Handle(new LoginRequest(request.UserName, request.Password, ipaddress ?? "127.0.0.1"), _loginPresenter);
+            await _loginUseCase.Handle(new LoginRequest(request.UserName, request.Password, ipaddress ?? "127.0.0.1"), _loginPresenter);
+            return _loginPresenter.ContentResult;
+        }
 
+
+
+        // POST api/auth/changepassword
+        /// <summary>
+        /// changepassword
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("changepassword")]
+
+        public async Task<ActionResult> changepassword([FromBody] LoginRequest request)
+        {
+            var ipaddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+            if (!ModelState.IsValid) { return BadRequest(ModelState); }
             await _loginUseCase.Handle(new LoginRequest(request.UserName, request.Password, ipaddress ?? "127.0.0.1"), _loginPresenter);
             return _loginPresenter.ContentResult;
         }

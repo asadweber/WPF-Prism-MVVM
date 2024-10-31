@@ -32,10 +32,10 @@ namespace Web.Api.Controllers
         public IConfiguration _configuration { get; }
 
         /// <summary>
-        /// GenFAQCagetogyController
+        /// GenFAQCategoryController
         /// </summary>
-        /// <param name="gen_FAQCagetogyUseCase"></param>
-        /// <param name="gen_FAQCagetogyPresenter"></param>
+        /// <param name="gen_FAQCategoryUseCase"></param>
+        /// <param name="gen_FAQCategoryPresenter"></param>
         /// <param name="authSettings"></param>
         public Owin_RolePermissionController(
             IOwin_RolePermissionUseCase owin_RolePermissionUseCase,
@@ -139,7 +139,7 @@ namespace Web.Api.Controllers
             /*				 ModelState.Remove("rolepremissionid");
 				 ModelState.Remove("roleid");
 				 ModelState.Remove("formactionid");
-				 ModelState.Remove("status");
+				 ModelState.Remove("medicalresult");
 */
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             await _owin_RolePermissionUseCase.Delete(new Owin_RolePermissionRequest(request), _owin_RolePermissionPresenter);

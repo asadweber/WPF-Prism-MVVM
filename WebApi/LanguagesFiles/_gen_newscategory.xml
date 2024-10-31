@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="newscategoryar" value="فئة الخبر"></resource>
+       <resource culture="ar-kw" name="newscategoryarRequired" value="الرجاء إدخال فئة الخبر"></resource>
+       <resource culture="ar-kw" name="newscategory" value="فئة الخبر"></resource>
+		<resource culture="ar-kw" name="newscategoryList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="newscategoryCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="newscategoryUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="newscategoryDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="newscategoryar" value=" News Category A R"></resource>
+       <resource culture="en-us" name="newscategoryarRequired" value="Please provide  News Category A R"></resource>
+       <resource culture="en-us" name="newscategory" value=" News Category"></resource>
+        <resource culture="en-us" name="newscategoryList" value="View All"></resource>
+		<resource culture="en-us" name="newscategoryCreate" value="Create"></resource>
+		<resource culture="en-us" name="newscategoryUpdate" value="Update"></resource>
+		<resource culture="en-us" name="newscategoryDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

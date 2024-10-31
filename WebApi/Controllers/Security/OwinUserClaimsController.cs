@@ -32,10 +32,10 @@ namespace Web.Api.Controllers
         public IConfiguration _configuration { get; }
 
         /// <summary>
-        /// GenFAQCagetogyController
+        /// GenFAQCategoryController
         /// </summary>
-        /// <param name="gen_FAQCagetogyUseCase"></param>
-        /// <param name="gen_FAQCagetogyPresenter"></param>
+        /// <param name="gen_FAQCategoryUseCase"></param>
+        /// <param name="gen_FAQCategoryPresenter"></param>
         /// <param name="authSettings"></param>
         public Owin_UserClaimsController(
             IOwin_UserClaimsUseCase owin_UserClaimsUseCase,

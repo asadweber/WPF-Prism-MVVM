@@ -10,6 +10,7 @@ using WebApi.Extensions;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.Models;
 using BDO.Core.DataAccessObjects.SecurityModels;
+
 namespace Web.Api.Controllers
 {
     /// <summary>
@@ -19,6 +20,7 @@ namespace Web.Api.Controllers
     [Authorize(Policy = "ApiPolicy")]
     [Route("api/[controller]")]
     [ApiController]
+
     public partial class Owin_LastWorkingPageController : ControllerBase
     {
         private readonly IOwin_LastWorkingPageUseCase _owin_LastWorkingPageUseCase;
@@ -31,10 +33,10 @@ namespace Web.Api.Controllers
         public IConfiguration _configuration { get; }
 
         /// <summary>
-        /// GenFAQCagetogyController
+        /// GenFAQCategoryController
         /// </summary>
-        /// <param name="gen_FAQCagetogyUseCase"></param>
-        /// <param name="gen_FAQCagetogyPresenter"></param>
+        /// <param name="gen_FAQCategoryUseCase"></param>
+        /// <param name="gen_FAQCategoryPresenter"></param>
         /// <param name="authSettings"></param>
         public Owin_LastWorkingPageController(
             IOwin_LastWorkingPageUseCase owin_LastWorkingPageUseCase,

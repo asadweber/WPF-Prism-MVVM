@@ -5,7 +5,6 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Linq;
 using Web.Core.Frame.Interfaces.Services;
-using Microsoft.AspNetCore.Http.Extensions;
 
 namespace WebApi.Extensions
 {
@@ -15,7 +14,7 @@ namespace WebApi.Extensions
     public class ApiSecurityFillerAttribute : IActionFilter
     {
 
-        private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _HostingEnvironment;
+        private readonly IHostingEnvironment _HostingEnvironment;
         private readonly IJwtTokenValidator _jwtTokenValidator;
 
         /// <summary>
@@ -25,7 +24,7 @@ namespace WebApi.Extensions
         /// <param name="jwtTokenValidator"></param>
         /// <param name="config"></param>
         public ApiSecurityFillerAttribute(
-            Microsoft.AspNetCore.Hosting.IHostingEnvironment HostingEnvironment,
+            IHostingEnvironment HostingEnvironment,
             IJwtTokenValidator jwtTokenValidator)
         {
             //_jwtTokenHandler = jwtTokenHandler ?? throw new ArgumentNullException(nameof(jwtTokenHandler));
@@ -55,7 +54,7 @@ namespace WebApi.Extensions
             var actionDescriptor = context.ActionDescriptor as ControllerActionDescriptor;
             var actionName = actionDescriptor.ActionName;
             var controllerName = actionDescriptor.ControllerName;
-            if (actionName == "ApiLogin" || actionName == "SubscribeCivilIDRequests")
+            if (actionName == "ApiLogin")
             {
                 return;
             }
@@ -80,7 +79,7 @@ namespace WebApi.Extensions
                     objBase.controllername = controllerName;
                     objBase.createdbyusername = username;
                     objBase.updatedbyusername = username;
-                    objBase.ipaddress = GetUserIP(context);
+                    objBase.ipaddress = context.HttpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1";
                     objBase.createddate = dt;
                     objBase.updateddate = dt;
                     objBase.transid = transid;
@@ -99,10 +98,15 @@ namespace WebApi.Extensions
                         objBase = new SecurityCapsule();
                     if (context.ActionArguments.Count > 0)
                     {
-                        objBase = ((BDO.Core.Base.BaseEntity)context.ActionArguments["request"])?.BaseSecurityParam;
-                        if (objBase == null)
+                        if (context.ActionArguments.ContainsKey("request"))
+                        {
+                            objBase = ((BDO.Core.Base.BaseEntity)context.ActionArguments["request"])?.BaseSecurityParam;
+                            if (objBase == null)
+                                objBase = new SecurityCapsule();
+                            reqobject = true;
+                        }
+                        else
                             objBase = new SecurityCapsule();
-                        reqobject = true;
                     }
                     else
                     {
@@ -115,11 +119,11 @@ namespace WebApi.Extensions
                         objBase.controllername = controllerName;
                         objBase.createdbyusername = "e527c07f-de86-44c6-9f93-0000800d295a";
                         objBase.updatedbyusername = "e527c07f-de86-44c6-9f93-0000800d295a";
-                        objBase.ipaddress = GetUserIP(context); 
+                        objBase.ipaddress = context.HttpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1";
                         objBase.createddate = dt;
                         objBase.updateddate = dt;
                         objBase.transid = "DUMMYTRANSID";
-                        if (reqobject)
+                        if(reqobject)
                             ((BDO.Core.Base.BaseEntity)context.ActionArguments["request"]).BaseSecurityParam = objBase;
                         else
                             context.ActionArguments.Add("request", objBase);
@@ -129,17 +133,6 @@ namespace WebApi.Extensions
             return;
         }
 
-        /// <summary>
-        /// GetUserIP
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public string GetUserIP(ActionExecutingContext context)
-        {
-            var ip = context.HttpContext.Connection.RemoteIpAddress?.ToString();
-            ip = (string.IsNullOrEmpty(context.HttpContext.Request.Headers["X-Forwarded-For"]) != true && context.HttpContext.Request.Headers["X-Forwarded-For"] != "")
-                ? context.HttpContext.Request.Headers["X-Forwarded-For"] : context.HttpContext.Request.Headers["REMOTE_ADDR"];
-            return ip;
-        }
+
     }
 }

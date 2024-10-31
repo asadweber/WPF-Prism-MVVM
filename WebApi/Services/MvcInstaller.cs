@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +28,7 @@ using WebApi.Extensions;
 namespace WebApi.Services
 {
     /// <summary>
-    /// ronty fixed policy serviced 2022
+    /// 
     /// </summary>
     public class MvcInstaller : IInstaller
     {
@@ -47,8 +46,7 @@ namespace WebApi.Services
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", builder => builder.WithOrigins("https://kafpacitst.kuwaitarmy.gov.kw", "http://kafpacitst.kuwaitarmy.gov.kw", "http://localhost:44318", "https://localhost:4431")
-                .AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+                options.AddPolicy("AllowAll", builder => builder.WithOrigins("https://kafpacitst.kuwaitarmy.gov.kw", "http://kafpacitst.kuwaitarmy.gov.kw", "http://localhost:44318", "https://localhost:4431").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
                 options.AddPolicy("AllowAllOrigins",
                     builder =>
                     {
@@ -86,7 +84,9 @@ namespace WebApi.Services
             services.AddSingleton<IUserStore<owin_userEntity>, CustomUserStore>();
             services.AddSingleton<IRoleStore<IdentityRole>, CustomRoleStore>();
             services.AddTransient<ApiSecurityFillerAttribute>();
-            
+
+
+
             services.Configure<AuthSettings>(_configuration.GetSection(nameof(AuthSettings)));
             var authSettings = _configuration.GetSection(nameof(AuthSettings)).Get<AuthSettings>();
             var ftpSettings = _configuration.GetSection(nameof(FtpSettings)).Get<FtpSettings>();
@@ -100,6 +100,7 @@ namespace WebApi.Services
                 options.ValidFor = jwtIssuerOptions.ValidFor;
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
+
 
             services.AddAuthentication(options =>
             {
@@ -154,6 +155,11 @@ namespace WebApi.Services
                     policy.Requirements.Add(new IsRoleActionRequirement());
                     policy.AuthenticationSchemes = new List<string> { JwtBearerDefaults.AuthenticationScheme };
                 });
+                options.AddPolicy("allowAllApiPolicy", policy =>
+				{
+					policy.RequireAuthenticatedUser();
+					policy.AuthenticationSchemes = new List<string> { JwtBearerDefaults.AuthenticationScheme };
+				}); 
             });
 
             services.AddSingleton<IAuthorizationHandler, IsApprovedReqHandler>();
@@ -164,13 +170,6 @@ namespace WebApi.Services
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
-
-
-            //services.Configure<ForwardedHeadersOptions>(options =>
-            //{
-            //    options.ForwardedHeaders =
-            //        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-            //});
         }
 
         private static void AddLocalizationConfigurations(IServiceCollection services)

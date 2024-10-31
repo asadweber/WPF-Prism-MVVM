@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="knsexservicename" value="AR:  K N S Ex Service Name"></resource>
+       <resource culture="ar-kw" name="knsexservicenameRequired" value="AR: Please provide  K N S Ex Service Name"></resource>
+       <resource culture="ar-kw" name="knsexservicedescription" value="AR:  K N S Ex Service Description"></resource>
+       <resource culture="ar-kw" name="isactive" value="AR:  Is Active"></resource>
+       <resource culture="ar-kw" name="isactiveRequired" value="AR: Please provide  Is Active"></resource>
+		<resource culture="ar-kw" name="genList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="genCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="genUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="genDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="knsexservicename" value=" K N S Ex Service Name"></resource>
+       <resource culture="en-us" name="knsexservicenameRequired" value="Please provide  K N S Ex Service Name"></resource>
+       <resource culture="en-us" name="knsexservicedescription" value=" K N S Ex Service Description"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+       <resource culture="en-us" name="isactiveRequired" value="Please provide  Is Active"></resource>
+        <resource culture="en-us" name="genList" value="View All"></resource>
+		<resource culture="en-us" name="genCreate" value="Create"></resource>
+		<resource culture="en-us" name="genUpdate" value="Update"></resource>
+		<resource culture="en-us" name="genDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+	<resource culture="ar-kw" name="FCIVIL_NO" value="البطاقة المدنية للأب"></resource>
+	<resource culture="en-us" name="FCIVIL_NO" value="Father's CivilId"></resource>
+	
+	<resource culture="ar-kw" name="MCIVIL_NO" value="البطاقة المدنية للأم"></resource>
+	<resource culture="en-us" name="MCIVIL_NO" value="Mother's Civilid"></resource>
+	
+	<resource culture="ar-kw" name="trainingstatus" value="حالة التدريب"></resource>
+	<resource culture="en-us" name="trainingstatus" value="Training Status"></resource>
+	
+	
+	<resource culture="ar-kw" name="LastUpdate" value="اخر تحديث"></resource>
+	<resource culture="en-us" name="LastUpdate" value="Last Update"></resource>
+
+	<resource culture="ar-kw" name="Created" value="تاريخ الإنشاء"></resource>
+	<resource culture="en-us" name="Created" value="Created"></resource>
+
+	<resource culture="ar-kw" name="registrationdate" value="تاريخ التسجيل"></resource>
+	<resource culture="en-us" name="registrationdate" value="Registration Date"></resource>
+
+
+	<resource culture="ar-kw" name="age" value="عمر"></resource>
+	<resource culture="en-us" name="age" value="Age"></resource>
+
+
+	<resource culture="ar-kw" name="batchid" value=" رقم الدعوة"></resource>
+	<resource culture="en-us" name="batchid" value=" Batch Id"></resource>
+
+	<!--  ar-kwabic (ar-kw) -->
+
+
+  <resource culture="ar-kw" name="TotalNotification" value="إجمالي الإخطارات المرسلة"></resource>
+
+  <resource culture="ar-kw" name="civilid" value="الرقم المدني"></resource>
+	<resource culture="ar-kw" name="civilidRequired" value="الرجاء إدخال الرقم المدني"></resource>
+	<resource culture="ar-kw" name="passportno" value="رقم جواز السفر"></resource>
+	<resource culture="ar-kw" name="fullname" value="الأسم الكامل"></resource>
+	<resource culture="ar-kw" name="fullnameRequired" value="الرجاء إدخال الأسم الكامل"></resource>
+	<resource culture="ar-kw" name="name1" value="الإسم الأول"></resource>
+	<resource culture="ar-kw" name="name1Required" value="الرجاء إدخال الإسم الأول"></resource>
+	<resource culture="ar-kw" name="name2" value="الإسم الثاني"></resource>
+	<resource culture="ar-kw" name="name2Required" value="الرجاء إدخال الإسم الثاني"></resource>
+	<resource culture="ar-kw" name="name3" value="الإسم الثالث"></resource>
+	<resource culture="ar-kw" name="name4" value="الإسم الرابع"></resource>
+	<resource culture="ar-kw" name="name5" value="الإسم الخامس"></resource>
+	<resource culture="ar-kw" name="dob" value="تاريخ الميلاد"></resource>
+	<resource culture="ar-kw" name="dobRequired" value="الرجاء إدخال تاريخ الميلاد"></resource>
+	<resource culture="ar-kw" name="mob1" value="رقم الهاتف"></resource>
+	<resource culture="ar-kw" name="mob1Required" value="الرجاء إدخال رقم الهاتف"></resource>
+	<resource culture="ar-kw" name="mob2" value="رقم هاتف 2"></resource>
+	<resource culture="ar-kw" name="mob3" value="رقم هاتف 3"></resource>
+	<resource culture="ar-kw" name="telephone1" value="هاتف المحمول 1"></resource>
+	<resource culture="ar-kw" name="telephone2" value="هاتف المحمول 2"></resource>
+	<resource culture="ar-kw" name="telephone3" value="هاتف المحمول 3"></resource>
+	<resource culture="ar-kw" name="email" value="البريد الإلكتروني"></resource>
+	<resource culture="ar-kw" name="emailRequired" value="الرجاء إدخال البريد الإلكتروني"></resource>
+	<resource culture="ar-kw" name="gender" value="الجنس"></resource>
+	<resource culture="ar-kw" name="pres_latitude" value="AR:  Pres Latitude"></resource>
+	<resource culture="ar-kw" name="pres_longitude" value="AR:  Pres Longitude"></resource>
+	<resource culture="ar-kw" name="peraddcountryid" value="إضافة الدولة"></resource>
+	<resource culture="ar-kw" name="peraddgovernid" value="إضافة المحافظة"></resource>
+	<resource culture="ar-kw" name="peraddcityid" value="المنطقة"></resource>
+	<resource culture="ar-kw" name="peraddstreet" value="الشارع"></resource>
+	<resource culture="ar-kw" name="peraddblock" value="القطعة"></resource>
+	<resource culture="ar-kw" name="peraddhousingno" value="رقم المنزل"></resource>
+	<resource culture="ar-kw" name="peraddhousingflatno" value="طابق رقم"></resource>
+	<resource culture="ar-kw" name="perpaci" value="رقم الالي للسكن"></resource>
+	<resource culture="ar-kw" name="peraddress" value="AR:  Per Address"></resource>
+	<resource culture="ar-kw" name="maritalstatus" value="الحالة الإجتماعية"></resource>
+	<resource culture="ar-kw" name="nationalid" value="AR:  National"></resource>
+	<resource culture="ar-kw" name="nationaldate" value="AR:  National Date"></resource>
+	<resource culture="ar-kw" name="countrynationalityid" value="AR:  Country Nationality"></resource>
+	<resource culture="ar-kw" name="countryclassid" value="AR:  Country Class"></resource>
+	<resource culture="ar-kw" name="registrationstatus" value="حالة التسجيل"></resource>
+	<resource culture="ar-kw" name="bloodgroupid" value="فصيلة الدم"></resource>
+	<resource culture="ar-kw" name="userid" value="AR:  User"></resource>
+	<resource culture="ar-kw" name="masprivatekey" value="AR:  Mas Private Key"></resource>
+	<resource culture="ar-kw" name="masprivatekeyRequired" value="AR: Please provide  Mas Private Key"></resource>
+	<resource culture="ar-kw" name="maspublickey" value="AR:  Mas Public Key"></resource>
+	<resource culture="ar-kw" name="maspublickeyRequired" value="AR: Please provide  Mas Public Key"></resource>
+	<resource culture="ar-kw" name="password" value="AR:  Password"></resource>
+	<resource culture="ar-kw" name="passwordRequired" value="AR: Please provide  Password"></resource>
+	<resource culture="ar-kw" name="passwordsalt" value="AR:  Password Salt"></resource>
+	<resource culture="ar-kw" name="passwordsaltRequired" value="AR: Please provide  Password Salt"></resource>
+	<resource culture="ar-kw" name="passwordkey" value="AR:  Password Key"></resource>
+	<resource culture="ar-kw" name="passwordkeyRequired" value="AR: Please provide  Password Key"></resource>
+	<resource culture="ar-kw" name="passwordvector" value="AR:  Password Vector"></resource>
+	<resource culture="ar-kw" name="passwordvectorRequired" value="AR: Please provide  Password Vector"></resource>
+	<resource culture="ar-kw" name="mobilepin" value="AR:  Mobile P I N"></resource>
+	<resource culture="ar-kw" name="passwordquestion" value="سؤال كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordanswer" value="جواب كلمة المرور"></resource>
+	<resource culture="ar-kw" name="approved" value="موافقة"></resource>
+	<resource culture="ar-kw" name="locked" value="مقفل"></resource>
+	<resource culture="ar-kw" name="paciauthdata" value="AR:  P A C I Auth Data"></resource>
+	<resource culture="ar-kw" name="paciservicedata" value="بيانات هويتي"></resource>
+	<resource culture="ar-kw" name="tranList" value="AR: View All"></resource>
+	<resource culture="ar-kw" name="tranCreate" value="AR: Create"></resource>
+	<resource culture="ar-kw" name="tranUpdate" value="AR: Update"></resource>
+	<resource culture="ar-kw" name="tranDetails" value="AR: Detail"></resource>
+	<resource culture="ar-kw" name="issms" value="رسالة قصيرة"></resource>
+	<resource culture="ar-kw" name="isemail" value="عن طريق البريد الإلكتروني"></resource>
+	<resource culture="ar-kw" name="ispacinotification" value="تنبيه من خلال هويتي"></resource>
+	<resource culture="ar-kw" name="sendingtime" value="وقت الإرسال"></resource>
+	<resource culture="ar-kw" name="FromDate" value="من تاريخ"></resource>
+	<resource culture="ar-kw" name="ToDate" value="إلى تاريخ"></resource>
+	<resource culture="ar-kw" name="ProfileStatus" value=" حالة الإدعاء"></resource>
+	
+
+	<!--  ar-kwabic (ar-kw) -->
+
+	<!--  English (en-US) -->
+
+  <resource culture="en-us" name="TotalNotification" value="Total# of Notification Sent"></resource>
+
+  <resource culture="en-us" name="civilid" value=" Civil ID"></resource>
+	<resource culture="en-us" name="civilidRequired" value="Please provide  Civil ID"></resource>
+	<resource culture="en-us" name="passportno" value=" Passport No"></resource>
+	<resource culture="en-us" name="fullname" value=" Full Name"></resource>
+	<resource culture="en-us" name="fullnameRequired" value="Please provide  Full Name"></resource>
+	<resource culture="en-us" name="name1" value=" Name 1"></resource>
+	<resource culture="en-us" name="name1Required" value="Please provide  Name 1"></resource>
+	<resource culture="en-us" name="name2" value=" Name 2"></resource>
+	<resource culture="en-us" name="name2Required" value="Please provide  Name 2"></resource>
+	<resource culture="en-us" name="name3" value=" Name 3"></resource>
+	<resource culture="en-us" name="name4" value=" Name 4"></resource>
+	<resource culture="en-us" name="name5" value=" Name 5"></resource>
+	<resource culture="en-us" name="dob" value=" Birth Date"></resource>
+	<resource culture="en-us" name="dobRequired" value="Please provide  D O B"></resource>
+	<resource culture="en-us" name="mob1" value=" Mobile No"></resource>
+	<resource culture="en-us" name="mob1Required" value="Please provide  Mobile No"></resource>
+	<resource culture="en-us" name="mob2" value=" Mob 2"></resource>
+	<resource culture="en-us" name="mob3" value=" Mob 3"></resource>
+	<resource culture="en-us" name="telephone1" value=" Telephone 1"></resource>
+	<resource culture="en-us" name="telephone2" value=" Telephone 2"></resource>
+	<resource culture="en-us" name="telephone3" value=" Telephone 3"></resource>
+	<resource culture="en-us" name="email" value=" Email"></resource>
+	<resource culture="en-us" name="emailRequired" value="Please provide  Email"></resource>
+	<resource culture="en-us" name="gender" value=" Gender"></resource>
+	<resource culture="en-us" name="pres_latitude" value=" Pres Latitude"></resource>
+	<resource culture="en-us" name="pres_longitude" value=" Pres Longitude"></resource>
+	<resource culture="en-us" name="peraddcountryid" value="Country"></resource>
+	<resource culture="en-us" name="peraddgovernid" value=" Governorate"></resource>
+	<resource culture="en-us" name="peraddcityid" value=" Area"></resource>
+	<resource culture="en-us" name="peraddstreet" value=" Street"></resource>
+	<resource culture="en-us" name="peraddblock" value=" Block"></resource>
+	<resource culture="en-us" name="peraddhousingno" value=" Housing No"></resource>
+	<resource culture="en-us" name="peraddhousingflatno" value=" Flat No"></resource>
+	<resource culture="en-us" name="perpaci" value=" Paci Number"></resource>
+	<resource culture="en-us" name="peraddress" value=" Per Address"></resource>
+	<resource culture="en-us" name="maritalstatus" value=" Marital Status"></resource>
+	<resource culture="en-us" name="nationalid" value=" National"></resource>
+	<resource culture="en-us" name="nationaldate" value=" National Date"></resource>
+	<resource culture="en-us" name="countrynationalityid" value=" Country Nationality"></resource>
+	<resource culture="en-us" name="countryclassid" value=" Country Class"></resource>
+	<resource culture="en-us" name="registrationstatus" value=" Registration Status"></resource>
+	<resource culture="en-us" name="bloodgroupid" value=" Blood Group"></resource>
+	<resource culture="en-us" name="userid" value=" User"></resource>
+	<resource culture="en-us" name="masprivatekey" value=" Mas Private Key"></resource>
+	<resource culture="en-us" name="masprivatekeyRequired" value="Please provide  Mas Private Key"></resource>
+	<resource culture="en-us" name="maspublickey" value=" Mas Public Key"></resource>
+	<resource culture="en-us" name="maspublickeyRequired" value="Please provide  Mas Public Key"></resource>
+	<resource culture="en-us" name="password" value=" Password"></resource>
+	<resource culture="en-us" name="passwordRequired" value="Please provide  Password"></resource>
+	<resource culture="en-us" name="passwordsalt" value=" Password Salt"></resource>
+	<resource culture="en-us" name="passwordsaltRequired" value="Please provide  Password Salt"></resource>
+	<resource culture="en-us" name="passwordkey" value=" Password Key"></resource>
+	<resource culture="en-us" name="passwordkeyRequired" value="Please provide  Password Key"></resource>
+	<resource culture="en-us" name="passwordvector" value=" Password Vector"></resource>
+	<resource culture="en-us" name="passwordvectorRequired" value="Please provide  Password Vector"></resource>
+	<resource culture="en-us" name="mobilepin" value=" Mobile P I N"></resource>
+	<resource culture="en-us" name="passwordquestion" value=" Password Question"></resource>
+	<resource culture="en-us" name="passwordanswer" value=" Password Answer"></resource>
+	<resource culture="en-us" name="approved" value=" Approved"></resource>
+	<resource culture="en-us" name="locked" value=" Locked"></resource>
+	<resource culture="en-us" name="paciauthdata" value=" P A C I Auth Data"></resource>
+	<resource culture="en-us" name="paciservicedata" value=" P A C I Service Data"></resource>
+	<resource culture="en-us" name="tranList" value="View All"></resource>
+	<resource culture="en-us" name="tranCreate" value="Create"></resource>
+	<resource culture="en-us" name="tranUpdate" value="Update"></resource>
+	<resource culture="en-us" name="tranDetails" value="Detail"></resource>
+	<resource culture="en-us" name="issms" value=" Is SMS"></resource>
+	<resource culture="en-us" name="isemail" value=" Is Email"></resource>
+	<resource culture="en-us" name="ispacinotification" value=" Is Paci Notification"></resource>
+	<resource culture="en-us" name="sendingtime" value=" Sending Time"></resource>
+	<resource culture="en-us" name="FromDate" value=" From Date"></resource>
+	<resource culture="en-us" name="ToDate" value=" To Date"></resource>
+	<resource culture="en-us" name="ProfileStatus" value=" Profile Status"></resource>
+	<!--  English (en-US) -->
+
+
+
+</resources>

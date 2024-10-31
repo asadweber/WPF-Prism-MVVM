@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="gatewayname" value="AR:  Gate Way Name"></resource>
+       <resource culture="ar-kw" name="gatewaynameRequired" value="AR: Please provide  Gate Way Name"></resource>
+       <resource culture="ar-kw" name="configurl" value="AR:  Config U R L"></resource>
+       <resource culture="ar-kw" name="configurlRequired" value="AR: Please provide  Config U R L"></resource>
+       <resource culture="ar-kw" name="methodtype" value="AR:  Method Type"></resource>
+       <resource culture="ar-kw" name="creditlimit" value="AR:  Credit Limit"></resource>
+       <resource culture="ar-kw" name="isdefault" value="AR:  Is Default"></resource>
+       <resource culture="ar-kw" name="priority" value="AR:  Priority"></resource>
+       <resource culture="ar-kw" name="isactive" value="AR:  Is Active"></resource>
+       <resource culture="ar-kw" name="successcase" value="AR:  Success Case"></resource>
+       <resource culture="ar-kw" name="casecompare" value="AR:  Case Compare"></resource>
+		<resource culture="ar-kw" name="configsmsgatewayList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="configsmsgatewayCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="configsmsgatewayUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="configsmsgatewayDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="gatewayname" value=" Gate Way Name"></resource>
+       <resource culture="en-us" name="gatewaynameRequired" value="Please provide  Gate Way Name"></resource>
+       <resource culture="en-us" name="configurl" value=" Config U R L"></resource>
+       <resource culture="en-us" name="configurlRequired" value="Please provide  Config U R L"></resource>
+       <resource culture="en-us" name="methodtype" value=" Method Type"></resource>
+       <resource culture="en-us" name="creditlimit" value=" Credit Limit"></resource>
+       <resource culture="en-us" name="isdefault" value=" Is Default"></resource>
+       <resource culture="en-us" name="priority" value=" Priority"></resource>
+       <resource culture="en-us" name="isactive" value=" Is Active"></resource>
+       <resource culture="en-us" name="successcase" value=" Success Case"></resource>
+       <resource culture="en-us" name="casecompare" value=" Case Compare"></resource>
+        <resource culture="en-us" name="configsmsgatewayList" value="View All"></resource>
+		<resource culture="en-us" name="configsmsgatewayCreate" value="Create"></resource>
+		<resource culture="en-us" name="configsmsgatewayUpdate" value="Update"></resource>
+		<resource culture="en-us" name="configsmsgatewayDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -3,13 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Web.Core.Frame.RequestResponse.UseCaseRequests;
+using Web.Core.Frame.Interfaces.UseCases;
 using Microsoft.AspNetCore.Authorization;
 using WebApi.Extensions;
 using BDO.Core.DataAccessObjects.Models;
+using Web.Core.Frame.Presenters;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
-using Web.Core.Frame.Interfaces.UseCases.Transaction;
-using Web.Core.Frame.Presenters.Transaction;
-using Web.Core.Frame.Dto.UseCaseRequests.Transaction;
 
 namespace Web.Api.Controllers
 {
@@ -46,6 +45,7 @@ namespace Web.Api.Controllers
             _tran_LoginUseCase = tran_LoginUseCase;
             _tran_LoginPresenter = tran_LoginPresenter;
         }
+
 
         /// <summary>
         /// GetAllTranLogin

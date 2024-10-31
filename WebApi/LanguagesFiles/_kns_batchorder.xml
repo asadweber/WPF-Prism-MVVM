@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="batchid" value="رقم الدعوة"></resource>
+       <resource culture="ar-kw" name="orderno" value="رقم الأمر الإداري"></resource>
+       <resource culture="ar-kw" name="ordernoRequired" value="الرجاء إدخال رقم الأمر الإداري"></resource>
+       <resource culture="ar-kw" name="orderdate" value="تاريخ الأمر الإداري"></resource>
+       <resource culture="ar-kw" name="orderdateRequired" value="الرجاء إدخال تاريخ الأمر الإداري"></resource>
+       <resource culture="ar-kw" name="educationlevel" value="المستوى التعليمي"></resource>
+       <resource culture="ar-kw" name="startbirthdate" value="من تاريخ ميلاد"></resource>
+       <resource culture="ar-kw" name="endbirthdate" value="إلى تاريخ ميلاد"></resource>
+       <resource culture="ar-kw" name="remarks" value="ملاحظة"></resource>
+       <resource culture="ar-kw" name="activestatus" value="حالة الفعالية"></resource>
+		<resource culture="ar-kw" name="batchorderList" value="View All"></resource>
+		<resource culture="ar-kw" name="batchorderCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="batchorderUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="batchorderDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="batchid" value=" Batch Id"></resource>
+       <resource culture="en-us" name="orderno" value=" Order No"></resource>
+       <resource culture="en-us" name="ordernoRequired" value="Please provide  Order No"></resource>
+       <resource culture="en-us" name="orderdate" value=" Order Date"></resource>
+       <resource culture="en-us" name="orderdateRequired" value="Please provide  Order Date"></resource>
+       <resource culture="en-us" name="educationlevel" value=" Education Level"></resource>
+       <resource culture="en-us" name="startbirthdate" value=" Start Birth Date"></resource>
+       <resource culture="en-us" name="endbirthdate" value=" End Birth Date"></resource>
+       <resource culture="en-us" name="remarks" value=" Remarks"></resource>
+       <resource culture="en-us" name="activestatus" value=" Active Status"></resource>
+        <resource culture="en-us" name="batchorderList" value="View All"></resource>
+		<resource culture="en-us" name="batchorderCreate" value="Create"></resource>
+		<resource culture="en-us" name="batchorderUpdate" value="Update"></resource>
+		<resource culture="en-us" name="batchorderDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

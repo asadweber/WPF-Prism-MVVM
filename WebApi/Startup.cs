@@ -1,7 +1,6 @@
 using System;
 using System.Net;
 using System.Reflection;
-using AspNetCore.CacheOutput;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
@@ -24,6 +23,8 @@ namespace WebApi
     /// <summary>
     /// Startup
     /// </summary>
+    /// 
+    //check in for kns 6.0
     public class Startup
     {
         public IConfiguration _configuration { get; }
@@ -79,7 +80,6 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IMapper mapper)
         {
-           // app.UseForwardedHeaders();
             mapper.ConfigurationProvider.AssertConfigurationIsValid();
             app.UseExceptionHandler(
                 builder =>
@@ -107,9 +107,9 @@ namespace WebApi
             app.UseSwaggerUI(c =>
             {
                 //c.RoutePrefix = "swagger/ui";
-
-                c.SwaggerEndpoint("../swagger/v1/swagger.json", "KAF - Sahel Integration API V2");
-                c.InjectStylesheet(isDevelopment == true ? "../swagger-ui/custom.Uat.css" : "../swagger-ui/custom.Prod.css");
+                
+                c.SwaggerEndpoint("../swagger/v1/swagger.json", "KNS Service Integration API V1");
+                c.InjectStylesheet(isDevelopment == true ? "../swagger-ui/custom.Uat.css": "../swagger-ui/custom.Prod.css");
                 c.InjectJavascript("../swagger-ui/customJs.js");
                 //c.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
             });
@@ -120,7 +120,7 @@ namespace WebApi
             app.UseCors("AllowAll");
 
             app.UseSerilogRequestLogging();
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
             //app.UseCacheOutput();
@@ -137,7 +137,7 @@ namespace WebApi
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-
+            
 
 
         }

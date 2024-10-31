@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="claimtype" value="نوع المطالبة"></resource>
+       <resource culture="ar-kw" name="claimvalue" value="قيمة المطالبة"></resource>
+       <resource culture="ar-kw" name="userid" value="User Id"></resource>
+       <resource culture="ar-kw" name="useridRequired" value="الرجاء تقديم معرف المستخدم"></resource>
+		<resource culture="ar-kw" name="userclaimsList" value="مشاهدة الكل"></resource>
+		<resource culture="ar-kw" name="userclaimsCreate" value="خلق"></resource>
+		<resource culture="ar-kw" name="userclaimsUpdate" value="تحديث"></resource>
+		<resource culture="ar-kw" name="userclaimsDetails" value="التفاصيل"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="claimtype" value=" Claim Type"></resource>
+       <resource culture="en-us" name="claimvalue" value=" Claim Value"></resource>
+       <resource culture="en-us" name="userid" value=" User Id"></resource>
+       <resource culture="en-us" name="useridRequired" value="Please provide  User Id"></resource>
+        <resource culture="en-us" name="userclaimsList" value="View All"></resource>
+		<resource culture="en-us" name="userclaimsCreate" value="Create"></resource>
+		<resource culture="en-us" name="userclaimsUpdate" value="Update"></resource>
+		<resource culture="en-us" name="userclaimsDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        
