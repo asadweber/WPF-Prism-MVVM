@@ -20,7 +20,6 @@ namespace WebApi.Controllers
         }
 
         // POST api/accounts
-        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] RegisterUserRequest request)
         {
