@@ -15,7 +15,7 @@ namespace WebApi.Extensions
     public class ApiSecurityFillerAttribute : IActionFilter
     {
 
-        private readonly IHostingEnvironment _HostingEnvironment;
+        private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _HostingEnvironment;
         private readonly IJwtTokenValidator _jwtTokenValidator;
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace WebApi.Extensions
         /// <param name="jwtTokenValidator"></param>
         /// <param name="config"></param>
         public ApiSecurityFillerAttribute(
-            IHostingEnvironment HostingEnvironment,
+            Microsoft.AspNetCore.Hosting.IHostingEnvironment HostingEnvironment,
             IJwtTokenValidator jwtTokenValidator)
         {
             //_jwtTokenHandler = jwtTokenHandler ?? throw new ArgumentNullException(nameof(jwtTokenHandler));
