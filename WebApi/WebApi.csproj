@@ -71,7 +71,7 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
-		<PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
