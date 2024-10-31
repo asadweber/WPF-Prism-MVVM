@@ -25,6 +25,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Connected Services\**" />
+	  <Compile Remove="InternalServices\**" />
+	  <Content Remove="Connected Services\**" />
+	  <Content Remove="InternalServices\**" />
+	  <EmbeddedResource Remove="Connected Services\**" />
+	  <EmbeddedResource Remove="InternalServices\**" />
+	  <None Remove="Connected Services\**" />
+	  <None Remove="InternalServices\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Remove="Controllers\General\CorrespondenceOperationController.cs" />
 		<Compile Remove="Controllers\General\MilitaryPersonnelController.cs" />
 		<Compile Remove="Models\Request\ExchangeRefreshTokenRequest.cs" />
@@ -45,7 +56,6 @@
 	  <None Remove="LanguagesFiles\_subscriberequestsdetail.xml" />
 	  <None Remove="LanguagesFiles\_trangrvfrontlinesubmitdata.xml" />
 	  <None Remove="LanguagesFiles\_trangrvfrontlinesubmitdatafiles.xml" />
-	  <None Remove="wwwroot\msgTemplates\kuwaitarmycontactform.html" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -126,20 +136,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Connected Services\" />
-		<Folder Include="InternalServices\" />
 		<Folder Include="Models\Request\" />
 		<Folder Include="Properties\PublishProfiles\" />
 		<Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="wwwroot\msgTemplates\kuwaitarmyreserviceform.html">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
-	  <Content Update="wwwroot\msgTemplates\kuwaitarmycontactform.html">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
 	  <Content Update="wwwroot\swagger-ui\kaf_logo.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
