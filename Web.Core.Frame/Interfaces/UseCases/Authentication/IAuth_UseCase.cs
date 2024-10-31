@@ -13,7 +13,6 @@ namespace Web.Core.Frame.Interfaces.UseCases
         Task<bool> LoginWebPACIRequest(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
 
 
-        Task<bool> CheckApplicantAccountActivation(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
 
         Task<bool> ForgetPasswordRequest(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
         Task<bool> PasswordRequestAuthTokenValidated(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);

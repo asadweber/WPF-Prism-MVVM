@@ -370,42 +370,7 @@ namespace Web.Core.Frame.UseCases
         }
 
 
-        public async Task<bool> CheckApplicantAccountActivation(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
-        {
-            CancellationToken cancellationToken = new CancellationToken();
-            bool state = false;
-            try
-            {
-
-                var ActivationCode = await BFC.Core.FacadeCreatorObjects.General.cnf_smsactivationcodeFCC.GetFacadeCreate(_contextAccessor).
-                    CheckActivation(new BDO.Core.DataAccessObjects.Models.cnf_smsactivationcodeEntity() {UserName= message.Obj_owin_user.emailaddress }, cancellationToken);
-                if (ActivationCode == null)
-                {
-                    Auth_Response objResponse = new Auth_Response(
-                     new AjaxResponse("200", _sharedLocalizer["ACCOUNT_ACTIVE"].Value, "true", "", "", message.Obj_owin_user.emailaddress),
-                     true,
-                     _sharedLocalizer["ACCOUNT_ACTIVE"].Value);
-                    outputPort.AccountActivation(objResponse);
-
-                    return true;
-                }
-                else
-                {
-                    Auth_Response objResponse = new Auth_Response(
-                     new AjaxResponse("200", _sharedLocalizer["ACCOUNT_NOT_ACTIVE"].Value, "false", "", "/AccountVarification/AccountVerification?civilId="+message.Obj_owin_user.emailaddress, message.Obj_owin_user.emailaddress),
-                     false,
-                     _sharedLocalizer["ACCOUNT_NOT_ACTIVE"].Value);
-                    outputPort.AccountActivation(objResponse);
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
-
+      
 
         public async Task<bool> ForgetPasswordRequest(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
         {

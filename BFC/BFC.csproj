@@ -14,16 +14,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FacadeCreatorObjects\Extended\**" />
+    <EmbeddedResource Remove="FacadeCreatorObjects\Extended\**" />
+    <None Remove="FacadeCreatorObjects\Extended\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BFO\BFO.csproj" />
     <ProjectReference Include="..\IBFO\IBFO.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FacadeCreatorObjects\Extended\" />
   </ItemGroup>
 
 </Project>

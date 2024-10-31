@@ -44,12 +44,7 @@ namespace IBFO.Core.IBusinessFacadeObjects.General
 		
         #region Save Master/Details	
         
-        [OperationContract]
-        Task<long> SaveMasterDetcnf_studentmenuskip(owin_forminfoEntity Master, List<cnf_studentmenuskipEntity> DetailList, CancellationToken cancellationToken);
-
-        [OperationContract]
-        Task<long> SaveMasterDetcnf_studentmenuskipdetail(owin_forminfoEntity Master, List<cnf_studentmenuskipdetailEntity> DetailList, CancellationToken cancellationToken);
-
+        
         [OperationContract]
         Task<long> SaveMasterDetowin_formaction(owin_forminfoEntity Master, List<owin_formactionEntity> DetailList, CancellationToken cancellationToken);
 

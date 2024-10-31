@@ -406,21 +406,7 @@ namespace BFO.Core.BusinessFacadeObjects.Security.ExtendedPartial
             }
         }
 
-        async Task<long?> IKAFUserSecurity.createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken)
-        {
-            try
-            {
-                return await DataAccessFactory.CreateKAFUserSecurityDataAccess().createSpecialRegistrationUser(objEntity, cancellationToken);
-            }
-            catch (DataException ex)
-            {
-                throw GetFacadeException(ex, SourceOfException("IKAFUserSecurity.CreateSpecialRegistrationUser"));
-            }
-            catch (Exception exx)
-            {
-                throw exx;
-            }
-        }
+      
 
         async Task<IList<Owin_ProcessGetFormActionistEntity_Ext>> IKAFUserSecurity.GetMenuWiseFormActionList(owin_userEntity objEntity, CancellationToken cancellationToken)
         {

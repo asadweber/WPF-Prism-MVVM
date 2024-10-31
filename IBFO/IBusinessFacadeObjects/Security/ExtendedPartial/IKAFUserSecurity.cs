@@ -55,9 +55,7 @@ namespace IBFO.Core.IBusinessFacadeObjects.Security.ExtendedPartial
         [OperationContract]
         Task<long?> createuser(owin_userEntity user, CancellationToken cancellationToken);
 
-        [OperationContract]
-        Task<long?> createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken);
-
+        
         [OperationContract]
         Task<IList<Owin_ProcessGetFormActionistEntity_Ext>> GetMenuWiseFormActionList(owin_userEntity objEntity, CancellationToken cancellationToken);
 

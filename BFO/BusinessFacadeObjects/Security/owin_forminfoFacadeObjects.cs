@@ -193,45 +193,6 @@ namespace BFO.Core.BusinessFacadeObjects.General
         
         #region FOR Master Details SAVE	
         
-        async Task<long> Iowin_forminfoFacadeObjects.SaveMasterDetcnf_studentmenuskip(owin_forminfoEntity Master, List<cnf_studentmenuskipEntity> DetailList, CancellationToken cancellationToken)
-        {
-            try
-               {
-                    DetailList.ForEach(P => P.BaseSecurityParam = new SecurityCapsule());
-                    DetailList.ForEach(P => P.BaseSecurityParam = Master.BaseSecurityParam);
-                    if (Master.CurrentState == BaseEntity.EntityState.Deleted)
-						DetailList.ForEach(p => p.CurrentState = BaseEntity.EntityState.Deleted);
-                    IList<cnf_studentmenuskipEntity> listAdded = DetailList.FindAll(Item => Item.CurrentState == BaseEntity.EntityState.Added);
-                    IList<cnf_studentmenuskipEntity> listUpdated = DetailList.FindAll(Item => Item.CurrentState == BaseEntity.EntityState.Changed);
-                    IList<cnf_studentmenuskipEntity> listDeleted = DetailList.FindAll(Item => Item.CurrentState == BaseEntity.EntityState.Deleted);
-                    return await DataAccessFactory.Createowin_forminfoDataAccess().SaveMasterDetcnf_studentmenuskip(Master, listAdded, listUpdated, listDeleted, cancellationToken);
-               }
-               catch (Exception ex)
-               {
-                    throw GetFacadeException(ex, SourceOfException("Imer_poFacade.SaveMasterDetcnf_studentmenuskip"));
-               }
-        }
-        
-        
-        async Task<long> Iowin_forminfoFacadeObjects.SaveMasterDetcnf_studentmenuskipdetail(owin_forminfoEntity Master, List<cnf_studentmenuskipdetailEntity> DetailList, CancellationToken cancellationToken)
-        {
-            try
-               {
-                    DetailList.ForEach(P => P.BaseSecurityParam = new SecurityCapsule());
-                    DetailList.ForEach(P => P.BaseSecurityParam = Master.BaseSecurityParam);
-                    if (Master.CurrentState == BaseEntity.EntityState.Deleted)
-						DetailList.ForEach(p => p.CurrentState = BaseEntity.EntityState.Deleted);
-                    IList<cnf_studentmenuskipdetailEntity> listAdded = DetailList.FindAll(Item => Item.CurrentState == BaseEntity.EntityState.Added);
-                    IList<cnf_studentmenuskipdetailEntity> listUpdated = DetailList.FindAll(Item => Item.CurrentState == BaseEntity.EntityState.Changed);
-                    IList<cnf_studentmenuskipdetailEntity> listDeleted = DetailList.FindAll(Item => Item.CurrentState == BaseEntity.EntityState.Deleted);
-                    return await DataAccessFactory.Createowin_forminfoDataAccess().SaveMasterDetcnf_studentmenuskipdetail(Master, listAdded, listUpdated, listDeleted, cancellationToken);
-               }
-               catch (Exception ex)
-               {
-                    throw GetFacadeException(ex, SourceOfException("Imer_poFacade.SaveMasterDetcnf_studentmenuskipdetail"));
-               }
-        }
-        
         
         async Task<long> Iowin_forminfoFacadeObjects.SaveMasterDetowin_formaction(owin_forminfoEntity Master, List<owin_formactionEntity> DetailList, CancellationToken cancellationToken)
         {
