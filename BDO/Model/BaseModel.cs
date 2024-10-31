@@ -11,7 +11,7 @@ namespace BDO.Model
     public class BaseModel : BindableBase, INotifyDataErrorInfo
     {
 
-        private readonly Dictionary<string, List<string>> _errors = new();
+        private readonly Dictionary<string, List<string>> _errors =new Dictionary<string, List<string>>(){ };
         public bool HasErrors => _errors.Any();
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;

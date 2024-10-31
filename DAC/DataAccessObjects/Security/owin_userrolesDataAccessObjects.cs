@@ -7,18 +7,18 @@ using AppConfig.ConfigDAAC;
 using DAC.Core.Base;
 using System.Threading.Tasks;
 using System.Threading;
+using IDAC.Core.IDataAccessObjects.Security;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using BDO.Core.Base;
-using IDAC.IDataAccessObjects.Security;
 
 namespace DAC.Core.DataAccessObjects.Security
 {
-    /// <summary>
+	/// <summary>
     /// Un touched: From Generator
     /// KAF Information Center
     /// </summary>
-
-    internal sealed partial class owin_userrolesDataAccessObjects : BaseDataAccess, Iowin_userrolesDataAccessObjects
+	
+	internal sealed partial class owin_userrolesDataAccessObjects : BaseDataAccess, Iowin_userrolesDataAccessObjects
 	{
 		
 	    #region Constructors

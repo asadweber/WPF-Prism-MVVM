@@ -7,20 +7,21 @@ using AppConfig.ConfigDAAC;
 using DAC.Core.Base;
 using System.Threading.Tasks;
 using System.Threading;
+using IDAC.Core.IDataAccessObjects.Security;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using BDO.Core.Base;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using System.Security.Cryptography;
-using IDAC.IDataAccessObjects.Security;
+using BDO.Core.DataAccessObjects.Models;
 
 namespace DAC.Core.DataAccessObjects.Security
 {
-    /// <summary>
+	/// <summary>
     /// Un touched: From Generator
     /// KAF Information Center
     /// </summary>
-
-    internal sealed partial class owin_userDataAccessObjects : BaseDataAccess, Iowin_userDataAccessObjects
+	
+	internal sealed partial class owin_userDataAccessObjects : BaseDataAccess, Iowin_userDataAccessObjects
 	{
 		
 	    #region Constructors
@@ -49,7 +50,9 @@ namespace DAC.Core.DataAccessObjects.Security
 				Database.AddInParameter(cmd, "@MasterUserID", DbType.Int64, owin_user.masteruserid);
 			if (!(string.IsNullOrEmpty(owin_user.username)))
 				Database.AddInParameter(cmd, "@UserName", DbType.String, owin_user.username);
-			if (!(string.IsNullOrEmpty(owin_user.emailaddress)))
+            if (!(string.IsNullOrEmpty(owin_user.fullname)))
+                Database.AddInParameter(cmd, "@FullName", DbType.String, owin_user.fullname);
+            if (!(string.IsNullOrEmpty(owin_user.emailaddress)))
 				Database.AddInParameter(cmd, "@EmailAddress", DbType.String, owin_user.emailaddress);
 			if (!(string.IsNullOrEmpty(owin_user.loweredusername)))
 				Database.AddInParameter(cmd, "@LoweredUserName", DbType.String, owin_user.loweredusername);
@@ -1132,7 +1135,7 @@ namespace DAC.Core.DataAccessObjects.Security
         {
         try
             {
-				const string SP = "owin_user_GAPgListView";
+				const string SP = "owin_user_GAPgListView_Ext";
 				using (DbCommand cmd = Database.GetStoredProcCommand(SP))
 				{
 					AddTotalRecordParameter(cmd);
@@ -1149,10 +1152,8 @@ namespace DAC.Core.DataAccessObjects.Security
                         Database.AddInParameter(cmd, "@FromDate", DbType.DateTime, owin_user.fromdate);
                     if ((owin_user.todate.HasValue))
                         Database.AddInParameter(cmd, "@ToDate", DbType.DateTime, owin_user.todate);
-
-
-                     if ((owin_user.roleid.HasValue))
-                        Database.AddInParameter(cmd, "@roleid", DbType.Int64, owin_user.roleid);
+                    if ((owin_user.roleid.HasValue))
+                        Database.AddInParameter(cmd, "@RoleID", DbType.Int64, owin_user.roleid);
 
                     IList<owin_userEntity> itemList = new List<owin_userEntity>();
 					
@@ -1164,7 +1165,7 @@ namespace DAC.Core.DataAccessObjects.Security
                     {
                         while (reader.Read())
                         {
-                            itemList.Add(new owin_userEntity(reader));
+                            itemList.Add(new OwinUserListLoadFromReader(reader));
                         }
                         reader.Close();
                     }

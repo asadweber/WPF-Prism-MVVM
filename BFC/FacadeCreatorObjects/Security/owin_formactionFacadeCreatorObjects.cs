@@ -5,7 +5,7 @@ using IBFO.Core.IBusinessFacadeObjects.Security;
 using Microsoft.AspNetCore.Http;
 
 namespace BFC.Core.FacadeCreatorObjects.Security
-{
+{ 
     public class owin_formactionFCC
     { 
 	

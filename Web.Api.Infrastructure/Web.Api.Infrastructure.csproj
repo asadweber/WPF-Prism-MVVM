@@ -1,7 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-   <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <NoWarn>NU1701</NoWarn>
+   
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,24 +27,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="automapper" Version="13.0.1" />
-    <PackageReference Include="ClosedXML" Version="0.104.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.35" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
-    <PackageReference Include="RestSharp" Version="112.1.0" />
-    		<PackageReference Include="Serilog" Version="2.11.0-dev-01380" />
-		<PackageReference Include="Serilog.AspNetCore" Version="6.0.0-dev-00265" />
-		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.1-dev-00787" />
-		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
-		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.2.0-dev-00752" />
-		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.1-dev-00296" />
-		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
-		<PackageReference Include="Serilog.Sinks.MongoDB" Version="5.1.2" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
-	  <PackageReference Include="System.DirectoryServices" Version="8.0.0" />
-	  <PackageReference Include="WireMock.Net.Abstractions" Version="1.6.7" />
+    <Compile Remove="Auth\JwtIssuerOptions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="11.0.1" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.17" />
+    <PackageReference Include="Serilog" Version="2.11.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageReference Include="Serilog.Sinks.MongoDB" Version="5.1.5" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+	  <PackageReference Include="System.DirectoryServices" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,6 +71,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Constant\" />
     <Folder Include="Services\Extended\" />
   </ItemGroup>
  

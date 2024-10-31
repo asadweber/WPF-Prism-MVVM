@@ -75,7 +75,10 @@ namespace Web.Core.Frame.UseCases
 
                     //await _userManager.UpdateAsync(user);
 
-                    outputPort.Handle(new ExchangeRefreshTokenResponse(jwtToken, refreshToken, true));
+                    //outputPort.Handle(new ExchangeRefreshTokenResponse(jwtToken, refreshToken, true));
+                    //SP for Baaler Sahel
+                    outputPort.Handle(new ExchangeRefreshTokenResponse(jwtToken.Token, jwtToken.ExpiresIn, refreshToken, true));
+
                     return true;
                 }
             }

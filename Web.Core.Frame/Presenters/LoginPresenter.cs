@@ -24,5 +24,11 @@ namespace Web.Core.Frame.Presenters
             ContentResult.StatusCode = (int)(response.Success ? HttpStatusCode.OK : HttpStatusCode.Unauthorized);
             ContentResult.Content = response.Success ? JsonSerializer.SerializeObject(new LoginResponse(response.AccessToken, response.RefreshToken, true)) : JsonSerializer.SerializeObject(response.Errors);
         }
+
+        public void SahelLogin(LoginResponse response)
+        {
+            ContentResult.StatusCode = (int)(response.Success ? HttpStatusCode.OK : HttpStatusCode.Unauthorized);
+            ContentResult.Content = response.Success ? JsonSerializer.SerializeObject(new LoginResponse(response.AccessToken, response.RefreshToken, true)) : JsonSerializer.SerializeObject(response.Errors);
+        }
     }
 }

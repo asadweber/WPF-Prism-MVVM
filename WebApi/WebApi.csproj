@@ -1,0 +1,206 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<UserSecretsId>ecde624a-0163-4b8d-988c-a55ea0993a3c</UserSecretsId>
+		<ApplicationIcon />
+		<OutputType>Exe</OutputType>
+		<StartupObject />
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<AnalysisLevel>none</AnalysisLevel>
+    <NoWarn>NU1701</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile></DocumentationFile>
+		<WarningLevel>0</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <WarningLevel>0</WarningLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Controllers\General\CorrespondenceOperationController.cs" />
+		<Compile Remove="Controllers\General\MilitaryPersonnelController.cs" />
+		<Compile Remove="Models\Request\ExchangeRefreshTokenRequest.cs" />
+		<Compile Remove="Models\Request\LoginRequest.cs" />
+		<Compile Remove="Models\Request\RegisterUserRequest.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Remove="wwwroot\swagger-ui\custom.Prod.css" />
+	  <Content Remove="wwwroot\swagger-ui\custom.Uat.css" />
+	  <Content Remove="wwwroot\swagger-ui\customJs.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="LanguagesFiles\_owin_user.xml" />
+	  <None Remove="LanguagesFiles\_sahelservicerequestinfo.xml" />
+	  <None Remove="LanguagesFiles\_subscriberequests.xml" />
+	  <None Remove="LanguagesFiles\_subscriberequestsdetail.xml" />
+	  <None Remove="LanguagesFiles\_trangrvfrontlinesubmitdata.xml" />
+	  <None Remove="LanguagesFiles\_trangrvfrontlinesubmitdatafiles.xml" />
+	  <None Remove="wwwroot\msgTemplates\kuwaitarmycontactform.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="LanguagesFiles\_owin_user.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="LanguagesFiles\_sahelservicerequestinfo.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="LanguagesFiles\_subscriberequests.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="LanguagesFiles\_subscriberequestsdetail.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="LanguagesFiles\_trangrvfrontlinesubmitdata.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="LanguagesFiles\_trangrvfrontlinesubmitdatafiles.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="wwwroot\swagger-ui\customJs.js">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="wwwroot\swagger-ui\custom.Prod.css">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="wwwroot\swagger-ui\custom.Uat.css">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.CacheOutput.Redis" Version="2.1.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="ClosedXML" Version="0.95.4" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.0.1" />
+		<PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+		<PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0">
+      <NoWarn>NU1701</NoWarn>
+    </PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
+		<PackageReference Include="Serilog" Version="2.11.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Serilog.Sinks.MongoDB" Version="5.1.5" />
+		<PackageReference Include="StackExchange.Redis" Version="2.5.61" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.1" />
+		<PackageReference Include="System.ServiceModel.Duplex" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.Federation" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.*" />
+		<PackageReference Include="System.ServiceModel.Security" Version="4.8.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AppConfig\AppConfig.csproj" />
+		<ProjectReference Include="..\BDO\BDO.csproj" />
+		<ProjectReference Include="..\CLL\CLL.csproj" />
+		<ProjectReference Include="..\Web.Api.Infrastructure\Web.Api.Infrastructure.csproj" />
+		<ProjectReference Include="..\Web.Core.Frame\Web.Core.Frame.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Connected Services\" />
+		<Folder Include="InternalServices\" />
+		<Folder Include="Models\Request\" />
+		<Folder Include="Properties\PublishProfiles\" />
+		<Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\msgTemplates\kuwaitarmyreserviceform.html">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\msgTemplates\kuwaitarmycontactform.html">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\swagger-ui\kaf_logo.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="LanguagesFiles\_Common.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_CommonHtml_resource.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_formaction.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_forminfo.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_lastworkingpage.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_role.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_rolepermission.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userclaims.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userlogintrail.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userpasswordresetinfo.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userprefferencessettings.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userrole.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userroles.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_owin_userstatuschangehistory.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_rabitestcase.xml">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_Responses.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_Status.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="LanguagesFiles\_tran_login.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+
+</Project>

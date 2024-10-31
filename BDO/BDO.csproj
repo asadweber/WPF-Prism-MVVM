@@ -1,44 +1,87 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+   
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="DataAccessObjects\NewFolder\**" />
-    <Compile Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
-    <EmbeddedResource Remove="DataAccessObjects\NewFolder\**" />
-    <EmbeddedResource Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
-    <None Remove="DataAccessObjects\NewFolder\**" />
-    <None Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>0</WarningLevel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="DataAccessObjects\ExtendedEntities\KNSDomainUrlSetting.cs" />
-    <Compile Remove="DataAccessObjects\ExtendedEntities\PaciFileUploadingModel.cs" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<WarningLevel>0</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Update="**\*Extended.cs">
+			<DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-	  <PackageReference Include="ClosedXML" Version="0.104.1" />
-	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
-	  <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.10" />
-	  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.1.2" />
-	  <PackageReference Include="MongoDB.Bson" Version="3.0.0" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-	  <PackageReference Include="Prism.Core" Version="$(PrismCoreVersion)" />
-	  <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="DataAccessObjects\ExtendedEntities\gen_batchcandprofessionEntity - Copy.cs" />
+		<Compile Remove="DataAccessObjects\ExtendedEntities\PaciFileUploadingModel.cs" />
+		<Compile Remove="DataAccessObjects\ExtendedEntities\Root.cs" />
+		<Compile Remove="DataAccessObjects\Models\reg_educationinfoEntity.Extended.cs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CLL\CLL.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNet.Mvc.es" Version="5.2.9" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.7" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.14.1" />
+		<PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Prism.Core" Version="6.3.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+		<PackageReference Include="System.Text.Json" Version="6.0.5" />
+	</ItemGroup>
 
-  <!--<ItemGroup>
-    <Compile Update="DataAccessObjects\KNS\gen_phasesEntity.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>-->
+	<ItemGroup>
+		<ProjectReference Include="..\CLL\CLL.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="DataAccessObjects\SecurityModels\ExtendedPartial\" />
+		<Folder Include="Enum\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="DataAccessObjects\ExtendedEntities\reg_educationinfoEntity.cs" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<Compile Update="**\*Extended.cs">
+			<DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+	  <Compile Update="Report\RptVolunterContractRep.Extended.cs">
+	    <DependentUpon>RptVolunterContractRep.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="Report\RptVolunteerClearanceList.Extended.cs">
+	    <DependentUpon>RptVolunteerClearanceList.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="Report\RptMedicalExamRep.Extended.cs">
+	    <DependentUpon>RptMedicalExamRep.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="Report\RptMedicalResultInfo.Extended.cs">
+	    <DependentUpon>RptMedicalResultInfo.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="Report\RptMedicalExamForm.Extended.cs">
+	    <DependentUpon>RptMedicalExamForm.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="Report\RptBatchSummary.Extended.cs">
+	    <DependentUpon>RptBatchSummary.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="Report\RptVolunteerCertificate.Extended.cs">
+	    <DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 
 </Project>

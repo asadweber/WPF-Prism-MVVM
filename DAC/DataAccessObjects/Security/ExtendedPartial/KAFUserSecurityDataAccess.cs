@@ -8,12 +8,22 @@ using DAC.Core.Base;
 using AppConfig.EncryptionHandler;
 using System.Threading.Tasks;
 using System.Threading;
+using IDAC.Core.IDataAccessObjects.Security.ExtendedPartial;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using IDAC.Core.IDataAccessObjects.Security;
 using CLL.LLClasses.SecurityModels;
 using System.Linq;
-using IDAC.IDataAccessObjects.Security.ExtendedPartial;
+using BDO.Core.DataAccessObjects.Models;
+using BDO.DataAccessObjects.Enums;
+using BDO.Core.Base;
+using AppConfig.HelperClasses;
+using DAC.Core.DataAccessObjects.General;
+using RestSharp;
+using Newtonsoft.Json;
+using BDO.Base;
+using System.IO;
+using BDO.DataAccessObjects.VCRegistration;
 
 namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
 {
@@ -48,12 +58,16 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
 
             if (!(string.IsNullOrEmpty(owin_user.username)))
                 Database.AddInParameter(cmd, "@UserName", DbType.String, owin_user.username);
+            if (!(string.IsNullOrEmpty(owin_user.fullname)))
+                Database.AddInParameter(cmd, "@FullName", DbType.String, owin_user.fullname);
             if (!(string.IsNullOrEmpty(owin_user.emailaddress)))
                 Database.AddInParameter(cmd, "@EmailAddress", DbType.String, owin_user.emailaddress);
             if (!(string.IsNullOrEmpty(owin_user.loweredusername)))
                 Database.AddInParameter(cmd, "@LoweredUserName", DbType.String, owin_user.loweredusername);
             if (!(string.IsNullOrEmpty(owin_user.mobilenumber)))
                 Database.AddInParameter(cmd, "@MobileNumber", DbType.String, owin_user.mobilenumber);
+            if (!(string.IsNullOrEmpty(owin_user.tempmob)))
+                Database.AddInParameter(cmd, "@TempMob", DbType.String, owin_user.tempmob);
             if (!(string.IsNullOrEmpty(owin_user.userprofilephoto)))
                 Database.AddInParameter(cmd, "@UserProfilePhoto", DbType.String, owin_user.userprofilephoto);
             if ((owin_user.isanonymous != null))
@@ -193,10 +207,7 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                     {
                         while (reader.Read())
                         {
-                            var obj=new owin_userEntity(reader) ;
-                            if (!reader.IsDBNull(reader.GetOrdinal("IsAdmin"))) obj.IsAdmin = reader.GetBoolean(reader.GetOrdinal("IsAdmin"));
-
-                            itemList.Add(obj);
+                            itemList.Add(new owin_userEntity(reader));
                         }
                         reader.Close();
                     }
@@ -668,23 +679,13 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                             using (DbCommand cmd = Database.GetStoredProcCommand("KAF_Owin_UserPasswordChange"))
                             {
                                 requestuser.lastlogindate = DateTime.Now;
+                                requestuser = FillParameters(requestuser, cmd, Database);
 
-                                Database.AddInParameter(cmd, "@UserId", DbType.Guid, requestuser.userid);
-                                Database.AddInParameter(cmd, "@MasterUserID", DbType.Int64, requestuser.masteruserid);
-                                Database.AddInParameter(cmd, "@UserName", DbType.String, requestuser.username);
-
-                                Database.AddInParameter(cmd, "@SessionID", DbType.String, string.IsNullOrEmpty(requestuser.BaseSecurityParam.sessionid) == true ? requestuser.BaseSecurityParam.transid : requestuser.BaseSecurityParam.sessionid);
+                                Database.AddInParameter(cmd, "@SessionID", DbType.String, requestuser.BaseSecurityParam.sessionid);
                                 Database.AddInParameter(cmd, "@SessionToken", DbType.String, requestuser.BaseSecurityParam.transid);
-
-                                Database.AddInParameter(cmd, "@Password", DbType.String, requestuser.password);
-                                Database.AddInParameter(cmd, "@PasswordSalt", DbType.String, requestuser.passwordsalt);
-                                Database.AddInParameter(cmd, "@PasswordKey", DbType.String, requestuser.passwordkey);
-                                Database.AddInParameter(cmd, "@PasswordVector", DbType.String, requestuser.passwordvector);
-                                Database.AddInParameter(cmd, "@LastLoginDate", DbType.DateTime, requestuser.lastlogindate);
 
                                 FillSequrityParameters(requestuser.BaseSecurityParam, cmd, Database);
                                 AddOutputParameter(cmd);
-
                                 try
                                 {
                                     IAsyncResult result = Database.BeginExecuteNonQuery(cmd, null, null);
@@ -812,12 +813,195 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
             }
         }
 
+        public async Task<owin_userEntity> GetUserAccountByMasterUserId(Database db,
+         DbTransaction transaction, owin_userEntity owin_user, CancellationToken cancellationToken)
+        {
+            try
+            {
+                const string SP = "KAF_owin_user_by_MasterUserId";
+                using (DbCommand cmd = db.GetStoredProcCommand(SP))
+                {
+                    db.AddInParameter(cmd, "@MasterUserID", DbType.Int64, owin_user.masteruserid);
+
+                    IList<owin_userEntity> itemList = new List<owin_userEntity>();
+
+                    IAsyncResult result = db.BeginExecuteReader(cmd, transaction, null, null);
+                    while (!result.IsCompleted)
+                    {
+                    }
+                    using (IDataReader reader = db.EndExecuteReader(result))
+                    {
+                        while (reader.Read())
+                        {
+                            itemList.Add(new owin_userEntity(reader));
+                        }
+                        reader.Close();
+                    }
+                    cmd.Dispose();
+
+                    if (itemList != null && itemList.Count > 0)
+                        return itemList[0];
+                    else
+                        return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.GetSingleowin_user"));
+            }
+        }
+
+        public async Task<owin_userEntity> GetUserAccountByUserName(Database db,
+       DbTransaction transaction, owin_userEntity owin_user, CancellationToken cancellationToken)
+        {
+            try
+            {
+                const string SP = "KAF_owin_user_by_UserName";
+                using (DbCommand cmd = db.GetStoredProcCommand(SP))
+                {
+                    db.AddInParameter(cmd, "@UserName", DbType.Int64, owin_user.username);
+
+                    IList<owin_userEntity> itemList = new List<owin_userEntity>();
+
+                    IAsyncResult result = db.BeginExecuteReader(cmd, transaction, null, null);
+                    while (!result.IsCompleted)
+                    {
+                    }
+                    using (IDataReader reader = db.EndExecuteReader(result))
+                    {
+                        while (reader.Read())
+                        {
+                            itemList.Add(new owin_userEntity(reader));
+                        }
+                        reader.Close();
+                    }
+                    cmd.Dispose();
+
+                    if (itemList != null && itemList.Count > 0)
+                        return itemList[0];
+                    else
+                        return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.GetSingleowin_user"));
+            }
+        }
+
+
+        public async Task<long> UpdateUserAccountMobile_EmailByUserId(Database db,
+             DbTransaction transaction, owin_userEntity owin_user, CancellationToken cancellationToken)
+        {
+            long returnValue = -99;
+
+            try
+            {
+                using (DbCommand cmd = db.GetStoredProcCommand("KAF_owin_user_Upd_ByUserId"))
+                {
+                    FillParameters(owin_user, cmd, db);
+                    FillSequrityParameters(owin_user.BaseSecurityParam, cmd, db);
+                    AddOutputParameter(cmd);
+                    try
+                    {
+                        IAsyncResult result = db.BeginExecuteNonQuery(cmd, transaction, null, null);
+                        while (!result.IsCompleted)
+                        {
+
+                        }
+                        returnValue = db.EndExecuteNonQuery(result);
+                        returnValue = (Int64)(cmd.Parameters["@RETURN_KEY"].Value);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.updateUser"));
+                    }
+                    cmd.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.GetSingleowin_user"));
+            }
+
+            return returnValue;
+        }
+
+
+        public async Task<long?> CreateApplicationUser(Database db,
+        DbTransaction transaction, owin_userEntity user, CancellationToken cancellationToken)
+        {
+            long returnValue = -99;
+
+            try
+            {
+                if (user != null)
+                {
+                    const string SP = "owin_user_Ins_Ext";
+                    EncryptionHelper objenc = new EncryptionHelper();
+                    var salt = objenc.GenerateRandomCryptographicKey(128);
+                    HashWithSaltResult ob1 = objenc.EncodePassword(user.password, salt);
+                    user.password = ob1.Digest;
+                    user.passwordsalt = ob1.Salt;
+                    user.passwordkey = objenc.GenerateRandomCryptographicKey(24);
+                    user.passwordvector = objenc.GenerateRandomCryptographicKey(32);
+
+
+                    if (user.applicationid is null)
+                    {
+                        user.applicationid = Guid.Parse("C4077E81-CD92-42E9-8811-B93A6578A4C1");
+                    }
+
+                    using (DbCommand cmd = db.GetStoredProcCommand(SP))
+                    {
+                        user = FillParameters(user, cmd, db);
+                        FillSequrityParameters(user.BaseSecurityParam, cmd, db);
+
+                        if (user.roleid != null && user.roleid > 0)
+                            db.AddInParameter(cmd, "@RoleID", DbType.Int64, user.roleid);
+                        AddOutputParameter(cmd);
+                        try
+                        {
+                            IAsyncResult result = db.BeginExecuteNonQuery(cmd, transaction, null, null);
+                            while (!result.IsCompleted)
+                            {
+
+                            }
+                            returnValue = db.EndExecuteNonQuery(result);
+                            returnValue = (Int64)(cmd.Parameters["@RETURN_KEY"].Value);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.updateUser"));
+                        }
+                        cmd.Dispose();
+                    }
+                }
+                if (returnValue > 0)
+                {
+                }
+                else
+                    throw new ArgumentException("Error Code." + returnValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw GetDataAccessException(ex, SourceOfException("IKAFUserSecurityDataAccess.updateUser"));
+            }
+            finally
+            {
+
+            }
+            return returnValue;
+        }
+
         async Task<long?> IKAFUserSecurityDataAccess.createuser(owin_userEntity user, CancellationToken cancellationToken)
         {
             long returnValue = -99;
+            Guid RETURN_KEY_USERID = new Guid();
             DbConnection connection = Database.CreateConnection();
             connection.Open();
             DbTransaction transaction = connection.BeginTransaction();
+            transactioncodeGen objTranIDGen = new transactioncodeGen();
             try
             {
                 if (user != null)
@@ -843,16 +1027,18 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                         FillSequrityParameters(user.BaseSecurityParam, cmd, Database);
                         if (user.roleid != null && user.roleid > 0)
                             Database.AddInParameter(cmd, "@RoleID", DbType.Int64, user.roleid);
-                        AddOutputParameter(cmd);
+
+                        Database.AddOutParameter(cmd, "@RETURN_KEY_USERID", DbType.Guid, 128);
+
                         try
                         {
-                            IAsyncResult result = Database.BeginExecuteNonQuery(cmd, null, null);
+                            IAsyncResult result = Database.BeginExecuteNonQuery(cmd, transaction, null, null);
                             while (!result.IsCompleted)
                             {
 
                             }
-                            returnValue = Database.EndExecuteNonQuery(result);
-                            returnValue = (Int64)(cmd.Parameters["@RETURN_KEY"].Value);
+                            var returnCode = Database.EndExecuteNonQuery(result);
+                            RETURN_KEY_USERID = (Guid)(cmd.Parameters["@RETURN_KEY_USERID"].Value);
                         }
                         catch (Exception ex)
                         {
@@ -861,7 +1047,7 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                         cmd.Dispose();
                     }
                 }
-                if (returnValue > 0)
+                if (RETURN_KEY_USERID != null)
                 {
                     //owin_userroleEntity owin_userrole = new owin_userroleEntity();
                     //owin_userrole.userid = user.userid;
@@ -877,6 +1063,106 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                     //owin_userroleDataAccessObjects objowin_userrole = new owin_userroleDataAccessObjects(this.Context);
                     //await objowin_userrole.SaveList(Database, transaction, objAdd, new List<owin_userroleEntity>(), new List<owin_userroleEntity>(), cancellationToken);
 
+                    #region TABLE:Cnf_SMSActivationCode
+
+                    //Finally Sent Activation Code
+                    var objSMSCode = new cnf_smsactivationcodeEntity();
+                    objSMSCode.userid = RETURN_KEY_USERID;
+                    objSMSCode.generatedate = DateTime.Now;
+                    objSMSCode.smscodetype = (int)SMSCodeTypeEnum.Create_User;
+                    objSMSCode.isactive = true;
+                    objSMSCode.sucessdate = DateTime.Now;
+                    objSMSCode.smsstatus = true;
+                    objSMSCode.smssenddate = DateTime.Now;
+                    objSMSCode.comment = "SEND ACTIVATION CODE";
+
+                    int _min = 1000;
+                    int _max = 9999;
+                    Random _rdm = new Random();
+                    objSMSCode.smscode = _rdm.Next(_min, _max);
+
+                    objSMSCode.BaseSecurityParam = new SecurityCapsule();
+                    objSMSCode.BaseSecurityParam.createdbyusername = Convert.ToString(RETURN_KEY_USERID);
+                    objSMSCode.BaseSecurityParam.createddate = DateTime.Now;
+                    objSMSCode.BaseSecurityParam.transid = objTranIDGen.GetRandomAlphaNumericStringForTransactionActivity("TRAN", DateTime.Now);
+
+                    cnf_smsactivationcodeDataAccessObjects objsmsactivationcode = new cnf_smsactivationcodeDataAccessObjects(this.Context);
+                    returnValue = await objsmsactivationcode.AddSMSActivationCode(Database, transaction, objSMSCode, cancellationToken);
+                    //TO-DO: Sent This Code By SAHIL API
+
+                    if (user.PaciServiceSettings != null)
+                    {
+                        try
+                        {
+                            using (RestClient client = new RestClient($"{user.PaciServiceSettings.WebApiAddress}Auth/login"))
+                            {
+                                RestRequest Shahilrequest = new RestRequest() { Method = Method.Post };
+                                //Add Headers  
+                                Shahilrequest.AddHeader("Content-Type", "application/json");
+                                var body = new
+                                {
+                                    username = user.PaciServiceSettings.UserName,
+                                    password = user.PaciServiceSettings.Password
+                                };
+
+                                Shahilrequest.AddJsonBody(body);
+
+                                var apiresponse = client.Execute(Shahilrequest);
+                                if (apiresponse.IsSuccessStatusCode)
+                                {
+                                    var accee = JsonConvert.DeserializeObject<SahilAccesstoken>(apiresponse.Content);
+
+                                    using (var notificationClient = new RestClient($"{user.PaciServiceSettings.WebApiAddress}NotificationRequestRecipientList/SendNotificationToSingleUser"))
+                                    {
+                                        Shahilrequest = new RestRequest() { Method = Method.Post };
+                                        Shahilrequest.AddHeader("Content-Type", "application/json");
+                                        Shahilrequest.AddHeader("Authorization", $"Bearer {accee.accessToken.token}");
+
+                                        string html = System.IO.File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "EmailTemplate/AccountVarification" + Thread.CurrentThread.CurrentCulture.ToString().ToUpper() + ".html"));
+                                        html.Replace("{currentdatetime}", DateTime.Now.ToString("dd-MM-yyyy"));
+                                        html = html.Replace("{authocode}", Convert.ToString(objSMSCode.smscode));
+                                        html = html.Replace("{resetpasswordurl}", user._applicationGlobalSettings.Value.AccountVarificationURL + $"?civilId={user.username}");
+
+
+                                        var NotificationBody = new
+                                        {
+                                            applicationid = user.PaciServiceSettings.ApplicationId,
+                                            notificationrequestid = 0,
+                                            recipientcivilid = user.username,
+                                            recipientmobile = user.tempmob,
+                                            recipientemail = user.emailaddress,
+
+
+
+                                            msgsubject = "VC:Account Activation",
+                                            msgsubjectar = "تفعيل حساب خدمة التوظيف التطوعي",
+
+                                            msg = $"Your account activation code is {objSMSCode.smscode}",
+                                            msgar = $"Your account activation code is {objSMSCode.smscode}",
+
+                                            messagebodyemail = html,
+                                            messagebodyemailar = html,
+
+                                            sendsms = true,
+                                            senddigitalidnotification = true,
+                                            sendemail = true
+                                        };
+
+                                        Shahilrequest.AddJsonBody(NotificationBody);
+                                        var NotificationApiresponse = notificationClient.Execute(Shahilrequest);
+
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                    }
+
+                    #endregion
+
                     transaction.Commit();
                 }
                 else
@@ -886,6 +1172,260 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
             {
                 transaction.Rollback();
                 throw GetDataAccessException(ex, SourceOfException("IKAFUserSecurityDataAccess.updateUser"));
+            }
+            finally
+            {
+                transaction.Dispose();
+                connection.Close();
+                connection = null;
+            }
+            return returnValue;
+        }
+
+        async Task<long?> IKAFUserSecurityDataAccess.createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken)
+        {
+            long returnValue = -99;
+            Guid RETURN_KEY_USERID = new Guid();
+            DbConnection connection = Database.CreateConnection();
+            connection.Open();
+            DbTransaction transaction = connection.BeginTransaction();
+            transactioncodeGen objTranIDGen = new transactioncodeGen();
+            var user = objEntity.OwinUser;
+            try
+            {
+                if (user != null)
+                {
+                    const string SP = "owin_user_Ins_Ext";
+                    EncryptionHelper objenc = new EncryptionHelper();
+                    var salt = objenc.GenerateRandomCryptographicKey(128);
+                    HashWithSaltResult ob1 = objenc.EncodePassword(user.password, salt);
+                    user.password = ob1.Digest;
+                    user.passwordsalt = ob1.Salt;
+                    user.passwordkey = objenc.GenerateRandomCryptographicKey(24);
+                    user.passwordvector = objenc.GenerateRandomCryptographicKey(32);
+                    if (user.applicationid is null)
+                    {
+                        user.applicationid = Guid.Parse("C4077E81-CD92-42E9-8811-B93A6578A4C1");
+                    }
+                    user.BaseSecurityParam = new SecurityCapsule();
+                    user.BaseSecurityParam.transid = objTranIDGen.GetRandomAlphaNumericStringForTransactionActivity("TRAN", DateTime.Now);
+
+                    using (DbCommand cmd = Database.GetStoredProcCommand(SP))
+                    {
+                        user = FillParameters(user, cmd, Database);
+                        FillSequrityParameters(user.BaseSecurityParam, cmd, Database);
+                        if (user.roleid != null && user.roleid > 0)
+                            Database.AddInParameter(cmd, "@RoleID", DbType.Int64, user.roleid);
+
+                        Database.AddOutParameter(cmd, "@RETURN_KEY_USERID", DbType.Guid, 128);
+
+                        try
+                        {
+                            IAsyncResult result = Database.BeginExecuteNonQuery(cmd, transaction, null, null);
+                            while (!result.IsCompleted)
+                            {
+
+                            }
+                            var returnCode = Database.EndExecuteNonQuery(result);
+                            RETURN_KEY_USERID = (Guid)(cmd.Parameters["@RETURN_KEY_USERID"].Value);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.updateUser"));
+                        }
+                        cmd.Dispose();
+                    }
+                }
+                if (RETURN_KEY_USERID != null)
+                {
+                    #region TABLE:Cnf_SMSActivationCode
+
+                    //Finally Sent Activation Code
+                    var objSMSCode = new cnf_smsactivationcodeEntity();
+                    objSMSCode.userid = RETURN_KEY_USERID;
+                    objSMSCode.generatedate = DateTime.Now;
+                    objSMSCode.smscodetype = (int)SMSCodeTypeEnum.Create_User;
+                    objSMSCode.isactive = true;
+                    objSMSCode.sucessdate = DateTime.Now;
+                    objSMSCode.smsstatus = true;
+                    objSMSCode.smssenddate = DateTime.Now;
+                    objSMSCode.comment = "SEND ACTIVATION CODE";
+
+                    int _min = 1000;
+                    int _max = 9999;
+                    Random _rdm = new Random();
+                    objSMSCode.smscode = _rdm.Next(_min, _max);
+
+                    objSMSCode.BaseSecurityParam = new SecurityCapsule();
+                    objSMSCode.BaseSecurityParam.createdbyusername = Convert.ToString(RETURN_KEY_USERID);
+                    objSMSCode.BaseSecurityParam.createddate = DateTime.Now;
+                    objSMSCode.BaseSecurityParam.transid = objTranIDGen.GetRandomAlphaNumericStringForTransactionActivity("TRAN", DateTime.Now);
+
+                    cnf_smsactivationcodeDataAccessObjects objsmsactivationcode = new cnf_smsactivationcodeDataAccessObjects(this.Context);
+                    returnValue = await objsmsactivationcode.AddSMSActivationCode(Database, transaction, objSMSCode, cancellationToken);
+                    //TO-DO: Sent This Code By SAHIL API
+
+                    if (user.PaciServiceSettings != null)
+                    {
+                        try
+                        {
+                            using (RestClient client = new RestClient($"{user.PaciServiceSettings.WebApiAddress}Auth/login"))
+                            {
+                                RestRequest Shahilrequest = new RestRequest() { Method = Method.Post };
+                                //Add Headers  
+                                Shahilrequest.AddHeader("Content-Type", "application/json");
+                                var body = new
+                                {
+                                    username = user.PaciServiceSettings.UserName,
+                                    password = user.PaciServiceSettings.Password
+                                };
+
+                                Shahilrequest.AddJsonBody(body);
+
+                                var apiresponse = client.Execute(Shahilrequest);
+                                if (apiresponse.IsSuccessStatusCode)
+                                {
+                                    var accee = JsonConvert.DeserializeObject<SahilAccesstoken>(apiresponse.Content);
+
+                                    using (var notificationClient = new RestClient($"{user.PaciServiceSettings.WebApiAddress}NotificationRequestRecipientList/SendNotificationToSingleUser"))
+                                    {
+                                        Shahilrequest = new RestRequest() { Method = Method.Post };
+                                        Shahilrequest.AddHeader("Content-Type", "application/json");
+                                        Shahilrequest.AddHeader("Authorization", $"Bearer {accee.accessToken.token}");
+
+                                        string html = System.IO.File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "EmailTemplate/AccountVarification" + Thread.CurrentThread.CurrentCulture.ToString().ToUpper() + ".html"));
+                                        html.Replace("{currentdatetime}", DateTime.Now.ToString("dd-MM-yyyy"));
+                                        html = html.Replace("{authocode}", Convert.ToString(objSMSCode.smscode));
+                                        html = html.Replace("{resetpasswordurl}", user._applicationGlobalSettings.Value.AccountVarificationURL + $"?civilId={user.username}");
+
+
+                                        var NotificationBody = new
+                                        {
+                                            applicationid = user.PaciServiceSettings.ApplicationId,
+                                            notificationrequestid = 0,
+                                            recipientcivilid = user.username,
+                                            recipientmobile = user.tempmob,
+                                            recipientemail = user.emailaddress,
+
+                                            msgsubject = "VC:Account Activation",
+                                            msgsubjectar = "تفعيل حساب خدمة التوظيف التطوعي",
+
+                                            msg = $"Your account activation code is {objSMSCode.smscode}",
+                                            msgar = $"Your account activation code is {objSMSCode.smscode}",
+
+                                            messagebodyemail = html,
+                                            messagebodyemailar = html,
+
+                                            sendsms = true,
+                                            senddigitalidnotification = true,
+                                            sendemail = true
+                                        };
+
+                                        Shahilrequest.AddJsonBody(NotificationBody);
+                                        var NotificationApiresponse = notificationClient.Execute(Shahilrequest);
+
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                    }
+
+                    #endregion
+
+                    #region Insert Basic Info
+
+                    Int64 PrimaryKeyMaster_BasicInfoId = -99;
+                    string SP = "KAF_reg_basicinfo_Ins_ext";
+                    long? masteruserid = 0;
+                    var basicinfo = objEntity.BasicInfo;
+
+                    basicinfo.userid = RETURN_KEY_USERID;
+
+                    using (DbCommand cmd = Database.GetStoredProcCommand(SP))
+                    {
+                        if (basicinfo.BaseSecurityParam == null)
+                        {
+                            basicinfo.BaseSecurityParam = new SecurityCapsule();
+                            //basicinfo.BaseSecurityParam.createdbyusername = Convert.ToString(basicinfo.userid);
+                            basicinfo.BaseSecurityParam.createdbyusername = basicinfo.civilid;
+                            basicinfo.BaseSecurityParam.createddate = DateTime.Now;
+                            basicinfo.BaseSecurityParam.transid = objTranIDGen.GetRandomAlphaNumericStringForTransactionActivity("TRAN", DateTime.Now);
+                        }
+
+                        reg_basicinfoDataAccessObjects objreg_basicinfo = new reg_basicinfoDataAccessObjects(this.Context);
+                        var basicinfoid = await objreg_basicinfo.SaveSpecialRegistrationBasicInfo(Database, transaction, basicinfo, cancellationToken);
+
+                        if (basicinfoid > 0)
+                        {
+                            #region TABLE:Reg_RegistrationInfo
+
+                            var registrationinfo = objEntity.CurrentRegistration;
+                            registrationinfo.basicinfoid = basicinfoid;
+                            if (registrationinfo.BaseSecurityParam == null)
+                            {
+                                registrationinfo.BaseSecurityParam = new SecurityCapsule();
+                                //registrationinfo.BaseSecurityParam.createdbyusername = Convert.ToString(basicinfo.userid);
+                                registrationinfo.BaseSecurityParam.createdbyusername = basicinfo.civilid;
+                                registrationinfo.BaseSecurityParam.createddate = DateTime.Now;
+                                registrationinfo.BaseSecurityParam.transid = objTranIDGen.GetRandomAlphaNumericStringForTransactionActivity("TRAN", DateTime.Now);
+                            }
+
+                            reg_registrationinfoDataAccessObjects objreg_registrationinfo = new reg_registrationinfoDataAccessObjects(this.Context);
+                            var registrationid = await objreg_registrationinfo.SaveRegistrationDetail(Database, transaction, registrationinfo, cancellationToken);
+                            #endregion
+
+                            #region TABLE:Tran_ApplicantPhases
+                            var objTran_ApplicantPhases = new tran_applicantphasesEntity();
+                            objTran_ApplicantPhases.basicinfoid = basicinfoid;
+                            objTran_ApplicantPhases.registrationid = registrationid;
+                            objTran_ApplicantPhases.batchid = registrationinfo.batchid;
+                            objTran_ApplicantPhases.phaseid = (long)ApplicantPhasesEnum.Registered;
+                            objTran_ApplicantPhases.statusid = (long)ApplicantStatusEnum.New;
+                            objTran_ApplicantPhases.submittedby = basicinfo.userid;
+                            objTran_ApplicantPhases.submitteddate = DateTime.Now;
+
+                            objTran_ApplicantPhases.BaseSecurityParam = new SecurityCapsule();
+                            objTran_ApplicantPhases.BaseSecurityParam.createdbyusername = basicinfo.civilid;
+                            objTran_ApplicantPhases.BaseSecurityParam.createddate = DateTime.Now;
+                            objTran_ApplicantPhases.BaseSecurityParam.transid = objTranIDGen.GetRandomAlphaNumericStringForTransactionActivity("TRAN", DateTime.Now);
+                            tran_applicantphasesDataAccessObjects objtran_applicantphasesDataAccess = new tran_applicantphasesDataAccessObjects(this.Context);
+                            await objtran_applicantphasesDataAccess.AddApplicationPhase(Database, transaction, objTran_ApplicantPhases, cancellationToken);
+                            #endregion
+
+                            #region TABLE:Tran_SpecialRegistration
+                            tran_specialregistrationDataAccessObjects objtran_specialregistrationDataAccessObjects = new tran_specialregistrationDataAccessObjects(this.Context);
+                            var objtran_specialregistrationEntity = new tran_specialregistrationEntity();
+                            objtran_specialregistrationEntity.specialregid = registrationinfo.SpecialRegID;
+                            objtran_specialregistrationEntity = await objtran_specialregistrationDataAccessObjects.GetSingleSpecialRegistration(Database, transaction, objtran_specialregistrationEntity, cancellationToken);
+                            if (objtran_specialregistrationEntity != null)
+                            {
+                                objtran_specialregistrationEntity.isexpired = true;
+                                objtran_specialregistrationEntity.BaseSecurityParam.updatedbyusername = basicinfo.civilid;
+                                objtran_specialregistrationEntity.BaseSecurityParam.updateddate = DateTime.Now;
+                            }
+                            await objtran_specialregistrationDataAccessObjects.UpdateSpecialRegistration(Database, transaction, objtran_specialregistrationEntity, cancellationToken);
+                            #endregion
+
+                        }
+
+                        cmd.Dispose();
+                    }
+
+                    #endregion
+
+                    transaction.Commit();
+                }
+                else
+                    throw new ArgumentException("Error Code." + returnValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw GetDataAccessException(ex, SourceOfException("IKAFUserSecurityDataAccess.createSpecialRegistrationUser"));
             }
             finally
             {
@@ -1042,24 +1582,13 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                         using (DbCommand cmd = Database.GetStoredProcCommand("KAF_Owin_UserPasswordChange"))
                         {
                             requestuser.lastlogindate = DateTime.Now;
+                            requestuser = FillParameters(requestuser, cmd, Database);
 
-                            Database.AddInParameter(cmd, "@UserId", DbType.Guid, requestuser.userid);
-                            Database.AddInParameter(cmd, "@MasterUserID", DbType.Int64, requestuser.masteruserid);
-                            Database.AddInParameter(cmd, "@UserName", DbType.String, requestuser.username);
-
-
-                            Database.AddInParameter(cmd, "@SessionID", DbType.String, string.IsNullOrEmpty(requestuser.BaseSecurityParam.sessionid) == true ? requestuser.BaseSecurityParam.transid : requestuser.BaseSecurityParam.sessionid);
+                            Database.AddInParameter(cmd, "@SessionID", DbType.String, requestuser.BaseSecurityParam.sessionid);
                             Database.AddInParameter(cmd, "@SessionToken", DbType.String, requestuser.BaseSecurityParam.transid);
-
-                            Database.AddInParameter(cmd, "@Password", DbType.String, requestuser.password);
-                            Database.AddInParameter(cmd, "@PasswordSalt", DbType.String, requestuser.passwordsalt);
-                            Database.AddInParameter(cmd, "@PasswordKey", DbType.String, requestuser.passwordkey);
-                            Database.AddInParameter(cmd, "@PasswordVector", DbType.String, requestuser.passwordvector);
-                            Database.AddInParameter(cmd, "@LastLoginDate", DbType.DateTime, requestuser.lastlogindate);
 
                             FillSequrityParameters(requestuser.BaseSecurityParam, cmd, Database);
                             AddOutputParameter(cmd);
-
                             try
                             {
                                 IAsyncResult result = Database.BeginExecuteNonQuery(cmd, null, null);
@@ -1124,7 +1653,6 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
             }
             return returnCode;
         }
-
         async Task<owin_userEntity> IKAFUserSecurityDataAccess.GetSingleExt(owin_userEntity owin_user, CancellationToken cancellationToken)
         {
             try
@@ -1162,69 +1690,6 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                 throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.GetSingleowin_user"));
             }
         }
-
-        async Task<long> IKAFUserSecurityDataAccess.UserChangePasswordAsync(owin_userEntity requestuser, CancellationToken cancellationToken)
-        {
-            long returnValue = -99;
-            owin_userEntity returnObject = new owin_userEntity();
-            try
-            {
-                EncryptionHelper objenc = new EncryptionHelper();
-
-                var salt = objenc.GenerateRandomCryptographicKey(128);
-                HashWithSaltResult ob1 = objenc.EncodePassword(requestuser.newpassword, salt);
-                requestuser.password = ob1.Digest;
-                requestuser.passwordsalt = ob1.Salt;
-                requestuser.passwordkey = objenc.GenerateRandomCryptographicKey(24);
-                requestuser.passwordvector = objenc.GenerateRandomCryptographicKey(32);
-
-                requestuser.masteruserid = requestuser.masteruserid;
-                requestuser.userid = requestuser.userid;
-
-                using (DbCommand cmd = Database.GetStoredProcCommand("KAF_Owin_UserPasswordChange")) //done
-                {
-                    requestuser.lastlogindate = DateTime.Now;
-
-                    Database.AddInParameter(cmd, "@UserId", DbType.Guid, requestuser.userid);
-                    Database.AddInParameter(cmd, "@MasterUserID", DbType.Int64, requestuser.masteruserid);
-                    Database.AddInParameter(cmd, "@UserName", DbType.String, requestuser.username);
-
-
-                    Database.AddInParameter(cmd, "@SessionID", DbType.String, string.IsNullOrEmpty(requestuser.BaseSecurityParam.sessionid) == true ? requestuser.BaseSecurityParam.transid : requestuser.BaseSecurityParam.sessionid);
-                    Database.AddInParameter(cmd, "@SessionToken", DbType.String, requestuser.BaseSecurityParam.transid);
-
-                    Database.AddInParameter(cmd, "@Password", DbType.String, requestuser.password);
-                    Database.AddInParameter(cmd, "@PasswordSalt", DbType.String, requestuser.passwordsalt);
-                    Database.AddInParameter(cmd, "@PasswordKey", DbType.String, requestuser.passwordkey);
-                    Database.AddInParameter(cmd, "@PasswordVector", DbType.String, requestuser.passwordvector);
-                    Database.AddInParameter(cmd, "@LastLoginDate", DbType.DateTime, requestuser.lastlogindate);
-
-                    FillSequrityParameters(requestuser.BaseSecurityParam, cmd, Database);
-                    AddOutputParameter(cmd);
-                    try
-                    {
-                        IAsyncResult result = Database.BeginExecuteNonQuery(cmd, null, null);
-                        while (!result.IsCompleted)
-                        {
-                        }
-                        returnValue = Database.EndExecuteNonQuery(result);
-                        returnValue = (Int64)(cmd.Parameters["@RETURN_KEY"].Value);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.UserChangePasswordAsync"));
-                    }
-                    cmd.Dispose();
-                }
-                return returnValue;
-            }
-            catch (Exception ex)
-            {
-                throw GetDataAccessException(ex, SourceOfException("IKAFUserSecurityDataAccess.UserChangePasswordAsync"));
-            }
-        }
-
-
         async Task<owin_userEntity> IKAFUserSecurityDataAccess.GetSingleExtByPKeyEX(owin_userEntity owin_user, CancellationToken cancellationToken)
         {
             try
@@ -1232,7 +1697,8 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                 const string SP = "owin_user_GS_Ext_ByPKeyEX";
                 using (DbCommand cmd = Database.GetStoredProcCommand(SP))
                 {
-                    Database.AddInParameter(cmd, "@PKeyEX", DbType.Int64, owin_user.pkeyex);
+                    FillSequrityParameters(owin_user.BaseSecurityParam, cmd, Database);
+                    FillParameters(owin_user, cmd, Database);
 
                     IList<owin_userEntity> itemList = new List<owin_userEntity>();
 
@@ -1261,7 +1727,5 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
                 throw GetDataAccessException(ex, SourceOfException("Iowin_userDataAccess.GetSingleExtByPKeyEX"));
             }
         }
-
-
     }
 }

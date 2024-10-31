@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="rolename" value="اسم الدور"></resource>
+       <resource culture="ar-kw" name="rolenameRequired" value="يرجى تقديم اسم الدور"></resource>
+       <resource culture="ar-kw" name="description" value="وصف"></resource>
+		<resource culture="ar-kw" name="roleList" value="مشاهدة الكل"></resource>
+		<resource culture="ar-kw" name="roleCreate" value="خلق"></resource>
+		<resource culture="ar-kw" name="roleUpdate" value="تحديث"></resource>
+		<resource culture="ar-kw" name="roleDetails" value="التفاصيل"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="rolename" value=" Role Name"></resource>
+       <resource culture="en-us" name="rolenameRequired" value="Please provide  Role Name"></resource>
+       <resource culture="en-us" name="description" value=" Description"></resource>
+        <resource culture="en-us" name="roleList" value="View All"></resource>
+		<resource culture="en-us" name="roleCreate" value="Create"></resource>
+		<resource culture="en-us" name="roleUpdate" value="Update"></resource>
+		<resource culture="en-us" name="roleDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

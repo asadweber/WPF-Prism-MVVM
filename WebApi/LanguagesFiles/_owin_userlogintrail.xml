@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="userid" value="AR:  User I D"></resource>
+       <resource culture="ar-kw" name="useridRequired" value="AR: Please provide  User I D"></resource>
+       <resource culture="ar-kw" name="masteruserid" value="AR:  Master User I D"></resource>
+       <resource culture="ar-kw" name="masteruseridRequired" value="AR: Please provide  Master User I D"></resource>
+       <resource culture="ar-kw" name="loginfrom" value="AR:  Login From"></resource>
+       <resource culture="ar-kw" name="logindate" value="AR:  Login Date"></resource>
+       <resource culture="ar-kw" name="logoutdate" value="AR:  Logout Date"></resource>
+       <resource culture="ar-kw" name="machineip" value="AR:  Machine I P"></resource>
+       <resource culture="ar-kw" name="loginstatus" value="AR:  Login Status"></resource>
+       <resource culture="ar-kw" name="loginstatusbit" value="AR:  Login Status Bit"></resource>
+       <resource culture="ar-kw" name="sessionid" value="AR:  Session I D"></resource>
+       <resource culture="ar-kw" name="usertoken" value="AR:  User Token"></resource>
+		<resource culture="ar-kw" name="userlogintrailList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="userlogintrailCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="userlogintrailUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="userlogintrailDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="userid" value=" User I D"></resource>
+       <resource culture="en-us" name="useridRequired" value="Please provide  User I D"></resource>
+       <resource culture="en-us" name="masteruserid" value=" Master User I D"></resource>
+       <resource culture="en-us" name="masteruseridRequired" value="Please provide  Master User I D"></resource>
+       <resource culture="en-us" name="loginfrom" value=" Login From"></resource>
+       <resource culture="en-us" name="logindate" value=" Login Date"></resource>
+       <resource culture="en-us" name="logoutdate" value=" Logout Date"></resource>
+       <resource culture="en-us" name="machineip" value=" Machine I P"></resource>
+       <resource culture="en-us" name="loginstatus" value=" Login Status"></resource>
+       <resource culture="en-us" name="loginstatusbit" value=" Login Status Bit"></resource>
+       <resource culture="en-us" name="sessionid" value=" Session I D"></resource>
+       <resource culture="en-us" name="usertoken" value=" User Token"></resource>
+        <resource culture="en-us" name="userlogintrailList" value="View All"></resource>
+		<resource culture="en-us" name="userlogintrailCreate" value="Create"></resource>
+		<resource culture="en-us" name="userlogintrailUpdate" value="Update"></resource>
+		<resource culture="en-us" name="userlogintrailDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

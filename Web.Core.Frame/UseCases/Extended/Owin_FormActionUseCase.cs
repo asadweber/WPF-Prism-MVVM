@@ -85,7 +85,7 @@ namespace Web.Core.Frame.UseCases
                                                                                           action = lang == "ar-kw" ? a.DisplayNameAr + " [" + a.EventName + "]" : a.DisplayName + " [" + a.EventName + "]"
                                                                                       }).ToList()
 
-                                                                }).Where(q=>q.formActionList.Count()>0).ToList()
+                                                                }).ToList()
                                                 }).ToList();
 
 
@@ -116,16 +116,14 @@ namespace Web.Core.Frame.UseCases
                                                                                           //action = lang == "ar-kw" ? b.Ex_Nvarchar1 : string.Join(" ", (b.Ex_Nvarchar3 + " " + b.Ex_Nvarchar2).Split(' ').Distinct())
                                                                                           action = lang == "ar-kw" ? b.DisplayNameAr + " [" + a.EventName + "]" : b.DisplayName + " [" + b.EventName + "]"
                                                                                       }).ToList()
-                                                                }).Where(q=>q.formActionList.Count()>0).ToList()
-                                                }).Where(q=>q.formList.Count()>0).ToList();
-                    var uList = kList.Concat(cList).ToList();
-
-                   var  FilteruList= uList.Where(q=>q.formList.Count()>0).ToList();
+                                                                }).ToList()
+                                                }).ToList();
+                    var uList = kList.Concat(cList);
 
                     //string permissionhtml = GeneratePermissionlayout(uList.ToList());
                     //var obj = new owin_formactionEntity();
                     //obj.ActionName = permissionhtml;
-                    var result = new Owin_FormActionResponse(FilteruList, true);
+                    var result = new Owin_FormActionResponse(uList, true);
 
                     outputPort.GetFormActionByRole(result);
                 }

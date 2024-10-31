@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="userid" value="AR:  User I D"></resource>
+       <resource culture="ar-kw" name="useridRequired" value="AR: Please provide  User I D"></resource>
+       <resource culture="ar-kw" name="masteruserid" value="AR:  Master User I D"></resource>
+       <resource culture="ar-kw" name="masteruseridRequired" value="AR: Please provide  Master User I D"></resource>
+       <resource culture="ar-kw" name="statuschanged" value="AR:  Status Changed"></resource>
+       <resource culture="ar-kw" name="statusremark" value="AR:  Status Remark"></resource>
+       <resource culture="ar-kw" name="statusremarkRequired" value="AR: Please provide  Status Remark"></resource>
+       <resource culture="ar-kw" name="comment" value="AR:  Comment"></resource>
+       <resource culture="ar-kw" name="extrafld" value="AR:  Extra F L D"></resource>
+		<resource culture="ar-kw" name="userstatuschangehistoryList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="userstatuschangehistoryCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="userstatuschangehistoryUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="userstatuschangehistoryDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="userid" value=" User I D"></resource>
+       <resource culture="en-us" name="useridRequired" value="Please provide  User I D"></resource>
+       <resource culture="en-us" name="masteruserid" value=" Master User I D"></resource>
+       <resource culture="en-us" name="masteruseridRequired" value="Please provide  Master User I D"></resource>
+       <resource culture="en-us" name="statuschanged" value=" Status Changed"></resource>
+       <resource culture="en-us" name="statusremark" value=" Status Remark"></resource>
+       <resource culture="en-us" name="statusremarkRequired" value="Please provide  Status Remark"></resource>
+       <resource culture="en-us" name="comment" value=" Comment"></resource>
+       <resource culture="en-us" name="extrafld" value=" Extra F L D"></resource>
+        <resource culture="en-us" name="userstatuschangehistoryList" value="View All"></resource>
+		<resource culture="en-us" name="userstatuschangehistoryCreate" value="Create"></resource>
+		<resource culture="en-us" name="userstatuschangehistoryUpdate" value="Update"></resource>
+		<resource culture="en-us" name="userstatuschangehistoryDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

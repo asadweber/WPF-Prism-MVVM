@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--  ar-kwabic (ar-kw) -->
+
+
+  <resource culture="ar-kw" name="isreviewed" value="  تمت مراجعته" ></resource>
+  
+  <resource culture="ar-kw" name="reviewedby" value="  تمت المراجعه بواسطة" ></resource>
+  <resource culture="ar-kw" name="reviewedbyusername" value="  إسم المستخدم للمراجع" ></resource>
+  <resource culture="ar-kw" name="reviewedcomment" value="  ملاحظات المراجع" ></resource>
+  <resource culture="ar-kw" name="revieweddate" value="  تاريخ المراجعة" ></resource>
+  <resource culture="ar-kw" name="ispublished" value="  تم النشر" ></resource>
+  <resource culture="ar-kw" name="publishedby" value="  منشور بواسطة" ></resource>
+  <resource culture="ar-kw" name="publishedbyusername" value="  إسم المستخدم للناشر" ></resource>
+  <resource culture="ar-kw" name="publishedcomment" value="  ملاحظات الناشر" ></resource>
+  <resource culture="ar-kw" name="publisheddate" value="  تاريخ النشر" ></resource>
+  <resource culture="ar-kw" name="isarchived" value="  تمت الأرشفة" ></resource>
+  <resource culture="ar-kw" name="archivedate" value="  تاريخ الأرشفة" ></resource>
+  <resource culture="ar-kw" name="archivedby" value="  تمت الأرشفة بواسطة" ></resource>
+  <resource culture="ar-kw" name="archivedbyusername" value="  إسم المستخدم المؤرشف " ></resource>
+  <resource culture="ar-kw" name="archivedcomment" value="  ملاحظات المؤرشف" ></resource>
+  <resource culture="ar-kw" name="_listAction" value=" إجراء" ></resource>
+  <resource culture="ar-kw" name="searchprofilesummary" value=" بحث ملخص ملف التعريف  " ></resource>
+  <resource culture="ar-kw" name="btnreview" value=" مراجعة" ></resource>
+  <resource culture="ar-kw" name="btnpublish" value="  نشر" ></resource>
+  <resource culture="ar-kw" name="btnarchive" value="  أرشيف" ></resource>
+  <resource culture="ar-kw" name="userType" value=" نوع المستخدم" ></resource>
+  <resource culture="ar-kw" name="date" value=" التاريخ" ></resource>
+  <resource culture="ar-kw" name="dateFor" value=" التاريخ إلى" ></resource>
+  <resource culture="ar-kw" name="dateFrom" value=" من" ></resource>
+  <resource culture="ar-kw" name="dateTo" value=" إلى" ></resource>
+  <resource culture="ar-kw" name="searchText" value=" بحث" ></resource>
+  <resource culture="ar-kw" name="searchContent" value=" بحث بالمحتوى" ></resource>
+
+  <resource culture="ar-kw" name="reviewed" value="تمت المراجعة" ></resource>
+  <resource culture="ar-kw" name="published" value="تم النشر" ></resource>
+  <resource culture="ar-kw" name="archieved" value="تمت الأرشفة" ></resource>
+  <resource culture="ar-kw" name="createddate" value="تاريخ الإنشاء" ></resource>
+
+  <resource culture="ar-kw" name="comment" value=" ملاحظات" ></resource>
+  <resource culture="ar-kw" name="by" value=" بواسطة" ></resource>
+
+  <resource culture="ar-kw" name="add" value=" إضافة" ></resource>
+
+  <resource culture="ar-kw" name="pleaseselect" value=" الرجاء الإختيار" ></resource>
+  <resource culture="ar-kw" name="yes" value=" نعم" ></resource>
+  <resource culture="ar-kw" name="no" value=" لا" ></resource>
+
+  <resource culture="ar-kw" name="createdby" value=" تم الإنشاء بواسطة" ></resource>
+  <resource culture="ar-kw" name="updatedby" value=" تم الإنشاء بواسطة" ></resource>
+
+  <resource culture="ar-kw" name="updateddate" value=" تاريخ التحديث" ></resource>
+  <resource culture="ar-kw" name="archiveddate" value=" تاريخ الأرشفة" ></resource>
+  <resource culture="ar-kw" name="newspublishdate" value=" تاريخ النشر الجديد" ></resource>
+
+  <resource culture="ar-kw" name="eventdate" value=" تاريخ الحدث" ></resource>
+  <resource culture="ar-kw" name="publicationdate" value=" تاريخ المنشور" ></resource>
+  
+  <resource culture="ar-kw" name="_title" value="العنوان" ></resource>
+  <resource culture="ar-kw" name="_homePageTitle" value="الصفحة الرئيسية" ></resource>
+  <resource culture="ar-kw" name="_titleAdminPanel" value="Parliament Member's Poll System: Back Office" ></resource>
+
+
+
+
+  <resource culture="ar-kw" name="_middleName" value="الاسم الوسطى" ></resource>
+  <resource culture="ar-kw" name="_fullname" value="الاسم بالكامل" ></resource>
+  <resource culture="ar-kw" name="_fullnameRequired" value="الإسم الكامل ضروري" ></resource>
+
+  <resource culture="ar-kw" name="_email" value="عنوان البريد الإلكتروني" ></resource>
+  <resource culture="ar-kw" name="_emailRequired" value="مطلوب عنوان البريد الإلكتروني" ></resource>
+
+  <resource culture="ar-kw" name="_subject" value="موضوع البريد" ></resource>
+  <resource culture="ar-kw" name="_subjectRequired" value="الموضوع البريدي مطلوب" ></resource>
+  <resource culture="ar-kw" name="_message" value="موضوع البريد" ></resource>
+  <resource culture="ar-kw" name="_messageRequired" value="الموضوع البريدي مطلوب" ></resource>
+  
+  <!--  ar-kwabic (ar-kw) -->
+
+  <!--  English (en-US) -->
+
+
+  <resource culture="en-us" name="isreviewed" value=" Is Reviewed"></resource>
+ 
+  <resource culture="en-us" name="reviewedby" value=" Reviewed By"></resource>
+  <resource culture="en-us" name="reviewedbyusername" value=" Reviewed By User Name"></resource>
+  <resource culture="en-us" name="reviewedcomment" value=" Reviewed Comment"></resource>
+  <resource culture="en-us" name="reviewedcommentrequired" value="Please provide Comments"></resource>
+  <resource culture="en-us" name="revieweddate" value=" Reviewed Date"></resource>
+  <resource culture="en-us" name="ispublished" value=" Is Published"></resource>
+  <resource culture="en-us" name="publishedby" value=" Published By"></resource>
+  <resource culture="en-us" name="publishedbyusername" value=" Published By User Name"></resource>
+  <resource culture="en-us" name="publishedcomment" value=" Published Comment"></resource>
+  <resource culture="en-us" name="publishedcommentrequired" value="Please provide Comments"></resource>
+  <resource culture="en-us" name="publisheddate" value=" Published Date"></resource>
+  <resource culture="en-us" name="isarchived" value=" Is Archived"></resource>
+  <resource culture="en-us" name="archivedate" value=" Archive Date"></resource>
+  <resource culture="en-us" name="archivedby" value=" Archived By"></resource>
+  <resource culture="en-us" name="archivedbyusername" value=" Archived By User Name"></resource>
+  <resource culture="en-us" name="archivedcomment" value=" Archived Comment"></resource>
+  <resource culture="en-us" name="archivedcommentrequired" value="Please provide Comment"></resource>
+  <resource culture="en-us" name="_listAction" value="Action"></resource>
+
+  <resource culture="en-us" name="btnreview" value="Review"></resource>
+  <resource culture="en-us" name="btnpublish" value="Publish"></resource>
+  <resource culture="en-us" name="btnarchive" value="Archive"></resource>
+  <resource culture="en-us" name="userType" value="User Type"></resource>
+  <resource culture="en-us" name="date" value="Date"></resource>
+  <resource culture="en-us" name="dateFor" value="Date For"></resource>
+  <resource culture="en-us" name="dateFrom" value="From"></resource>
+  <resource culture="en-us" name="dateTo" value="To"></resource>
+  <resource culture="en-us" name="searchText" value="Search"></resource>
+  <resource culture="en-us" name="searchContent" value="Search Content"></resource>
+  <resource culture="en-us" name="searchprofilesummary" value=" Search Profile Summary  " ></resource>
+  <resource culture="en-us" name="reviewed" value="Reviewed"></resource>
+  <resource culture="en-us" name="published" value="Published"></resource>
+  <resource culture="en-us" name="archieved" value="Archived"></resource>
+  <resource culture="en-us" name="createddate" value="Created Date"></resource>
+
+  <resource culture="en-us" name="comment" value=" Comment"></resource>
+  <resource culture="en-us" name="by" value=" By"></resource>
+
+  <resource culture="en-us" name="add" value="Add"></resource>
+
+  <resource culture="en-us" name="pleaseselect" value=" Please Select"></resource>
+  <resource culture="en-us" name="yes" value="Yes"></resource>
+  <resource culture="en-us" name="no" value="No"></resource>
+
+
+  <resource culture="en-us" name="createdby" value=" Created By"></resource>
+  <resource culture="en-us" name="updatedby" value=" Created By"></resource>
+
+
+  <resource culture="en-us" name="updateddate" value=" Updated Date"></resource>
+  <resource culture="en-us" name="archiveddate" value="Archived Date"></resource>
+  <resource culture="en-us" name="newspublishdate" value=" News Publish Date"></resource>
+  <resource culture="en-us" name="eventdate" value=" Event Date"></resource>
+  <resource culture="en-us" name="publicationdate" value=" Publication Date"></resource>
+  
+  <resource culture="en-us" name="_title" value=" Title"></resource>
+  <resource culture="en-us" name="_homePageTitle" value="Home Page" ></resource>
+  <resource culture="en-us" name="_titleAdminPanel" value="Parliament Member's Poll System: Back Office" ></resource>
+
+  <resource culture="en-us" name="_middleName" value="Middle name" ></resource>
+  <resource culture="en-us" name="_fullname" value="Full name" ></resource>
+  <resource culture="en-us" name="_fullnameRequired" value="Full name is required" ></resource>
+
+  <resource culture="en-us" name="_email" value="Email address" ></resource>
+  <resource culture="en-us" name="_emailRequired" value="Email address is required" ></resource>
+
+  <resource culture="en-us" name="_subject" value="Subject" ></resource>
+  <resource culture="en-us" name="_subjectRequired" value="Subject is required" ></resource>
+  <resource culture="en-us" name="_message" value="Message" ></resource>
+  <resource culture="en-us" name="_messageRequired" value="Message is required" ></resource>
+
+  <!-- English (en-US) -->
+
+</resources>

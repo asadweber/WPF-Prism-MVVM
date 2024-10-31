@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="formactionid" value="AR:  Form Action I D"></resource>
+       <resource culture="ar-kw" name="formactionidRequired" value="AR: Please provide  Form Action I D"></resource>
+       <resource culture="ar-kw" name="userid" value="AR:  User I D"></resource>
+       <resource culture="ar-kw" name="useridRequired" value="AR: Please provide  User I D"></resource>
+       <resource culture="ar-kw" name="masteruserid" value="AR:  Master User I D"></resource>
+       <resource culture="ar-kw" name="masteruseridRequired" value="AR: Please provide  Master User I D"></resource>
+       <resource culture="ar-kw" name="lastentrydate" value="AR:  Last Entry Date"></resource>
+       <resource culture="ar-kw" name="lastentrydateRequired" value="AR: Please provide  Last Entry Date"></resource>
+		<resource culture="ar-kw" name="lastworkingpageList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="lastworkingpageCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="lastworkingpageUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="lastworkingpageDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="formactionid" value=" Form Action I D"></resource>
+       <resource culture="en-us" name="formactionidRequired" value="Please provide  Form Action I D"></resource>
+       <resource culture="en-us" name="userid" value=" User I D"></resource>
+       <resource culture="en-us" name="useridRequired" value="Please provide  User I D"></resource>
+       <resource culture="en-us" name="masteruserid" value=" Master User I D"></resource>
+       <resource culture="en-us" name="masteruseridRequired" value="Please provide  Master User I D"></resource>
+       <resource culture="en-us" name="lastentrydate" value=" Last Entry Date"></resource>
+       <resource culture="en-us" name="lastentrydateRequired" value="Please provide  Last Entry Date"></resource>
+        <resource culture="en-us" name="lastworkingpageList" value="View All"></resource>
+		<resource culture="en-us" name="lastworkingpageCreate" value="Create"></resource>
+		<resource culture="en-us" name="lastworkingpageUpdate" value="Update"></resource>
+		<resource culture="en-us" name="lastworkingpageDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

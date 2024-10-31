@@ -11,6 +11,7 @@ using BDO.Core.DataAccessObjects.SecurityModels;
 using Web.Core.Frame.Interfaces;
 using Web.Core.Frame.Interfaces.Services;
 
+
 namespace Web.Core.Frame.CustomStores
 {
     public class CustomUserStore :
@@ -612,20 +613,6 @@ namespace Web.Core.Frame.CustomStores
         }
 
 
-
-        public async Task<long> ChangePasswordHashAsync(owin_userEntity user, string confirmNewPassword, CancellationToken cancellationToken)
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-            ThrowIfDisposed();
-            if (user == null)
-            {
-                throw new ArgumentNullException(nameof(user));
-            }
-            user.newpassword = confirmNewPassword;
-            var longVal = await BFC.Core.FacadeCreatorObjects.Security.ExtendedPartial.FCCKAFUserSecurity.GetFacadeCreate(_contextAccessor).UserChangePasswordAsync(user, cancellationToken);
-
-            return longVal;
-        }
-
+      
     }
 }

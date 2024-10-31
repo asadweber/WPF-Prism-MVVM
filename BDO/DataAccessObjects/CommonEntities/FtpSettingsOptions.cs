@@ -13,6 +13,7 @@ namespace BDO.Core.DataAccessObjects.CommonEntities
         public string uploadfolderServices { get; set; }
 
         public string ftpAddress { get; set; }
+        public bool IsSSL { get; set; }
 
     }
 }

@@ -1,4 +1,7 @@
 ﻿using BDO.Core.DataAccessObjects.CommonEntities;
+using BDO.Core.DataAccessObjects.ExtendedEntities;
+using BDO.DataAccessObjects.ExtendedEntities;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +15,11 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
     {
         protected DateTime? _fromdate;
         protected DateTime? _todate;
+        private bool _sendBySMS = false;
+        private bool _sendByDigitalId;
+        private bool _sendByEmail;
+        private string _aUPIOuser;
+
         [DataMember]
         [Display(Name = "fromdate", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
         public DateTime? fromdate
@@ -25,11 +33,32 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         {
             get => _todate; set => _todate = value;
         }
+
+
+        [DataMember]
+        public bool SendBySMS { get => _sendBySMS; set => _sendBySMS = value; }
+
+        [DataMember]
+        public bool SendByDigitalId { get => _sendByDigitalId; set => _sendByDigitalId = value; }
+
+        [DataMember]
+        public bool SendByEmail { get => _sendByEmail; set => _sendByEmail = value; }
+
+        [DataMember]
+        [Display(Name = "OTP", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_role))]
+        [Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_role), ErrorMessageResourceName = "OTPRequired")]
+        public string OTP { get => _aUPIOuser; set => _aUPIOuser = value; }
+
+        [DataMember]
+        public KAFPaciServiceSettings PaciServiceSettings { get; set; }
+
+        public IOptions<ApplicationGlobalSettings> _applicationGlobalSettings { get; set; }
     }
 
     public class dtOwinUser : DtParameters
     {
         protected string _username;
+        protected long? _roleid;
         protected string _emailaddress;
         protected string _loweredusername;
         protected string _mobilenumber;
@@ -38,12 +67,16 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         protected bool? _isreviewed;
         protected DateTime? _fromdate;
         protected DateTime? _todate;
-        private long? _roleid;
 
         public string username
         {
             get { return _username; }
             set { _username = value; this.OnChnaged(); }
+        }
+        public long? roleid
+        {
+            get { return _roleid; }
+            set { _roleid = value; this.OnChnaged(); }
         }
         public string emailaddress
         {
@@ -83,7 +116,5 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         {
             get => _todate; set => _todate = value;
         }
-
-        public long? roleid { get => _roleid; set => _roleid = value; }
     }
 }

@@ -7,7 +7,7 @@ using Web.Core.Frame.Helpers;
 namespace  Web.Core.Frame.Presenters
 {
     /// <summary>
-    /// Gen_FAQCategoryPresenter
+    /// Gen_FAQCagetogyPresenter
     /// </summary>
     public sealed class HomePresenter : IOutputPort<HomeResponse>, ICRUDRequestHandler<HomeResponse>
     {

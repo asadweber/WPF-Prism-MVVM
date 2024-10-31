@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--  ar-kwabic (ar-kw) -->
+
+  <resource culture="ar-kw" name="_resforgetPasswordReply" value=" يرجى مراجعة البريد الإلكتروني للحصول على رابط إعادة ضبك كلمة المرور مع رمز التحقق" ></resource>
+  <resource culture="ar-kw" name="_resinvalidCredential" value=" بيانات الإعتماد غير صالحة" ></resource>
+  <resource culture="ar-kw" name="_resloginSuccess" value=" تم تسجيل الدخول" ></resource>
+  <resource culture="ar-kw" name="_resgeneralErrorInformation" value=" هناك خطأ، يرجى المحاولة مرة أخرى" ></resource>
+  <resource culture="ar-kw" name="_resmodelStateInvalidInformation" value=" طلب غير صحيح، يرجى المحاولة مرة أخرى" ></resource>
+  <resource culture="ar-kw" name="_resbadRequest" value=" طلب غير صحيح" ></resource>
+  <resource culture="ar-kw" name="_resinvalidUser" value=" المستخدم غير مصرح له أو هناك خطأ في بيانات المستخدم" ></resource>
+  
+  <!--  ar-kwabic (ar-kw) -->
+
+  <!--  English (en-US) -->
+  <resource culture="en-us" name="_resforgetPasswordReply" value="Please check you mail for Reset Link and Auth Code."></resource>
+  <resource culture="en-us" name="_resinvalidCredential" value="Invalid user credentials.."></resource>
+  <resource culture="en-us" name="_resloginSuccess" value="Login Success."></resource>
+  <resource culture="en-us" name="_resgeneralErrorInformation" value="There was a problem, please try again."></resource>
+  <resource culture="en-us" name="_resmodelStateInvalidInformation" value="The request made was invalid, please try again."></resource>
+  <resource culture="en-us" name="_resbadRequest" value="The request made was invalid."></resource>
+  <resource culture="en-us" name="_resinvalidUser" value="The user isnot authorized or invalid."></resource>
+
+  <!-- English (en-US) -->
+
+</resources>

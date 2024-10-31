@@ -83,6 +83,13 @@ namespace CLL.LLClasses.SecurityModels
                 return resourceProvider_owin_user.GetResource("usernameRequired", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
+        public static string fullname
+        {
+            get
+            {
+                return resourceProvider_owin_user.GetResource("fullname", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
         public static string emailaddress
         {
             get
@@ -439,6 +446,30 @@ namespace CLL.LLClasses.SecurityModels
             get
             {
                 return resourceProvider_owin_user.GetResource("passwordmissmatch", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
+
+        public static string passwordlengthmissmatch
+        {
+            get
+            {
+                return resourceProvider_owin_user.GetResource("passwordlengthmissmatch", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
+
+        public static string newpasswordlengthmissmatch
+        {
+            get
+            {
+                return resourceProvider_owin_user.GetResource("newpasswordlengthmissmatch", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
+
+        public static string confirmpasswordlengthmissmatch
+        {
+            get
+            {
+                return resourceProvider_owin_user.GetResource("confirmpasswordlengthmissmatch", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
 

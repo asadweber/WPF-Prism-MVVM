@@ -27,6 +27,9 @@ namespace Web.Core.Frame.UseCases
         private readonly IStringLocalizer _sharedLocalizer;
         private readonly ILogger<LoginUseCase> _logger;
         private readonly IConfiguration _config;
+        private readonly hrwebapiconnectionsettings _objhrwebapiSettigns;
+
+        private readonly IHttpClientHR _ihttpclienthr;
 
         public LoginUseCase(
             IHttpContextAccessor contextAccessor,
@@ -35,6 +38,7 @@ namespace Web.Core.Frame.UseCases
             ITokenFactory tokenFactory,
             IStringLocalizerFactory factory,
             ILoggerFactory loggerFactory
+            , IHttpClientHR ihttpclienthr
             , IConfiguration config)
         {
             _contextAccessor = contextAccessor;
@@ -44,12 +48,15 @@ namespace Web.Core.Frame.UseCases
             _logger = loggerFactory.CreateLogger<LoginUseCase>();
             _config = config;
 
+            _objhrwebapiSettigns = _config.GetSection(nameof(hrwebapiconnectionsettings)).Get<hrwebapiconnectionsettings>();
 
             var type = typeof(SharedResource);
             var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
             _sharedLocalizer = factory.Create("SharedResource", assemblyName.Name);
 
+            _ihttpclienthr = ihttpclienthr;
         }
+
 
         public async Task<bool> Handle(LoginRequest message, IOutputPort<LoginResponse> outputPort)
         {
@@ -58,7 +65,14 @@ namespace Web.Core.Frame.UseCases
                 string hrTokenJsonString = string.Empty;
                 string hrprofileJsonString = string.Empty;
                 bool ADLogin = false;
-                
+
+                if (_objhrwebapiSettigns.isRequired)
+                {
+                }
+
+
+
+                var ss = _sharedLocalizer["INVALID_VERFICATION_CODE"].Value;
                 // ensure we have a user with the given user name
                 var user = await _userManager.FindByNameAsync(message.UserName);
                 if (user != null)
@@ -74,7 +88,8 @@ namespace Web.Core.Frame.UseCases
                         await _userManager.UpdateAsync(user);
 
                         // generate access token
-                        outputPort.Handle(new LoginResponse(await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+                        outputPort.Handle(new LoginResponse(true, await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+
                         return true;
                     }
                 }
@@ -84,6 +99,61 @@ namespace Web.Core.Frame.UseCases
                     //WORK. RON.
                 }
             }
+
+            outputPort.Handle(new LoginResponse(new[] { new Error("login_failure", "Invalid username or password.") }));
+            return false;
+        }
+
+        public async Task<bool> HandleForSahel(LoginRequest message, IOutputPort<LoginResponse> outputPort)
+        {
+
+            if (!string.IsNullOrEmpty(message.UserName) && !string.IsNullOrEmpty(message.Password))
+            {
+                string hrTokenJsonString = string.Empty;
+                string hrprofileJsonString = string.Empty;
+                bool ADLogin = false;
+
+                if (_objhrwebapiSettigns.isRequired)
+                {
+                 
+                }
+
+
+
+                var ss = _sharedLocalizer["INVALID_VERFICATION_CODE"].Value;
+                // ensure we have a user with the given user name
+                var user = await _userManager.FindByNameAsync(message.UserName);
+                if (user != null)
+                {
+                    // validate password
+                    if (await _userManager.CheckPasswordAsync(user, message.Password))
+                    {
+                        var userrole = await _userManager.GetRolesAsync(user);
+
+                        // generate refresh token
+                        var refreshToken = _tokenFactory.GenerateToken();
+                        user.AddRefreshToken(refreshToken, user.userid.GetValueOrDefault(), message.RemoteIpAddress);
+                        await _userManager.UpdateAsync(user);
+
+                        // generate access token
+                        //outputPort.Handle(new LoginResponse(true, await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+
+                        var str = await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString);
+
+                        outputPort.Handle(new LoginResponse(true, await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+
+                        return true;
+                    }
+                }
+                else
+                {
+                    //create profile and login - ad - db cross matches. required
+                    //WORK. RON.
+                }
+            }
+
+            //outputPort.Handle(new LoginResponse(new[] { new Error("login_failure", "Invalid username or password.") }));
+
             outputPort.Handle(new LoginResponse(new[] { new Error("login_failure", "Invalid username or password.") }));
             return false;
         }

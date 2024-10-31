@@ -21,31 +21,54 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
         public string SignalRContextNameQR { get; set; } = "";
         public string SignalRContextNameCivil { get; set; } = "";
 
-        public string UploadFolderRoot { get; set; }
 
-        public string NoImageLocation { get; set; }
 
         private string _CompleteDomainURL;
-		private string _knsFrontAddress;
 
-		public string CompleteDomainURL { get => _CompleteDomainURL; set => _CompleteDomainURL = value; }
-		//public string CompleteDomainURL
-		//{
-		//    get
-		//    {
-		//        var port = string.Empty;
-		//        var protocol = string.Empty;
-		//        var subDomain = string.Empty;
-		//        var slug = string.Empty;
-		//        protocol = IsSSLRequired.GetValueOrDefault(false) == true ? "https://" : "http://";
-		//        subDomain = SubDomain == "" ? string.Empty : SubDomain + ".";
-		//        port = IsPortRequired == true ? ":" + (IsSSLRequired == true ? SSLPort : Port) : string.Empty;
-		//        slug = Slug == "" ? "/" : "/" + Slug + "/";
-		//        _CompleteDomainURL = protocol + subDomain + Domain + port + slug;
-		//        return _CompleteDomainURL;
-		//    }
-		//}
-		public string KnsFrontAddress { get => _knsFrontAddress; set => _knsFrontAddress = value; }
+//#if DEBUG
+        public string CompleteDomainURL { get => _CompleteDomainURL; set => _CompleteDomainURL = value; }
+//#else
+//        public string CompleteDomainURL 
+//           {
+//            get
+//            {
+//                var port = string.Empty;
+//                var protocol = string.Empty;
+//                var subDomain = string.Empty;
+//                var slug = string.Empty;
+//                protocol = IsSSLRequired.GetValueOrDefault(false) == true ? "https://" : "http://";
+//                subDomain = SubDomain == "" ? string.Empty : SubDomain + ".";
+//                port = IsPortRequired == true ? ":" + (IsSSLRequired == true ? SSLPort : Port) : string.Empty;
+//                slug = Slug == "" ? "/" : "/" + Slug + "/";
+//                _CompleteDomainURL = protocol + subDomain + Domain + port + slug;
+//                return _CompleteDomainURL;
+//            }
+//        }
+//#endif
 
-	}
+
+
+
+        private string _SignalRServiceURLWithContext;
+        public string SignalRServiceURLWithContext
+        {
+            get
+            {
+                _SignalRServiceURLWithContext = _CompleteDomainURL + SignalRContextName;
+                return _SignalRServiceURLWithContext;
+            }
+        }
+
+        private string _SignalRServiceURLWithContextQR;
+       
+
+        public string SignalRServiceURLWithContextQR
+        {
+            get
+            {
+                _SignalRServiceURLWithContextQR = _CompleteDomainURL;
+                return _SignalRServiceURLWithContextQR;
+            }
+        }
+    }
 }

@@ -23,6 +23,7 @@ using BDO.Core.DataAccessObjects.Models;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using Web.Core.Frame.CustomIdentityManagers;
+using Web.Core.Frame.Dto.UseCaseResponses.Registration;
 
 namespace Web.Core.Frame.UseCases
 {
@@ -70,7 +71,7 @@ namespace Web.Core.Frame.UseCases
             try
             {
                 IList<owin_userEntity> oblist = await BFC.Core.FacadeCreatorObjects.Security.owin_userFCC.GetFacadeCreate(_contextAccessor)
-                .GetAll(message.Objowin_user, cancellationToken);
+                .GetAll(new owin_userEntity(), cancellationToken);
 
                 if (oblist != null && oblist.Count > 0)
                 {
@@ -138,79 +139,69 @@ namespace Web.Core.Frame.UseCases
 
                 IList<owin_userEntity> oblist = await BFC.Core.FacadeCreatorObjects.Security.owin_userFCC.GetFacadeCreate(_contextAccessor)
                 .GAPgListView(message.Objowin_user, cancellationToken);
-                if (oblist != null && oblist.Count > 0)
-                {
-                    List<dataTableButtonModel> btnActionList = new List<dataTableButtonModel>();
-                    ////btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.New_GET));
-                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Edit_GET));
-                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Delete_GET));
-                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.GetSingle_GET));
-                    ////btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["PROCESS"], "StpOrganizationEntity/userprocess"));
-                    ////btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["SEARCH"], "StpOrganizationEntity/usersearch"));
-                    btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Update Role", "Owin_User/UpdateRoleOwin_User", "fas fa-edit"));
-                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Review", "Owin_User/ReviewOwin_User", "fas fa-edit"));
-                    btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Lock", "Owin_User/LockOwin_User", "fas fa-edit"));
-                    btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Password Reset", "Owin_User/PasswordResetOwin_User", "fas fa-edit"));
-                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Email Reset", "Owin_User/EmailResetOwin_User", "fas fa-edit"));
-                    btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.GetSingle_GET));
-                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Details", "OwinUserDetails", "<i class='fas fa-eye'></i>"));
-                    var data = (from t in oblist
-                                select new
-                                {
-                                    t.applicationid,
-                                    t.userid,
-                                    t.masteruserid,
-                                    t.username,
-                                    t.emailaddress,
-                                    t.loweredusername,
-                                    t.mobilenumber,
-                                    t.userprofilephoto,
-                                    t.isanonymous,
-                                    t.ischildenable,
-                                    t.masprivatekey,
-                                    t.maspublickey,
-                                    t.password,
-                                    t.passwordsalt,
-                                    t.passwordkey,
-                                    t.passwordvector,
-                                    t.mobilepin,
-                                    t.passwordquestion,
-                                    t.passwordanswer,
-                                    t.approved,
-                                    t.locked,
-                                    t.isreviewed,
-                                    t.lastlogindate,
-                                    t.lastpasschangeddate,
-                                    t.lastlockoutdate,
-                                    t.failedpasswordattemptcount,
-                                    t.comment,
-                                    t.lastactivitydate,
-                                    t.isapproved,
-                                    t.approvedby,
-                                    t.approvedbyusername,
-                                    t.approveddate,
-                                    t.isemailconfirmed,
-                                    t.emailconfirmationbyuserdate,
-                                    t.twofactorenable,
-                                    t.ismobilenumberconfirmed,
-                                    t.mobilenumberconfirmedbyuserdate,
-                                    t.securitystamp,
-                                    t.concurrencystamp,
-                                    datatablebuttonscode = objDTBtnPanel.genDTBtnPanel(message.Objowin_user.ControllerName, t.userid, "userid", _contextAccessor.HttpContext.User.Identity as ClaimsIdentity, btnActionList, _contextAccessor)
-                                }).ToList();
 
-                    outputPort.GetListView(new Owin_UserResponse(new AjaxResponse(oblist[0].RETURN_KEY, data), true, null));
+                List<dataTableButtonModel> btnActionList = new List<dataTableButtonModel>();
+                ////btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.New_GET));
+                //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Edit_GET));
+                //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Delete_GET));
+                //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.GetSingle_GET));
+                ////btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["PROCESS"], "StpOrganizationEntity/userprocess"));
+                ////btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["SEARCH"], "StpOrganizationEntity/usersearch"));
+                btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["UPDATE_ROLE"], "Owin_User/UpdateRoleOwin_User", "fas fa-edit"));
+                btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["REVIEW_OWIN_USER"], "Owin_User/ReviewOwin_User", "fas fa-edit"));
+                btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["LOCK_OWIN_USER"], "Owin_User/LockOwin_User", "fas fa-edit"));
+                btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["RESET_PASSWORD"], "Owin_User/PasswordResetOwin_User", "fas fa-edit"));
+                btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["EMAIL_RESET"], "Owin_User/EmailResetOwin_User", "fas fa-edit"));
+                btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.GetSingle_GET));
+                //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, "Details", "OwinUserDetails", "<i class='fas fa-eye'></i>"));
+                var data = (from t in oblist
+                            select new
+                            {
+                                t.applicationid,
+                                t.userid,
+                                t.masteruserid,
+                                t.username,
+                                t.fullname,
+                                t.emailaddress,
+                                t.loweredusername,
+                                t.mobilenumber,
+                                t.userprofilephoto,
+                                t.isanonymous,
+                                t.ischildenable,
+                                t.masprivatekey,
+                                t.maspublickey,
+                                t.password,
+                                t.passwordsalt,
+                                t.passwordkey,
+                                t.passwordvector,
+                                t.mobilepin,
+                                t.passwordquestion,
+                                t.passwordanswer,
+                                t.approved,
+                                t.locked,
+                                t.isreviewed,
+                                t.lastlogindate,
+                                t.lastpasschangeddate,
+                                t.lastlockoutdate,
+                                t.failedpasswordattemptcount,
+                                t.comment,
+                                t.lastactivitydate,
+                                t.isapproved,
+                                t.approvedby,
+                                t.approvedbyusername,
+                                t.approveddate,
+                                t.isemailconfirmed,
+                                t.emailconfirmationbyuserdate,
+                                t.twofactorenable,
+                                t.ismobilenumberconfirmed,
+                                t.mobilenumberconfirmedbyuserdate,
+                                t.securitystamp,
+                                t.concurrencystamp,
+                                t.rolename,
+                                datatablebuttonscode = objDTBtnPanel.genDTBtnPanel(message.Objowin_user.ControllerName, t.userid, "userid", _contextAccessor.HttpContext.User.Identity as ClaimsIdentity, btnActionList, _contextAccessor)
+                            }).ToList();
 
-                }
-                else
-                {
-                    //Owin_UserResponse objResponse = new Owin_UserResponse(false, _sharedLocalizer["NO_DATA_FOUND"], new Error(
-                    //    "404",
-                    //    _sharedLocalizer["NO_DATA_FOUND"]));
-                    //_logger.LogInformation(JsonConvert.SerializeObject(objResponse));
-                    //outputPort.GetListView(objResponse);
-                    outputPort.GetListView(new Owin_UserResponse(new AjaxResponse(0, oblist), true, null));
-                }
+                outputPort.GetListView(new Owin_UserResponse(new AjaxResponse(oblist.Count > 0 ? oblist[0].RETURN_KEY : 0, data), true, null));
                 return true;
             }
             catch (Exception ex)

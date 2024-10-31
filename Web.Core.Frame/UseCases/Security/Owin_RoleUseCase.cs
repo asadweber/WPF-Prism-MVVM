@@ -133,7 +133,7 @@ namespace Web.Core.Frame.UseCases
                     List<dataTableButtonModel> btnActionList = new List<dataTableButtonModel>();
                     //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.New_GET));
                     btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Edit_GET));
-                    btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Delete_GET));
+                    //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.Delete_GET));
                     btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.GetSingle_GET));
                     //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["PROCESS"], "StpOrganizationEntity/userprocess"));
                     //btnActionList.Add(new dataTableButtonModel(basicCRUDButtons.CUSTOM, _sharedLocalizer["SEARCH"], "StpOrganizationEntity/usersearch"));

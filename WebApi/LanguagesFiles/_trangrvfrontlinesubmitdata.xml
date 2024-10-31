@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="qrcode" value="AR:  Q R Code"></resource>
+       <resource culture="ar-kw" name="qrcodeRequired" value="AR: Please provide  Q R Code"></resource>
+       <resource culture="ar-kw" name="documentnumber" value="AR:  Document Number"></resource>
+       <resource culture="ar-kw" name="documentnumberRequired" value="AR: Please provide  Document Number"></resource>
+       <resource culture="ar-kw" name="doccreationdate" value="AR:  Doc Creation Date"></resource>
+       <resource culture="ar-kw" name="doccreationdateRequired" value="AR: Please provide  Doc Creation Date"></resource>
+       <resource culture="ar-kw" name="subject" value="AR:  Subject"></resource>
+       <resource culture="ar-kw" name="subjectRequired" value="AR: Please provide  Subject"></resource>
+       <resource culture="ar-kw" name="fullname" value="الاسم الكامل"></resource>
+       <resource culture="ar-kw" name="fullnameRequired" value="AR: Please provide  Full Name"></resource>
+       <resource culture="ar-kw" name="mobilenumber" value="AR:  Mobile Number"></resource>
+       <resource culture="ar-kw" name="hitfrom" value="AR:  Hit From"></resource>
+       <resource culture="ar-kw" name="hitfromRequired" value="AR: Please provide  Hit From"></resource>
+       <resource culture="ar-kw" name="civilid" value="AR:  Civil I D"></resource>
+       <resource culture="ar-kw" name="civilidRequired" value="يرجى كتابة رقم البطاقة المدنية"></resource>
+       <resource culture="ar-kw" name="militaryid" value="AR:  Military I D"></resource>
+       <resource culture="ar-kw" name="rankid" value="AR:  Rank I D"></resource>
+       <resource culture="ar-kw" name="rankname" value="AR:  Rank Name"></resource>
+       <resource culture="ar-kw" name="positionid" value="AR:  Position I D"></resource>
+       <resource culture="ar-kw" name="positionname" value="AR:  Position Name"></resource>
+       <resource culture="ar-kw" name="unitid" value="AR:  Unit I D"></resource>
+       <resource culture="ar-kw" name="unitname" value="AR:  Unit Name"></resource>
+       <resource culture="ar-kw" name="subunitid" value="AR:  Sub Unit I D"></resource>
+       <resource culture="ar-kw" name="subunitname" value="AR:  Sub Unit Name"></resource>
+       <resource culture="ar-kw" name="pdfurl" value="AR:  P D F U R L"></resource>
+       <resource culture="ar-kw" name="comment" value="AR:  Comment"></resource>
+       <resource culture="ar-kw" name="isreviewed" value="AR:  Is Reviewed"></resource>
+       <resource culture="ar-kw" name="revieweddate" value="AR:  Reviewed Date"></resource>
+       <resource culture="ar-kw" name="reviewednote" value="AR:  Reviewed Note"></resource>
+       <resource culture="ar-kw" name="email" value="AR:  Email"></resource>
+       <resource culture="ar-kw" name="hrbasicid" value="AR:  H R Basic I D"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdataList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdataCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdataUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdataDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="qrcode" value=" Q R Code"></resource>
+       <resource culture="en-us" name="qrcodeRequired" value="Please provide  Q R Code"></resource>
+       <resource culture="en-us" name="documentnumber" value=" Document Number"></resource>
+       <resource culture="en-us" name="documentnumberRequired" value="Please provide  Document Number"></resource>
+       <resource culture="en-us" name="doccreationdate" value=" Doc Creation Date"></resource>
+       <resource culture="en-us" name="doccreationdateRequired" value="Please provide  Doc Creation Date"></resource>
+       <resource culture="en-us" name="subject" value=" Subject"></resource>
+       <resource culture="en-us" name="subjectRequired" value="Please provide  Subject"></resource>
+       <resource culture="en-us" name="fullname" value=" Full Name"></resource>
+       <resource culture="en-us" name="fullnameRequired" value="Please provide  Full Name"></resource>
+       <resource culture="en-us" name="mobilenumber" value=" Mobile Number"></resource>
+       <resource culture="en-us" name="hitfrom" value=" Hit From"></resource>
+       <resource culture="en-us" name="hitfromRequired" value="Please provide  Hit From"></resource>
+       <resource culture="en-us" name="civilid" value=" Civil I D"></resource>
+       <resource culture="en-us" name="civilidRequired" value="Please provide  Civil I D"></resource>
+       <resource culture="en-us" name="militaryid" value=" Military I D"></resource>
+       <resource culture="en-us" name="rankid" value=" Rank I D"></resource>
+       <resource culture="en-us" name="rankname" value=" Rank Name"></resource>
+       <resource culture="en-us" name="positionid" value=" Position I D"></resource>
+       <resource culture="en-us" name="positionname" value=" Position Name"></resource>
+       <resource culture="en-us" name="unitid" value=" Unit I D"></resource>
+       <resource culture="en-us" name="unitname" value=" Unit Name"></resource>
+       <resource culture="en-us" name="subunitid" value=" Sub Unit I D"></resource>
+       <resource culture="en-us" name="subunitname" value=" Sub Unit Name"></resource>
+       <resource culture="en-us" name="pdfurl" value=" P D F U R L"></resource>
+       <resource culture="en-us" name="comment" value=" Comment"></resource>
+       <resource culture="en-us" name="isreviewed" value=" Is Reviewed"></resource>
+       <resource culture="en-us" name="revieweddate" value=" Reviewed Date"></resource>
+       <resource culture="en-us" name="reviewednote" value=" Reviewed Note"></resource>
+       <resource culture="en-us" name="email" value=" Email"></resource>
+       <resource culture="en-us" name="hrbasicid" value=" H R Basic I D"></resource>
+        <resource culture="en-us" name="trangrvfrontlinesubmitdataList" value="View All"></resource>
+		<resource culture="en-us" name="trangrvfrontlinesubmitdataCreate" value="Create"></resource>
+		<resource culture="en-us" name="trangrvfrontlinesubmitdataUpdate" value="Update"></resource>
+		<resource culture="en-us" name="trangrvfrontlinesubmitdataDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -3,6 +3,8 @@ using Web.Core.Frame.RequestResponse.UseCaseResponses;
 using Web.Core.Frame.Interfaces;
 using Web.Core.Frame.Serialization;
 using Web.Core.Frame.Helpers;
+using BDO.DataAccessObjects.ExtendedEntities;
+using Web.Core.Frame.Dto.UseCaseResponses.Registration;
 
 namespace Web.Core.Frame.Presenters
 {
@@ -15,7 +17,7 @@ namespace Web.Core.Frame.Presenters
         /// ContentResult
         /// </summary>
         public JsonContentResult ContentResult { get; }
-
+        public object Result { get; set; }
         /// <summary>
         /// Auth_Presenter
         /// </summary>
@@ -71,6 +73,14 @@ namespace Web.Core.Frame.Presenters
 
             ContentResult.StatusCode = int.Parse(response._ajaxresponse.responsecode);
             ContentResult.Content = JsonSerializer.SerializeObject(new Auth_Response(response._ajaxresponse, response.Success));
+        }
+
+
+        public void AccountActivation(Auth_Response response)
+        {
+            ContentResult.StatusCode = (int)(HttpStatusCode.OK);
+            ContentResult.Content = JsonSerializer.SerializeObject(new Auth_Response(response._ajaxresponse, response.Success));// response.Success ? JsonSerializer.SerializeObject(new VCRegistrationResponse(response._ajaxresponse, response.Success)) : JsonSerializer.SerializeObject(response.Errors);
+            Result = response.Message as object;
         }
 
         //

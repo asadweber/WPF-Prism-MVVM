@@ -7,6 +7,9 @@ namespace Web.Core.Frame.Dto.UseCaseResponses
     {
         public AccessToken AccessToken { get; }
         public string RefreshToken { get; }
+        public string accessToken { get; }
+        public int expiresIn { get; }
+
 
         public ExchangeRefreshTokenResponse(bool success = false, string message = null) : base(success, message)
         {
@@ -17,5 +20,13 @@ namespace Web.Core.Frame.Dto.UseCaseResponses
             AccessToken = accessToken;
             RefreshToken = refreshToken;
         }
+
+        public ExchangeRefreshTokenResponse(string Token, int ExpiresIn, string refreshToken, bool success = false, string message = null) : base(success, message)
+        {
+            accessToken = Token;
+            expiresIn = ExpiresIn;
+            RefreshToken = refreshToken;
+        }
+
     }
 }

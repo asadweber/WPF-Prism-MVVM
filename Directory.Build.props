@@ -8,8 +8,6 @@
 		
 		<!-- Common properties for all projects -->
 		<OutputPath>$(SolutionDir)\bin\</OutputPath>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>		
 	</PropertyGroup>
 </Project>

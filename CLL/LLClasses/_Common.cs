@@ -2,13 +2,12 @@
 using System;
 using System.Globalization;
 using System.IO;
-using System.Reflection;
 
 namespace CLL.LLClasses
 {
     public class _Common
     {
-        private static IResourceProvider resourceProvidercommon = new XmlResourceProvider(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"LanguagesFiles/_Common.xml"));//DbResourceProvider(); //  
+        private static IResourceProvider resourceProvidercommon = new XmlResourceProvider(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"LanguagesFiles/_CommonHtml_resource.xml"));//DbResourceProvider(); //  
         public static string CheckCivilIdDialog
         {
             get
@@ -25,7 +24,6 @@ namespace CLL.LLClasses
                 return resourceProvidercommon.GetResource("CheckCivilIdMessage", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
-
         public static string createddate
         {
             get
@@ -599,6 +597,8 @@ namespace CLL.LLClasses
                 return resourceProvidercommon.GetResource("_viewMore", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
+
+
         public static string _uploadfiles
         {
             get
@@ -606,6 +606,7 @@ namespace CLL.LLClasses
                 return resourceProvidercommon.GetResource("_uploadfiles", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
+
         public static string _btnDelete
         {
             get
@@ -613,56 +614,26 @@ namespace CLL.LLClasses
                 return resourceProvidercommon.GetResource("_btnDelete", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
-
-        public static string _DeleteConfirmation
+        public static string _btnOK
         {
             get
             {
-                return resourceProvidercommon.GetResource("_DeleteConfirmation", CultureInfo.CurrentUICulture.Name) as String;
+                return resourceProvidercommon.GetResource("_btnOK", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
-
-
-        public static string _DeleteConfirmationMessage
+        public static string _chooseFile
         {
             get
             {
-                return resourceProvidercommon.GetResource("_DeleteConfirmationMessage", CultureInfo.CurrentUICulture.Name) as String;
+                return resourceProvidercommon.GetResource("_chooseFile", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
-
-
-		public static string Confirmation
-		{
-			get
-			{
-				return resourceProvidercommon.GetResource("Confirmation", CultureInfo.CurrentUICulture.Name) as String;
-			}
-		}
-		public static string ConfirmationMessage
-		{
-			get
-			{
-				return resourceProvidercommon.GetResource("ConfirmationMessage", CultureInfo.CurrentUICulture.Name) as String;
-			}
-		}
-
-
-        public static string LanguageToggle
-		{
-			get
-			{
-				return resourceProvidercommon.GetResource("LanguageToggle", CultureInfo.CurrentUICulture.Name) as String;
-			}
-		}
-
-
-        public static string btnSave
+        public static string _print
+        {
+            get
             {
-			get
-			{
-				return resourceProvidercommon.GetResource("btnSave", CultureInfo.CurrentUICulture.Name) as String;
-			}
-		}
+                return resourceProvidercommon.GetResource("_print", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
     }
 }

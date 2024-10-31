@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="grvfrontlineid" value="AR:  Grv Front Line I D"></resource>
+       <resource culture="ar-kw" name="grvfrontlineidRequired" value="AR: Please provide  Grv Front Line I D"></resource>
+       <resource culture="ar-kw" name="fileurl" value="AR:  File U R L"></resource>
+       <resource culture="ar-kw" name="fileurlRequired" value="AR: Please provide  File U R L"></resource>
+       <resource culture="ar-kw" name="filename" value="AR:  File Name"></resource>
+       <resource culture="ar-kw" name="filenameRequired" value="AR: Please provide  File Name"></resource>
+       <resource culture="ar-kw" name="fileextension" value="AR:  File Extension"></resource>
+       <resource culture="ar-kw" name="fileextensionRequired" value="AR: Please provide  File Extension"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdatafilesList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdatafilesCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdatafilesUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="trangrvfrontlinesubmitdatafilesDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="grvfrontlineid" value=" Grv Front Line I D"></resource>
+       <resource culture="en-us" name="grvfrontlineidRequired" value="Please provide  Grv Front Line I D"></resource>
+       <resource culture="en-us" name="fileurl" value=" File U R L"></resource>
+       <resource culture="en-us" name="fileurlRequired" value="Please provide  File U R L"></resource>
+       <resource culture="en-us" name="filename" value=" File Name"></resource>
+       <resource culture="en-us" name="filenameRequired" value="Please provide  File Name"></resource>
+       <resource culture="en-us" name="fileextension" value=" File Extension"></resource>
+       <resource culture="en-us" name="fileextensionRequired" value="Please provide  File Extension"></resource>
+        <resource culture="en-us" name="trangrvfrontlinesubmitdatafilesList" value="View All"></resource>
+		<resource culture="en-us" name="trangrvfrontlinesubmitdatafilesCreate" value="Create"></resource>
+		<resource culture="en-us" name="trangrvfrontlinesubmitdatafilesUpdate" value="Update"></resource>
+		<resource culture="en-us" name="trangrvfrontlinesubmitdatafilesDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

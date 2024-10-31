@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="userid" value="AR:  User I D"></resource>
+       <resource culture="ar-kw" name="useridRequired" value="AR: Please provide  User I D"></resource>
+       <resource culture="ar-kw" name="masteruserid" value="AR:  Master User I D"></resource>
+       <resource culture="ar-kw" name="roleid" value="AR:  Role I D"></resource>
+       <resource culture="ar-kw" name="roleidRequired" value="AR: Please provide  Role I D"></resource>
+       <resource culture="ar-kw" name="isenable" value="AR:  Is Enable"></resource>
+       <resource culture="ar-kw" name="isenableRequired" value="AR: Please provide  Is Enable"></resource>
+		<resource culture="ar-kw" name="userroleList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="userroleCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="userroleUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="userroleDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="userid" value=" User I D"></resource>
+       <resource culture="en-us" name="useridRequired" value="Please provide  User I D"></resource>
+       <resource culture="en-us" name="masteruserid" value=" Master User I D"></resource>
+       <resource culture="en-us" name="roleid" value=" Role I D"></resource>
+       <resource culture="en-us" name="roleidRequired" value="Please provide  Role I D"></resource>
+       <resource culture="en-us" name="isenable" value=" Is Enable"></resource>
+       <resource culture="en-us" name="isenableRequired" value="Please provide  Is Enable"></resource>
+        <resource culture="en-us" name="userroleList" value="View All"></resource>
+		<resource culture="en-us" name="userroleCreate" value="Create"></resource>
+		<resource culture="en-us" name="userroleUpdate" value="Update"></resource>
+		<resource culture="en-us" name="userroleDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

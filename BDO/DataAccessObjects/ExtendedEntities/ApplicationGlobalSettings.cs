@@ -8,5 +8,9 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
     {
         public string PassResetURL { get; set; }
         public string ApplicationID { get; set; }
+        public string AccountVarificationURL { get; set; }
+
+        public string SpecialRegistrationURL { get; set; }
+
     }
 }

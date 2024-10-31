@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System.Data;
 using BDO.Core.Base;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel;
 
 namespace BDO.Core.DataAccessObjects.Models
 {

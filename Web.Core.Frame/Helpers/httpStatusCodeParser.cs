@@ -12,6 +12,7 @@ namespace Web.Core.Frame.Helpers
                 case "401": return HttpStatusCode.Unauthorized;
                 case "500": return HttpStatusCode.InternalServerError;
                 case "404": return HttpStatusCode.NotFound;
+                case "415": return HttpStatusCode.UnsupportedMediaType;
                 default: return HttpStatusCode.OK;
             }
         }

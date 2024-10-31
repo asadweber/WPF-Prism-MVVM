@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
+using BDO.DataAccessObjects.VCRegistration;
 
 namespace IBFO.Core.IBusinessFacadeObjects.Security.ExtendedPartial
 {
@@ -41,7 +42,7 @@ namespace IBFO.Core.IBusinessFacadeObjects.Security.ExtendedPartial
         Task<long> SetEmailAsync(owin_userEntity user, CancellationToken cancellationToken);
 
         [OperationContract]
-        Task<string> ForgetPasswordRequest(owin_userEntity user, CancellationToken cancellationToken);
+        Task<(string, string,string)> ForgetPasswordRequest(owin_userEntity user, CancellationToken cancellationToken);
 
         [OperationContract]
         Task<owin_userEntity> ChangePasswordRequest(owin_userEntity user, CancellationToken cancellationToken);
@@ -53,6 +54,10 @@ namespace IBFO.Core.IBusinessFacadeObjects.Security.ExtendedPartial
 
         [OperationContract]
         Task<long?> createuser(owin_userEntity user, CancellationToken cancellationToken);
+
+        [OperationContract]
+        Task<long?> createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken);
+
         [OperationContract]
         Task<IList<Owin_ProcessGetFormActionistEntity_Ext>> GetMenuWiseFormActionList(owin_userEntity objEntity, CancellationToken cancellationToken);
 
@@ -68,12 +73,14 @@ namespace IBFO.Core.IBusinessFacadeObjects.Security.ExtendedPartial
 
         [OperationContract]
         Task<owin_userEntity> GetSingleExt(owin_userEntity owin_user, CancellationToken cancellationToken);
-
-        [OperationContract]
-        Task<long> UserChangePasswordAsync(owin_userEntity owin_user, CancellationToken cancellationToken);
-
+      
         [OperationContract]
         Task<owin_userEntity> GetSingleExtByPKeyEX(owin_userEntity owin_user, CancellationToken cancellationToken);
+
+        [OperationContract]
+        Task<(string, string, string)> ForgetPasswordRequestFromFront(owin_userEntity user, CancellationToken cancellationToken);
+
+
 
     }
 }

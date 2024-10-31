@@ -123,8 +123,20 @@ namespace Web.Core.Frame.CustomIdentityManagers
             }
 
             var user = await Store.FindByNameAsync(userName, CancellationToken);
+            if (user != null)
                 return user;
-            
+            else
+            {
+                var cast = Store as CustomUserStore;
+                hrprofileJsonString = _stringCompression.UnZip(hrprofileJsonString);
+                //GetMilShortInfoByBasicMilEntity objUserHRProfile = JsonConvert.DeserializeObject<GetMilShortInfoByBasicMilEntity>(hrprofileJsonString);
+                //objUserHRProfile.jobresponsibility = string.Empty;
+                //objUserHRProfile.unitrole = string.Empty;
+                //objUserHRProfile.jobresponsibility = password;
+
+                //user = await cast.createUserProfileAsync(objUserHRProfile, CancellationToken);
+                return await Store.FindByNameAsync(userName, CancellationToken); 
+            }    
         }
 
 
@@ -521,35 +533,6 @@ namespace Web.Core.Frame.CustomIdentityManagers
                 }
             }
             return resLoginUpdate;
-        }
-
-
-
-        public async Task<IdentityResult> ChangePasswordAsyncs(owin_userEntity user, string confirmNewPassword)
-        {
-            try
-            {
-                CancellationToken cancellationToken = new CancellationToken();
-                ThrowIfDisposed();
-                if (user != null)
-                {
-                    var cast = Store as CustomUserStore;
-                    long i = await cast.ChangePasswordHashAsync(user, confirmNewPassword, CancellationToken);
-
-                    // Make sure the token is valid and the stamp matches
-                    if (i < 0)
-                    {
-                        return IdentityResult.Failed(ErrorDescriber.DefaultError());
-                    }
-                    return IdentityResult.Success;
-                }
-                else
-                    return IdentityResult.Failed(ErrorDescriber.DefaultError());
-            }
-            catch (Exception ex)
-            {
-                return IdentityResult.Failed(ErrorDescriber.InvalidToken());
-            }
         }
     }
 }

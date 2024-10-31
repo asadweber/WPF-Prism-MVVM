@@ -11,7 +11,7 @@ namespace AppConfig.HelperClasses
     {
 
         public enum basicCRUDButtons
-        {
+        { 
             New_GET = 1,
             New_POST = 2,
 
@@ -32,9 +32,7 @@ namespace AppConfig.HelperClasses
 
             Submit_POST = 13,
 
-            CUSTOM = 8,
-
-            Add_GET = 14
+            CUSTOM = 8
         }
 
     }

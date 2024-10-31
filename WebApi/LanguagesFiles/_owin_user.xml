@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+	<!--  ar-kwabic (ar-kw) -->
+
+	<resource culture="ar-kw" name="applicationid" value="رقم الاستمارة"></resource>
+	<resource culture="ar-kw" name="applicationidRequired" value="يرجى تقديم معرف التطبيق"></resource>
+	<resource culture="ar-kw" name="masteruserid" value="معرف المستخدم الرئيسي"></resource>
+	<resource culture="ar-kw" name="masteruseridRequired" value="يرجى تقديم معرف المستخدم الرئيسي"></resource>
+	<resource culture="ar-kw" name="username" value="اسم االمستخدم"></resource>
+	<resource culture="ar-kw" name="usernameRequired" value="الرجاء تقديم اسم المستخدم"></resource>
+	<resource culture="ar-kw" name="emailaddress" value="عنوان البريد الالكترونى"></resource>
+	<resource culture="ar-kw" name="emailaddressRequired" value="يرجى تقديم عنوان البريد الإلكتروني"></resource>
+	<resource culture="ar-kw" name="loweredusername" value="اسم المستخدم المنخفض"></resource>
+	<resource culture="ar-kw" name="loweredusernameRequired" value="يرجى تقديم اسم المستخدم المنخفض"></resource>
+	<resource culture="ar-kw" name="mobilenumber" value="رقم الهاتف المحمول"></resource>
+	<resource culture="ar-kw" name="userprofilephoto" value="صورة ملف تعريف المستخدم"></resource>
+	<resource culture="ar-kw" name="isanonymous" value="مجهول"></resource>
+	<resource culture="ar-kw" name="isanonymousRequired" value="يرجى تقديم مجهول"></resource>
+	<resource culture="ar-kw" name="ischildenable" value="هل الطفل ممكن"></resource>
+	<resource culture="ar-kw" name="masprivatekey" value="مفتاح ماس الخاص"></resource>
+	<resource culture="ar-kw" name="masprivatekeyRequired" value="يرجى تقديم مفتاح ماس الخاص"></resource>
+	<resource culture="ar-kw" name="maspublickey" value="مفتاح ماس العام"></resource>
+	<resource culture="ar-kw" name="maspublickeyRequired" value="يرجى تقديم مفتاح ماس العام"></resource>
+
+
+	<resource culture="ar-kw" name="pkeyex" value="رقم الهوية المدنية"></resource>
+	<resource culture="ar-kw" name="pkeyexRequired" value="يرجى تقديم رقم الهوية المدنية"></resource>
+	
+	
+	<resource culture="ar-kw" name="password" value="كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordRequired" value="يرجى تقديم كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordsalt" value="ملح كلمة السر"></resource>
+	<resource culture="ar-kw" name="passwordsaltRequired" value="AR: Please provide  Password Salt"></resource>
+	<resource culture="ar-kw" name="passwordkey" value="مفتاح كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordkeyRequired" value="يرجى تقديم مفتاح كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordvector" value="ناقل كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordvectorRequired" value="يرجى تقديم ناقل كلمة المرور"></resource>
+	<resource culture="ar-kw" name="mobilepin" value="رقم التعريف الشخصي للجوال"></resource>
+	<resource culture="ar-kw" name="passwordquestion" value="سؤال كلمة السر"></resource>
+	<resource culture="ar-kw" name="passwordanswer" value="إجابة كلمة المرور"></resource>
+	<resource culture="ar-kw" name="approved" value="وافق"></resource>
+	<resource culture="ar-kw" name="locked" value="مقفل"></resource>
+	<resource culture="ar-kw" name="lastlogindate" value="تاريخ آخر تسجيل دخول"></resource>
+	<resource culture="ar-kw" name="lastpasschangeddate" value="تم تغيير تاريخ آخر تمرير"></resource>
+	<resource culture="ar-kw" name="lastlockoutdate" value="AR:  تاريخ آخر تأمين"></resource>
+	<resource culture="ar-kw" name="failedpasswordattemptcount" value="عدد محاولات كلمة المرور الفاشلة"></resource>
+	<resource culture="ar-kw" name="comment" value="تعليق"></resource>
+	<resource culture="ar-kw" name="lastactivitydate" value="تاريخ آخر نشاط"></resource>
+	<resource culture="ar-kw" name="isreviewed" value="تمت المراجعة"></resource>
+	<resource culture="ar-kw" name="reviewedby" value="تمت مراجعته من قبل"></resource>
+	<resource culture="ar-kw" name="reviewedbyusername" value="تمت المراجعة بواسطة اسم المستخدم"></resource>
+	<resource culture="ar-kw" name="revieweddate" value="تاريخ المراجعة"></resource>
+	<resource culture="ar-kw" name="isapproved" value="تمت الموافقة"></resource>
+	<resource culture="ar-kw" name="approvedby" value="تمت الموافقة عليه من قبل"></resource>
+	<resource culture="ar-kw" name="approvedbyusername" value="معتمد من قبل اسم المستخدم"></resource>
+	<resource culture="ar-kw" name="approveddate" value="تاريخ الموافقة"></resource>
+	<resource culture="ar-kw" name="isemailconfirmed" value="هل تم تأكيد البريد الإلكتروني"></resource>
+	<resource culture="ar-kw" name="emailconfirmationbyuserdate" value="تأكيد البريد الإلكتروني حسب تاريخ المستخدم"></resource>
+	<resource culture="ar-kw" name="twofactorenable" value="عامل اثنين تمكين"></resource>
+	<resource culture="ar-kw" name="ismobilenumberconfirmed" value="هل تم تأكيد رقم الهاتف المحمول"></resource>
+	<resource culture="ar-kw" name="mobilenumberconfirmedbyuserdate" value="رقم الهاتف المحمول تم تأكيده بواسطة تاريخ المستخدم"></resource>
+	<resource culture="ar-kw" name="securitystamp" value="ختم الأمان"></resource>
+	<resource culture="ar-kw" name="concurrencystamp" value="طابع التزامن"></resource>
+	<resource culture="ar-kw" name="userList" value="مشاهدة الكل"></resource>
+	<resource culture="ar-kw" name="userCreate" value="خلق"></resource>
+	<resource culture="ar-kw" name="userUpdate" value="تحديث"></resource>
+	<resource culture="ar-kw" name="userDetails" value="التفاصيل"></resource>
+
+	<resource culture="ar-kw" name="newpassword" value="كلمة السر الجديدة"></resource>
+	<resource culture="ar-kw" name="confirmpassword" value="تأكيد كلمة المرور"></resource>
+	<resource culture="ar-kw" name="passwordmissmatch" value="كلمة المرور غير متطابقة"></resource>
+
+
+	<!--  ar-kwabic (ar-kw) -->
+
+	<!--  English (en-US) -->
+	<resource culture="en-us" name="applicationid" value=" Application Id"></resource>
+	<resource culture="en-us" name="applicationidRequired" value="Please provide  Application Id"></resource>
+	<resource culture="en-us" name="masteruserid" value=" Master User I D"></resource>
+	<resource culture="en-us" name="masteruseridRequired" value="Please provide  Master User I D"></resource>
+	<resource culture="en-us" name="username" value=" User Name"></resource>
+	<resource culture="en-us" name="usernameRequired" value="Please provide  User Name"></resource>
+	<resource culture="en-us" name="emailaddress" value=" Email Address"></resource>
+	<resource culture="en-us" name="emailaddressRequired" value="Please provide  Email Address"></resource>
+	<resource culture="en-us" name="loweredusername" value=" Lowered User Name"></resource>
+	<resource culture="en-us" name="loweredusernameRequired" value="Please provide  Lowered User Name"></resource>
+	<resource culture="en-us" name="mobilenumber" value=" Mobile Number"></resource>
+	<resource culture="en-us" name="userprofilephoto" value=" User Profile Photo"></resource>
+	<resource culture="en-us" name="isanonymous" value=" Is Anonymous"></resource>
+	<resource culture="en-us" name="isanonymousRequired" value="Please provide  Is Anonymous"></resource>
+	<resource culture="en-us" name="ischildenable" value=" Is Child Enable"></resource>
+	<resource culture="en-us" name="masprivatekey" value=" Mas Private Key"></resource>
+	<resource culture="en-us" name="masprivatekeyRequired" value="Please provide  Mas Private Key"></resource>
+	<resource culture="en-us" name="maspublickey" value=" Mas Public Key"></resource>
+	<resource culture="en-us" name="maspublickeyRequired" value="Please provide  Mas Public Key"></resource>
+	
+	<resource culture="en-us" name="pkeyex" value=" Civil Id"></resource>	
+	<resource culture="en-us" name="pkeyexRequired" value="Please provide  Civil ID"></resource>
+	
+	
+	<resource culture="en-us" name="password" value=" Password"></resource>
+	<resource culture="en-us" name="passwordRequired" value="Please provide  Password"></resource>
+	<resource culture="en-us" name="passwordsalt" value=" Password Salt"></resource>
+	<resource culture="en-us" name="passwordsaltRequired" value="Please provide  Password Salt"></resource>
+	<resource culture="en-us" name="passwordkey" value=" Password Key"></resource>
+	<resource culture="en-us" name="passwordkeyRequired" value="Please provide  Password Key"></resource>
+	<resource culture="en-us" name="passwordvector" value=" Password Vector"></resource>
+	<resource culture="en-us" name="passwordvectorRequired" value="Please provide  Password Vector"></resource>
+	<resource culture="en-us" name="mobilepin" value=" Mobile P I N"></resource>
+	<resource culture="en-us" name="passwordquestion" value=" Password Question"></resource>
+	<resource culture="en-us" name="passwordanswer" value=" Password Answer"></resource>
+	<resource culture="en-us" name="approved" value=" Approved"></resource>
+	<resource culture="en-us" name="locked" value=" Locked"></resource>
+	<resource culture="en-us" name="lastlogindate" value=" Last Login Date"></resource>
+	<resource culture="en-us" name="lastpasschangeddate" value=" Last Pass Changed Date"></resource>
+	<resource culture="en-us" name="lastlockoutdate" value=" Last Lockout Date"></resource>
+	<resource culture="en-us" name="failedpasswordattemptcount" value=" Failed Password Attempt Count"></resource>
+	<resource culture="en-us" name="comment" value=" Comment"></resource>
+	<resource culture="en-us" name="lastactivitydate" value=" Last Activity Date"></resource>
+	<resource culture="en-us" name="isreviewed" value=" Is Reviewed"></resource>
+	<resource culture="en-us" name="reviewedby" value=" Reviewed By"></resource>
+	<resource culture="en-us" name="reviewedbyusername" value=" Reviewed By User Name"></resource>
+	<resource culture="en-us" name="revieweddate" value=" Reviewed Date"></resource>
+	<resource culture="en-us" name="isapproved" value=" Is Approved"></resource>
+	<resource culture="en-us" name="approvedby" value=" Approved By"></resource>
+	<resource culture="en-us" name="approvedbyusername" value=" Approved By User Name"></resource>
+	<resource culture="en-us" name="approveddate" value=" Approved Date"></resource>
+	<resource culture="en-us" name="isemailconfirmed" value=" Is Email Confirmed"></resource>
+	<resource culture="en-us" name="emailconfirmationbyuserdate" value=" Email Confirmation By User Date"></resource>
+	<resource culture="en-us" name="twofactorenable" value=" Two Factor Enable"></resource>
+	<resource culture="en-us" name="ismobilenumberconfirmed" value=" Is Mobile Number Confirmed"></resource>
+	<resource culture="en-us" name="mobilenumberconfirmedbyuserdate" value=" Mobile Number Confirmed By User Date"></resource>
+	<resource culture="en-us" name="securitystamp" value=" Security Stamp"></resource>
+	<resource culture="en-us" name="concurrencystamp" value=" Concurrency Stamp"></resource>
+	<resource culture="en-us" name="userList" value="View All"></resource>
+	<resource culture="en-us" name="userCreate" value="Create"></resource>
+	<resource culture="en-us" name="userUpdate" value="Update"></resource>
+	<resource culture="en-us" name="userDetails" value="Detail"></resource>
+
+
+	<resource culture="en-us" name="newpassword" value=" New Password"></resource>
+	<resource culture="en-us" name="confirmpassword" value="  Confirm Password"></resource>
+	<resource culture="en-us" name="passwordmissmatch" value="Password Mismatch"></resource>
+	<!--  English (en-US) -->
+
+	<resource culture="ar-kw" name="webuseronly" value="AR:  web user only"></resource>
+	<resource culture="en-us" name="webuseronly" value="web user only"></resource>
+
+	<resource culture="ar-kw" name="fromdate" value="AR: From Date"></resource>
+	<resource culture="en-us" name="fromdate" value="From Date"></resource>
+
+	<resource culture="ar-kw" name="todate" value="AR: To Date"></resource>
+	<resource culture="en-us" name="todate" value="To Date"></resource>
+
+	<resource culture="ar-kw" name="newemailaddress" value="New Email Address"></resource>
+	<resource culture="en-us" name="newemailaddress" value="New Email Address"></resource>
+</resources>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--  ar-kwabic (ar-kw) -->
+
+  <resource culture="ar-kw" name="_statusFailed" value="باءت بالفشل"></resource>
+  <resource culture="ar-kw" name="_statusSuccess" value="النجاح"></resource>
+
+  <resource culture="ar-kw" name="_titleInvalidData" value="بيانات غير صالحة"></resource>
+  <resource culture="ar-kw" name="_titleGenericError" value="خطأ"></resource>
+  <resource culture="ar-kw" name="_titleInformation" value="معلومة"></resource>
+  <resource culture="ar-kw" name="_titleUnAuthorizedUser" value="طلب المستخدم غير مصرح به"></resource>
+  <!--  ar-kwabic (ar-kw) -->
+
+  <!--  English (en-US) -->
+
+  <resource culture="en-us" name="_statusFailed" value="failed"></resource>
+  <resource culture="en-us" name="_statusSuccess" value="success"></resource>
+
+  <resource culture="en-us" name="_titleInvalidData" value="Invalid Data"></resource>
+  <resource culture="en-us" name="_titleGenericError" value="Error!"></resource>
+  <resource culture="en-us" name="_titleInformation" value="Information"></resource>
+  <resource culture="en-us" name="_titleUnAuthorizedUser" value="User requiest is not authorized"></resource>
+
+
+  <!-- English (en-US) -->
+
+</resources>

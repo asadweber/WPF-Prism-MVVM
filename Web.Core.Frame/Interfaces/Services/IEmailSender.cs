@@ -1,10 +1,11 @@
-﻿ 
+﻿
+using BDO.DataAccessObjects.ExtendedEntities;
 using System.Threading.Tasks;
 
 namespace Web.Core.Frame.Interfaces.Services
 {
     public interface IEmailSender
-    {
+    { 
         /// <summary>
         /// SendEmailAsync
         /// </summary>
@@ -12,6 +13,6 @@ namespace Web.Core.Frame.Interfaces.Services
         /// <param name="subject"></param>
         /// <param name="message"></param>
         /// <returns></returns>
-        Task SendEmailAsync(string email, string subject, string message);
+        Task SendEmailAsync(EmailEntity emailobject);
     }
 }

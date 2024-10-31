@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Web.Core.Frame.Dto.UseCaseResponses.Registration;
 
 namespace Web.Core.Frame.Interfaces
 {
@@ -17,6 +18,5 @@ namespace Web.Core.Frame.Interfaces
         void Save(TUseCaseResponse response);
 
         void Update(TUseCaseResponse response);
-
     }
 }

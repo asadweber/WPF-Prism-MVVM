@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="roleid" value="دور أنا د"></resource>
+       <resource culture="ar-kw" name="roleidRequired" value="يرجى تقديم الدور الأول د"></resource>
+       <resource culture="ar-kw" name="formactionid" value="نموذج العمل الأول د"></resource>
+       <resource culture="ar-kw" name="formactionidRequired" value="يرجى تقديم نموذج الإجراء الأول د"></resource>
+       <resource culture="ar-kw" name="status" value="حالة"></resource>
+       <resource culture="ar-kw" name="statusRequired" value="يرجى تقديم الحالة"></resource>
+		<resource culture="ar-kw" name="rolepermissionList" value="مشاهدة الكل"></resource>
+		<resource culture="ar-kw" name="rolepermissionCreate" value="خلق"></resource>
+		<resource culture="ar-kw" name="rolepermissionUpdate" value="تحديث"></resource>
+		<resource culture="ar-kw" name="rolepermissionDetails" value="التفاصيل"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="roleid" value=" Role I D"></resource>
+       <resource culture="en-us" name="roleidRequired" value="Please provide  Role I D"></resource>
+       <resource culture="en-us" name="formactionid" value=" Form Action I D"></resource>
+       <resource culture="en-us" name="formactionidRequired" value="Please provide  Form Action I D"></resource>
+       <resource culture="en-us" name="status" value=" Status"></resource>
+       <resource culture="en-us" name="statusRequired" value="Please provide  Status"></resource>
+        <resource culture="en-us" name="rolepermissionList" value="View All"></resource>
+		<resource culture="en-us" name="rolepermissionCreate" value="Create"></resource>
+		<resource culture="en-us" name="rolepermissionUpdate" value="Update"></resource>
+		<resource culture="en-us" name="rolepermissionDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

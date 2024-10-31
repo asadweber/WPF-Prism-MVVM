@@ -11,5 +11,7 @@ namespace Web.Core.Frame.Interfaces
         void ForgetPasswordAjax(Auth_Response response);
 
         void PasswordResetAuthTokenValidatedAjax(Auth_Response response);
+        void AccountActivation(Auth_Response response);
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BDO.Core.DataAccessObjects.CommonEntities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -60,6 +61,12 @@ namespace AppConfig.HelperClasses
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(currentDir);
                 reqFTP.Method = WebRequestMethods.Ftp.MakeDirectory;
                 reqFTP.UseBinary = true;
+
+                if (ftpSettings.IsSSL)
+                {
+                    reqFTP.EnableSsl = true;
+                }
+
                 reqFTP.Credentials = new NetworkCredential(_UserName, _Password);
                 FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
                 ftpStream = response.GetResponseStream();
@@ -132,7 +139,7 @@ namespace AppConfig.HelperClasses
         /// UploadFileFTP
         /// </summary>
         /// <param name="Myfile"></param>
-        /// <param name="fileUploadDir"></param>
+        /// <param name="fileUploadDir"></param> 
         /// <param name="FileNamePrefix"></param>
         /// <param name="fileExtension"></param>
         /// <param name="ftpSettings"></param>
@@ -198,6 +205,12 @@ namespace AppConfig.HelperClasses
             {
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(_ftpURL + fileUploadDir);
                 request.Method = WebRequestMethods.Ftp.ListDirectory;
+
+                if (ftpSettings.IsSSL)
+                {
+                    request.EnableSsl = true;
+                }
+
                 request.Credentials = new NetworkCredential(_UserName, _Password);
                 using (FtpWebResponse res = (FtpWebResponse)request.GetResponse())
                 {

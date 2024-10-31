@@ -15,7 +15,7 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
         protected long ? _Id;
         protected string _Text;
         protected string _strValue1;
-
+        
         [DataMember]
         public long ? Id
         {
@@ -36,7 +36,6 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
             set { _strValue1 = value; }
         }
 
-
         #region Constructor
 
         public gen_dropdownEntity():base()
@@ -51,7 +50,6 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
         {
             if (reader != null && !reader.IsClosed)
             {
-
                 if (!reader.IsDBNull(reader.GetOrdinal("Id"))) _Id = reader.GetInt64(reader.GetOrdinal("Id"));
                 if (!reader.IsDBNull(reader.GetOrdinal("Text"))) _Text = reader.GetString(reader.GetOrdinal("Text"));
             }

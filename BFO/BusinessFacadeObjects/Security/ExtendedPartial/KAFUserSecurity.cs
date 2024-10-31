@@ -5,6 +5,7 @@ using AppConfig.HelperClasses;
 using BDO.Core.Base;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
+using BDO.DataAccessObjects.VCRegistration;
 using BFO.Base;
 using DAC.Core.CoreFactory;
 using IBFO.Core.IBusinessFacadeObjects.Security;
@@ -245,7 +246,7 @@ namespace BFO.Core.BusinessFacadeObjects.Security.ExtendedPartial
             }
         }
 
-        async Task<string> IKAFUserSecurity.ForgetPasswordRequest(owin_userEntity user, CancellationToken cancellationToken)
+        async Task<(string,string,string)> IKAFUserSecurity.ForgetPasswordRequest(owin_userEntity user, CancellationToken cancellationToken)
         {
             string authCode = string.Empty;
             try
@@ -286,7 +287,63 @@ namespace BFO.Core.BusinessFacadeObjects.Security.ExtendedPartial
 
                         await DataAccessFactory.CreateKAFUserSecurityDataAccess().ForgetPasswordRequest(obj, cancellationToken);
                     }
-                    return authCode;
+                    return (authCode, objGetUserbyEmail.emailaddress, objGetUserbyEmail.mobilenumber);
+                }
+                else
+                    throw new Exception("User Not Found");
+
+            }
+            catch (DataException ex)
+            {
+                throw GetFacadeException(ex, SourceOfException("IKAFUserSecurity.ForgetPasswordRequest"));
+            }
+            catch (Exception exx)
+            {
+                throw exx;
+            }
+        }
+        async Task<(string, string, string)> IKAFUserSecurity.ForgetPasswordRequestFromFront(BDO.Core.DataAccessObjects.SecurityModels.owin_userEntity user, System.Threading.CancellationToken cancellationToken)
+        {
+            string authCode = string.Empty;
+            try
+            {
+                owin_userEntity objGetUserbyEmail = await DataAccessFactory.CreateKAFUserSecurityDataAccess().GetUserByParams(user, cancellationToken);
+
+                if (objGetUserbyEmail != null)
+                {
+                    user.username = objGetUserbyEmail.username;
+
+                    owin_userEntity objGetUser = await DataAccessFactory.CreateKAFUserSecurityDataAccess().GetUserByUserName(user, cancellationToken);
+                    if (objGetUser != null)
+                    {
+                        long i = -99;
+                        owin_userpasswordresetinfoEntity obj = new owin_userpasswordresetinfoEntity();
+                        SecurityCapsule objBase = new SecurityCapsule();
+                        transactioncodeGen ojbTransGen = new transactioncodeGen();
+
+                        objBase.actioname = user.BaseSecurityParam.actioname;
+                        objBase.controllername = user.BaseSecurityParam.controllername;
+                        objBase.createdbyusername = user.username;
+                        objBase.updatedbyusername = user.username;
+                        objBase.sessionid = user.BaseSecurityParam.sessionid;
+                        objBase.ipaddress = user.BaseSecurityParam.ipaddress;
+                        objBase.createddate = user.BaseSecurityParam.createddate;
+                        objBase.updateddate = user.BaseSecurityParam.createddate;
+                        objBase.transid = user.BaseSecurityParam.transid;
+
+                        authCode = ojbTransGen.GetRandomNumeric(6);
+                        obj.BaseSecurityParam = new SecurityCapsule();
+                        obj.BaseSecurityParam = objBase;
+                        obj.sessionid = objBase.sessionid;
+                        obj.userid = objGetUser.userid;
+                        obj.masteruserid = objGetUser.masteruserid;
+                        obj.sessiontoken = authCode;
+                        obj.username = objGetUser.username;
+                        obj.isactive = true;
+
+                        await DataAccessFactory.CreateKAFUserSecurityDataAccess().ForgetPasswordRequest(obj, cancellationToken);
+                    }
+                    return (authCode, objGetUserbyEmail.emailaddress, objGetUserbyEmail.mobilenumber);
                 }
                 else
                     throw new Exception("User Not Found");
@@ -333,7 +390,6 @@ namespace BFO.Core.BusinessFacadeObjects.Security.ExtendedPartial
             }
         }
 
-
         async Task<long?> IKAFUserSecurity.createuser(owin_userEntity user, CancellationToken cancellationToken)
         {
             try
@@ -342,7 +398,23 @@ namespace BFO.Core.BusinessFacadeObjects.Security.ExtendedPartial
             }
             catch (DataException ex)
             {
-                throw GetFacadeException(ex, SourceOfException("IKAFUserSecurity.createuser"));
+                throw GetFacadeException(ex, SourceOfException("IKAFUserSecurity.CreateApplicationUser"));
+            }
+            catch (Exception exx)
+            {
+                throw exx;
+            }
+        }
+
+        async Task<long?> IKAFUserSecurity.createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken)
+        {
+            try
+            {
+                return await DataAccessFactory.CreateKAFUserSecurityDataAccess().createSpecialRegistrationUser(objEntity, cancellationToken);
+            }
+            catch (DataException ex)
+            {
+                throw GetFacadeException(ex, SourceOfException("IKAFUserSecurity.CreateSpecialRegistrationUser"));
             }
             catch (Exception exx)
             {
@@ -431,24 +503,6 @@ namespace BFO.Core.BusinessFacadeObjects.Security.ExtendedPartial
                 throw GetFacadeException(ex, SourceOfException("owin_userEntity Iowin_userFacade.GetSingleowin_user"));
             }
         }
-
-
-        async Task<long> IKAFUserSecurity.UserChangePasswordAsync(owin_userEntity owin_user, CancellationToken cancellationToken)
-        {
-            try
-            {
-                return await DataAccessFactory.CreateKAFUserSecurityDataAccess().UserChangePasswordAsync(owin_user, cancellationToken);
-            }
-            catch (DataException ex)
-            {
-                throw GetFacadeException(ex, SourceOfException("IKAFUserSecurity.UserChangePasswordAsync"));
-            }
-            catch (Exception exx)
-            {
-                throw exx;
-            }
-        }
-
 
         async Task<owin_userEntity> IKAFUserSecurity.GetSingleExtByPKeyEX(owin_userEntity owin_user, CancellationToken cancellationToken)
         {

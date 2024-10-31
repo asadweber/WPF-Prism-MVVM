@@ -7,7 +7,7 @@ namespace CLL.Localization
     public class LocalizeService
     {
         private readonly IStringLocalizer _localizer;
-
+        
         public LocalizeService(IStringLocalizerFactory factory)
         {
             var type = typeof(SharedResource);
@@ -34,8 +34,6 @@ namespace CLL.Localization
         {
             return _localizer[key, parameter];
         }
-
-
 
         public static string jsonStatusError(IStringLocalizer _sharedLocalizer)
         {

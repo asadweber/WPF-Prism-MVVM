@@ -10,8 +10,8 @@ namespace BDO.Core.DataAccessObjects.CommonEntities
     [DataContract(Name = "S2Parameters", Namespace = "http://www.KAF.com/types")]
     public class S2Parameters : BaseEntity
     {
-		private bool? _isResponsibleStatus;
-        private long? _parentId;
+        private int? nationalityListType;
+        private bool? includeAll = false;
 
         [DataMember]
         public string s2SearchTerm { get; set; }
@@ -28,20 +28,16 @@ namespace BDO.Core.DataAccessObjects.CommonEntities
         public string s2ParamParentkey { get; set; }
 
         [DataMember]
-        public Int64? SearchID { get; set; }
+        public long? AdditionalIdKey { get; set; }
+        [DataMember]
+        public long? AdditionalIdKey1 { get; set; }
 
         [DataMember]
-        public bool? IsMapped { get; set; }
-      
-        
-        [DataMember]
-        public string serviceId { get; set; }
-
-		[DataMember]
-		public bool? isResponsibleStatus { get => _isResponsibleStatus; set => _isResponsibleStatus = value; }
+        public int? NationalityListType { get => nationalityListType; set => nationalityListType = value; }
 
         [DataMember]
-        public long? parentId { get => _parentId; set => _parentId = value; }
+        public bool? IsInculdeAll { get => includeAll; set => includeAll = value; }
+
     }
 
 }

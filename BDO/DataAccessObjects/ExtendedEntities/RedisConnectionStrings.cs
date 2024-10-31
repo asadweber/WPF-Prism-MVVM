@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BDO.DataAccessObjects.ExtendedEntities
+namespace BDO.Core.DataAccessObjects.ExtendedEntities
 {
     public class RedisConnectionStrings
     {

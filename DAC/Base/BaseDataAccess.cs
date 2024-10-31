@@ -1,5 +1,8 @@
 ﻿using AppConfig.ConfigDAAC;
+using AppConfig.HelperClasses;
 using BDO.Core.Base;
+using CLL.Localization;
+using Microsoft.Extensions.Localization;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
 using System.Collections.Generic;
@@ -7,17 +10,17 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Text;
 
 namespace DAC.Core.Base
 {
-    
+
     internal interface IEntityBuilder<T> where T : BaseEntity
     {
         IList<T> BuildEntities(IDataReader dataReader);
 
         T BuildEntity(IDataReader dataReader);
     }
+
 
     internal abstract class BaseDataAccess : MarshalByRefObject, IDisposable
     {
@@ -28,9 +31,9 @@ namespace DAC.Core.Base
         private string _objSaltstring = new AppConfiguration()._saltString;
         private bool _isDisposed;
         private Context _context;
-
         private Database _db;
 
+        private readonly LocalizeService _sharedLocalizer;
         #endregion
 
         #region Properties
@@ -52,7 +55,7 @@ namespace DAC.Core.Base
         protected virtual Database Database
         {
 
-           //[DebuggerStepThrough()]
+            [DebuggerStepThrough()]
             get
             {
 
@@ -87,6 +90,8 @@ namespace DAC.Core.Base
         protected BaseDataAccess(Context context)
         {
             _context = context;
+
+            _sharedLocalizer = new LocalizeService(BasicApplicationConstant.Factory);
         }
 
         public void Dispose()
@@ -201,15 +206,16 @@ namespace DAC.Core.Base
                 {
                     // Duplicate Value
                     case 2601:
+                    case 2627:
                         {
-                            ErrorMessage = "Duplicate value can not be saved.";
+                            ErrorMessage = _sharedLocalizer.GetLocalizedHtmlStringAllowNull("DUPLICATE_VALUE_ERROR");
                             break;
                         }
 
                     // Reference
                     case 547:
                         {
-                            ErrorMessage = "This reference is already in use. Data can not be deleted.";
+                            ErrorMessage = _sharedLocalizer.GetLocalizedHtmlStringAllowNull("REFERENCE_IN_USE_ERROR");
                             break;
                         }
                     case 515:

@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--  ar-kwabic (ar-kw) -->
+  <resource culture="ar-kw" name="_headerText" value=" كلية مبارك العبدالله للقيادة والأركان المشتركة" ></resource>
+
+
+  <resource culture="ar-kw" name="_btnCancel" value=" إلغاء" ></resource>
+  <resource culture="ar-kw" name="requiredfieldvalidation" value="هذه الخانة مطلوبه " ></resource>
+  <resource culture="ar-kw" name="_btnSubmit" value=" إرسال" ></resource>
+  <resource culture="ar-kw" name="_btnSearch" value=" بحث" ></resource>
+  <resource culture="ar-kw" name="_btnSave" value=" حفظ" ></resource>
+  <resource culture="ar-kw" name="_btnUpdate" value=" تحديث" ></resource>
+  <resource culture="ar-kw" name="_btnDelete" value=" حذف" ></resource>
+  <resource culture="ar-kw" name="_btnReset" value=" إعادة ضبط" ></resource>
+  <resource culture="ar-kw" name="_btnClose" value=" إغلاق" ></resource>
+  <resource culture="ar-kw" name="_btnSignIn" value=" تسجيل الدخول" ></resource>
+  <resource culture="ar-kw" name="_btnSignOut" value=" تسجيل الخروج" ></resource>
+  <resource culture="ar-kw" name="_btnProcess" value=" العمليات" ></resource>
+  <resource culture="ar-kw" name="_btnDetail" value=" تفاصيل" ></resource>
+  <resource culture="ar-kw" name="_btnSelect" value=" إختيار" ></resource>
+  <resource culture="ar-kw" name="_btnClear" value=" مسح" ></resource>
+
+  <resource culture="ar-kw" name="_btnProfileUpdate" value="الملف" ></resource>
+  <resource culture="ar-kw" name="_saveConfirmation" value=" هل تريد حفظ البيانات؟" ></resource>
+  <resource culture="ar-kw" name="_saveInformation" value=" تم الحفظ بنجاح" ></resource>
+  <resource culture="ar-kw" name="_updateConfirmation" value=" هل تريد تحديث البيانات؟" ></resource>
+  <resource culture="ar-kw" name="_updateInformation" value=" تم التحديث" ></resource>
+  <resource culture="ar-kw" name="_deleteConfirmation" value=" هل تريد حذف البيانات؟" ></resource>
+  <resource culture="ar-kw" name="_deleteInformation" value=" تم الحذف" ></resource>
+  <resource culture="ar-kw" name="_cancelConfirmation" value=" هل تريد إلغاء العملية" ></resource>
+  <resource culture="ar-kw" name="_cancelInformation" value=" تم الإلغاء" ></resource>
+  <resource culture="ar-kw" name="_processConfirmation" value=" هل تريد معالجة البيانات؟" ></resource>
+  <resource culture="ar-kw" name="_processInformation" value=" تمت العملية" ></resource>
+  <resource culture="ar-kw" name="_closeConfirmation" value=" هل تريد إغلاق النافذة؟" ></resource>
+  <resource culture="ar-kw" name="_signoutConfirmation" value=" هل تريد الخروج من التطبيق؟" ></resource>
+  <resource culture="ar-kw" name="_signoutInformation" value=" الرجاء الإنتظارحتى تتم عملية الخروج" ></resource>
+
+  <resource culture="ar-kw" name="_messageConfirmation" value=" تم إرسال الرسالة بنجاح" ></resource>
+  <resource culture="ar-kw" name="_generalErrorInformation" value=" هناك حطأ, الرجاء المحاولة مرة اخرى" ></resource>
+  <resource culture="ar-kw" name="_modelStateInvalidInformation" value=" طلب خاطئ, الرجاء المحاولة مرة اخرى" ></resource>
+  <resource culture="ar-kw" name="_imageUploadErrorInformation" value=" لم تتم عملية رفع الملف, حاول مرى اخرى" ></resource>
+
+  <resource culture="ar-kw" name="_errorTitle" value=" حدث خطأ!" ></resource>
+  <resource culture="ar-kw" name="_informationTitle" value=" البيانات" ></resource>
+  <resource culture="ar-kw" name="_confirmationTitle" value=" التأكيد" ></resource>
+  <resource culture="ar-kw" name="_alertTitle" value=" تنبيه!" ></resource>
+  <resource culture="ar-kw" name="_title" value="العنوان" ></resource>
+
+  <resource culture="ar-kw" name="_passdonotmatch" value=" كلمة المرور الجديدة غير مطابقة" ></resource>
+
+  <resource culture="ar-kw" name="_statusFailed" value="failed" ></resource>
+  <resource culture="ar-kw" name="_statusSuccess" value="success" ></resource>
+
+
+  <resource culture="ar-kw" name="_btnOK" value=" تم" ></resource>
+  <resource culture="ar-kw" name="_btnNo" value=" لا" ></resource>
+  <resource culture="ar-kw" name="_btnYes" value=" نعم" ></resource>
+  <resource culture="ar-kw" name="_btnGoBackToMain" value=" الرجوع" ></resource>
+  <resource culture="ar-kw" name="_btnAddMore" value=" إضافة المزيد" ></resource>
+
+
+  <resource culture="ar-kw" name="_btnAdd" value=" إضافة" ></resource>
+
+  <resource culture="ar-kw" name="createtext" value=" إنشاء" ></resource>
+  <resource culture="ar-kw" name="updatetext" value=" تحديث" ></resource>
+  <resource culture="ar-kw" name="detailstext" value=" تفاصيل" ></resource>
+  <resource culture="ar-kw" name="reviewtext" value=" مراجعة" ></resource>
+  <resource culture="ar-kw" name="publishtext" value=" نشر" ></resource>
+  <resource culture="ar-kw" name="archievedtext" value=" أرشفة" ></resource>
+  <resource culture="ar-kw" name="_commentRequired" value="الرجاء كتابة تعليق" ></resource>
+
+  <resource culture="ar-kw" name="usercreateRoleVal" value=" الرجاء إختيار شرط على الأقل للإستمرار" ></resource>
+  <resource culture="ar-kw" name="usercreateFullNameVal" value="الإسم الكامل مطلوب" ></resource>
+
+  <resource culture="ar-kw" name="emailAlreadyExist" value=" البريد الإلكتروني مسجل بالفعل" ></resource>
+  <resource culture="ar-kw" name="dataAlreadyExist" value="البيانات موجودة" ></resource>
+
+  <resource culture="ar-kw" name="_resetPasswordConfirmation" value=" هل تريد إعادة ضبط كلمة المرور؟" ></resource>
+  <resource culture="ar-kw" name="_provideAuthCode" value=" يرجى إدخال رمز التحقق" ></resource>
+  <resource culture="ar-kw" name="_confirmNewPassword" value=" يرجى تأكيد كلمة المرور الجديدة" ></resource>
+  <resource culture="ar-kw" name="_passwordMissmatch" value=" كلمة مرور غير متوافقة" ></resource>
+  
+  <resource culture="ar-kw" name="_selectCategory" value="  يرجى إختيار الفئة" ></resource>
+
+  <resource culture="ar-kw" name="_onlyalphanumeric" value="الأحرف الأبجدية الرقمية فقط" ></resource>
+  <resource culture="ar-kw" name="_onlyalphabet" value=" الحروف الهجائية فقط" ></resource>
+  <resource culture="ar-kw" name="_onlynumeric" value="  الرقم فقط" ></resource>
+  <resource culture="ar-kw" name="_onlyinteger" value="  الأعداد الصحيحة فقط" ></resource>
+  <resource culture="ar-kw" name="fileName" value="اسم الملف" ></resource>
+  <resource culture="ar-kw" name="sizeInKB" value="الحجم بالكيلوبايت" ></resource>
+  <resource culture="ar-kw" name="action" value="عمل" ></resource>
+  <resource culture="ar-kw" name="commonFunction" value="بالبيانات التفصيلية" ></resource>
+  <resource culture="ar-kw" name="fileupload" value="تحميل الملف" ></resource>
+  <resource culture="ar-kw" name="_uploadfiles" value="تحميل الملفات" ></resource>
+
+
+  <resource culture="ar-kw" name="_middleName" value="الاسم الوسطى" ></resource>
+  <resource culture="ar-kw" name="_fullname" value="الاسم بالكامل" ></resource>
+  <resource culture="ar-kw" name="_fullnameRequired" value="الإسم الكامل ضروري" ></resource>
+
+  <resource culture="ar-kw" name="_email" value="عنوان البريد الإلكتروني" ></resource>
+  <resource culture="ar-kw" name="_emailRequired" value="مطلوب عنوان البريد الإلكتروني" ></resource>
+
+  <resource culture="ar-kw" name="_subject" value="موضوع البريد" ></resource>
+  <resource culture="ar-kw" name="_subjectRequired" value="الموضوع البريدي مطلوب" ></resource>
+  <resource culture="ar-kw" name="_message" value="موضوع البريد" ></resource>
+  <resource culture="ar-kw" name="_messageRequired" value="الموضوع البريدي مطلوب" ></resource>
+  
+  
+  
+  <!--  ar-kwabic (ar-kw) -->
+
+  <!--  English (en-US) -->
+  <resource culture="en-us" name="_headerText" value="Mubarak al-Abdullah Joint Command and Staff College"></resource>
+  
+
+  <resource culture="en-us" name="_btnCancel" value="Cancel"></resource>
+  <resource culture="en-us" name="requiredfieldvalidation" value="This field is required"></resource>
+  <resource culture="en-us" name="_btnSubmit" value="Submit"></resource>
+  <resource culture="en-us" name="_btnSearch" value="Search"></resource>
+  <resource culture="en-us" name="_btnSave" value="Save"></resource>
+  <resource culture="en-us" name="_btnUpdate" value="Update"></resource>
+  <resource culture="en-us" name="_btnDelete" value="Delete"></resource>
+  <resource culture="en-us" name="_btnReset" value="Reset"></resource>
+  <resource culture="en-us" name="_btnClose" value="Close"></resource>
+  <resource culture="en-us" name="_btnSignIn" value="Sign-In"></resource>
+  <resource culture="en-us" name="_btnSignOut" value="Sign-Out"></resource>
+  <resource culture="en-us" name="_btnProcess" value="Process"></resource>
+  <resource culture="en-us" name="_btnDetail" value="Detail"></resource>
+  <resource culture="en-us" name="_btnSelect" value="Select"></resource>
+  <resource culture="en-us" name="_commentRequired" value="Please Provide a Comment"></resource>
+  <resource culture="en-us" name="_btnClear" value="Clear" ></resource>
+  <resource culture="en-us" name="_btnProfileUpdate" value="AR: Profile"></resource>
+  <resource culture="en-us" name="_saveConfirmation" value="Do you want to save the data?"></resource>
+  <resource culture="en-us" name="_saveInformation" value="Data has been saved successfully."></resource>
+  <resource culture="en-us" name="_updateConfirmation" value="Do you want to updated the data?"></resource>
+  <resource culture="en-us" name="_updateInformation" value="Data has been updated successfully."></resource>
+  <resource culture="en-us" name="_deleteConfirmation" value="Do you want to delete the data?"></resource>
+  <resource culture="en-us" name="_deleteInformation" value="Data has been deleted successfully."></resource>
+  <resource culture="en-us" name="_cancelConfirmation" value="Do you want to cancel the operation?"></resource>
+  <resource culture="en-us" name="_cancelInformation" value="Operation has been cancelled successfully."></resource>
+  <resource culture="en-us" name="_processConfirmation" value="Do you want to process the data?"></resource>
+  <resource culture="en-us" name="_processInformation" value="Data has been processed successfully."></resource>
+  <resource culture="en-us" name="_closeConfirmation" value="Do you want to close the window?"></resource>
+  <resource culture="en-us" name="_signoutConfirmation" value="Do you want to signout from the application?"></resource>
+  <resource culture="en-us" name="_signoutInformation" value="Please wait while system log you off from the application."></resource>
+
+  <resource culture="en-us" name="_messageConfirmation" value="Your message has been sent successfully."></resource>
+  <resource culture="en-us" name="_generalErrorInformation" value="There was a problem, please try again."></resource>
+  <resource culture="en-us" name="_modelStateInvalidInformation" value="The request made was invalid, please try again."></resource>
+  <resource culture="en-us" name="_imageUploadErrorInformation" value="The file could not uploaded, please try again."></resource>
+
+
+  <resource culture="en-us" name="_errorTitle" value="There was an error!"></resource>
+  <resource culture="en-us" name="_informationTitle" value="Information"></resource>
+  <resource culture="en-us" name="_confirmationTitle" value="Confiramtion"></resource>
+  <resource culture="en-us" name="_alertTitle" value="Alert!"></resource>
+  <resource culture="en-us" name="_title" value=" Title"></resource>
+
+  <resource culture="en-us" name="_passdonotmatch" value="The New password doest not match."></resource>
+
+
+  <resource culture="en-us" name="_statusFailed" value="failed"></resource>
+  <resource culture="en-us" name="_statusSuccess" value="success"></resource>
+
+  <resource culture="en-us" name="_btnOK" value="OK"></resource>
+  <resource culture="en-us" name="_btnNo" value="No"></resource>
+  <resource culture="en-us" name="_btnYes" value="Yes"></resource>
+  <resource culture="en-us" name="_btnGoBackToMain" value="Go back"></resource>
+  <resource culture="en-us" name="_btnAddMore" value="Add More"></resource>
+
+  <resource culture="en-us" name="_btnAdd" value="Add"></resource>
+
+  <resource culture="en-us" name="createtext" value="Create"></resource>
+  <resource culture="en-us" name="updatetext" value="Update"></resource>
+  <resource culture="en-us" name="detailstext" value="Details"></resource>
+  <resource culture="en-us" name="reviewtext" value="Review"></resource>
+  <resource culture="en-us" name="publishtext" value="Publish"></resource>
+  <resource culture="en-us" name="archievedtext" value="Archived"></resource>
+
+
+  <resource culture="en-us" name="usercreateRoleVal" value=" Please select at least one role to continue"></resource>
+  <resource culture="en-us" name="usercreateFullNameVal" value=" User Full name is required."></resource>
+  <resource culture="en-us" name="emailAlreadyExist" value=" The email address is already registered."></resource>
+  <resource culture="en-us" name="dataAlreadyExist" value="Data Exist" ></resource>
+
+
+  <resource culture="en-us" name="_resetPasswordConfirmation" value=" Do you want to reset your password?"></resource>
+  <resource culture="en-us" name="_provideAuthCode" value=" Please provide the Auth code from your email."></resource>
+  <resource culture="en-us" name="_confirmNewPassword" value="Please confirm new password."></resource>
+  <resource culture="en-us" name="_passwordMissmatch" value="Password did not match."></resource>
+
+
+  <resource culture="en-us" name="_selectCategory" value="Please Select A Category"></resource>
+
+
+  <resource culture="en-us" name="_onlyalphanumeric" value="Only alphanumeric allowed"></resource>
+  <resource culture="en-us" name="_onlyalphabet" value="Only alphabets allowed"></resource>
+  <resource culture="en-us" name="_onlynumeric" value="Only numeric allowed"></resource>
+  <resource culture="en-us" name="_onlyinteger" value="Only integer allowed"></resource>
+  <resource culture="en-us" name="fileName" value="File Name" ></resource>
+  <resource culture="en-us" name="sizeInKB" value="Size in KB" ></resource>
+  <resource culture="en-us" name="action" value="Action" ></resource>
+  <resource culture="en-us" name="commonFunction" value="Common functions for Officer's Module" ></resource>
+  <resource culture="en-us" name="fileupload" value="File Upload" ></resource>
+  <resource culture="en-us" name="_uploadfiles" value="Upload files" ></resource>
+
+
+
+  <resource culture="en-us" name="_middleName" value="Middle name" ></resource>
+  <resource culture="en-us" name="_fullname" value="Full name" ></resource>
+  <resource culture="en-us" name="_fullnameRequired" value="Full name is required" ></resource>
+
+  <resource culture="en-us" name="_email" value="Email address" ></resource>
+  <resource culture="en-us" name="_emailRequired" value="Email address is required" ></resource>
+
+  <resource culture="en-us" name="_subject" value="Subject" ></resource>
+  <resource culture="en-us" name="_subjectRequired" value="Subject is required" ></resource>
+  <resource culture="en-us" name="_message" value="Message" ></resource>
+  <resource culture="en-us" name="_messageRequired" value="Message is required" ></resource>
+  
+  <!-- English (en-US) -->
+
+</resources>

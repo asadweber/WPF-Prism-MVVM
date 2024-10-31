@@ -6,6 +6,6 @@ namespace Web.Core.Frame.Interfaces.UseCases
 {
     public interface IHomeUseCase : IUseCaseRequestHandler<HomeRequest, HomeResponse>
     {
-        Task<bool> LoadMenuByUserID(HomeRequest message, ICRUDRequestHandler<HomeResponse> outputPort);
+        Task<bool> LoadMenuByUserID(HomeRequest message, ICRUDRequestHandler<HomeResponse> outputPort, string culture = "");
     }
 }

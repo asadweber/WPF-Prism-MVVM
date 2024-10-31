@@ -20,6 +20,7 @@ namespace AppConfig.ConfigDAAC
             var root = configurationBuilder.Build();
             _connectionString = root.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
             _saltString = root.GetSection("AuthSettings").GetSection("SecretKey").Value;
+            //var appSetting = root.GetSection("ApplicationSettings");
         }
         public string ConnectionString
         {
@@ -30,5 +31,6 @@ namespace AppConfig.ConfigDAAC
         {
             get => _saltString;
         }
+
     }
 }

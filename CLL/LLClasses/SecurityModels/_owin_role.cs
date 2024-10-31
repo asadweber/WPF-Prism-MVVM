@@ -69,7 +69,28 @@ namespace CLL.LLClasses.SecurityModels
                 return resourceProvider_owin_role.GetResource("description", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
-        
-      
+
+        public static string OTP
+        {
+            get
+            {
+                return resourceProvider_owin_role.GetResource("OTP", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
+        public static string OTPRequired
+        {
+            get
+            {
+                return resourceProvider_owin_role.GetResource("OTPRequired", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
+        public static string usertype
+        {
+            get
+            {
+                return resourceProvider_owin_role.GetResource("usertype", CultureInfo.CurrentUICulture.Name) as String;
+            }
+        }
+
     }
 }

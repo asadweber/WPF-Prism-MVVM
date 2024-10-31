@@ -51,8 +51,11 @@ namespace CLL.Abstract
                 }
             }
 
+            //if (Cache)
+            //{
             try
             {
+                //return resources[string.Format("{0}.{1}", culture, name)].Value;
                 ResourceEntry retRes = new ResourceEntry();
                 if (resources.TryGetValue(string.Format("{0}.{1}", culture, name), out retRes))
                 {
@@ -60,14 +63,18 @@ namespace CLL.Abstract
                 }
                 else
                 {
-                    throw new Exception("Resource key: " + name + " not found.");
+                    // return new System.Collections.Generic.KeyNotFoundException(string.Format("{0}.{1}", culture, name));
+                    throw new Exception("Resource key: " + name + " not found." );
+                    //return name;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            //}
 
+            // return ReadResource(name, culture).Value;
 
         }
 

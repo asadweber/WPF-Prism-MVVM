@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="userrequestid" value="AR:  User Request I D"></resource>
+       <resource culture="ar-kw" name="userrequestidRequired" value="AR: Please provide  User Request I D"></resource>
+       <resource culture="ar-kw" name="civilid" value="AR:  Civilid"></resource>
+       <resource culture="ar-kw" name="civilidRequired" value="يرجى كتابة رقم البطاقة المدنية"></resource>
+       <resource culture="ar-kw" name="jsondata" value="AR:  Json Data"></resource>
+		<resource culture="ar-kw" name="subscriberequestsdetailList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="subscriberequestsdetailCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="subscriberequestsdetailUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="subscriberequestsdetailDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="userrequestid" value=" User Request I D"></resource>
+       <resource culture="en-us" name="userrequestidRequired" value="Please provide  User Request I D"></resource>
+       <resource culture="en-us" name="civilid" value=" Civilid"></resource>
+       <resource culture="en-us" name="civilidRequired" value="Please provide  Civilid"></resource>
+       <resource culture="en-us" name="jsondata" value=" Json Data"></resource>
+        <resource culture="en-us" name="subscriberequestsdetailList" value="View All"></resource>
+		<resource culture="en-us" name="subscriberequestsdetailCreate" value="Create"></resource>
+		<resource culture="en-us" name="subscriberequestsdetailUpdate" value="Update"></resource>
+		<resource culture="en-us" name="subscriberequestsdetailDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

@@ -8,26 +8,13 @@ namespace Web.Core.Frame.Serialization
         private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
         {
             ContractResolver = new JsonContractResolver(),
-            NullValueHandling = NullValueHandling.Ignore,
-			ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-		};
+            NullValueHandling = NullValueHandling.Ignore
+        };
 
         public static string SerializeObject(object o)
         {
-            string SerializeObject=string.Empty;
-
-			try
-            {
-				SerializeObject = JsonConvert.SerializeObject(o, Formatting.Indented, Settings);
-			}
-            catch (System.Exception ex)
-            {
-
-                throw ex;
-            }
-            return SerializeObject;
-
-		}
+            return JsonConvert.SerializeObject(o, Formatting.Indented, Settings);
+        }
 
         public sealed class JsonContractResolver : CamelCasePropertyNamesContractResolver
         {

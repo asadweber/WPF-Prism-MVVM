@@ -3,8 +3,9 @@ namespace Web.Core.Frame.Interfaces
 {
     public abstract class UseCaseResponseMessage
     {
-        public bool Success { get;  }
+        public bool Success { get; }
         public string Message { get; }
+
 
         protected UseCaseResponseMessage(bool success = false, string message = null)
         {

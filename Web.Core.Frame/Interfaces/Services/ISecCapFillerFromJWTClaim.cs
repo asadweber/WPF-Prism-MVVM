@@ -1,5 +1,7 @@
 ﻿using BDO.Core.Base;
 
+using System.Security.Claims;
+
 namespace Web.Core.Frame.Interfaces.Services
 {
     public interface ISecCapFillerFromJWTClaim

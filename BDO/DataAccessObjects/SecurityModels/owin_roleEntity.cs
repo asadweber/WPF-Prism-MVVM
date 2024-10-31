@@ -17,7 +17,9 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         protected string _rolename;
         protected bool? _isactive;
         protected string _description;
+
         
+
         [DataMember]
         public long ? roleid
         {

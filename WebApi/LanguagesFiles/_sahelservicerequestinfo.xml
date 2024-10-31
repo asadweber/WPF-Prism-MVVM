@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="servicename" value="AR:  Service Name"></resource>
+       <resource culture="ar-kw" name="servicenameRequired" value="AR: Please provide  Service Name"></resource>
+       <resource culture="ar-kw" name="serviceurl" value="AR:  Service U R L"></resource>
+       <resource culture="ar-kw" name="serviceurlRequired" value="AR: Please provide  Service U R L"></resource>
+       <resource culture="ar-kw" name="fromcivilid" value="AR:  From Civil I D"></resource>
+       <resource culture="ar-kw" name="fromcivilidRequired" value="AR: Please provide  From Civil I D"></resource>
+       <resource culture="ar-kw" name="requestdate" value="AR:  Request Date"></resource>
+       <resource culture="ar-kw" name="requestdateRequired" value="AR: Please provide  Request Date"></resource>
+       <resource culture="ar-kw" name="requestjson" value="AR:  Request Json"></resource>
+       <resource culture="ar-kw" name="requestjsonRequired" value="AR: Please provide  Request Json"></resource>
+		<resource culture="ar-kw" name="sahelservicerequestinfoList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="sahelservicerequestinfoCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="sahelservicerequestinfoUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="sahelservicerequestinfoDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="servicename" value=" Service Name"></resource>
+       <resource culture="en-us" name="servicenameRequired" value="Please provide  Service Name"></resource>
+       <resource culture="en-us" name="serviceurl" value=" Service U R L"></resource>
+       <resource culture="en-us" name="serviceurlRequired" value="Please provide  Service U R L"></resource>
+       <resource culture="en-us" name="fromcivilid" value=" From Civil I D"></resource>
+       <resource culture="en-us" name="fromcivilidRequired" value="Please provide  From Civil I D"></resource>
+       <resource culture="en-us" name="requestdate" value=" Request Date"></resource>
+       <resource culture="en-us" name="requestdateRequired" value="Please provide  Request Date"></resource>
+       <resource culture="en-us" name="requestjson" value=" Request Json"></resource>
+       <resource culture="en-us" name="requestjsonRequired" value="Please provide  Request Json"></resource>
+        <resource culture="en-us" name="sahelservicerequestinfoList" value="View All"></resource>
+		<resource culture="en-us" name="sahelservicerequestinfoCreate" value="Create"></resource>
+		<resource culture="en-us" name="sahelservicerequestinfoUpdate" value="Update"></resource>
+		<resource culture="en-us" name="sahelservicerequestinfoDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

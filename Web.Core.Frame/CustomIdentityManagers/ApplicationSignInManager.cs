@@ -11,7 +11,6 @@ using BDO.Core.DataAccessObjects.SecurityModels;
 using Microsoft.Extensions.Configuration;
 using BDO.Core.DataAccessObjects.CommonEntities;
 using Web.Core.Frame.Interfaces.Services;
-using BDO.DataAccessObjects.ExtendedEntities;
 
 namespace Web.Core.Frame.CustomIdentityManagers
 {
@@ -48,6 +47,8 @@ namespace Web.Core.Frame.CustomIdentityManagers
         }
 
         private readonly IConfiguration _config;
+        private readonly hrwebapiconnectionsettings _objhrwebapiSettigns;
+        //private readonly IHttpClientHR _ihttpclienthr;
 
 
         public ApplicationSignInManager(
@@ -59,7 +60,8 @@ namespace Web.Core.Frame.CustomIdentityManagers
             ILogger<SignInManager<owin_userEntity>> logger,
             IAuthenticationSchemeProvider schemes,
             IUserConfirmation<owin_userEntity> confirmation,
-            IConfiguration config 
+            IConfiguration config
+            //,IHttpClientHR ihttpclienthr
         )
         : base(userManager, contextAccessor, claimsFactory, optionsAccessor, logger, schemes, confirmation)
         {
@@ -83,6 +85,8 @@ namespace Web.Core.Frame.CustomIdentityManagers
             Logger = logger;
             _schemes = schemes;
             _config = config;
+            _objhrwebapiSettigns = _config.GetSection(nameof(hrwebapiconnectionsettings)).Get<hrwebapiconnectionsettings>();
+            //_ihttpclienthr = ihttpclienthr;
         }
 
         public override async Task<ClaimsPrincipal> CreateUserPrincipalAsync(owin_userEntity user) => await ClaimsFactory.CreateAsync(user);
@@ -99,19 +103,12 @@ namespace Web.Core.Frame.CustomIdentityManagers
         }
 
 
-        public override async Task<SignInResult> PasswordSignInAsync(owin_userEntity user, string password,
-           bool isPersistent, bool lockoutOnFailure)
+        public override async Task<SignInResult> PasswordSignInAsync(owin_userEntity user, string password,bool isPersistent, bool lockoutOnFailure)
         {
             var attempt = await CheckPasswordSignInAsync(user, password, lockoutOnFailure);
-            //return attempt.Succeeded
-            //    ? await SignInOrTwoFactorAsync(user, isPersistent)
-            //    : attempt;
-            if (attempt.Succeeded)
-            {
-                await SignInAsync(user, isPersistent);
-                return SignInResult.Success;
-            }
-            return attempt;
+            return attempt.Succeeded
+                ? await SignInOrTwoFactorAsync(user, isPersistent)
+                : attempt;
         }
 
         /// <summary>
@@ -168,14 +165,9 @@ namespace Web.Core.Frame.CustomIdentityManagers
 
         public override Task SignInAsync(owin_userEntity user, bool isPersistent, string authenticationMethod = null)
         {
-            var redisConnectionStrings = _config.GetSection(nameof(RedisConnectionStrings)).Get<RedisConnectionStrings>();
-
-            return SignInAsync(user, new AuthenticationProperties { 
-                IsPersistent = isPersistent,
-            ExpiresUtc = DateTime.UtcNow.AddMinutes(redisConnectionStrings.IdleTimeout),
-                AllowRefresh = true
-            }, authenticationMethod);
+            return SignInAsync(user, new AuthenticationProperties { IsPersistent = isPersistent }, authenticationMethod);
         }
+
         public async Task SignInAsync(owin_userEntity user, AuthenticationProperties authenticationProperties, string authenticationMethod = null)
         {
             //claims
@@ -215,6 +207,70 @@ namespace Web.Core.Frame.CustomIdentityManagers
             }
 
             return true;
+        }
+
+
+        public  async Task<SignInResult> PasswordSignInAsync(string username, string password, bool isPersistent, bool lockoutOnFailure,bool isPaci)
+        {
+            var user = await UserManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                return SignInResult.Failed;
+            }
+
+            return await PasswordSignInAsync(user, password, isPersistent, lockoutOnFailure, isPaci);
+        }
+
+
+        public async Task<SignInResult> PasswordSignInAsync(owin_userEntity user, string password,bool isPersistent, bool lockoutOnFailure, bool isPaci)
+        {
+            var attempt = await CheckPasswordSignInAsync(user, password, lockoutOnFailure, isPaci);
+            return attempt.Succeeded ? await SignInOrTwoFactorAsync(user, isPersistent) : attempt;
+        }
+
+        /// <summary>
+        /// CheckPasswordSignInAsync
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="password"></param>
+        /// <param name="lockoutOnFailure"></param>
+        /// <returns></returns>
+        public  async Task<SignInResult> CheckPasswordSignInAsync(owin_userEntity user, string password, bool lockoutOnFailure,bool isPaci)
+        {
+            if (user == null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            var error = await PreSignInCheck(user);
+            if (error != null)
+            {
+                return error;
+            }
+
+            if (isPaci)
+            {
+                var alwaysLockout = AppContext.TryGetSwitch("Microsoft.AspNetCore.Identity.CheckPasswordSignInAlwaysResetLockoutOnSuccess", out var enabled) && enabled;
+                // Only reset the lockout when TFA is not enabled when not in quirks mode
+                if (alwaysLockout || !await IsTfaEnabled(user))
+                {
+                    await ResetLockout(user);
+                }
+
+                return SignInResult.Success;
+            }
+            Logger.LogWarning(2, "User {userId} failed to provide the correct password.", await UserManager.GetUserIdAsync(user));
+
+            if (UserManager.SupportsUserLockout && lockoutOnFailure)
+            {
+                // If lockout is requested, increment access failed count which might lock out the user
+                await UserManager.AccessFailedAsync(user);
+                if (await UserManager.IsLockedOutAsync(user))
+                {
+                    return await LockedOut(user);
+                }
+            }
+            return SignInResult.Failed;
         }
 
 

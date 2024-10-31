@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+        <!--  ar-kwabic (ar-kw) -->
+        
+       <resource culture="ar-kw" name="requestdate" value="AR:  Request Date"></resource>
+       <resource culture="ar-kw" name="requestdateRequired" value="AR: Please provide  Request Date"></resource>
+       <resource culture="ar-kw" name="requesteduserinfojson" value="AR:  Requested User Info Json"></resource>
+		<resource culture="ar-kw" name="subscriberequestsList" value="AR: View All"></resource>
+		<resource culture="ar-kw" name="subscriberequestsCreate" value="AR: Create"></resource>
+		<resource culture="ar-kw" name="subscriberequestsUpdate" value="AR: Update"></resource>
+		<resource culture="ar-kw" name="subscriberequestsDetails" value="AR: Detail"></resource>
+
+         <!--  ar-kwabic (ar-kw) -->
+         
+          <!--  English (en-US) -->
+       <resource culture="en-us" name="requestdate" value=" Request Date"></resource>
+       <resource culture="en-us" name="requestdateRequired" value="Please provide  Request Date"></resource>
+       <resource culture="en-us" name="requesteduserinfojson" value=" Requested User Info Json"></resource>
+        <resource culture="en-us" name="subscriberequestsList" value="View All"></resource>
+		<resource culture="en-us" name="subscriberequestsCreate" value="Create"></resource>
+		<resource culture="en-us" name="subscriberequestsUpdate" value="Update"></resource>
+		<resource culture="en-us" name="subscriberequestsDetails" value="Detail"></resource>
+          <!--  English (en-US) -->
+        
+         
+
+</resources>        

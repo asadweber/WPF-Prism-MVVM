@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BDO.Core.DataAccessObjects.ExtendedEntities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using Web.Core.Frame.Interfaces.Services;
-using BDO.Core.DataAccessObjects.ExtendedEntities;
-using BDO.Core.DataAccessObjects.Models;
+using Web.Core.Frame.UseCases;
 
 namespace Web.Api.Infrastructure.Services
 {
@@ -29,15 +33,15 @@ namespace Web.Api.Infrastructure.Services
         {
             try
             {
-                FtpWebRequest requestDir = (FtpWebRequest)WebRequest.Create(ftpServerSetting.uploadftpurl + fileUploadDir);
+                FtpWebRequest requestDir = (FtpWebRequest)WebRequest.Create(ftpServerSetting.UploadFtpUrl + fileUploadDir);
                 requestDir.Method = WebRequestMethods.Ftp.MakeDirectory;
+
                 if (ftpServerSetting.IsSSL)
                 {
                     requestDir.EnableSsl = true;
                 }
 
-
-                requestDir.Credentials = new NetworkCredential(ftpServerSetting.ftpuser, ftpServerSetting.ftpuserpassword);
+                requestDir.Credentials = new NetworkCredential(ftpServerSetting.FtpUser, ftpServerSetting.FtpUserPassword);
                 requestDir.UsePassive = true;
                 requestDir.UseBinary = true;
                 requestDir.KeepAlive = false;
@@ -64,6 +68,7 @@ namespace Web.Api.Infrastructure.Services
                     return false;
                 }
             }
+            return false;
         }
 
         public string UploadFileFTP(byte[] Myfile, string fileUploadDir, string FileNamePrefix, string fileExtension)
@@ -78,22 +83,23 @@ namespace Web.Api.Infrastructure.Services
 
 
 
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpServerSetting.uploadftpurl + fileUploadDir + FileNamePrefix + fileExtension);
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpServerSetting.UploadFtpUrl + fileUploadDir + FileNamePrefix + fileExtension);
                 request.Method = WebRequestMethods.Ftp.UploadFile;
-            
+
                 if (ftpServerSetting.IsSSL)
                 {
                     request.EnableSsl = true;
                 }
 
-                request.Credentials = new NetworkCredential(ftpServerSetting.ftpuser, ftpServerSetting.ftpuserpassword);
+
+                request.Credentials = new NetworkCredential(ftpServerSetting.FtpUser, ftpServerSetting.FtpUserPassword);
                 Stream ftpstream = request.GetRequestStream();
                 ftpstream.Write(Myfile, 0, Myfile.Length);
                 ftpstream.Close();
 
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 
-                strMsg = request.RequestUri.AbsoluteUri.Replace(ftpServerSetting.uploadftpurl, "");
+                strMsg = request.RequestUri.AbsoluteUri.Replace(ftpServerSetting.UploadFtpUrl, "");
 
                 response.Close();
 
@@ -116,13 +122,16 @@ namespace Web.Api.Infrastructure.Services
                 if (!fileUploadDir.Substring(fileUploadDir.Length - 1).Contains("/"))
                     fileUploadDir = fileUploadDir + "/";
 
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpServerSetting.uploadftpurl + fileUploadDir + FileNamePrefix + fileExtension);
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpServerSetting.UploadFtpUrl + fileUploadDir + FileNamePrefix + fileExtension);
                 request.Method = WebRequestMethods.Ftp.DeleteFile;
+
+
                 if (ftpServerSetting.IsSSL)
                 {
                     request.EnableSsl = true;
                 }
-                request.Credentials = new NetworkCredential(ftpServerSetting.ftpuser, ftpServerSetting.ftpuserpassword);
+
+                request.Credentials = new NetworkCredential(ftpServerSetting.FtpUser, ftpServerSetting.FtpUserPassword);
                 request.Proxy = null;
                 request.UseBinary = false;
                 request.UsePassive = true;
@@ -142,63 +151,8 @@ namespace Web.Api.Infrastructure.Services
             }
             return strMsg;
         }
-        public string ReadFileFTP(string fileUploadDir, string FileNamePrefix, string fileExtension)
-        {
-            string fileContentBase64 = string.Empty;
-			try
-            {
-                if (!fileUploadDir.Substring(fileUploadDir.Length - 1).Contains("/"))
-                    fileUploadDir = fileUploadDir + "/";
 
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpServerSetting.uploadftpurl + fileUploadDir + FileNamePrefix + fileExtension);
-                request.Method = WebRequestMethods.Ftp.DownloadFile;
-                
-                if (ftpServerSetting.IsSSL)
-                {
-                    request.EnableSsl = true;
-                }
-
-                request.Credentials = new NetworkCredential(ftpServerSetting.ftpuser, ftpServerSetting.ftpuserpassword);
-                request.Proxy = null;
-                request.UseBinary = false;
-                request.UsePassive = true;
-                request.KeepAlive = false;
-                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-				using (Stream responseStream = response.GetResponseStream())
-				{
-					// Read the file content and convert it to Base64
-					using (MemoryStream ms = new MemoryStream())
-					{
-						byte[] buffer = new byte[1024];
-						int bytesRead;
-
-						while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
-						{
-							ms.Write(buffer, 0, bytesRead);
-						}
-
-						// Convert the file content to Base64 string
-						fileContentBase64 = Convert.ToBase64String(ms.ToArray());
-					}
-				}
-
-			}
-            catch (Exception ex)
-            {
-				fileContentBase64 = "";
-
-            }
-			return fileContentBase64;
-
-		}
-        public string ReadFileFTPPath(string filepath)
-        {
-			string Retfilepath= $"{ftpServerSetting.readfileurl}{filepath}";
-			return Retfilepath;
-
-		}
-
-		public string DeleteFileFTP(string fileUrl)
+        public string DeleteFileFTP(string fileUrl)
         {
             string strMsg = string.Empty;
 
@@ -209,11 +163,14 @@ namespace Web.Api.Infrastructure.Services
 
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(fileUrl);
                 request.Method = WebRequestMethods.Ftp.DeleteFile;
+
+
                 if (ftpServerSetting.IsSSL)
                 {
                     request.EnableSsl = true;
                 }
-                request.Credentials = new NetworkCredential(ftpServerSetting.ftpuser, ftpServerSetting.ftpuserpassword);
+
+                request.Credentials = new NetworkCredential(ftpServerSetting.FtpUser, ftpServerSetting.FtpUserPassword);
                 request.Proxy = null;
                 request.UseBinary = false;
                 request.UsePassive = true;

@@ -105,7 +105,7 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
                 //from Form info
                 if (!reader.IsDBNull(reader.GetOrdinal("DisplayName"))) _displayname = reader.GetString(reader.GetOrdinal("DisplayName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("DisplayNameAr"))) _displaynamear = reader.GetString(reader.GetOrdinal("DisplayNameAr"));
-                //if (!reader.IsDBNull(reader.GetOrdinal("ParentID"))) _parentid = reader.GetInt64(reader.GetOrdinal("ParentID"));
+                if (!reader.IsDBNull(reader.GetOrdinal("ParentID"))) _parentid = reader.GetInt64(reader.GetOrdinal("ParentID"));
                 //from Form action
                 if (!reader.IsDBNull(reader.GetOrdinal("ActionName"))) _actionname = reader.GetString(reader.GetOrdinal("ActionName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("ActionType"))) _actiontype = reader.GetString(reader.GetOrdinal("ActionType"));

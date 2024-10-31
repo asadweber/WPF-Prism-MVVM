@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 
 namespace AppConfig.HelperClasses
 {
@@ -11,7 +12,7 @@ namespace AppConfig.HelperClasses
         #region IDisposable Members
 
         private bool isDisposed = false;
-
+        private static Mutex mutex = new Mutex();
         ~transactioncodeGen()
         {
             Dispose(false);
@@ -496,6 +497,33 @@ namespace AppConfig.HelperClasses
             return MPIN.ToString();
         }
 
+        /// <summary>
+        /// DatetimeToGuid
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public Guid DatetimeToGuid(DateTime dt)
+        {
 
+            var bytes = BitConverter.GetBytes(dt.Ticks);
+
+            Array.Resize(ref bytes, 16);
+
+            return new Guid(bytes);
+        }
+
+        /// <summary>
+        /// GuiDToDateTime
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
+        public DateTime GuiDToDateTime(Guid guid)
+        {
+            var bytes = guid.ToByteArray();
+
+            Array.Resize(ref bytes, 8);
+
+            return new DateTime(BitConverter.ToInt64(bytes));
+        }
     }
 }

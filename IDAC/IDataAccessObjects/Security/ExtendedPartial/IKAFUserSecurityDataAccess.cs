@@ -3,8 +3,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
+using BDO.DataAccessObjects.VCRegistration;
 
-namespace IDAC.IDataAccessObjects.Security.ExtendedPartial
+namespace IDAC.Core.IDataAccessObjects.Security.ExtendedPartial
 {
     public interface IKAFUserSecurityDataAccess
     {
@@ -45,6 +46,8 @@ namespace IDAC.IDataAccessObjects.Security.ExtendedPartial
 
         Task<long?> createuser(owin_userEntity user, CancellationToken cancellationToken);
 
+        Task<long?> createSpecialRegistrationUser(RegistrationViewModel objEntity, CancellationToken cancellationToken);
+
         Task<IList<Owin_ProcessGetFormActionistEntity_Ext>> GetMenuWiseFormActionList(owin_userEntity objEntity, CancellationToken cancellationToken);
 
         Task<long> ReviewOwin_User(owin_userEntity owin_user, CancellationToken cancellationToken);
@@ -52,9 +55,8 @@ namespace IDAC.IDataAccessObjects.Security.ExtendedPartial
         Task<long> PasswordResetOwin_User(owin_userEntity owin_user, CancellationToken cancellationToken);
         Task<long> EmailResetOwin_User(owin_userEntity owin_user, CancellationToken cancellationToken);
         Task<owin_userEntity> GetSingleExt(owin_userEntity owin_user, CancellationToken cancellationToken);
-
-        Task<long> UserChangePasswordAsync(owin_userEntity owin_user, CancellationToken cancellationToken);
         Task<owin_userEntity> GetSingleExtByPKeyEX(owin_userEntity owin_user, CancellationToken cancellationToken);
+
 
     }
 }

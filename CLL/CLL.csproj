@@ -1,25 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	  <TargetFramework>netstandard2.1</TargetFramework>
+	  <OutputType>Library</OutputType>
+   
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ClosedXML" Version="0.104.1" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.10" />
-    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="8.0.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Localization\SharedResource.ar-KW.resx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Generator></Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Localization\SharedResource.en-US.resx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Generator></Generator>
-    </EmbeddedResource>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="5.0.3" />
   </ItemGroup>
 
 </Project>

@@ -36,8 +36,6 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
         protected String _DisplayName;
 
         protected Int64? _ProfileTypeForModule;
-        private string _classIcon;
-
         [DataMember]
         public Int64? ProfileTypeForModule
         {
@@ -160,8 +158,6 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
             set { _DisplayName = value; }
         }
 
-        [DataMember]
-        public string ClassIcon { get => _classIcon; set => _classIcon = value; }
 
         public Owin_ProcessGetFormActionistEntity_Ext() : base()
         {
@@ -196,9 +192,6 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
             if (!reader.IsDBNull(reader.GetOrdinal("EventName"))) _EventName = reader.GetString(reader.GetOrdinal("EventName"));
             if (!reader.IsDBNull(reader.GetOrdinal("DisplayName"))) _DisplayName = reader.GetString(reader.GetOrdinal("DisplayName"));
             if (!reader.IsDBNull(reader.GetOrdinal("DisplayNameAr"))) _DisplayNameAr = reader.GetString(reader.GetOrdinal("DisplayNameAr"));
-
-            if (!reader.IsDBNull(reader.GetOrdinal("ClassIcon"))) _classIcon = reader.GetString(reader.GetOrdinal("ClassIcon"));
-
         }
 
         public Owin_ProcessGetFormActionistEntity_Ext(IDataReader reader, int i)
