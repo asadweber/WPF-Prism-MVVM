@@ -25,7 +25,7 @@ namespace WebApi.Services
                 bool isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
 
 
-                x.SwaggerDoc("v1", new OpenApiInfo { Title = isDevelopment == true ? "KAF - Sahel Integration API - UAT" : "KAF Sahel Integration API", Version = "v2.0" });
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = isDevelopment == true ? "KAF - Integration API - UAT" : "KAF Integration API", Version = "v2.0" });
                 
                 //x.ExampleFilters();
 
