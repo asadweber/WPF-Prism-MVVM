@@ -41,8 +41,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppConfig", "AppConfig\AppConfig.csproj", "{173A3739-20D4-4BA2-8425-A78FE885D76A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{98481AE2-7B6C-4543-BFC1-092BC1F96143}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Core.Frame", "Web.Core.Frame\Web.Core.Frame.csproj", "{52E8648A-364E-4CCC-9C0A-1C62445A3539}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Api.Infrastructure", "Web.Api.Infrastructure\Web.Api.Infrastructure.csproj", "{51D216FE-B15C-4EDB-98BA-5E7C3D3690D3}"
@@ -101,10 +99,6 @@ Global
 		{173A3739-20D4-4BA2-8425-A78FE885D76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{173A3739-20D4-4BA2-8425-A78FE885D76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{173A3739-20D4-4BA2-8425-A78FE885D76A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98481AE2-7B6C-4543-BFC1-092BC1F96143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98481AE2-7B6C-4543-BFC1-092BC1F96143}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98481AE2-7B6C-4543-BFC1-092BC1F96143}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98481AE2-7B6C-4543-BFC1-092BC1F96143}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52E8648A-364E-4CCC-9C0A-1C62445A3539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52E8648A-364E-4CCC-9C0A-1C62445A3539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52E8648A-364E-4CCC-9C0A-1C62445A3539}.Release|Any CPU.ActiveCfg = Release|Any CPU
