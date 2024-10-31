@@ -23,7 +23,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Autofac" Version="8.1.1" />
-		<PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
+		<PackageReference Include="ClosedXML" Version="0.104.1" />
 		<PackageReference Include="EPPlus" Version="7.4.2" />
 		<PackageReference Include="Hangfire.AspNetCore" Version="1.8.15" />
 		<PackageReference Include="Hangfire.Core" Version="1.8.15" />

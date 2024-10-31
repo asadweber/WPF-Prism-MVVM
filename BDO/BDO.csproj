@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
+	  <PackageReference Include="ClosedXML" Version="0.104.1" />
 	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
 	  <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.10" />
 	  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.1.2" />
