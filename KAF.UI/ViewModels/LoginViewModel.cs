@@ -1,4 +1,5 @@
 ﻿using BDO.Model;
+using KAF.Service.Proxy.Clients;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Service.Interface;
@@ -18,6 +19,9 @@ namespace KAF.UI.ViewModels
         private readonly IUserService _userService;
         private readonly IRegionManager _regionManager;
 
+        private readonly IKafApiClient _apiClient;
+
+
 
         private User _currentUser;
         public User CurrentUser { get => _currentUser; set => SetProperty(ref _currentUser, value); }
@@ -26,7 +30,7 @@ namespace KAF.UI.ViewModels
         private readonly IDialogService _dialogService;
 
 
-        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager)
+        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager, IKafApiClient apiClient)
         {
             Title = "User Login";
             _containerProvider = containerProvider;
@@ -45,6 +49,7 @@ namespace KAF.UI.ViewModels
 
             _dialogService = dialogService;
             _regionManager = regionManager;
+            _apiClient = apiClient;
         }
 
         // Logic to determine whether the command can be executed (can enable/disable button)
@@ -54,11 +59,19 @@ namespace KAF.UI.ViewModels
             return true;
         }
 
-        private void ExecuteLoginCommand(User login)
+        private async void ExecuteLoginCommand(User login)
         {
 
             //Apply Login Logic
             // Validate user credentials (this is just an example)
+            
+            var loginResponse = await _apiClient.LoginAsync(new LoginRequest()
+            {
+                UserName = login.UserName,
+                Password = login.Password
+            });
+
+
             if (login.UserName == "admin" && login.Password == "admin") // Replace with real validation
             {
 
