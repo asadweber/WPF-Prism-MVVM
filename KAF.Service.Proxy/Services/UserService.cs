@@ -1,10 +1,10 @@
-﻿using KAF.Service.Proxy.Clients;
+﻿using BDO.Model;
 using KAF.UI.Service.Interface;
 
 namespace KAF.UI.Service.Services
 {
     public class UserService : IUserService
     {
-        public AccessToken CurrentUser { get; set; }
+        public User CurrentUser { get; set; }
     }
 }

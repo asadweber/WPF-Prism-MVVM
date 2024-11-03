@@ -1,5 +1,4 @@
 ﻿using BDO.Model;
-using KAF.Service.Proxy.Clients;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Service.Interface;
@@ -19,7 +18,6 @@ namespace KAF.UI.ViewModels
         private readonly IUserService _userService;
         private readonly IRegionManager _regionManager;
 
-        private readonly IKafApiClient _apiClient;
 
 
 
@@ -30,7 +28,7 @@ namespace KAF.UI.ViewModels
         private readonly IDialogService _dialogService;
 
 
-        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager, IKafApiClient apiClient)
+        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager)
         {
             Title = "User Login";
             _containerProvider = containerProvider;
@@ -49,7 +47,6 @@ namespace KAF.UI.ViewModels
 
             _dialogService = dialogService;
             _regionManager = regionManager;
-            _apiClient = apiClient;
         }
 
         // Logic to determine whether the command can be executed (can enable/disable button)
@@ -65,16 +62,16 @@ namespace KAF.UI.ViewModels
             //Apply Login Logic
             // Validate user credentials (this is just an example)
             
-            var loginResponse = await _apiClient.LoginAsync(new LoginRequest()
-            {
-                UserName = login.UserName,
-                Password = login.Password
-            });
-            if(loginResponse.Success)
+            //var loginResponse = await _apiClient.LoginAsync(new LoginRequest()
+            //{
+            //    UserName = login.UserName,
+            //    Password = login.Password
+            //});
+            if(login.UserName=="admin")
             {
 
                 //Add other Data
-                _userService.CurrentUser = loginResponse.AccessToken;
+                _userService.CurrentUser = login;
 
                 Application.Current.Dispatcher.Invoke(() =>
                    {
