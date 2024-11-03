@@ -7,7 +7,7 @@ namespace CLL.LLClasses
 {
     public class _Common
     {
-        private static IResourceProvider resourceProvidercommon = new XmlResourceProvider(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"LanguagesFiles/_CommonHtml_resource.xml"));//DbResourceProvider(); //  
+        private static IResourceProvider resourceProvidercommon = new XmlResourceProvider(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"LanguagesFiles/_Common.xml"));//DbResourceProvider(); //  
         public static string CheckCivilIdDialog
         {
             get
@@ -635,5 +635,25 @@ namespace CLL.LLClasses
                 return resourceProvidercommon.GetResource("_print", CultureInfo.CurrentUICulture.Name) as String;
             }
         }
+
+        public static string btnSave
+        {
+            get
+            {
+                return resourceProvidercommon.GetResource("btnSave", CultureInfo.CurrentUICulture.Name) as String;
+            }
+
+        }
+
+
+        public static string LanguageToggle
+        {
+            get
+            {
+                return resourceProvidercommon.GetResource("LanguageToggle", CultureInfo.CurrentUICulture.Name) as String;
+            }
+
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using KAF.UI.Common;
+using Prism.Navigation.Regions;
 
 namespace KAF.UI.Module.ViewModels
 {

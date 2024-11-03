@@ -14,6 +14,84 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="LanguagesFiles\_Common.xml" />
+    <None Remove="LanguagesFiles\_owin_formaction.xml" />
+    <None Remove="LanguagesFiles\_owin_forminfo.xml" />
+    <None Remove="LanguagesFiles\_owin_lastworkingpage.xml" />
+    <None Remove="LanguagesFiles\_owin_role.xml" />
+    <None Remove="LanguagesFiles\_owin_rolepermission.xml" />
+    <None Remove="LanguagesFiles\_owin_user.xml" />
+    <None Remove="LanguagesFiles\_owin_userclaims.xml" />
+    <None Remove="LanguagesFiles\_owin_userlogintrail.xml" />
+    <None Remove="LanguagesFiles\_owin_userpasswordresetinfo.xml" />
+    <None Remove="LanguagesFiles\_owin_userprefferencessettings.xml" />
+    <None Remove="LanguagesFiles\_owin_userrole.xml" />
+    <None Remove="LanguagesFiles\_owin_userroles.xml" />
+    <None Remove="LanguagesFiles\_owin_userstatuschangehistory.xml" />
+    <None Remove="LanguagesFiles\_register.xml" />
+    <None Remove="LanguagesFiles\_Responses.xml" />
+    <None Remove="LanguagesFiles\_Status.xml" />
+    <None Remove="LanguagesFiles\_tran_login.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="LanguagesFiles\_Common.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_formaction.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_forminfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_lastworkingpage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_role.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_rolepermission.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_user.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userclaims.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userlogintrail.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userpasswordresetinfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userprefferencessettings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userrole.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userroles.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_owin_userstatuschangehistory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_register.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_Responses.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_Status.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LanguagesFiles\_tran_login.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.3" />
     <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="5.0.3" />
   </ItemGroup>

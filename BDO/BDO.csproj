@@ -35,15 +35,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNet.Mvc.es" Version="5.2.9" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.10" />
 		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.7" />
 		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.14.1" />
 		<PackageReference Include="MongoDB.Bson" Version="2.13.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-		<PackageReference Include="Prism.Core" Version="6.3.0" />
+		<PackageReference Include="Prism.Core" Version="9.0.537" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-		<PackageReference Include="System.Text.Json" Version="6.0.5" />
+		<PackageReference Include="System.Text.Json" Version="8.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>

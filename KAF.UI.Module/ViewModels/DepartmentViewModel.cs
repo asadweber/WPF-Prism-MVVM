@@ -3,8 +3,14 @@ using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Module.View;
 using KAF.UI.Service.Interface;
+using Prism.Commands;
+using Prism.Dialogs;
+using Prism.Events;
+using Prism.Navigation.Regions;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace KAF.UI.Module.ViewModels
 {

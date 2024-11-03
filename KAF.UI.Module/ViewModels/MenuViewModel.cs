@@ -2,6 +2,9 @@
 using KAF.UI.Common;
 using KAF.UI.Module.View;
 using KAF.UI.Service.Interface;
+using Prism.Commands;
+using Prism.Navigation.Regions;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace KAF.UI.Module.ViewModels

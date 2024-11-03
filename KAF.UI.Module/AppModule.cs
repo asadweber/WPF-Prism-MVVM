@@ -5,6 +5,10 @@ using KAF.UI.Module.ViewModels;
 using KAF.UI.Service;
 using KAF.UI.Service.Interface;
 using KAF.UI.Service.Services;
+using Prism.Events;
+using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Navigation.Regions;
 
 namespace KAF.UI.Module
 {
