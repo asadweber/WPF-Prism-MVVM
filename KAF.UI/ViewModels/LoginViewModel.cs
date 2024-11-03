@@ -70,14 +70,11 @@ namespace KAF.UI.ViewModels
                 UserName = login.UserName,
                 Password = login.Password
             });
-
-
-            if (login.UserName == "admin" && login.Password == "admin") // Replace with real validation
+            if(loginResponse.Success)
             {
 
-
                 //Add other Data
-                _userService.CurrentUser = login;
+                _userService.CurrentUser = loginResponse.AccessToken;
 
                 Application.Current.Dispatcher.Invoke(() =>
                    {

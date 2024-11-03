@@ -31,10 +31,9 @@ namespace KAF.UI.Views
             _userService = userService;
             _regionManager = regionManager;
             _dialogService = dialogService;
-
+             _apiClient= apiClient;
             loginViewModel = new LoginViewModel(containerProvider, currentWindow, userService, dialogService, regionManager,_apiClient);
             DataContext = loginViewModel;
-            _apiClient = apiClient;
         }
 
 
