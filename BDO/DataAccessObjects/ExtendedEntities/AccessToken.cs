@@ -9,10 +9,13 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
         public string Token { get; }
         public int ExpiresIn { get; }
 
-        public AccessToken(string token, int expiresIn)
+        public string RefreshToken   { get;set; }
+
+        public AccessToken(string token, int expiresIn,string refreshToken)
         {
             Token = token;
             ExpiresIn = expiresIn;
+            RefreshToken = refreshToken;
         }
     }
 }

@@ -87,8 +87,12 @@ namespace Web.Core.Frame.UseCases
                         user.AddRefreshToken(refreshToken, user.userid.GetValueOrDefault(), message.RemoteIpAddress);
                         await _userManager.UpdateAsync(user);
 
+
+                        var accessToken=await _jwtFactory.GenerateEncodedToken(user, userrole.ToList());
+                        accessToken.RefreshToken = refreshToken;
+
                         // generate access token
-                        outputPort.Handle(new LoginResponse(true, await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+                        outputPort.Handle(new LoginResponse(accessToken, true));
 
                         return true;
                     }
@@ -135,12 +139,11 @@ namespace Web.Core.Frame.UseCases
                         user.AddRefreshToken(refreshToken, user.userid.GetValueOrDefault(), message.RemoteIpAddress);
                         await _userManager.UpdateAsync(user);
 
-                        // generate access token
-                        //outputPort.Handle(new LoginResponse(true, await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+                        var accessToken = await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString);
 
-                        var str = await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString);
+                        accessToken.RefreshToken = refreshToken;
 
-                        outputPort.Handle(new LoginResponse(true, await _jwtFactory.GenerateEncodedToken(user, userrole.ToList(), hrTokenJsonString, hrprofileJsonString), refreshToken, true));
+                        outputPort.Handle(new LoginResponse(accessToken, true));
 
                         return true;
                     }

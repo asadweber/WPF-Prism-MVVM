@@ -57,16 +57,12 @@ namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
 
             if (!(string.IsNullOrEmpty(owin_user.username)))
                 Database.AddInParameter(cmd, "@UserName", DbType.String, owin_user.username);
-            if (!(string.IsNullOrEmpty(owin_user.fullname)))
-                Database.AddInParameter(cmd, "@FullName", DbType.String, owin_user.fullname);
             if (!(string.IsNullOrEmpty(owin_user.emailaddress)))
                 Database.AddInParameter(cmd, "@EmailAddress", DbType.String, owin_user.emailaddress);
             if (!(string.IsNullOrEmpty(owin_user.loweredusername)))
                 Database.AddInParameter(cmd, "@LoweredUserName", DbType.String, owin_user.loweredusername);
             if (!(string.IsNullOrEmpty(owin_user.mobilenumber)))
                 Database.AddInParameter(cmd, "@MobileNumber", DbType.String, owin_user.mobilenumber);
-            if (!(string.IsNullOrEmpty(owin_user.tempmob)))
-                Database.AddInParameter(cmd, "@TempMob", DbType.String, owin_user.tempmob);
             if (!(string.IsNullOrEmpty(owin_user.userprofilephoto)))
                 Database.AddInParameter(cmd, "@UserProfilePhoto", DbType.String, owin_user.userprofilephoto);
             if ((owin_user.isanonymous != null))

@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BDO\BDO.csproj" />
+    <ProjectReference Include="..\CLL\CLL.csproj" />
   </ItemGroup>
 
 </Project>

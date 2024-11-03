@@ -81,7 +81,7 @@ namespace WebApi.Controllers
             if (!ModelState.IsValid) { return BadRequest(ModelState); }
             //await _loginUseCase.Handle(new LoginRequest(request.UserName, request.Password, ipaddress ?? "127.0.0.1"), _loginPresenter);
 
-            await _loginUseCase.HandleForSahel(new LoginRequest(request.UserName, request.Password, ipaddress ?? "127.0.0.1"), _loginPresenter);
+            await _loginUseCase.Handle(new LoginRequest(request.UserName, request.Password, ipaddress ?? "127.0.0.1"), _loginPresenter);
             return _loginPresenter.ContentResult;
         }
 

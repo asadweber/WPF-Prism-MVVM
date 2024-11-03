@@ -407,7 +407,7 @@ namespace Web.Core.Frame.CustomIdentityManagers
             user.userid = new System.Guid(message.Password);
             user.username = message.UserName;
 
-            await SaveLoginTrain(objResponse.AccessToken, objResponse.RefreshToken, message.RemoteIpAddress,
+            await SaveLoginTrain(objResponse.AccessToken, objResponse.AccessToken.RefreshToken, message.RemoteIpAddress,
                 user);
 
             Logger.LogWarning(2, "User {userId} failed to provide the correct password.", message.Password);

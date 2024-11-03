@@ -160,7 +160,6 @@ namespace Web.Core.Frame.UseCases
                                 t.userid,
                                 t.masteruserid,
                                 t.username,
-                                t.fullname,
                                 t.emailaddress,
                                 t.loweredusername,
                                 t.mobilenumber,

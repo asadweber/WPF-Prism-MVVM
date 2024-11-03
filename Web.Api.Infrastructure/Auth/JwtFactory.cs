@@ -85,7 +85,7 @@ namespace Web.Api.Infrastructure.Auth
 
 
 
-            return new AccessToken(_jwtTokenHandler.WriteToken(jwt), (int)_jwtOptions.ValidFor.TotalSeconds);
+            return new AccessToken(_jwtTokenHandler.WriteToken(jwt), (int)_jwtOptions.ValidFor.TotalSeconds,string.Empty);
         }
 
 

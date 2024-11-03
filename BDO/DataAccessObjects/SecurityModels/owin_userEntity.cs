@@ -24,12 +24,9 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         protected Guid? _applicationid;
         protected long? _masteruserid;
         protected string _username;
-        protected string? _fullname;
         protected string _emailaddress;
         protected string _loweredusername;
         protected string _mobilenumber;
-        protected string? _tempmob;
-        protected bool? _mobnoverified;
         protected string _userprofilephoto;
         protected bool? _isanonymous;
         protected bool? _ischildenable;
@@ -127,7 +124,6 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
             get;
             set;
         }
-        [DataMember] 
         public string ReturnUrl { get; set; }
 
         [Key]
@@ -170,20 +166,10 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         }
 
         [DataMember]
-        [MaxLength(500)]
-        [PersonalDataAttribute]
-        [Display(Name = "fullname", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
-        public string? fullname
-        {
-            get { return _fullname; }
-            set { _fullname = value; this.OnChnaged(); }
-        }
-
-        [DataMember]
         [MaxLength(150)]
         [PersonalDataAttribute]
         [Display(Name = "emailaddress", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
-        [Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "emailaddressRequired")]
+       [Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "emailaddressRequired")]
         public string emailaddress
         {
             get { return _emailaddress; }
@@ -211,12 +197,11 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         }
 
         [DataMember]
-        [MaxLength(16)]
-        [PersonalDataAttribute]
-        public string? tempmob
+        [Display(Name = "userprofilephoto", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
+        public string userprofilephoto
         {
-            get { return _tempmob; }
-            set { _tempmob = value; this.OnChnaged(); }
+            get { return _userprofilephoto; }
+            set { _userprofilephoto = value; this.OnChnaged(); }
         }
 
         [DataMember]
@@ -226,15 +211,6 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         {
             get { return _isanonymous; }
             set { _isanonymous = value; this.OnChnaged(); }
-        }
-
-        [DataMember]
-        [MaxLength(250)]
-        [Display(Name = "userprofilephoto", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
-        public string userprofilephoto
-        {
-            get { return _userprofilephoto; }
-            set { _userprofilephoto = value; this.OnChnaged(); }
         }
 
         [DataMember]
@@ -271,7 +247,7 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         //[MaxLength(1000)]
         [PersonalDataAttribute]
         [Display(Name = "pkeyex", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
-        [Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "pkeyexRequired")]
+        //[Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "pkeyexRequired")]
         public long? pkeyex
         {
             get { return _pkeyex; }
@@ -281,7 +257,7 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
 
         [DataMember]
         [DataType(DataType.Password)]
-        [StringLength(50, MinimumLength = 6, ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "passwordlengthmissmatch")]
+        [StringLength(150, MinimumLength = 5)]
         [Display(Name = "password", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
         [Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "passwordRequired")]
         public string password
@@ -292,7 +268,7 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
 
         protected string _newpassword;
         [DataMember]
-        [StringLength(50, MinimumLength = 6, ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "newpasswordlengthmissmatch")]
+        [StringLength(150, MinimumLength = 5)]
         [DataType(DataType.Password)]
         //[Compare("confirmpassword", ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "passwordmissmatch")]
         [Display(Name = "newpassword", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
@@ -305,7 +281,7 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
 
         protected string _confirmpassword;
         [DataMember]
-        [StringLength(50, MinimumLength = 6, ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "confirmpasswordlengthmissmatch")]
+        [StringLength(150, MinimumLength = 5)]
         [DataType(DataType.Password)]
         [Compare("newpassword", ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user), ErrorMessageResourceName = "passwordmissmatch")]
         [Display(Name = "confirmpassword", ResourceType = typeof(CLL.LLClasses.SecurityModels._owin_user))]
@@ -593,11 +569,9 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
                 if (!reader.IsDBNull(reader.GetOrdinal("UserId"))) _userid = reader.GetGuid(reader.GetOrdinal("UserId"));
                 if (!reader.IsDBNull(reader.GetOrdinal("MasterUserID"))) _masteruserid = reader.GetInt64(reader.GetOrdinal("MasterUserID"));
                 if (!reader.IsDBNull(reader.GetOrdinal("UserName"))) _username = reader.GetString(reader.GetOrdinal("UserName"));
-                if (!reader.IsDBNull(reader.GetOrdinal("FullName"))) _fullname = reader.GetString(reader.GetOrdinal("FullName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("EmailAddress"))) _emailaddress = reader.GetString(reader.GetOrdinal("EmailAddress"));
                 if (!reader.IsDBNull(reader.GetOrdinal("LoweredUserName"))) _loweredusername = reader.GetString(reader.GetOrdinal("LoweredUserName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("MobileNumber"))) _mobilenumber = reader.GetString(reader.GetOrdinal("MobileNumber"));
-                if (!reader.IsDBNull(reader.GetOrdinal("TempMob"))) _tempmob = reader.GetString(reader.GetOrdinal("TempMob"));
                 if (!reader.IsDBNull(reader.GetOrdinal("UserProfilePhoto"))) _userprofilephoto = reader.GetString(reader.GetOrdinal("UserProfilePhoto"));
                 if (!reader.IsDBNull(reader.GetOrdinal("IsAnonymous"))) _isanonymous = reader.GetBoolean(reader.GetOrdinal("IsAnonymous"));
                 if (!reader.IsDBNull(reader.GetOrdinal("IsChildEnable"))) _ischildenable = reader.GetBoolean(reader.GetOrdinal("IsChildEnable"));
@@ -658,7 +632,6 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
                 if (!reader.IsDBNull(reader.GetOrdinal("UserId"))) _userid = reader.GetGuid(reader.GetOrdinal("UserId"));
                 if (!reader.IsDBNull(reader.GetOrdinal("MasterUserID"))) _masteruserid = reader.GetInt64(reader.GetOrdinal("MasterUserID"));
                 if (!reader.IsDBNull(reader.GetOrdinal("UserName"))) _username = reader.GetString(reader.GetOrdinal("UserName"));
-                if (!reader.IsDBNull(reader.GetOrdinal("FullName"))) _fullname = reader.GetString(reader.GetOrdinal("FullName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("EmailAddress"))) _emailaddress = reader.GetString(reader.GetOrdinal("EmailAddress"));
                 if (!reader.IsDBNull(reader.GetOrdinal("LoweredUserName"))) _loweredusername = reader.GetString(reader.GetOrdinal("LoweredUserName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("MobileNumber"))) _mobilenumber = reader.GetString(reader.GetOrdinal("MobileNumber"));
@@ -721,7 +694,6 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
                 if (!reader.IsDBNull(reader.GetOrdinal("UserId"))) _userid = reader.GetGuid(reader.GetOrdinal("UserId"));
                 if (!reader.IsDBNull(reader.GetOrdinal("MasterUserID"))) _masteruserid = reader.GetInt64(reader.GetOrdinal("MasterUserID"));
                 if (!reader.IsDBNull(reader.GetOrdinal("UserName"))) _username = reader.GetString(reader.GetOrdinal("UserName"));
-                if (!reader.IsDBNull(reader.GetOrdinal("FullName"))) _fullname = reader.GetString(reader.GetOrdinal("FullName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("EmailAddress"))) _emailaddress = reader.GetString(reader.GetOrdinal("EmailAddress"));
                 if (!reader.IsDBNull(reader.GetOrdinal("LoweredUserName"))) _loweredusername = reader.GetString(reader.GetOrdinal("LoweredUserName"));
                 if (!reader.IsDBNull(reader.GetOrdinal("MobileNumber"))) _mobilenumber = reader.GetString(reader.GetOrdinal("MobileNumber"));
@@ -788,7 +760,7 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
             set { _Claims = value; }
         }
 
-        public bool AllowRememberLogin { get; set; } = true;
+        public bool AllowRememberLogin { get; set; } = false;
         public bool EnableLocalLogin { get; set; } = true;
 
         public IEnumerable<ExternalProvider> ExternalProviders { get; set; } = Enumerable.Empty<ExternalProvider>();

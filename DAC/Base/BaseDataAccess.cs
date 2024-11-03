@@ -91,7 +91,6 @@ namespace DAC.Core.Base
         {
             _context = context;
 
-            _sharedLocalizer = new LocalizeService(BasicApplicationConstant.Factory);
         }
 
         public void Dispose()

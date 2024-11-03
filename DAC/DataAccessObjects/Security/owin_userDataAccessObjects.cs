@@ -50,8 +50,6 @@ namespace DAC.Core.DataAccessObjects.Security
 				Database.AddInParameter(cmd, "@MasterUserID", DbType.Int64, owin_user.masteruserid);
 			if (!(string.IsNullOrEmpty(owin_user.username)))
 				Database.AddInParameter(cmd, "@UserName", DbType.String, owin_user.username);
-            if (!(string.IsNullOrEmpty(owin_user.fullname)))
-                Database.AddInParameter(cmd, "@FullName", DbType.String, owin_user.fullname);
             if (!(string.IsNullOrEmpty(owin_user.emailaddress)))
 				Database.AddInParameter(cmd, "@EmailAddress", DbType.String, owin_user.emailaddress);
 			if (!(string.IsNullOrEmpty(owin_user.loweredusername)))
