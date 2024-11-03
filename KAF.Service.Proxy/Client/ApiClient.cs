@@ -54,7 +54,7 @@ namespace KAF.Service.Proxy.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AuthClient : IAuthClient
+    public partial class AuthClient : HttpClientBase, IAuthClient
     {
         #pragma warning disable 8618
         private string _baseUrl;
@@ -408,7 +408,7 @@ namespace KAF.Service.Proxy.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class DepartmentClient : IDepartmentClient
+    public partial class DepartmentClient : HttpClientBase, IDepartmentClient
     {
         #pragma warning disable 8618
         private string _baseUrl;
