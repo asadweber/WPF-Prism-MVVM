@@ -44,6 +44,8 @@ namespace WebApi.Services
             AddLocalizationConfigurations(services);
             services.AddResponseCaching();
             services.AddHttpClient();
+            
+            services.AddOpenApiDocument();
 
             services.AddCors(options =>
             {

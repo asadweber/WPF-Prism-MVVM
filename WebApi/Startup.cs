@@ -104,6 +104,8 @@ namespace WebApi
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseStaticFiles();
             app.UseSwagger();
+
+            app.UseOpenApi();
             app.UseSwaggerUI(c =>
             {
                 //c.RoutePrefix = "swagger/ui";

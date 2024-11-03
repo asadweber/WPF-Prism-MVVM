@@ -3,19 +3,7 @@
   "defaultVariables": null,
   "documentGenerator": {
     "aspNetCoreToOpenApi": {
-      "project": "../../WebApi/WebApi.csproj",
-      "documentName": "v1",
-      "msBuildProjectExtensionsPath": null,
-      "configuration": null,
-      "runtime": null,
-      "targetFramework": null,
-      "noBuild": false,
-      "msBuildOutputPath": null,
-      "verbose": true,
-      "workingDirectory": null,
-      "aspNetCoreEnvironment": null,
-      "output": null,
-      "newLineBehavior": "Auto"
+      "project": "../../WebApi/WebApi.csproj"
     }
   },
   "codeGenerators": {
@@ -103,7 +91,7 @@
       "templateDirectory": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "$(ProjectDir)Generated/ApiClient.cs",
+      "output": "../Generated/ApiClient.cs",
       "newLineBehavior": "Auto"
     }
   }

@@ -36,6 +36,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Remove="Controllers\AccountsController.cs" />
 		<Compile Remove="Controllers\General\CorrespondenceOperationController.cs" />
 		<Compile Remove="Controllers\General\MilitaryPersonnelController.cs" />
 		<Compile Remove="Models\Request\ExchangeRefreshTokenRequest.cs" />
@@ -107,6 +108,7 @@
       <NoWarn>NU1701</NoWarn>
     </PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+		<PackageReference Include="NSwag.AspNetCore" Version="14.1.0" />
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="Serilog" Version="2.11.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />

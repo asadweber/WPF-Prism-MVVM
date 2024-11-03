@@ -1,33 +1,47 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="config.nswag" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="config.nswag" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="swagger\config.nswag">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="swagger\config.nswag">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BDO\BDO.csproj" />
-    <ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BDO\BDO.csproj" />
+		<ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Generated\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Generated\" />
+	</ItemGroup>
 
-  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="dotnet nswag run &quot;$(ProjectDir)swagger/config.nswag&quot;&#xA;" />
-  </Target>-->
+	<ItemGroup>
+		<PackageReference Include="NSwag.Generation" Version="14.1.0" />
+		<PackageReference Include="NSwag.MSBuild" Version="14.1.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+
+	<Target Name="NSwag" AfterTargets="PostBuildEvent">
+		<Exec Command="$(NSwagExe_Net60) run swagger/config.nswag" />
+	</Target>
+
 
 </Project>
