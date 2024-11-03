@@ -1,4 +1,5 @@
-﻿using KAF.UI;
+﻿using KAF.Service.Proxy.Client;
+using KAF.UI;
 using KAF.UI.Common.Helper;
 using KAF.UI.Module;
 using KAF.UI.Service.Interface;
@@ -50,9 +51,11 @@ public class Bootstrapper : PrismBootstrapper
         var apiSettings = new ApiSettings();
         Configuration.GetSection("ApiSettings").Bind(apiSettings);
 
+
         // Register the KafApiClient with a base URL
-        //containerRegistry.Register<IKafApiClient>(sp =>
-        //    new KafApiClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
+        containerRegistry.Register<IAuthClient>(sp =>new AuthClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
+        containerRegistry.Register<IDepartmentClient>(sp =>new DepartmentClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
+
 
 
         // Register the custom window that will host the UserControl dialog
