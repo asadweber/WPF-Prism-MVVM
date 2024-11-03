@@ -8,8 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="config.nswag" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="swagger\config.nswag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BDO\BDO.csproj" />
     <ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generated\" />
+  </ItemGroup>
+
+  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="dotnet nswag run &quot;$(ProjectDir)swagger/config.nswag&quot;&#xA;" />
+  </Target>-->
 
 </Project>

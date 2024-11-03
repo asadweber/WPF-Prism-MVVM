@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CLL\CLL.csproj" />
+    <ProjectReference Include="..\KAF.Service.Proxy\KAF.Service.Proxy.csproj" />
     <ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
     <ProjectReference Include="..\KAF.UI.Module\KAF.UI.Module.csproj" />
     <ProjectReference Include="..\KAF.UI.Service\KAF.Service.Proxy.csproj" />
