@@ -23,7 +23,6 @@ using BDO.Core.DataAccessObjects.Models;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
 using Web.Core.Frame.CustomIdentityManagers;
-using Web.Core.Frame.Dto.UseCaseResponses.Registration;
 
 namespace Web.Core.Frame.UseCases
 {

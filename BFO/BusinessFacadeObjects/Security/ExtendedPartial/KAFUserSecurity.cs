@@ -5,7 +5,6 @@ using AppConfig.HelperClasses;
 using BDO.Core.Base;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
-using BDO.DataAccessObjects.VCRegistration;
 using BFO.Base;
 using DAC.Core.CoreFactory;
 using IBFO.Core.IBusinessFacadeObjects.Security;

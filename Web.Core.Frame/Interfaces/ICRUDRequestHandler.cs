@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Web.Core.Frame.Dto.UseCaseResponses.Registration;
 
 namespace Web.Core.Frame.Interfaces
 {

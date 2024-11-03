@@ -4,7 +4,6 @@ using Web.Core.Frame.Interfaces;
 using Web.Core.Frame.Serialization;
 using Web.Core.Frame.Helpers;
 using BDO.DataAccessObjects.ExtendedEntities;
-using Web.Core.Frame.Dto.UseCaseResponses.Registration;
 
 namespace Web.Core.Frame.Presenters
 {

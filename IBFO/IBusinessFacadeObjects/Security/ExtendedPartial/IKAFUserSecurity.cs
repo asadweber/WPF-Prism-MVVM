@@ -5,7 +5,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using BDO.Core.DataAccessObjects.ExtendedEntities;
 using BDO.Core.DataAccessObjects.SecurityModels;
-using BDO.DataAccessObjects.VCRegistration;
 
 namespace IBFO.Core.IBusinessFacadeObjects.Security.ExtendedPartial
 {

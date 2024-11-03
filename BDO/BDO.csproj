@@ -12,6 +12,15 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<WarningLevel>0</WarningLevel>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
+	  <Compile Remove="Enum\**" />
+	  <EmbeddedResource Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
+	  <EmbeddedResource Remove="Enum\**" />
+	  <None Remove="DataAccessObjects\SecurityModels\ExtendedPartial\**" />
+	  <None Remove="Enum\**" />
+	</ItemGroup>
 	<ItemGroup>
 		<Compile Update="**\*Extended.cs">
 			<DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
@@ -41,47 +50,12 @@
 		<ProjectReference Include="..\CLL\CLL.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="DataAccessObjects\SecurityModels\ExtendedPartial\" />
-		<Folder Include="Enum\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="DataAccessObjects\ExtendedEntities\reg_educationinfoEntity.cs" />
-	</ItemGroup>
-
 
 
 	<ItemGroup>
 		<Compile Update="**\*Extended.cs">
 			<DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
 		</Compile>
-	</ItemGroup>
-
-
-
-	<ItemGroup>
-	  <Compile Update="Report\RptVolunterContractRep.Extended.cs">
-	    <DependentUpon>RptVolunterContractRep.cs</DependentUpon>
-	  </Compile>
-	  <Compile Update="Report\RptVolunteerClearanceList.Extended.cs">
-	    <DependentUpon>RptVolunteerClearanceList.cs</DependentUpon>
-	  </Compile>
-	  <Compile Update="Report\RptMedicalExamRep.Extended.cs">
-	    <DependentUpon>RptMedicalExamRep.cs</DependentUpon>
-	  </Compile>
-	  <Compile Update="Report\RptMedicalResultInfo.Extended.cs">
-	    <DependentUpon>RptMedicalResultInfo.cs</DependentUpon>
-	  </Compile>
-	  <Compile Update="Report\RptMedicalExamForm.Extended.cs">
-	    <DependentUpon>RptMedicalExamForm.cs</DependentUpon>
-	  </Compile>
-	  <Compile Update="Report\RptBatchSummary.Extended.cs">
-	    <DependentUpon>RptBatchSummary.cs</DependentUpon>
-	  </Compile>
-	  <Compile Update="Report\RptVolunteerCertificate.Extended.cs">
-	    <DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
-	  </Compile>
 	</ItemGroup>
 
 </Project>

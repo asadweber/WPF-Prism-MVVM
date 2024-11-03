@@ -20,6 +20,7 @@
 	<ItemGroup>
 		<Compile Remove="Data\**" />
 		<Compile Remove="Dto\UseCaseRequests\Extended\**" />
+		<Compile Remove="Dto\UseCaseResponses\Extended\**" />
 		<Compile Remove="Identity\**" />
 		<Compile Remove="InAppResources\**" />
 		<Compile Remove="Interfaces\IProcessHelper\**" />
@@ -27,6 +28,7 @@
 		<Compile Remove="Migrations\**" />
 		<EmbeddedResource Remove="Data\**" />
 		<EmbeddedResource Remove="Dto\UseCaseRequests\Extended\**" />
+		<EmbeddedResource Remove="Dto\UseCaseResponses\Extended\**" />
 		<EmbeddedResource Remove="Identity\**" />
 		<EmbeddedResource Remove="InAppResources\**" />
 		<EmbeddedResource Remove="Interfaces\IProcessHelper\**" />
@@ -34,6 +36,7 @@
 		<EmbeddedResource Remove="Migrations\**" />
 		<None Remove="Data\**" />
 		<None Remove="Dto\UseCaseRequests\Extended\**" />
+		<None Remove="Dto\UseCaseResponses\Extended\**" />
 		<None Remove="Identity\**" />
 		<None Remove="InAppResources\**" />
 		<None Remove="Interfaces\IProcessHelper\**" />
@@ -89,9 +92,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Dto\UseCaseRequests\Configuration\" />
-	  <Folder Include="Dto\UseCaseRequests\Registration\" />
-	  <Folder Include="Dto\UseCaseResponses\Extended\" />
 	  <Folder Include="Interfaces\UseCases\Configuration\" />
 	  <Folder Include="Presenters\Configuration\" />
 	  <Folder Include="UseCases\Configuration\" />

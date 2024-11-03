@@ -1,5 +1,4 @@
 ﻿using BDO.Core.Base;
-using KAF.BusinessDataObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

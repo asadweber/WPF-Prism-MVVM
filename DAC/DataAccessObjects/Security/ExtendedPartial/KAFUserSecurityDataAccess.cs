@@ -23,7 +23,6 @@ using RestSharp;
 using Newtonsoft.Json;
 using BDO.Base;
 using System.IO;
-using BDO.DataAccessObjects.VCRegistration;
 
 namespace DAC.Core.DataAccessObjects.Security.ExtendedPartial
 {
