@@ -61,6 +61,8 @@ namespace KAF.UI.ViewModels
             // Validate user credentials (this is just an example)
             if (login.UserName == "admin" && login.Password == "admin") // Replace with real validation
             {
+
+
                 //Add other Data
                 _userService.CurrentUser = login;
 

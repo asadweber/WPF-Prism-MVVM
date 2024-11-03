@@ -3,7 +3,19 @@
   "defaultVariables": null,
   "documentGenerator": {
     "aspNetCoreToOpenApi": {
-      "project": "../../WebApi/WebApi.csproj"
+      "project": "../../WebApi/WebApi.csproj",
+      "documentName": "v1",
+      "msBuildProjectExtensionsPath": null,
+      "configuration": null,
+      "runtime": null,
+      "targetFramework": null,
+      "noBuild": false,
+      "msBuildOutputPath": null,
+      "verbose": true,
+      "workingDirectory": null,
+      "aspNetCoreEnvironment": null,
+      "output": null,
+      "newLineBehavior": "Auto"
     }
   },
   "codeGenerators": {
@@ -16,7 +28,7 @@
       "suppressClientInterfacesOutput": false,
       "clientBaseInterface": null,
       "injectHttpClient": true,
-      "disposeHttpClient": false,
+      "disposeHttpClient": true,
       "protectedMethods": [],
       "generateExceptionClasses": true,
       "exceptionClass": "MyApiException",

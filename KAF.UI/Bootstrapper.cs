@@ -1,4 +1,5 @@
-﻿using KAF.UI;
+﻿using KAF.Service.Proxy.Clients;
+using KAF.UI;
 using KAF.UI.Module;
 using KAF.UI.Service.Interface;
 using KAF.UI.Service.Services;
@@ -21,6 +22,9 @@ public class Bootstrapper : PrismBootstrapper
 
         //Register All Service
         containerRegistry.RegisterSingleton<IUserService, UserService>();
+
+        containerRegistry.RegisterScoped<IKafApiClient, KafApiClient>();
+
 
         // Register the custom window that will host the UserControl dialog
         containerRegistry.RegisterDialogWindow<AppDialogWindow>();
