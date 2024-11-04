@@ -73,6 +73,7 @@ namespace KAF.UI.Module.ViewModels
             _regionManager = regionManager;
             _dialogService = dialogService;
             _eventAggregator = eventAggregator;
+            _mapper = mapper;
 
             _httpClient = httpClient;
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ApplicationState.CurrentUser.Token);
@@ -93,7 +94,6 @@ namespace KAF.UI.Module.ViewModels
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
-            _mapper = mapper;
         }
 
 
@@ -123,7 +123,7 @@ namespace KAF.UI.Module.ViewModels
             try
             {
                 DepartmentList = new ObservableCollection<DepartmentDto>(_mapper.Map<List<DepartmentDto>>(await _departmentService.GetAllDepartmentAsync()));
-                CurrentDepartment=new DepartmentDto();
+                CurrentDepartment = new DepartmentDto();
             }
             finally
             {
@@ -180,7 +180,7 @@ namespace KAF.UI.Module.ViewModels
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
 
-        
+
         #endregion
     }
 }

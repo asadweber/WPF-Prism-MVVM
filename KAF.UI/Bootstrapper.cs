@@ -16,6 +16,7 @@ using System.Windows;
 public class Bootstrapper : PrismBootstrapper
 {
     public IConfiguration Configuration { get; private set; }
+  
     private IExceptionHandler _exceptionHandler;
 
 
