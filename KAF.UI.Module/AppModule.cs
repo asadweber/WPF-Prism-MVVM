@@ -36,7 +36,7 @@ namespace KAF.UI.Module
             //Register All Service
             containerRegistry.RegisterSingleton<IUserService, UserService>();
 
-            containerRegistry.RegisterScoped<IDepartmentService, DepartmentService>();
+            containerRegistry.Register<IDepartmentService, DepartmentService>();
 
 
             // Register the UserControl and its ViewModel as a dialog
