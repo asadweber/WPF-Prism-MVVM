@@ -32,13 +32,17 @@ public class Bootstrapper : PrismBootstrapper
 
     private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
     {
+        // Handle UI thread exceptions
         if (e.Exception is ApiException apiexception)
         {
-            // HandleException(exception);
+            _exceptionHandler?.Handle(apiexception);
+        }
+        if (e.Exception is Exception exception)
+        {
+            _exceptionHandler?.Handle(exception);
+
         }
 
-        // Handle UI thread exceptions
-        _exceptionHandler?.Handle(e.Exception);
         e.Handled = true; // Prevent application from crashing
     }
 
@@ -52,7 +56,7 @@ public class Bootstrapper : PrismBootstrapper
 
         if (e.ExceptionObject is ApiException apiexception)
         {
-            // HandleException(exception);
+            _exceptionHandler?.Handle(apiexception);
         }
     }
 

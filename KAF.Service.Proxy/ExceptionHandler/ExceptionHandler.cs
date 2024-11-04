@@ -1,4 +1,5 @@
-﻿using KAF.UI.Common.View;
+﻿using KAF.Service.Proxy.Client;
+using KAF.UI.Common.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,19 @@ namespace KAF.UI.Common.ExceptionHandler
                         {
                             {
                                 "message", exception.Message
+                            }
+                        };
+            _dialogService.ShowDialog(typeof(DialogView).Name, parameters, r =>
+             {
+             });
+        }
+
+        public void Handle(ApiException exception)
+        {
+            var parameters = new DialogParameters
+                        {
+                            {
+                                "message", exception.Response.ToString()
                             }
                         };
             _dialogService.ShowDialog(typeof(DialogView).Name, parameters, r =>
