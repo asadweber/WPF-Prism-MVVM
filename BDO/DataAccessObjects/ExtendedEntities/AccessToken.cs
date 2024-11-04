@@ -6,11 +6,12 @@ namespace BDO.Core.DataAccessObjects.ExtendedEntities
 {
     public sealed class AccessToken
     {
-        public string Token { get; }
-        public int ExpiresIn { get; }
+        public string Token { get;set; }
+        public int ExpiresIn { get;set; }
 
         public string RefreshToken   { get;set; }
 
+        public AccessToken(){}
         public AccessToken(string token, int expiresIn,string refreshToken)
         {
             Token = token;

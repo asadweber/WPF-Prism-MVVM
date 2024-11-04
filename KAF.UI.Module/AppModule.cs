@@ -34,8 +34,6 @@ namespace KAF.UI.Module
             containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
 
             //Register All Service
-            containerRegistry.RegisterSingleton<IUserService, UserService>();
-
             containerRegistry.Register<IDepartmentService, DepartmentService>();
 
 

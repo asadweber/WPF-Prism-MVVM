@@ -16,7 +16,6 @@ namespace KAF.UI.ViewModels
         //DI
         private readonly IContainerProvider _containerProvider;
         private readonly Window _currentWindow;
-        private readonly IUserService _userService;
         private readonly IRegionManager _regionManager;
 
 
@@ -31,7 +30,7 @@ namespace KAF.UI.ViewModels
         private readonly IDialogService _dialogService;
 
 
-        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager, IAuthApiClient authApiClient)
+        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IDialogService dialogService, IRegionManager regionManager, IAuthApiClient authApiClient)
         {
             Title = "User Login";
             _containerProvider = containerProvider;
@@ -46,7 +45,6 @@ namespace KAF.UI.ViewModels
 #endif
 
             LoginCommand = new DelegateCommand<User>(ExecuteLoginCommand, CanExecuteLogin);
-            _userService = userService;
 
             _dialogService = dialogService;
             _regionManager = regionManager;
@@ -66,7 +64,7 @@ namespace KAF.UI.ViewModels
             //Apply Login Logic
             // Validate user credentials (this is just an example)
 
-            var loginResponse = await authApiClient.LoginAsync (new LoginRequest()
+            var loginResponse = await authApiClient.LoginAsync(new LoginRequest()
             {
                 UserName = login.UserName,
                 Password = login.Password
@@ -75,7 +73,14 @@ namespace KAF.UI.ViewModels
             {
 
                 //Add other Data
-                _userService.CurrentUser = loginResponse.AccessToken;
+                //_userService.CurrentUser = loginResponse.AccessToken;
+                ApplicationState.CurrentUser = new BDO.Core.DataAccessObjects.ExtendedEntities.AccessToken
+                {
+                    Token = loginResponse.AccessToken.Token,
+                    RefreshToken = loginResponse.AccessToken.RefreshToken,
+                    ExpiresIn = loginResponse.AccessToken.ExpiresIn,
+                };
+
 
                 Application.Current.Dispatcher.Invoke(() =>
                    {

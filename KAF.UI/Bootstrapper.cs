@@ -38,7 +38,6 @@ public class Bootstrapper : PrismBootstrapper
         //Register All Service
         // Register HttpClient (but we will configure it later)
         containerRegistry.RegisterInstance(new HttpClient());
-        containerRegistry.RegisterSingleton<IUserService, UserService>();
 
         // Read BaseUrl from configuration
         var apiSettings = new ApiSettings();

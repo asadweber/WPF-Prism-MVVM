@@ -17,25 +17,23 @@ namespace KAF.UI.Views
 
         private readonly IContainerProvider _containerProvider;
         private readonly Window _currentWindow;
-        private readonly IUserService _userService;
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
 
         private readonly IAuthApiClient _authApiClient;
 
         public LoginWindow(IContainerProvider containerProvider, Window currentWindow,
-            IUserService userService, IRegionManager regionManager, IDialogService dialogService, IAuthApiClient authApiClient)
+          IRegionManager regionManager, IDialogService dialogService, IAuthApiClient authApiClient)
         {
             InitializeComponent();
 
             _containerProvider = containerProvider;
             _currentWindow = currentWindow;
-            _userService = userService;
             _regionManager = regionManager;
             _dialogService = dialogService;
             _authApiClient = authApiClient;
 
-            loginViewModel = new LoginViewModel(containerProvider, currentWindow, _userService, dialogService, regionManager,_authApiClient);
+            loginViewModel = new LoginViewModel(containerProvider, currentWindow, dialogService, regionManager,_authApiClient);
             DataContext = loginViewModel;
         }
 

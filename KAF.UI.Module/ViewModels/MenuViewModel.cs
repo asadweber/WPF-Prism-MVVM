@@ -11,7 +11,6 @@ namespace KAF.UI.Module.ViewModels
 {
     public class MenuViewModel : BaseViewModel
     {
-        private readonly IUserService _userService;
 
         private readonly IRegionManager _regionManager;
 
@@ -24,10 +23,9 @@ namespace KAF.UI.Module.ViewModels
             set => SetProperty(ref _selectedItem, value);
         }
 
-        public MenuViewModel(IUserService userService, IRegionManager regionManager)
+        public MenuViewModel(IRegionManager regionManager)
         {
-            _userService = userService;
-            MenuItems = new ObservableCollection<MenuItemModel>();
+                MenuItems = new ObservableCollection<MenuItemModel>();
             GenerateMockMenu();
             _regionManager = regionManager;
         }
