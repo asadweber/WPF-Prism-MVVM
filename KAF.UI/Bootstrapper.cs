@@ -33,18 +33,11 @@ public class Bootstrapper : PrismBootstrapper
 
         // Register IConfiguration for dependency injection
         containerRegistry.RegisterInstance<IConfiguration>(Configuration);
-
-
-
         containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
-
-
+       
         //Register All Service
-
-
         // Register HttpClient (but we will configure it later)
         containerRegistry.RegisterInstance(new HttpClient());
-
         containerRegistry.RegisterSingleton<IUserService, UserService>();
 
         // Read BaseUrl from configuration
