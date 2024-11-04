@@ -6,6 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="Extended.Wpf.Toolkit" Version="$(ExtendedWpfToolkitVersion)" />
 		<PackageReference Include="Prism.Core" Version="$(PrismCoreVersion)" />
 		<PackageReference Include="Prism.Unity" Version="$(PrismUnityVersion)" />

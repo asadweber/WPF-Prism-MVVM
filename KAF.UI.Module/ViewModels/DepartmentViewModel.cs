@@ -1,4 +1,5 @@
-﻿using BDO.Model;
+﻿using AutoMapper;
+using BDO.Model;
 using KAF.Service.Proxy.Client;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Department = BDO.Model.Department;
 
@@ -23,6 +25,8 @@ namespace KAF.UI.Module.ViewModels
         private readonly IDialogService _dialogService;
         private readonly IEventAggregator _eventAggregator;
         private readonly IDepartmentApiClient _departmentService;
+        private readonly HttpClient _httpClient;
+
         #endregion
 
         #region Command
@@ -61,11 +65,19 @@ namespace KAF.UI.Module.ViewModels
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
         /// <param name="eventAggregation"></param>
-        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator, IDepartmentApiClient departmentService)
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService,
+            IEventAggregator eventAggregator,
+            HttpClient httpClient,
+            IDepartmentApiClient departmentService)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
             _eventAggregator = eventAggregator;
+
+            _httpClient = httpClient;
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ApplicationState.CurrentUser.Token);
+
+
             _departmentService = departmentService;
 
             CurrentDepartment = new Department();
@@ -81,7 +93,6 @@ namespace KAF.UI.Module.ViewModels
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
-
         }
 
 
@@ -110,8 +121,8 @@ namespace KAF.UI.Module.ViewModels
             IsBusy = true;
             try
             {
-                var list=await _departmentService.GetAllDepartmentAsync() as List<Department>;
-                DepartmentList = new ObservableCollection<Department>(list);
+                var list = await _departmentService.GetAllDepartmentAsync();
+                //DepartmentList = new ObservableCollection<Department>();
             }
             finally
             {
@@ -150,8 +161,8 @@ namespace KAF.UI.Module.ViewModels
 
         }
 
-      
-        
+
+
 
         private void ExecuteUpdateCommand()
         {
