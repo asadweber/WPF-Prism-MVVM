@@ -1,3 +1,4 @@
+using AutoMapper;
 using KAF.UI.Common.View;
 using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
@@ -26,7 +27,17 @@ namespace KAF.UI.Module
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
-        {       
+        {
+            // Register AutoMapper with profiles
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<AutoMapperProfile>(); // Add the AutoMapper profile here
+            });
+
+            // Register the mapper as a singleton
+            containerRegistry.RegisterInstance<IMapper>(config.CreateMapper());
+
+
             // Register the Event Aggregator
             containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
 

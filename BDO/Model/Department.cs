@@ -7,18 +7,11 @@ namespace BDO.Model
         private long? _departmentCode;
         private string _departmentName;
 
-
         [Required(ErrorMessage = "Department Code is required.")]
         public long? DepartmentCode
         {
             get => _departmentCode;
-
-            set
-            {
-                SetProperty(ref _departmentCode, value);
-                RaisePropertyChanged(nameof(DepartmentCode));
-                ValidateProperty(value, nameof(DepartmentCode));
-            }
+            set => _departmentCode = value;
 
         }
 
@@ -27,17 +20,9 @@ namespace BDO.Model
         public string DepartmentName
         {
             get => _departmentName;
-            set
-            {
-
-                SetProperty(ref _departmentName, value);
-                RaisePropertyChanged(nameof(DepartmentName));
-                ValidateProperty(value, nameof(DepartmentName));
-            }
+            set => _departmentName = value;
 
         }
-
-
 
     }
 }

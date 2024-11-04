@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BDO.Model;
 using KAF.Service.Proxy.Client;
+using KAF.Service.Proxy.Dto;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Module.View;
@@ -14,7 +15,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Department = BDO.Model.Department;
 
 namespace KAF.UI.Module.ViewModels
 {
@@ -27,6 +27,7 @@ namespace KAF.UI.Module.ViewModels
         private readonly IDepartmentApiClient _departmentService;
         private readonly HttpClient _httpClient;
 
+        private IMapper _mapper;
         #endregion
 
         #region Command
@@ -39,9 +40,9 @@ namespace KAF.UI.Module.ViewModels
         #endregion
 
         #region Field & Property
-        private Department _currentDepartment;
+        private DepartmentDto _currentDepartment;
 
-        public Department CurrentDepartment
+        public DepartmentDto CurrentDepartment
         {
             get { return _currentDepartment; }
             set
@@ -50,9 +51,9 @@ namespace KAF.UI.Module.ViewModels
             }
         }
 
-        private ObservableCollection<Department> _departmentList;
+        private ObservableCollection<DepartmentDto> _departmentList;
 
-        public ObservableCollection<Department> DepartmentList
+        public ObservableCollection<DepartmentDto> DepartmentList
         {
             get { return _departmentList; }
             set { SetProperty(ref _departmentList, value); }
@@ -68,7 +69,7 @@ namespace KAF.UI.Module.ViewModels
         public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService,
             IEventAggregator eventAggregator,
             HttpClient httpClient,
-            IDepartmentApiClient departmentService)
+            IDepartmentApiClient departmentService, IMapper mapper)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
@@ -80,7 +81,7 @@ namespace KAF.UI.Module.ViewModels
 
             _departmentService = departmentService;
 
-            CurrentDepartment = new Department();
+            CurrentDepartment = new DepartmentDto();
             CurrentDepartment.ErrorsChanged += OnDepartmentErrorsChanged;
 
             SaveCommand = new DelegateCommand(ExecuteSaveCommand, CanSaveExecute)
@@ -93,6 +94,7 @@ namespace KAF.UI.Module.ViewModels
             CloseCommand = new DelegateCommand(() => ExecuteCloseCommand());
             LoadDataCommand = new DelegateCommand(async () => await LoadDataAsync(), () => !IsBusy);
             LoadDataCommand.Execute();
+            _mapper = mapper;
         }
 
 
@@ -122,7 +124,7 @@ namespace KAF.UI.Module.ViewModels
             try
             {
                 var list = await _departmentService.GetAllDepartmentAsync();
-                //DepartmentList = new ObservableCollection<Department>();
+                DepartmentList = new ObservableCollection<DepartmentDto>(_mapper.Map<List<DepartmentDto>>(list));
             }
             finally
             {
@@ -179,7 +181,7 @@ namespace KAF.UI.Module.ViewModels
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
 
-        private void OnRowSelected(Department department)
+        private void OnRowSelected(DepartmentDto department)
         {
 
         }
