@@ -10,7 +10,7 @@ namespace KAF.UI.Service.Services
     {
 
         private readonly HttpClient _httpClient;
-        private readonly IUserService userService;
+        private readonly IUserService _userService;
         private readonly IDepartmentApiClient _departmentApiClient;
 
 
@@ -18,12 +18,12 @@ namespace KAF.UI.Service.Services
         {
             this._departmentApiClient = departmentApiClient;
             _httpClient = httpClient;
-            this.userService = userService;
+            _userService = userService;
         }
 
-        public BDO.Model.Department GetDepartment(int id)
+        public Department GetDepartment(int id)
         {
-            Department department = new BDO.Model.Department();
+            Department department = new Department();
             return department;
         }
 
@@ -33,7 +33,7 @@ namespace KAF.UI.Service.Services
             //Let assume data load take some time
             //await Task.Delay(300);
 
-            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", this.userService.CurrentUser.Token);
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _userService.CurrentUser.Token);
 
             var data = await _departmentApiClient.GetAllDepartmentAsync();
 
