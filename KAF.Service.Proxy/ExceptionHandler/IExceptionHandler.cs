@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KAF.Service.Proxy
+namespace KAF.UI.Common.ExceptionHandler
 {
     public interface IExceptionHandler
     {
         void Handle(Exception exception);
+
     }
 }

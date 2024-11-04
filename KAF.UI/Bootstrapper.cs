@@ -1,6 +1,7 @@
 ﻿using KAF.Service.Proxy;
 using KAF.Service.Proxy.Client;
 using KAF.UI;
+using KAF.UI.Common.ExceptionHandler;
 using KAF.UI.Common.Helper;
 using KAF.UI.Module;
 using KAF.UI.ViewModels;
@@ -31,6 +32,11 @@ public class Bootstrapper : PrismBootstrapper
 
     private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
     {
+        if (e.Exception is ApiException apiexception)
+        {
+            // HandleException(exception);
+        }
+
         // Handle UI thread exceptions
         _exceptionHandler?.Handle(e.Exception);
         e.Handled = true; // Prevent application from crashing
