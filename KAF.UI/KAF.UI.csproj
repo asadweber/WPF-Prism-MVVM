@@ -30,8 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BDO\BDO.csproj" />
     <ProjectReference Include="..\CLL\CLL.csproj" />
+    <ProjectReference Include="..\KAF.Service.Proxy.DTO\KAF.Service.Proxy.Dto.csproj" />
     <ProjectReference Include="..\KAF.Service.Proxy\KAF.Service.Proxy.csproj" />
     <ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
     <ProjectReference Include="..\KAF.UI.Module\KAF.UI.Module.csproj" />

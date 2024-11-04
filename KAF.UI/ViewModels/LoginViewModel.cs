@@ -1,5 +1,5 @@
-﻿using BDO.Model;
-using KAF.Service.Proxy.Client;
+﻿using KAF.Service.Proxy.Client;
+using KAF.Service.Proxy.Dto;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Views;
@@ -10,7 +10,7 @@ namespace KAF.UI.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         // Command Property
-        public DelegateCommand<User> LoginCommand { get; private set; }
+        public DelegateCommand<UserDto> LoginCommand { get; private set; }
 
         //DI
         private readonly IContainerProvider _containerProvider;
@@ -22,8 +22,8 @@ namespace KAF.UI.ViewModels
 
 
 
-        private User _currentUser;
-        public User CurrentUser { get => _currentUser; set => SetProperty(ref _currentUser, value); }
+        private UserDto _currentUser;
+        public UserDto CurrentUser { get => _currentUser; set => SetProperty(ref _currentUser, value); }
 
 
         private readonly IDialogService _dialogService;
@@ -36,14 +36,14 @@ namespace KAF.UI.ViewModels
             _currentWindow = currentWindow;
 
 
-            _currentUser = new User();
+            _currentUser = new UserDto();
 
 #if DEBUG
             _currentUser.UserName = "admin";
             _currentUser.Password = "admin";
 #endif
 
-            LoginCommand = new DelegateCommand<User>(ExecuteLoginCommand, CanExecuteLogin);
+            LoginCommand = new DelegateCommand<UserDto>(ExecuteLoginCommand, CanExecuteLogin);
 
             _dialogService = dialogService;
             _regionManager = regionManager;
@@ -51,13 +51,13 @@ namespace KAF.UI.ViewModels
         }
 
         // Logic to determine whether the command can be executed (can enable/disable button)
-        private bool CanExecuteLogin(User login)
+        private bool CanExecuteLogin(UserDto login)
         {
             // You can add any condition here, but let's keep it always true for simplicity
             return true;
         }
 
-        private async void ExecuteLoginCommand(User login)
+        private async void ExecuteLoginCommand(UserDto login)
         {
 
             //Apply Login Logic
@@ -73,7 +73,7 @@ namespace KAF.UI.ViewModels
 
                 //Add other Data
                 //_userService.CurrentUser = loginResponse.AccessToken;
-                ApplicationState.CurrentUser = new BDO.Core.DataAccessObjects.ExtendedEntities.AccessToken
+                ApplicationState.CurrentUser = new AccessTokenDto
                 {
                     Token = loginResponse.AccessToken.Token,
                     RefreshToken = loginResponse.AccessToken.RefreshToken,

@@ -788,7 +788,7 @@ namespace KAF.Service.Proxy.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Department : BaseModel
+    public partial class Department : BaseEntity
     {
         private long _departmentCode;
         private string _departmentName;
@@ -813,23 +813,442 @@ namespace KAF.Service.Proxy.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class BaseModel : BindableBase
+    public abstract partial class BaseEntity : Prism.Mvvm.BindableBase
     {
-        private bool _hasErrors;
+        private long? _applicantMaritalstatus;
+        private string _strModelPrimaryKey;
+        private string _strModelForigenKey;
+        private string _strModelForigenKey1;
+        private string _strModelForigenKey2;
+        private SecurityCapsule _baseSecurityParam;
+        private string _strCommonSerachParam;
+        private string _status;
+        private string _strMasterID;
+        private string _strDetailID;
+        private string _code;
+        private string _sortExpression;
+        private long _totalRecord;
+        private int _pageSize;
+        private int _currentPage;
+        private long _rowNumber;
+        private EntityState _currentState;
+        private long _returN_KEY;
+        private string _selectedculture;
+        private string _selectedvalue;
+        private string _selectedtext;
+        private string _datatablebuttonscode;
+        private string _controllerName;
+        private string _actionName;
 
-        [Newtonsoft.Json.JsonProperty("hasErrors", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool HasErrors
+        [Newtonsoft.Json.JsonProperty("applicantMaritalstatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? ApplicantMaritalstatus
         {
-            get { return _hasErrors; }
+            get { return _applicantMaritalstatus; }
 
-            set { SetProperty(ref _hasErrors, value); }
+            set { SetProperty(ref _applicantMaritalstatus, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strModelPrimaryKey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrModelPrimaryKey
+        {
+            get { return _strModelPrimaryKey; }
+
+            set { SetProperty(ref _strModelPrimaryKey, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strModelForigenKey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrModelForigenKey
+        {
+            get { return _strModelForigenKey; }
+
+            set { SetProperty(ref _strModelForigenKey, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strModelForigenKey1", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrModelForigenKey1
+        {
+            get { return _strModelForigenKey1; }
+
+            set { SetProperty(ref _strModelForigenKey1, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strModelForigenKey2", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrModelForigenKey2
+        {
+            get { return _strModelForigenKey2; }
+
+            set { SetProperty(ref _strModelForigenKey2, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("baseSecurityParam", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SecurityCapsule BaseSecurityParam
+        {
+            get { return _baseSecurityParam; }
+
+            set { SetProperty(ref _baseSecurityParam, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strCommonSerachParam", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrCommonSerachParam
+        {
+            get { return _strCommonSerachParam; }
+
+            set { SetProperty(ref _strCommonSerachParam, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Status
+        {
+            get { return _status; }
+
+            set { SetProperty(ref _status, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strMasterID", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrMasterID
+        {
+            get { return _strMasterID; }
+
+            set { SetProperty(ref _strMasterID, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("strDetailID", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string StrDetailID
+        {
+            get { return _strDetailID; }
+
+            set { SetProperty(ref _strDetailID, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("code", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Code
+        {
+            get { return _code; }
+
+            set { SetProperty(ref _code, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("sortExpression", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string SortExpression
+        {
+            get { return _sortExpression; }
+
+            set { SetProperty(ref _sortExpression, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("totalRecord", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long TotalRecord
+        {
+            get { return _totalRecord; }
+
+            set { SetProperty(ref _totalRecord, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("pageSize", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int PageSize
+        {
+            get { return _pageSize; }
+
+            set { SetProperty(ref _pageSize, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("currentPage", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int CurrentPage
+        {
+            get { return _currentPage; }
+
+            set { SetProperty(ref _currentPage, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("rowNumber", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long RowNumber
+        {
+            get { return _rowNumber; }
+
+            set { SetProperty(ref _rowNumber, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("currentState", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public EntityState CurrentState
+        {
+            get { return _currentState; }
+
+            set { SetProperty(ref _currentState, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("returN_KEY", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long ReturN_KEY
+        {
+            get { return _returN_KEY; }
+
+            set { SetProperty(ref _returN_KEY, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("selectedculture", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Selectedculture
+        {
+            get { return _selectedculture; }
+
+            set { SetProperty(ref _selectedculture, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("selectedvalue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Selectedvalue
+        {
+            get { return _selectedvalue; }
+
+            set { SetProperty(ref _selectedvalue, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("selectedtext", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Selectedtext
+        {
+            get { return _selectedtext; }
+
+            set { SetProperty(ref _selectedtext, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("datatablebuttonscode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Datatablebuttonscode
+        {
+            get { return _datatablebuttonscode; }
+
+            set { SetProperty(ref _datatablebuttonscode, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("controllerName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ControllerName
+        {
+            get { return _controllerName; }
+
+            set { SetProperty(ref _controllerName, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("actionName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ActionName
+        {
+            get { return _actionName; }
+
+            set { SetProperty(ref _actionName, value); }
         }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public abstract partial class BindableBase : Prism.Mvvm.BindableBase
+    public partial class SecurityCapsule : Prism.Mvvm.BindableBase
     {
+        private long? _masteruserid;
+        private bool? _isauthenticated;
+        private string _note;
+        private string _transid;
+        private System.Guid? _userid;
+        private long? _ts;
+        private System.DateTimeOffset? _updateddate;
+        private System.DateTimeOffset? _createddate;
+        private string _updatedbyusername;
+        private string _createdbyusername;
+        private string _email;
+        private string _sessionid;
+        private string _hitfrom;
+        private string _pageurl;
+        private string _controllername;
+        private string _username;
+        private string _macaddress;
+        private string _ipaddress;
+        private string _actioname;
+        private string _usertoken;
+        private System.DateTimeOffset? _tokenValidFromTime;
+        private System.DateTimeOffset? _tokenValidToTime;
+
+        [Newtonsoft.Json.JsonProperty("masteruserid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? Masteruserid
+        {
+            get { return _masteruserid; }
+
+            set { SetProperty(ref _masteruserid, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("isauthenticated", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool? Isauthenticated
+        {
+            get { return _isauthenticated; }
+
+            set { SetProperty(ref _isauthenticated, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("note", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Note
+        {
+            get { return _note; }
+
+            set { SetProperty(ref _note, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("transid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Transid
+        {
+            get { return _transid; }
+
+            set { SetProperty(ref _transid, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("userid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Guid? Userid
+        {
+            get { return _userid; }
+
+            set { SetProperty(ref _userid, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("ts", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? Ts
+        {
+            get { return _ts; }
+
+            set { SetProperty(ref _ts, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("updateddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Updateddate
+        {
+            get { return _updateddate; }
+
+            set { SetProperty(ref _updateddate, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("createddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? Createddate
+        {
+            get { return _createddate; }
+
+            set { SetProperty(ref _createddate, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("updatedbyusername", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Updatedbyusername
+        {
+            get { return _updatedbyusername; }
+
+            set { SetProperty(ref _updatedbyusername, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("createdbyusername", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Createdbyusername
+        {
+            get { return _createdbyusername; }
+
+            set { SetProperty(ref _createdbyusername, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Email
+        {
+            get { return _email; }
+
+            set { SetProperty(ref _email, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("sessionid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Sessionid
+        {
+            get { return _sessionid; }
+
+            set { SetProperty(ref _sessionid, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("hitfrom", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Hitfrom
+        {
+            get { return _hitfrom; }
+
+            set { SetProperty(ref _hitfrom, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("pageurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Pageurl
+        {
+            get { return _pageurl; }
+
+            set { SetProperty(ref _pageurl, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("controllername", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Controllername
+        {
+            get { return _controllername; }
+
+            set { SetProperty(ref _controllername, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("username", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Username
+        {
+            get { return _username; }
+
+            set { SetProperty(ref _username, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("macaddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Macaddress
+        {
+            get { return _macaddress; }
+
+            set { SetProperty(ref _macaddress, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("ipaddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Ipaddress
+        {
+            get { return _ipaddress; }
+
+            set { SetProperty(ref _ipaddress, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("actioname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Actioname
+        {
+            get { return _actioname; }
+
+            set { SetProperty(ref _actioname, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("usertoken", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Usertoken
+        {
+            get { return _usertoken; }
+
+            set { SetProperty(ref _usertoken, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("tokenValidFromTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? TokenValidFromTime
+        {
+            get { return _tokenValidFromTime; }
+
+            set { SetProperty(ref _tokenValidFromTime, value); }
+        }
+
+        [Newtonsoft.Json.JsonProperty("tokenValidToTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset? TokenValidToTime
+        {
+            get { return _tokenValidToTime; }
+
+            set { SetProperty(ref _tokenValidToTime, value); }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum EntityState
+    {
+
+        Unchanged = 0,
+
+        Added = 1,
+
+        Changed = 2,
+
+        Deleted = 3,
 
     }
 

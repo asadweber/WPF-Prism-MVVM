@@ -15,7 +15,7 @@ namespace KAF.UI.Module
         {
             // Configure your mappings here
             CreateMap<Department, DepartmentDto>();
-            CreateMap<Department, DepartmentDto>();
+            CreateMap<AccessToken, AccessTokenDto>();
 
             // Add more mappings as needed
         }

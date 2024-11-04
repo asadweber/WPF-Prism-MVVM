@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BDO.Model;
 using KAF.Service.Proxy.Client;
 using KAF.Service.Proxy.Dto;
 using KAF.UI.Common;

@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BDO.Core.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace BDO.Model
 {
-    public class Department : BaseModel
+    public class Department:BaseEntity
     {
         private long? _departmentCode;
         private string _departmentName;
