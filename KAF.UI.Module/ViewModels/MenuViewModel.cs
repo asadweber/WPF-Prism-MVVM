@@ -1,4 +1,4 @@
-﻿using BDO.Model;
+﻿using KAF.Service.Proxy.Dto;
 using KAF.UI.Common;
 using KAF.UI.Module.View;
 using Prism.Commands;
@@ -13,10 +13,10 @@ namespace KAF.UI.Module.ViewModels
 
         private readonly IRegionManager _regionManager;
 
-        public ObservableCollection<MenuItemModel> MenuItems { get; private set; }
+        public ObservableCollection<MenuItemModelDto> MenuItems { get; private set; }
        
-        private MenuItemModel _selectedItem;
-        public MenuItemModel SelectedItem
+        private MenuItemModelDto _selectedItem;
+        public MenuItemModelDto SelectedItem
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
@@ -24,30 +24,30 @@ namespace KAF.UI.Module.ViewModels
 
         public MenuViewModel(IRegionManager regionManager)
         {
-                MenuItems = new ObservableCollection<MenuItemModel>();
+                MenuItems = new ObservableCollection<MenuItemModelDto>();
             GenerateMockMenu();
             _regionManager = regionManager;
         }
 
         private void GenerateMockMenu()
         {
-            MenuItems = new ObservableCollection<MenuItemModel>
+            MenuItems = new ObservableCollection<MenuItemModelDto>
         {
-                new MenuItemModel
+                new MenuItemModelDto
             {
                 Header = "Home",
                 Command = new DelegateCommand(()=>ExecuteNew(typeof(HomeView).Name)),
-                SubItems = new List<MenuItemModel> ()
+                SubItems = new List<MenuItemModelDto> ()
 
             },
-            new MenuItemModel
+            new MenuItemModelDto
             {
                 Header = "General",
                 Command = new DelegateCommand(()=>ExecuteEmptyCommand(string.Empty)),
-                SubItems = new List<MenuItemModel>
+                SubItems = new List<MenuItemModelDto>
                 {
 
-                    new MenuItemModel { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew(typeof(DepartmentView).Name)) },
+                    new MenuItemModelDto { Header = "Department", Command = new DelegateCommand(()=>ExecuteNew(typeof(DepartmentView).Name)) },
                 }
             },
         };

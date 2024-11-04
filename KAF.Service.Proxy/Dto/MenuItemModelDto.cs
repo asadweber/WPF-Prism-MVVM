@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BDO.Model
+namespace KAF.Service.Proxy.Dto
 {
-    public class MenuItemModel : BaseModel
+    public class MenuItemModelDto : BaseModel
     {
         private int _id;
         private string _header;
@@ -30,6 +30,6 @@ namespace BDO.Model
             get => _command;
             set => SetProperty(ref _command, value);
         }
-        public List<MenuItemModel> SubItems { get; set; } = new List<MenuItemModel>();
+        public List<MenuItemModelDto> SubItems { get; set; } = new List<MenuItemModelDto>();
     }
 }
