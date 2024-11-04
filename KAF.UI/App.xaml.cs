@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using KAF.Service.Proxy;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.Windows;
 namespace KAF.UI
@@ -14,6 +15,6 @@ namespace KAF.UI
             var bootstrapper = new Bootstrapper();
             bootstrapper.Run();
         }
-
+        
     }
 }

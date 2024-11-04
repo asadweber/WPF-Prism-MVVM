@@ -122,8 +122,8 @@ namespace KAF.UI.Module.ViewModels
             IsBusy = true;
             try
             {
-                var list = await _departmentService.GetAllDepartmentAsync();
-                DepartmentList = new ObservableCollection<DepartmentDto>(_mapper.Map<List<DepartmentDto>>(list));
+                DepartmentList = new ObservableCollection<DepartmentDto>(_mapper.Map<List<DepartmentDto>>(await _departmentService.GetAllDepartmentAsync()));
+                CurrentDepartment=new DepartmentDto();
             }
             finally
             {
@@ -180,10 +180,7 @@ namespace KAF.UI.Module.ViewModels
             _regionManager.RequestNavigate(RegionNameConfig.ContentRegionName, typeof(HomeView).Name);
         }
 
-        private void OnRowSelected(DepartmentDto department)
-        {
-
-        }
+        
         #endregion
     }
 }
