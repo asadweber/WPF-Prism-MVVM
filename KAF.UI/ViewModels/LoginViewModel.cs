@@ -62,43 +62,40 @@ namespace KAF.UI.ViewModels
 
             //Apply Login Logic
             // Validate user credentials (this is just an example)
-
-            var loginResponse = await authApiClient.LoginAsync(new LoginRequest()
+            try
             {
-                UserName = login.UserName,
-                Password = login.Password
-            });
-            if (loginResponse.Success)
-            {
-
-                //Add other Data
-                //_userService.CurrentUser = loginResponse.AccessToken;
-                ApplicationState.CurrentUser = new AccessTokenDto
+                var loginResponse = await authApiClient.LoginAsync(new LoginRequest()
                 {
-                    Token = loginResponse.AccessToken.Token,
-                    RefreshToken = loginResponse.AccessToken.RefreshToken,
-                    ExpiresIn = loginResponse.AccessToken.ExpiresIn,
-                };
+                    UserName = login.UserName,
+                    Password = login.Password
+                });
+                if (loginResponse.Success)
+                {
+                    ApplicationState.CurrentUser = new AccessTokenDto
+                    {
+                        Token = loginResponse.AccessToken.Token,
+                        RefreshToken = loginResponse.AccessToken.RefreshToken,
+                        ExpiresIn = loginResponse.AccessToken.ExpiresIn,
+                    };
+                    Application.Current.Dispatcher.Invoke(() =>
+                       {
+                           // Close the login window
+                           var loginWindow = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
+                           loginWindow?.Hide();
 
+                           // Create and show the master window
+                           var masterWindow = _containerProvider.Resolve<MasterWindow>();
 
-                Application.Current.Dispatcher.Invoke(() =>
-                   {
-                       // Close the login window
-                       var loginWindow = Application.Current.Windows.OfType<LoginWindow>().FirstOrDefault();
-                       loginWindow?.Hide();
+                           // Ensure the RegionManager is associated with MainShell
+                           RegionManager.SetRegionManager(masterWindow, _regionManager);
 
-                       // Create and show the master window
-                       var masterWindow = _containerProvider.Resolve<MasterWindow>();
-
-                       // Ensure the RegionManager is associated with MainShell
-                       RegionManager.SetRegionManager(masterWindow, _regionManager);
-
-                       // Optionally, you can set the master window as the application main window
-                       Application.Current.MainWindow = masterWindow;
-                       Application.Current.MainWindow.Show();
-                   });
+                           // Optionally, you can set the master window as the application main window
+                           Application.Current.MainWindow = masterWindow;
+                           Application.Current.MainWindow.Show();
+                       });
+                }
             }
-            else
+            catch (Exception)
             {
                 var parameters = new DialogParameters
                     {
@@ -107,14 +104,6 @@ namespace KAF.UI.ViewModels
 
                 _dialogService.ShowDialog(typeof(DialogView).Name, parameters, r =>
                 {
-                    if (r.Result == ButtonResult.OK)
-                    {
-                        // Handle OK result
-                    }
-                    else if (r.Result == ButtonResult.Cancel)
-                    {
-                        // Handle Cancel result
-                    }
                 });
             }
 
