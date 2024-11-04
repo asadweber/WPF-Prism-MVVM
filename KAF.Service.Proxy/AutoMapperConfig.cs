@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KAF.UI.Module
+namespace KAF.Service.Proxy
 {
     public class AutoMapperProfile : Profile
     {

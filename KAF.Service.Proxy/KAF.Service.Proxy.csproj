@@ -23,6 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="NSwag.Generation" Version="14.1.0" />
 		<PackageReference Include="NSwag.MSBuild" Version="14.1.0">
 			<PrivateAssets>all</PrivateAssets>

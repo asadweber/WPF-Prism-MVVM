@@ -1,4 +1,5 @@
 using AutoMapper;
+using KAF.Service.Proxy;
 using KAF.UI.Common.View;
 using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
