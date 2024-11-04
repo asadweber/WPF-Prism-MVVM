@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
-   
+   		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -54,6 +54,12 @@
 		<Compile Update="**\*Extended.cs">
 			<DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Extended', '.cs'))</DependentUpon>
 		</Compile>
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>
