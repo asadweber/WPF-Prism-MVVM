@@ -2,9 +2,6 @@ using KAF.UI.Common.View;
 using KAF.UI.Common.ViewModels;
 using KAF.UI.Module.View;
 using KAF.UI.Module.ViewModels;
-using KAF.UI.Service;
-using KAF.UI.Service.Interface;
-using KAF.UI.Service.Services;
 using Prism.Events;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -34,8 +31,6 @@ namespace KAF.UI.Module
             containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
 
             //Register All Service
-            containerRegistry.Register<IDepartmentService, DepartmentService>();
-
 
             // Register the UserControl and its ViewModel as a dialog
             containerRegistry.RegisterDialog<DialogView, DialogViewModel>();

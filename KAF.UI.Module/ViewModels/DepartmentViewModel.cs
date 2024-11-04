@@ -1,16 +1,18 @@
 ﻿using BDO.Model;
+using KAF.Service.Proxy.Client;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Module.View;
-using KAF.UI.Service.Interface;
 using Prism.Commands;
 using Prism.Dialogs;
 using Prism.Events;
 using Prism.Navigation.Regions;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using Department = BDO.Model.Department;
 
 namespace KAF.UI.Module.ViewModels
 {
@@ -20,7 +22,7 @@ namespace KAF.UI.Module.ViewModels
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
         private readonly IEventAggregator _eventAggregator;
-        private readonly IDepartmentService _departmentService;
+        private readonly IDepartmentApiClient _departmentService;
         #endregion
 
         #region Command
@@ -59,7 +61,7 @@ namespace KAF.UI.Module.ViewModels
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
         /// <param name="eventAggregation"></param>
-        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator, IDepartmentService departmentService)
+        public DepartmentViewModel(IRegionManager regionManager, IDialogService dialogService, IEventAggregator eventAggregator, IDepartmentApiClient departmentService)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
@@ -108,7 +110,8 @@ namespace KAF.UI.Module.ViewModels
             IsBusy = true;
             try
             {
-                DepartmentList = new ObservableCollection<Department>(await _departmentService.GetDepartments());
+                var list=await _departmentService.GetAllDepartmentAsync() as List<Department>;
+                DepartmentList = new ObservableCollection<Department>(list);
             }
             finally
             {

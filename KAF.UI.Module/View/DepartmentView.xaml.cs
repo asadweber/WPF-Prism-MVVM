@@ -1,5 +1,4 @@
 ﻿using KAF.UI.Module.ViewModels;
-using KAF.UI.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

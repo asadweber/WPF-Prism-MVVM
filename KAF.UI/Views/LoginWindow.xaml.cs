@@ -1,5 +1,4 @@
 ﻿using KAF.Service.Proxy.Client;
-using KAF.UI.Service.Interface;
 using KAF.UI.ViewModels;
 using System.Text;
 using System.Windows;

@@ -2,7 +2,6 @@
 using KAF.Service.Proxy.Client;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
-using KAF.UI.Service.Interface;
 using KAF.UI.Views;
 using System.Windows;
 

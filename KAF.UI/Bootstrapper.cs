@@ -2,8 +2,6 @@
 using KAF.UI;
 using KAF.UI.Common.Helper;
 using KAF.UI.Module;
-using KAF.UI.Service.Interface;
-using KAF.UI.Service.Services;
 using KAF.UI.ViewModels;
 using KAF.UI.Views;
 using Microsoft.Extensions.Configuration;

@@ -21,16 +21,25 @@ namespace WebApi.Controllers
 
     public class DepartmentController : ControllerBase
     {
-       /// <summary>
+        /// <summary>
         /// GetAllPagedGen_Faq
         /// </summary>
         /// <returns></returns>
         [HttpPost("GetAllDepartment")]
         [ServiceFilter(typeof(ApiSecurityFillerAttribute))]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Department))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Department>))]
         public async Task<ActionResult> GetAllDepartment()
         {
-            return Ok(new Department());
-        }             
+
+            List<Department> list = new List<Department>
+                    {
+                        new Department { DepartmentCode = 1, DepartmentName = "HR" },
+                        new Department { DepartmentCode = 2, DepartmentName = "IT" },
+                        new Department { DepartmentCode = 3, DepartmentName = "Finance" }
+                    };
+
+
+            return Ok(list);
+        }
     }
 }
