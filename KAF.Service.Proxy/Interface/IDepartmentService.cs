@@ -1,5 +1,6 @@
 ﻿
-using KAF.Service.Proxy.Client;
+
+using BDO.Model;
 
 namespace KAF.UI.Service.Interface
 {

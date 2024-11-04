@@ -1,4 +1,5 @@
-﻿using KAF.UI.Service.Interface;
+﻿using KAF.Service.Proxy.Client;
+using KAF.UI.Service.Interface;
 using KAF.UI.ViewModels;
 using System.Text;
 using System.Windows;
@@ -20,8 +21,10 @@ namespace KAF.UI.Views
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
 
-        public LoginWindow(IContainerProvider containerProvider, Window currentWindow, 
-            IUserService userService, IRegionManager regionManager, IDialogService dialogService)
+        private readonly IAuthApiClient _authApiClient;
+
+        public LoginWindow(IContainerProvider containerProvider, Window currentWindow,
+            IUserService userService, IRegionManager regionManager, IDialogService dialogService, IAuthApiClient authApiClient)
         {
             InitializeComponent();
 
@@ -30,7 +33,9 @@ namespace KAF.UI.Views
             _userService = userService;
             _regionManager = regionManager;
             _dialogService = dialogService;
-            loginViewModel = new LoginViewModel(containerProvider, currentWindow, userService, dialogService, regionManager);
+            _authApiClient = authApiClient;
+
+            loginViewModel = new LoginViewModel(containerProvider, currentWindow, userService, dialogService, regionManager,_authApiClient);
             DataContext = loginViewModel;
         }
 

@@ -1,13 +1,29 @@
-﻿using KAF.Service.Proxy.Client;
+﻿using BDO.Model;
+using KAF.Service.Proxy.Client;
 using KAF.UI.Service.Interface;
+using System.Net.Http;
+using Department = BDO.Model.Department;
 
 namespace KAF.UI.Service.Services
 {
     public class DepartmentService : IDepartmentService
     {
-        public Department GetDepartment(int id)
+
+        private readonly HttpClient _httpClient;
+        private readonly IUserService userService;
+        private readonly IDepartmentApiClient _departmentApiClient;
+
+
+        public DepartmentService(HttpClient httpClient, IDepartmentApiClient departmentApiClient, IUserService userService)
         {
-            Department department = new Department();
+            this._departmentApiClient = departmentApiClient;
+            _httpClient = httpClient;
+            this.userService = userService;
+        }
+
+        public BDO.Model.Department GetDepartment(int id)
+        {
+            Department department = new BDO.Model.Department();
             return department;
         }
 
@@ -15,7 +31,15 @@ namespace KAF.UI.Service.Services
         {
             // Create a list of departments with sample data
             //Let assume data load take some time
-            await Task.Delay(300);
+            //await Task.Delay(300);
+
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", this.userService.CurrentUser.Token);
+
+            var data = await _departmentApiClient.GetAllDepartmentAsync();
+
+
+
+
             List<Department> list = new List<Department>
                     {
                         new Department { DepartmentCode = 1, DepartmentName = "HR" },
@@ -31,9 +55,6 @@ namespace KAF.UI.Service.Services
             throw new NotImplementedException();
         }
 
-        Task<List<Department>> IDepartmentService.GetDepartments()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

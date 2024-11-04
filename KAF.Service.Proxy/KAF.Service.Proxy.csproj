@@ -18,6 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\BDO\BDO.csproj" />
 		<ProjectReference Include="..\KAF.UI.Common\KAF.UI.Common.csproj" />
 	</ItemGroup>
 
@@ -34,8 +35,12 @@
 		<OutputType>Library</OutputType>
 	</PropertyGroup>
 
-	<Target Name="NSwag" AfterTargets="PostBuildEvent">
+	<!--<Target Name="NSwag" AfterTargets="PostBuildEvent">
 		<Exec Command="$(NSwagExe_Net60) run swagger/config.nswag" />
+	</Target>-->
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	  <Exec Command="$(NSwagExe_Net60) run swagger/config.nswag" />
 	</Target>
 
 

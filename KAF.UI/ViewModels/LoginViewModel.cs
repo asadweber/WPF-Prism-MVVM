@@ -1,4 +1,5 @@
 ﻿using BDO.Model;
+using KAF.Service.Proxy.Client;
 using KAF.UI.Common;
 using KAF.UI.Common.View;
 using KAF.UI.Service.Interface;
@@ -19,6 +20,8 @@ namespace KAF.UI.ViewModels
         private readonly IRegionManager _regionManager;
 
 
+        private readonly IAuthApiClient authApiClient;
+
 
 
         private User _currentUser;
@@ -28,7 +31,7 @@ namespace KAF.UI.ViewModels
         private readonly IDialogService _dialogService;
 
 
-        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager)
+        public LoginViewModel(IContainerProvider containerProvider, Window currentWindow, IUserService userService, IDialogService dialogService, IRegionManager regionManager, IAuthApiClient authApiClient)
         {
             Title = "User Login";
             _containerProvider = containerProvider;
@@ -47,6 +50,7 @@ namespace KAF.UI.ViewModels
 
             _dialogService = dialogService;
             _regionManager = regionManager;
+            this.authApiClient = authApiClient;
         }
 
         // Logic to determine whether the command can be executed (can enable/disable button)
@@ -61,17 +65,17 @@ namespace KAF.UI.ViewModels
 
             //Apply Login Logic
             // Validate user credentials (this is just an example)
-            
-            //var loginResponse = await _apiClient.LoginAsync(new LoginRequest()
-            //{
-            //    UserName = login.UserName,
-            //    Password = login.Password
-            //});
-            if(login.UserName=="admin")
+
+            var loginResponse = await authApiClient.LoginAsync (new LoginRequest()
+            {
+                UserName = login.UserName,
+                Password = login.Password
+            });
+            if (loginResponse.Success)
             {
 
                 //Add other Data
-                _userService.CurrentUser = login;
+                _userService.CurrentUser = loginResponse.AccessToken;
 
                 Application.Current.Dispatcher.Invoke(() =>
                    {

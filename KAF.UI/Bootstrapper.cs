@@ -53,8 +53,9 @@ public class Bootstrapper : PrismBootstrapper
 
 
         // Register the KafApiClient with a base URL
-        containerRegistry.Register<IAuthClient>(sp =>new AuthClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
-        containerRegistry.Register<IDepartmentClient>(sp =>new DepartmentClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
+        containerRegistry.Register<IAuthApiClient>(sp =>new AuthApiClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
+        containerRegistry.Register<IDepartmentApiClient>(sp =>new DepartmentApiClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
+
 
 
 
