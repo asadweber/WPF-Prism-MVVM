@@ -15,7 +15,7 @@ using System.Windows;
 
 public class Bootstrapper : PrismBootstrapper
 {
-    public IConfiguration Configuration { get; private set; }
+    public IConfiguration SettingConfiguration { get; private set; }
 
     private IExceptionHandler _exceptionHandler;
 
@@ -73,13 +73,13 @@ public class Bootstrapper : PrismBootstrapper
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-        Configuration = builder.Build();
+        SettingConfiguration = builder.Build();
 
 
         containerRegistry.RegisterSingleton<IExceptionHandler, ExceptionHandler>();
 
         // Register IConfiguration for dependency injection
-        containerRegistry.RegisterInstance<IConfiguration>(Configuration);
+        containerRegistry.RegisterInstance<IConfiguration>(SettingConfiguration);
         containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
 
         //Register All Service
@@ -88,7 +88,7 @@ public class Bootstrapper : PrismBootstrapper
 
         // Read BaseUrl from configuration
         var apiSettings = new ApiSettings();
-        Configuration.GetSection("ApiSettings").Bind(apiSettings);
+        SettingConfiguration.GetSection("ApiSettings").Bind(apiSettings);
 
 
         // Register the KafApiClient with a base URL

@@ -10,7 +10,7 @@ namespace KAF.Service.Proxy
     public class ServiceModule : IModule
     {
         private readonly IRegionManager _regionManager;
-        public IConfiguration Configuration { get; private set; }
+        public IConfiguration SettingConfiguration { get; private set; }
 
         public ServiceModule(IRegionManager regionManager)
         {
@@ -37,12 +37,12 @@ namespace KAF.Service.Proxy
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            Configuration = builder.Build();
+            SettingConfiguration = builder.Build();
             // Register IConfiguration for dependency injection
-            containerRegistry.RegisterInstance<IConfiguration>(Configuration);
+            containerRegistry.RegisterInstance<IConfiguration>(SettingConfiguration);
             // Read BaseUrl from configuration
             var apiSettings = new ApiSettings();
-            Configuration.GetSection("ApiSettings").Bind(apiSettings);
+            SettingConfiguration.GetSection("ApiSettings").Bind(apiSettings);
 
 
             // Register the KafApiClient with a base URL
