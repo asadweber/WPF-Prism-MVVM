@@ -49,9 +49,6 @@ namespace BDO.Core.DataAccessObjects.SecurityModels
         [Required(ErrorMessageResourceType = typeof(CLL.LLClasses.SecurityModels._owin_role), ErrorMessageResourceName = "OTPRequired")]
         public string OTP { get => _aUPIOuser; set => _aUPIOuser = value; }
 
-        [DataMember]
-        public KAFPaciServiceSettings PaciServiceSettings { get; set; }
-
         public IOptions<ApplicationGlobalSettings> _applicationGlobalSettings { get; set; }
     }
 

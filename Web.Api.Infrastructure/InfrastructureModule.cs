@@ -27,20 +27,12 @@ namespace Web.Api.Infrastructure
 
             builder.RegisterType<TokenFactory>().As<ITokenFactory>().SingleInstance();
             builder.RegisterType<EmailSender>().As<IEmailSender>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-            builder.RegisterType<DigitalNotificationSender>().As<IDigitalNotificationSender>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-            builder.RegisterType<PaciCivilIDInformationSender>().As<IPaciCivilIDInformationSender>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-            builder.RegisterType<PaciMainCivilIDInformationSender>().As<IPaciMainCivilIDInformationSender>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
 
 
             builder.RegisterType<StringCompression>().As<IStringCompression>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
 
-            builder.RegisterType<HttpClientPACIAuth>().As<IHttpClientPACIAuth>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
 
             builder.RegisterType<FileUploadClient>().As<IFileUploadClient>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-
-
-            builder.RegisterType<NotificationService>().As<INotificationService>().SingleInstance().FindConstructorsWith(new InternalConstructorFinder());
-
 
 
         }

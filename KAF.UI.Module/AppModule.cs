@@ -29,16 +29,6 @@ namespace KAF.UI.Module
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Register AutoMapper with profiles
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<AutoMapperProfile>(); // Add the AutoMapper profile here
-            });
-
-            // Register the mapper as a singleton
-            containerRegistry.RegisterInstance<IMapper>(config.CreateMapper());
-
-
             // Register the Event Aggregator
             containerRegistry.RegisterSingleton<IEventAggregator, EventAggregator>();
 

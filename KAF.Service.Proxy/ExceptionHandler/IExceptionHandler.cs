@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KAF.UI.Common.ExceptionHandler
+namespace KAF.Service.Proxy.ExceptionHandler
 {
     public interface IExceptionHandler
     {

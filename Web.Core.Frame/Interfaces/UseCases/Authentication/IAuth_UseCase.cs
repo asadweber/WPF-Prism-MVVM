@@ -20,11 +20,8 @@ namespace Web.Core.Frame.Interfaces.UseCases
 
         Task<bool> ChangePassword(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
 
-        Task<bool> GetQRCodeFromPACIToAuthenticate(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
-        Task<bool> CivilIdValidateUsingPaciAPI(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
 
 
-        Task<bool> ForgetPasswordFromFrontRequest(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
         Task<bool> GetCivilIDValidated(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort);
 
 

@@ -55,10 +55,7 @@ namespace Web.Core.Frame.UseCases
 
         private readonly ApplicationUserManager<owin_userEntity> _userManager;
         private readonly ApplicationSignInManager<owin_userEntity> _signInManager;
-        //private readonly IHttpClientHR _ihttpclienthr;
-        private readonly KAFPaciServiceSettings _kAFPaciServiceSettings;
 
-        private readonly IHttpClientPACIAuth _iHttpClientPACIAuth;
 
         private readonly IStringCompression _stringCompression;
 
@@ -77,7 +74,6 @@ namespace Web.Core.Frame.UseCases
             IOptions<ApplicationGlobalSettings> applicationGlobalSettings
             , IConfiguration config
             //, IHttpClientHR ihttpclienthr
-            , IHttpClientPACIAuth iHttpClientPACIAuth
             , IStringCompression stringCompression)
         {
             _stringCompression = stringCompression;
@@ -101,8 +97,6 @@ namespace Web.Core.Frame.UseCases
             _sharedLocalizer = factory.Create("SharedResource", assemblyName.Name);
 
             //_ihttpclienthr = ihttpclienthr;
-            _iHttpClientPACIAuth = iHttpClientPACIAuth;
-            _kAFPaciServiceSettings = _config.GetSection(nameof(KAFPaciServiceSettings)).Get<KAFPaciServiceSettings>();
 
         }
 
@@ -406,111 +400,7 @@ namespace Web.Core.Frame.UseCases
             }
         }
 
-        public async Task<bool> ForgetPasswordFromFrontRequest(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
-        {
-            CancellationToken cancellationToken = new CancellationToken();
-            // string authcode = string.Empty;
-            try
-            {
-                (string authcode, string emailaddress, string PhoneNumber) = await BFC.Core.FacadeCreatorObjects.Security.ExtendedPartial.FCCKAFUserSecurity.GetFacadeCreate(_contextAccessor).ForgetPasswordRequestFromFront(message.Obj_owin_user, cancellationToken);
-                if (!string.IsNullOrEmpty(authcode))
-                {
-
-                    string html = System.IO.File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "EmailTemplate/forgetPasswordAuthCode" + Thread.CurrentThread.CurrentCulture.ToString().ToUpper() + ".html"));
-                    html.Replace("{currentdatetime}", DateTime.Now.ToString("dd-MM-yyyy"));
-                    html = html.Replace("{authocode}", authcode);
-                    html = html.Replace("{resetpasswordurl}", _applicationGlobalSettings.Value.PassResetURL);
-
-                    try
-                    {
-                        if (_kAFPaciServiceSettings.IsEnable)
-                        {
-                            using (RestClient client = new RestClient($"{_kAFPaciServiceSettings.WebApiAddress}Auth/login"))
-                            {
-                                RestRequest Shahilrequest = new RestRequest() { Method = Method.Post };
-                                //Add Headers  
-                                Shahilrequest.AddHeader("Content-Type", "application/json");
-                                var body = new
-                                {
-                                    username = _kAFPaciServiceSettings.UserName,
-                                    password = _kAFPaciServiceSettings.Password
-                                };
-
-                                Shahilrequest.AddJsonBody(body);
-
-                                var apiresponse = client.Execute(Shahilrequest);
-                                if (apiresponse.IsSuccessStatusCode)
-                                {
-                                    var accee = JsonConvert.DeserializeObject<SahilAccesstoken>(apiresponse.Content);
-
-                                    using (var notificationClient = new RestClient($"{_kAFPaciServiceSettings.WebApiAddress}NotificationRequestRecipientList/SendNotificationToSingleUser"))
-                                    {
-                                        Shahilrequest = new RestRequest() { Method = Method.Post };
-                                        Shahilrequest.AddHeader("Content-Type", "application/json");
-                                        Shahilrequest.AddHeader("Authorization", $"Bearer {accee.accessToken.token}");
-
-                                        var NotificationBody = new
-                                        {
-                                            applicationid = _kAFPaciServiceSettings.ApplicationId,
-                                            notificationrequestid = 0,
-                                            recipientcivilid = message.Obj_owin_user.username,
-                                            recipientmobile = PhoneNumber,
-                                            recipientemail = emailaddress,
-
-                                            msgsubject = "VC:Password Reset",
-                                            msgsubjectar = "إعادة تعيين كلمة المرور",
-
-                                            msg = $"Your password reset Authorization Code is {authcode}",
-                                            msgar = $"Your password reset Authorization Code is {authcode}",
-
-                                            messagebodyemail = html,
-                                            messagebodyemailar = html,
-
-                                            sendsms = message.Obj_owin_user.SendBySMS,
-                                            senddigitalidnotification = message.Obj_owin_user.SendByDigitalId,
-                                            sendemail = message.Obj_owin_user.SendByEmail
-                                        };
-
-                                        Shahilrequest.AddJsonBody(NotificationBody);
-                                        var NotificationApiresponse = notificationClient.Execute(Shahilrequest);
-
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-
-                }
-
-                string Replymess = string.Empty;
-                if (message.Obj_owin_user.SendBySMS)
-                    Replymess = _sharedLocalizer["FORGETPASSWORDSMS"].Value;
-                else if (message.Obj_owin_user.SendByDigitalId)
-                    Replymess = _sharedLocalizer["FORGETPASSWORDDIGITAL"].Value;
-                else if (message.Obj_owin_user.SendByEmail)
-                    Replymess = _sharedLocalizer["FORGETPASSWORDEMAIL"].Value;
-                
-
-                outputPort.ForgetPasswordAjax(new Auth_Response(new AjaxResponse("200", Replymess, CLL.LLClasses._Status._statusSuccess, CLL.LLClasses._Status._titleInformation, "/Account/PasswordReset"
-                    ), true, null));
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Auth_Response objResponse = new Auth_Response(false, _sharedLocalizer["DATA_DELETE_ERROR"], new Error(
-                         "500",
-                         _sharedLocalizer["USER_NOT_FOUND"]));
-                _logger.LogInformation(JsonConvert.SerializeObject(objResponse));
-                outputPort.ForgetPassword(objResponse);
-                return true;
-            }
-        }
-
+        
         public async Task<bool> PasswordRequestAuthTokenValidated(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
         {
             CancellationToken cancellationToken = new CancellationToken();
@@ -655,73 +545,8 @@ namespace Web.Core.Frame.UseCases
 
 
 
-        public async Task<bool> GetQRCodeFromPACIToAuthenticate(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
-        {
-            try
-            {
-                PACIQRCodeAuthenticationEntity objRet = new PACIQRCodeAuthenticationEntity();
-                objRet = await _iHttpClientPACIAuth.GetQRCodeFromPACIToAuthenticate(message.Obj_PACIAuthRequest);
-                outputPort.Login(new Auth_Response(new AjaxResponse(objRet), true, null));
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Auth_Response objResponse = new Auth_Response(false, _sharedLocalizer["DATA_DELETE_ERROR"], new Error(
-                         "500",
-                         ex.Message));
-                _logger.LogInformation(JsonConvert.SerializeObject(objResponse));
-                outputPort.ForgetPassword(objResponse);
-                return true;
-            }
-        }
-        public async Task<bool> CivilIdValidateUsingPaciAPI(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
-        {
-            try
-            {
-                CancellationToken cancellationToken = new CancellationToken();
-                owin_userEntity Obj_owin_user = new owin_userEntity();
-                Obj_owin_user.BaseSecurityParam = new BDO.Core.Base.SecurityCapsule();
-                Obj_owin_user.BaseSecurityParam = message.Obj_PACIAuthRequest.BaseSecurityParam;
-                Obj_owin_user.username = message.Obj_PACIAuthRequest.civilid;
-
-                owin_userEntity objUser = await BFC.Core.FacadeCreatorObjects.Security.ExtendedPartial.FCCKAFUserSecurity.GetFacadeCreate(_contextAccessor).
-                    GetSingleExtByPKeyEX(Obj_owin_user, cancellationToken);
-
-                if (objUser != null)
-                {
-
-                    SignInAjaxResponse objRet = new SignInAjaxResponse();
-                    objRet = await _iHttpClientPACIAuth.SendAuthRequestToAuthenticate(message.Obj_PACIAuthRequest);
-
-                    var objData = new
-                    {
-                        civilID = objRet.data.CivilId,
-                        PaciSigninRequestInfoSerial = objRet.data.PaciSigninRequestInfoSerial,
-                        KeyParam = objRet.data.KeyParam,
-                        result = objRet.data.Result,
-                        status = 200
-                    };
-                    outputPort.Login(new Auth_Response(new AjaxResponse(objData), true, null));
-                    return true;
-                }
-                else
-                {
-                    outputPort.Error(new Auth_Response(new AjaxResponse("403", _sharedLocalizer["INVALID_CIVILID"].Value, CLL.LLClasses._Status._statusFailed, CLL.LLClasses._Status._titleInformation, ""
-                          ), false, _sharedLocalizer["INVALID_CIVILID"].Value));
-                    return false;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Auth_Response objResponse = new Auth_Response(false, _sharedLocalizer["DATA_DELETE_ERROR"], new Error(
-                         "500",
-                         ex.Message));
-                _logger.LogInformation(JsonConvert.SerializeObject(objResponse));
-                outputPort.ForgetPassword(objResponse);
-                return true;
-            }
-        }
+        
+       
 
         public async Task<bool> GetCivilIDValidated(Auth_Request message, IOutputPort_Auth<Auth_Response> outputPort)
         {

@@ -1,7 +1,7 @@
 ﻿using KAF.Service.Proxy;
 using KAF.Service.Proxy.Client;
+using KAF.Service.Proxy.ExceptionHandler;
 using KAF.UI;
-using KAF.UI.Common.ExceptionHandler;
 using KAF.UI.Common.Helper;
 using KAF.UI.Module;
 using KAF.UI.ViewModels;
@@ -16,7 +16,7 @@ using System.Windows;
 public class Bootstrapper : PrismBootstrapper
 {
     public IConfiguration Configuration { get; private set; }
-  
+
     private IExceptionHandler _exceptionHandler;
 
 
@@ -93,10 +93,6 @@ public class Bootstrapper : PrismBootstrapper
 
         // Register the KafApiClient with a base URL
         containerRegistry.Register<IAuthApiClient>(sp => new AuthApiClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
-        containerRegistry.Register<IDepartmentApiClient>(sp => new DepartmentApiClient(apiSettings.BaseUrl, sp.Resolve<HttpClient>()));
-
-
-
 
         // Register the custom window that will host the UserControl dialog
         containerRegistry.RegisterDialogWindow<AppDialogWindow>();
@@ -107,6 +103,7 @@ public class Bootstrapper : PrismBootstrapper
     }
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {
+        moduleCatalog.AddModule<ServiceModule>();
         moduleCatalog.AddModule<AppModule>();
     }
 }

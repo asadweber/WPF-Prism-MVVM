@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace KAF.UI.Common.ExceptionHandler
+namespace KAF.Service.Proxy.ExceptionHandler
 {
     public class ExceptionHandler : IExceptionHandler
     {
