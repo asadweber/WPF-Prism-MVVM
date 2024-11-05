@@ -38,8 +38,11 @@ namespace KAF.Service.Proxy
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             SettingConfiguration = builder.Build();
+            
             // Register IConfiguration for dependency injection
             containerRegistry.RegisterInstance<IConfiguration>(SettingConfiguration);
+            
+            
             // Read BaseUrl from configuration
             var apiSettings = new ApiSettings();
             SettingConfiguration.GetSection("ApiSettings").Bind(apiSettings);
