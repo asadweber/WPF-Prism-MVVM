@@ -27,7 +27,6 @@ namespace Web.Core.Frame.UseCases
         private readonly IStringLocalizer _sharedLocalizer;
         private readonly ILogger<LoginUseCase> _logger;
         private readonly IConfiguration _config;
-        private readonly hrwebapiconnectionsettings _objhrwebapiSettigns;
 
         private readonly IHttpClientHR _ihttpclienthr;
 
@@ -48,7 +47,6 @@ namespace Web.Core.Frame.UseCases
             _logger = loggerFactory.CreateLogger<LoginUseCase>();
             _config = config;
 
-            _objhrwebapiSettigns = _config.GetSection(nameof(hrwebapiconnectionsettings)).Get<hrwebapiconnectionsettings>();
 
             var type = typeof(SharedResource);
             var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
@@ -66,9 +64,6 @@ namespace Web.Core.Frame.UseCases
                 string hrprofileJsonString = string.Empty;
                 bool ADLogin = false;
 
-                if (_objhrwebapiSettigns.isRequired)
-                {
-                }
 
 
 
@@ -117,10 +112,7 @@ namespace Web.Core.Frame.UseCases
                 string hrprofileJsonString = string.Empty;
                 bool ADLogin = false;
 
-                if (_objhrwebapiSettigns.isRequired)
-                {
-                 
-                }
+              
 
 
 
